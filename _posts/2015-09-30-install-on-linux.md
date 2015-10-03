@@ -9,6 +9,11 @@ order: 1
 
 To install BleachBit, first <a href="http://bleachbit.sourceforge.net/download">download</a> the latest installation package for your system.
 
+### Requirements
+
+BleachBit requires Python 2.5, 2.6, or 2.7 (not 3) and GTK+ version 2 (not 3). There is an experimental branch with support for GTK+3.
+
+
 ### Ubuntu, Mint, and Debian
 
 Double click on the downloaded installation package which has a name like <tt>bleachbit_1.6_all_ubuntu1404.deb</tt>. Then, follow the prompts.
