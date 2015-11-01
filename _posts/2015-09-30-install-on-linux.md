@@ -24,7 +24,7 @@ Alternatively, install using the command line like this:
 
 Installing using apt from the distribution's repositories is _not_ recommended because they tend to be old releases of BleachBit.
 
-### Fedora, Red Hat, CentOS, Mandriva
+### Fedora, Red Hat, CentOS
 
 
 #### Graphical package manager
