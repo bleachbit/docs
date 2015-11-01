@@ -26,9 +26,20 @@ Installing using apt from the distribution's repositories is _not_ recommended b
 
 ### Fedora, Red Hat, CentOS, Mandriva
 
-Double click on the downloaded installation package which has a name like <tt>bleachbit-1.4-1.1.fc20.noarch.rpm</tt>. Then, follow the prompts.
 
-Alternatively, install using the command line like this:
+#### Graphical package manager
+To install BleachBit using the graphic package manager, double click on the downloaded installation package which has a name like <tt>bleachbit-1.4-1.1.fc20.noarch.rpm</tt>. Then, follow the prompts.
+
+
+#### Command line
+Alternatively, install using the command line like this.
+
+While installing the public key is not required (a missing key can be ignored), it is recommended to verify the authenticity of the downloaded files.  Without importing the key you may see the following error: "Signature verification failed [4-Signatures public key is not available]." Installing the key is required only once (in other words, not every time you install or upgrade BleachBit). This command downloads and imports the pubic key:
+
+`wget http://bleachbit.sourceforge.net/bleachbit_public.key -O /tmp/bleachbit_public.key
+sudo rpm --import /tmp/bleachbit_public.key`
+
+The following command installs BleachBit using the command line:
 
 `sudo rpm -Uvh bleachbit-1.4-1.1.fc20.noarch.rpm`
 
