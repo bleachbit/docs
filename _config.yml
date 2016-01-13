@@ -28,7 +28,7 @@ sections: [
 
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
-baseurl: '/docs'
+baseurl: ''
 
 # Dates are not included in permalinks
 permalink: none
@@ -59,3 +59,4 @@ redcarpet:
 # https://help.github.com/articles/redirects-on-github-pages/
 gems:
   - jekyll-redirect-from
+
