@@ -3,9 +3,9 @@ layout: default
 ---
 
 <div class="page-header">
+    {% include ad.html %}
     <h2>{{ page.title }}
         {% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}
     </h2>
 
-{% include ad.html %}
 {{ content }}
