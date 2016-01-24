@@ -22,9 +22,6 @@ To tell the difference, start BleachBit as Administrator, click on Help - System
 
 Another way to check is first to run BleachBit as administrator. Then run BleachBit as a regular user, and if the preview shows any files, then you may need to run BleachBit as a regular user.
 
-**Q: How can I delete Firefox URL history without deleting bookmarks?**  
-A: Uncheck **Places** and check **URL history**. Firefox version 3 stores bookmarks, favicons, and URL history in a single file called the Places database.
-
 **Q: How many passes does BleachBit make for the overwrite file option (shredding file)?**  
 A: See [Shred files and wipe disks](/documentation/shred-files-wipe-disk).
 
