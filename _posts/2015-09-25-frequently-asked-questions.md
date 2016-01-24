@@ -31,8 +31,6 @@ A: You enabled the option to **System - Free disk space** to wipe free disk spac
 **Q: How do I see BleachBit in my own language on Microsoft Windows?**  
 A: The language chosen in the installer does not affect the application. Open the Windows Control Panel, click on Regionalization, choose your language under Standards and Formats, and restart BleachBit. _Alternatively_, you can set the [environment variable](http://support.microsoft.com/kb/310519) **LANG** to your [ISO 639-1 language code](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (for example, Spanish is ```es```) or locale code (Mexican Spanish is ```es_MX```).
 
-**Q: Why do I see permission denied errors on ```index.dat```?**  
-A: Windows locks this file continuously even when Internet Explorer is closed. BleachBit version 0.6.0 fixes this.
 
 **Q: Why do I see permission denied errors on Windows (when deleting system logs, for example)?**  
 A: Hold shift on the keyboard while right clicking on the BleachBit icon. Then, click Run as Administrator. BleachBit 0.7.3 automatically asks you to become administrator. on Windows
