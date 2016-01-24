@@ -34,6 +34,10 @@ A: You enabled the option to **System - Free disk space** to wipe free disk spac
 A: The language chosen in the installer does not affect the application. Open the Windows Control Panel, click on Regionalization, choose your language under Standards and Formats, and restart BleachBit. _Alternatively_, you can set the [environment variable](http://support.microsoft.com/kb/310519) **LANG** to your [ISO 639-1 language code](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (for example, Spanish is ```es```) or locale code (Mexican Spanish is ```es_MX```).
 
 
+### Q: What is format for the versioning number system?
+A: Since BleachBit version 1.0 the numbering system is like that of GNOME, Linux between 1.0 and 2.6, and other projects: the format is basically *a.b*. When *b* is odd like 1.1, it is an unstable release (alpha or beta), and when *b* is even like 1.2, it is a stable release. Also, *b* can be greater than 9, so version 1.10 is newer than version 1.8.
+
+
 ## Things to know
 
 While these may not be asked, they are not common knowledge:
