@@ -31,7 +31,7 @@ During application startup, BleachBit looks for CleanerML files in a few standar
 *   ```/usr/share/bleachbit/cleaners/``` on Linux
 *   ```~/.config/bleachbit/cleaners/``` on Linux
 *   ```share/cleaners/``` relative to the Python script on Linux (useful for running BleachBit from source without installation
-*   ```share\cleaners\``` relative to the BleachBit executable on Windows which typically translates to ```c:\program files\bleachbit\share\cleaners```  
+*   ```share\cleaners\``` relative to the BleachBit executable on Windows which typically translates to ```c:\program files\bleachbit\share\cleaners```
     Warning: This directory is deleted when BleachBit is updated or uninstalled.
 *   ```%APPDATA%\BleachBit\cleaners\``` on Windows which typically translates to
     *   Windows XP: ```C:\Documents and Settings\(username)\Application Data\BleachBit\Cleaners\```
@@ -53,8 +53,8 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 1.  Run the application you want to clean.
     *   In the applications' preferences, turn on all logging (if applicable). For example, by default Pidgin turns off chat logs.
     *   Use all the features of the application to try to make it generate as many files as it can. For example, in Nexuiz (a game) you must play a multiplayer game with a new map to cause the game to download the map into its cache. Many Nexuiz multiplayer games don't download maps.
-2.  Discover where the application stores its file. Assume your application is called Firefox: you could use the following commands to begin the find its files.  
-    Linux: `ls -d ~/.* | tail -n+3 | xargs -I '{}' find '{}' | grep -i firefox`  
+2.  Discover where the application stores its file. Assume your application is called Firefox: you could use the following commands to begin the find its files.
+    Linux: `ls -d ~/.* | tail -n+3 | xargs -I '{}' find '{}' | grep -i firefox`
     Windows: `dir /s /b $USERPROFILE | find /i "firefox"`
 3.  In some cases not all files appear using those commands. Perhaps the application checks for a file which doesn't often exist, or it writes a file but deletes it a moment later. In these cases use strace (for Linux) or [Process Monitor](http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx) (for Windows) to find these files. A standard invokation of strace (assuming you are launching Firefox) is: `strace -f -e trace=open,stat64,lstat64,access,mkdir,unlink,rename,readlink firefox &> /tmp/firefox.log grep -iE "(cache|log|tmp|$HOME)" /tmp/firefox.log | sort | uniq | less`
 4.  Search for registry entries in Windows: typically they are under ```HCKU\Software\(app name)```.
