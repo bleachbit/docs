@@ -49,10 +49,8 @@ A: Cache generally improves the performance of your computer. For example, brows
 
 On the other hand, cache contains content you have viewed and can be used to reconstruct some of your browsing history. Especially for applications that you deleted, some cache is ever used. Finally, deleting a large cache saves time and space before making a backup.
 
-**Q: Should I delete cookies?**  
-A: Cookies are not inherently evil or dangerous. Wikipedia [lists these misconceptions:](http://en.wikipedia.org/wiki/HTTP_cookie#Misconceptions)
-
-[
+**Q: Should I delete cookies?**
+A: Cookies are not inherently evil or dangerous. The following statements are *false*:
 
 *   Cookies have many uses besides advertising
 *   Cookies cannot infect a computer like a virus
@@ -71,6 +69,5 @@ A: BleachBit probably won't make your computer faster in general, but there are 
 
 On the other hand, deleting (or disabling) cache may make your computer slower because data will have be re-downloaded or re-generated..
 
-](http://en.wikipedia.org/wiki/HTTP_cookie#Misconceptions)
 
 
