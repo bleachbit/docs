@@ -11,6 +11,10 @@ order: 5
 **Q: Why do I see permissions denied errors on Linux?**  
 A: If you are trying to clean the system (localizations, APT, or Yum), run BleachBit with root permissions by choosing the menu option "BleachBit as Administrator" _or_ using <tt>sudo</tt> on the command line.
 
+**Q: Why do I see permission denied errors on Windows?**
+This happens when cleaning certain files, such as Windows system logs under ``c:\windows``.
+A: When you first launch BleachBit it should prompt you with the User Access Control dialog, which asks, "Do you want to allow the following program to make changes to this computer." Answer *Yes* to grant BleachBit the privileges to modify all files.
+
 **Q: On Linux do I need to run BleachBit both as a normal user and as an administrator?**  
 A: It depends how your system elevates privileges. Linux has various tools (for example, kdesudo, gksudo sudo, and su-to-root) with various options to elevate to root (administrator) privileges, and they create basically two different situations.
 
@@ -31,9 +35,6 @@ A: You enabled the option to **System - Free disk space** to wipe free disk spac
 **Q: How do I see BleachBit in my own language on Microsoft Windows?**  
 A: The language chosen in the installer does not affect the application. Open the Windows Control Panel, click on Regionalization, choose your language under Standards and Formats, and restart BleachBit. _Alternatively_, you can set the [environment variable](http://support.microsoft.com/kb/310519) **LANG** to your [ISO 639-1 language code](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (for example, Spanish is ```es```) or locale code (Mexican Spanish is ```es_MX```).
 
-
-**Q: Why do I see permission denied errors on Windows (when deleting system logs, for example)?**  
-A: Hold shift on the keyboard while right clicking on the BleachBit icon. Then, click Run as Administrator. BleachBit 0.7.3 automatically asks you to become administrator. on Windows
 
 ## Things to know
 
