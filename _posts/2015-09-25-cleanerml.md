@@ -14,7 +14,7 @@ You can think of it as writing XML to delete files, but it is more powerful than
 * Open standard
 * Delete, truncate, or shred files
 * Delete Windows registry keys and named values
-* Perform specialized operations (see [Actions])(#Actions) below)
+* Perform specialized operations (see [Actions](#Actions))
 * Find files by glob, walking a tree, or 'deep scan'
 * Refine a file search with a regular expression
 * Export to gettext for translation using standard tools such as Launchpad
