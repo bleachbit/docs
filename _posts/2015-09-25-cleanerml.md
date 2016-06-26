@@ -12,12 +12,9 @@ You can think of it as writing XML to delete files, but it is more powerful than
 
 * Familiar XML
 * Open standard
-* Cleaners
 * Delete, truncate, or shred files
 * Delete Windows registry keys and named values
-* Vacuum SQLite databases
-* Clean .ini configuration files
-* Clean JSON configuration files
+* Perform specialized operations (see [Actions])(#Actions) below)
 * Find files by glob, walking a tree, or 'deep scan'
 * Refine a file search with a regular expression
 * Export to gettext for translation using standard tools such as Launchpad
