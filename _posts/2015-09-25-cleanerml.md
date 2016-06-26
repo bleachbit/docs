@@ -69,7 +69,12 @@ CleanerML allows several ways to match files:
 
 What is the difference between a **deep** and **walk.files**? Deep scan expect matches to be loosely scattered (such as Thumbs.db), but **walk.files** expects to match most files under that directory (such as Firefox's cache). To improve performance, BleachBit combines deep scans for the same directory (such as all deep scans for $HOME). In the future, BleachBit may allow the user to reconfigure the deep scan directory, so, for example, he can scan a network drive in addition to his home directory.
 
-Any of these methods can be combined with [Python's Perl regular expressions](http://docs.python.org/howto/regex.html#regex-howto) for sophisticated filtering.
+Any of these methods can be combined with [Python's Perl regular expressions](http://docs.python.org/howto/regex.html#regex-howto) for sophisticated filtering. The regular expression options are:
+
+* **regex**: require the path, not including the directory, to match the expression
+* **nregex**: require the path, not including the directory, to *not* match the expression
+* **wholeregex**: require the full path to match the expression
+* **nwholeregex**: require the full path to *not* match the expression
 
 For more information, refer to the section [Learning](#learning-cleanerml).
 
