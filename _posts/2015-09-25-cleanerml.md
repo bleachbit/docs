@@ -76,6 +76,27 @@ Any of these methods can be combined with [Python's Perl regular expressions](ht
 
 For more information, refer to the section [Learning](#learning-cleanerml).
 
+### Actions
+
+* apt.autoclean
+* apt.autoremove
+* chrome.autofill
+* chrome.databases_db
+* chrome.favicons
+* chrome.history
+* chrome.keywords
+* delete: delete a file
+* ini: delete part of a .ini configuration file
+* json: delete part of a JSON file
+* mozilla_url_history
+* office_registrymodifications
+* process: launch a process
+* sqlite.vacuum: vacuum an SQLite 3 database
+* truncate: truncate a file
+* win.shell.change.notify
+* winreg: delete a Windows registry key or value
+* yum.clean_all
+
 ### Environment variables
 
 Instead of hard coding path names, use an environment variable whenever possible because common paths may change depending on user logged in, the version of Windows, and on the user's language. In addition to expanding ```~``` to the user's home directory (such as ```/home/andrew/```), CleanerML expands environment variables. On both Linux and Windows environment variables must be given in the Bash format ```$foo``` instead of the Windows format ```%foo%```.
