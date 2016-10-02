@@ -74,9 +74,10 @@ On Windows, click on ```bleachbit.py```.
 
 ### Staying up to date with Git
 
-The Git repository changes frequently. To download changes, run these commands on Linux:
+The Git repository changes frequently. To download changes, run these commands:
 
-`git pull make -C po local`
+`git pull
+make -C po local`
 
 ### Further reading
 
