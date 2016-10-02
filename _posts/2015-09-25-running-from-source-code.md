@@ -76,8 +76,10 @@ On Windows, click on ```bleachbit.py```.
 
 The Git repository changes frequently. To download changes, run these commands:
 
-`git pull
-make -C po local`
+````
+git pull
+make -C po local
+````
 
 ### Further reading
 
