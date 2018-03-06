@@ -58,7 +58,7 @@ The answers to these questions will lead you to the appropriate level of caution
 
 ### Are multiple passes better than one pass?
 
-Some applications offer "advanced" and "high security" erasure techniques such as Gutmann method (35 passes), Department of Defense (DOD) standard (7 passes), National Security Agency (NSA) "approved" (3 passes), etc. Introduced by a poor reading of Peter Gutmann's ancient paper, people incorrectly believe that overwriting the same data multiple times makes it more difficult to recover. Years after his original paper, Peter Gutmann himself tried to clear up the confusion caused by his original paper [[*](http://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html#Epilogue)]:
+Some applications offer "advanced" and "high security" erasure techniques such as Gutmann method (35 passes), Department of Defense (DOD) standard (7 passes), National Security Agency (NSA) "approved" (3 passes), etc. Introduced by a poor reading of Peter Gutmann's ancient paper, people incorrectly believe that overwriting the same data multiple times makes it more difficult to recover. Years after his original paper, Peter Gutmann himself tried to clear up the confusion caused by his original paper [[*](https://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html#Epilogue)]:
 
 > Some people have treated the 35-pass overwrite technique described in it more as a kind of voodoo incantation to banish evil spirit. [... ] In fact performing the full 35-pass overwrite is pointless for any drive since it targets a blend of scenarios involving all types of (normally-used) encoding technology.
 
@@ -76,7 +76,7 @@ Shredding individual files and free disk space has limited benefits for any clea
 
 Shredding an individual file properly assumes its location can be completely known, but basically it can only be known in one ideal case.The ideal case has three characteristics:
 
-1.  The file size has never shrunk because of editing. Imagine starting with a 3MB spreadsheet, editing it down to 1MB (using the spreadsheet application), and asking the cleaner application to delete the 1MB version: the cleaner has no way of knowing where the missing 2MB was allocated on the physical hard drive. (Remember: file systems often don't store files continuously, so you can't assume the missing part was directly after the known part.) ![Graphic illustrating layout of file on disk in blocks](http://lh5.ggpht.com/_1XYQfEGGEIw/TMG_UyXYeVI/AAAAAAAACx4/mclA1xjpxlE/s800/file_shred_graphics.png)
+1.  The file size has never shrunk because of editing. Imagine starting with a 3MB spreadsheet, editing it down to 1MB (using the spreadsheet application), and asking the cleaner application to delete the 1MB version: the cleaner has no way of knowing where the missing 2MB was allocated on the physical hard drive. (Remember: file systems often don't store files continuously, so you can't assume the missing part was directly after the known part.) ![Graphic illustrating layout of file on disk in blocks](https://lh5.ggpht.com/_1XYQfEGGEIw/TMG_UyXYeVI/AAAAAAAACx4/mclA1xjpxlE/s800/file_shred_graphics.png)
 2.  The file never moved. Imagine the spreadsheet software saves the document by writing a new copy to a temporary file, deleting the old copy, and renaming the temporary file to the original name. In this case, the cleaner application has no way of knowing where any of the old spreadsheet was located.
 3.  The file system overwrites files to the same place. This is a good assumption. On Windows NTFS and on Linux the most common ext3 configuration (which is the default on Ubuntu 9.10 and other Linux distributions) overwrite files in the same place, but transparent disk compression, encryption, and sparse files may not overwrite files in place.
 
@@ -88,7 +88,7 @@ However, wiping free disk space has several of its own challenges:
 
 1.  It can be very slow, so many people aren't willing to use it.
 2.  File systems allocate space in fixed chunks called a block size, and many files do not use all of the last block. A 5,000,000 byte file on a 4096 size block file system would use 1220 full blocks and 1 partial block with 2880 bytes. Say the file was deleted and a new file in the same place used 1024 byte of the last block. That means 1856 bytes of the old file (0.03%) is not overwritten in what is called the "slack space" of the new file. Because cleaning slack space is tricky and realistically little useful data can be recovered from such tiny pieces (typically not more than 4096 bytes), BleachBit does not clean slack space when wiping free disk space. (Remember: BleachBit _does_ wipe slack when wiping individual files.)
-3.  When an area of a modern hard drive is damaged, it automatically remaps the bad sector to a spare. The operating system and applications are unaware of the move, so wiping the drive ignores the damaged area. According to [DBAN](http://www.dban.org/node/34), a powerful disk wiping tool, most of its wipe methods do not wipe bad remapped sectors, though one method does.
+3.  When an area of a modern hard drive is damaged, it automatically remaps the bad sector to a spare. The operating system and applications are unaware of the move, so wiping the drive ignores the damaged area. According to [DBAN](https://dban.org/), a powerful disk wiping tool, it does not erase remapped sectors and hidden areas.
 
 ### How to securely delete data
 
@@ -109,7 +109,7 @@ Here are some suggestions to keep your data private
 1.  Don't keep secrets. It's easier to sleep.
 2.  Don't waste time with multiple passes for data sanitation.
 3.  Second guess any software which advertises multiple passes to wipe files or free disk space. Do the authors not honestly know what they are doing, or is a useless feature for marketing purposes?
-4.  Use full volume encryption, though someone may [hit you with a $5 wrench](http://xkcd.com/538/) until you reveal the key.
+4.  Use full volume encryption, though someone may [hit you with a $5 wrench](https://xkcd.com/538/) until you reveal the key.
 5.  If giving a hard drive (or whole computer) to someone else, use DBAN to wipe the entire drive, including the remapped sectors—even though reinstalling an operating system, security updates, applications, and settings is a pain. It's not enough to delete files, empty the recycle bin (or trash can), and wipe the free space because some useful data may be in the swap file, hibernation file, Windows registry, and application registries (such as passwords in Firefox's configuration). If you are not willing to do that, minimally delete the user accounts on the system and _then_ wipe free disk space.
 6.  If you really need DoD class security, use the only sanitation method approved by the DoD 5220.22-M standard: degauss or mechanically destroy the storage device.
 7.  Don't assume you control all the data. Say you download a file from www.example.com: there may be records on your computer, your ISP, www.example.com's server, www.example.com's ISP, www.example.com's backup site, the Internet backbone, etc. Think about how much data is stored on your email server, Facebook account, etc.
@@ -117,9 +117,9 @@ Here are some suggestions to keep your data private
 
 ### Suggested reading
 
-*   ["Data Remanence"](http://en.wikipedia.org/wiki/Data_remanence) (Wikipedia)
-*   ["Gutmann method: criticism"](https://secure.wikimedia.org/wikipedia/en/wiki/Gutmann_method#Criticism) (Wikipedia)
-*   [One big file is not enough: A critical evaluation of the dominant free-space sanitization technique](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.117.694&rep=rep1&type=pdf) (Garfinkel andn Malan, 2006)
+*   ["Data Remanence"](https://en.wikipedia.org/wiki/Data_remanence) (Wikipedia)
+*   ["Gutmann method: criticism"](https://en.wikipedia.org/wiki/Gutmann_method#Criticism) (Wikipedia)
+*   [One big file is not enough: A critical evaluation of the dominant free-space sanitization technique](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.117.694&rep=rep1&type=pdf) (Garfinkel and Malan, 2006)
 
 
 

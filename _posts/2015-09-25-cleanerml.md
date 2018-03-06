@@ -34,7 +34,7 @@ During application startup, BleachBit looks for CleanerML files in a few standar
     *   Windows XP: ```C:\Documents and Settings\(username)\Application Data\BleachBit\Cleaners\```
     *   Windows Vista/7: ```C:\Users\(username)\AppData\Roaming\BleachBit\Cleaners\```
 
-Most of these locations are also scanned for [winapp2.ini](/documentation/winapp2_ini) files, but you may only use one winapp2.ini file.
+Most of these locations are also scanned for [winapp2.ini](/doc/winapp2ini.html) files, but you may only use one winapp2.ini file.
 
 ### Learning CleanerML
 
@@ -53,7 +53,7 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 2.  Discover where the application stores its file. Assume your application is called Firefox: you could use the following commands to begin the find its files.
     Linux: `ls -d ~/.* | tail -n+3 | xargs -I '{}' find '{}' | grep -i firefox`
     Windows: `dir /s /b $USERPROFILE | find /i "firefox"`
-3.  In some cases not all files appear using those commands. Perhaps the application checks for a file which doesn't often exist, or it writes a file but deletes it a moment later. In these cases use strace (for Linux) or [Process Monitor](http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx) (for Windows) to find these files. A standard invokation of strace (assuming you are launching Firefox) is: `strace -f -e trace=open,stat64,lstat64,access,mkdir,unlink,rename,readlink firefox &> /tmp/firefox.log grep -iE "(cache|log|tmp|$HOME)" /tmp/firefox.log | sort | uniq | less`
+3.  In some cases not all files appear using those commands. Perhaps the application checks for a file which doesn't often exist, or it writes a file but deletes it a moment later. In these cases use strace (for Linux) or [Process Monitor](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) (for Windows) to find these files. A standard invokation of strace (assuming you are launching Firefox) is: `strace -f -e trace=open,stat64,lstat64,access,mkdir,unlink,rename,readlink firefox &> /tmp/firefox.log grep -iE "(cache|log|tmp|$HOME)" /tmp/firefox.log | sort | uniq | less`
 4.  Search for registry entries in Windows: typically they are under ```HCKU\Software\(app name)```.
 5.  It's not strictly necessary, but it's nice if you put your cleaner in the ```cleaners``` directory of the BleachBit source and run ```make tests``` (to check it against the XSD) and ```make pretty``` (to reformat the XML).
 
@@ -62,14 +62,14 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 CleanerML allows several ways to match files:
 
 *   **file**: matches a single file.
-*   **glob**: matches one or more files with a simple pattern. See the Python documentation on [glob](http://docs.python.org/library/glob.html).
+*   **glob**: matches one or more files with a simple pattern. See the Python documentation on [glob](https://docs.python.org/2/library/glob.html).
 *   **walk.files**: matches all files under a directory (but does not match directories).
 *   **walk.all**: matches all and directories files under a directory.
 *   **deep**: queues a deep scan
 
 What is the difference between a **deep** and **walk.files**? Deep scan expect matches to be loosely scattered (such as Thumbs.db), but **walk.files** expects to match most files under that directory (such as Firefox's cache). To improve performance, BleachBit combines deep scans for the same directory (such as all deep scans for $HOME). In the future, BleachBit may allow the user to reconfigure the deep scan directory, so, for example, he can scan a network drive in addition to his home directory.
 
-Any of these methods can be combined with [Python's Perl regular expressions](http://docs.python.org/howto/regex.html#regex-howto) for sophisticated filtering. The regular expression options are:
+Any of these methods can be combined with [Python's Perl regular expressions](https://docs.python.org/2/howto/regex.html) for sophisticated filtering. The regular expression options are:
 
 * **regex**: require the path, not including the directory, to match the expression
 * **nregex**: require the path, not including the directory, to *not* match the expression
@@ -108,11 +108,11 @@ For more information, refer to the section [Learning](#learning-cleanerml).
 
 Instead of hard coding path names, use an environment variable whenever possible because common paths may change depending on user logged in, the version of Windows, and on the user's language. In addition to expanding ```~``` to the user's home directory (such as ```/home/andrew/```), CleanerML expands environment variables. On both Linux and Windows environment variables must be given in the Bash format ```$foo``` instead of the Windows format ```%foo%```.
 
-The most common environment variables are APPDATA, LOCALAPPDATA, PROGRAMFILES, and USERPROFILE. For more information, see Wikipedia's ["Environment variable"](http://en.wikipedia.org/wiki/Environment_variable).
+The most common environment variables are APPDATA, LOCALAPPDATA, PROGRAMFILES, and USERPROFILE. For more information, see Wikipedia's ["Environment variable"](https://en.wikipedia.org/wiki/Environment_variable).
 
 ### Sharing your cleaner
 
-Of course you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner](http://bleachbit.sourceforge.net/contribute/cleaner).
+Of course you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner](https://www.bleachbit.org/contribute/cleaner).
 
 
 

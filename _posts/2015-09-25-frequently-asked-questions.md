@@ -25,13 +25,13 @@ To tell the difference, start BleachBit as Administrator, click on Help - System
 Another way to check is first to run BleachBit as administrator. Then run BleachBit as a regular user, and if the preview shows any files, then you may need to run BleachBit as a regular user.
 
 ### Q: How many passes does BleachBit make for the overwrite file option (shredding file)?
-A: See [Shred files and wipe disks](/documentation/shred-files-wipe-disk).
+A: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
 
 ### Q: Why does BleachBit take a long time (more than five minutes) and fill up by hard drive?
 A: You enabled the option to **System - Free disk space** to wipe free disk space for privacy. This works basically by creating a large, empty file (see [Shred files and wipe disks](/documentation/shred-files-wipe-disk) for more information). When the hard drive is full, the file will be deleted immediately, and there will be no net change in disk space (you will be back where you started). It is generally recommended you disable this option.
 
 ### Q: How do I see BleachBit in my own language on Microsoft Windows?
-A: The language chosen in the installer does not affect the application. Open the Windows Control Panel, click on Regionalization, choose your language under Standards and Formats, and restart BleachBit. _Alternatively_, you can set the [environment variable](http://support.microsoft.com/kb/310519) **LANG** to your [ISO 639-1 language code](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (for example, Spanish is ```es```) or locale code (Mexican Spanish is ```es_MX```).
+A: The language chosen in the installer does not affect the application. Open the Windows Control Panel, click on Regionalization, choose your language under Standards and Formats, and restart BleachBit. _Alternatively_, you can set the [environment variable](https://support.microsoft.com/en-us/help/310519/how-to-manage-environment-variables-in-windows-xp) **LANG** to your [ISO 639-1 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (for example, Spanish is ```es```) or locale code (Mexican Spanish is ```es_MX```).
 
 
 ### Q: What is format for the versioning number system?

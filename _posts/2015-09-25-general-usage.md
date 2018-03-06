@@ -17,6 +17,6 @@ The general usage is as follows:
 7.  Make any adjustments to your selection of options, and preview again until you are comfortable with the changes. Disable any options which you don't understand or make you uncomfortable.
 8.  Click the **Delete** button.
 
-Watch the [videos](http://bleachbit.sourceforge.net/videos) for narrated walk-through of usage.
+Watch the [videos](https://www.bleachbit.org/videos) for narrated walk-through of usage.
 
 

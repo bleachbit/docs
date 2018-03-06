@@ -6,7 +6,7 @@ date: 2015-09-30 20:37:24
 order: 1
 ---
 
-To install BleachBit, first <a href="http://bleachbit.sourceforge.net/download">download</a> the latest installation package for your system.
+To install BleachBit, first <a href="https://www.bleachbit.org/download">download</a> the latest installation package for your system.
 
 BleachBit is supported on Windows XP, 2003, Vista, 7, 8, 8.1, or 10 (32-bit or 64-bit).
 

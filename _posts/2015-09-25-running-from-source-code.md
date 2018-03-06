@@ -5,7 +5,7 @@ category: dev
 date: 2015-09-25 23:40:58
 ---
 
-Running BleachBit from source code is intended for developers and testers: other users should install [the prepared packages](http://bleachbit.sourceforge.net/download). Running BleachBit from source code is relatively easy because there is nothing to compile and installing BleachBit is not required.
+Running BleachBit from source code is intended for developers and testers: other users should install [the prepared packages](https://www.bleachbit.org/download). Running BleachBit from source code is relatively easy because there is nothing to compile and installing BleachBit is not required.
 
 ## Linux
 
@@ -16,8 +16,8 @@ Linux systems almost always have the necessary dependencies installed for runnin
 On Microsoft Windows you must install several dependencies:
 
 *   [Python 2.7 32-bit](https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
-*   [PyGTK all-in-one installer](http://ftp.gnome.org/pub/GNOME/binaries/win32/pygtk/2.24/pygtk-all-in-one-2.24.2.win32-py2.7.msi)
-*   [Python for Windows Extensions](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download)
+*   [PyGTK all-in-one installer](https://ftp.gnome.org/pub/GNOME/binaries/win32/pygtk/2.24/pygtk-all-in-one-2.24.2.win32-py2.7.msi)
+*   [Python for Windows Extensions](https://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download)
 
 Python, GTK+, and all Python extensions should be 32-bit. Mixing 64-bit and 32-bit components will cause errors.
 
@@ -51,10 +51,10 @@ On Linux checkout the BleachBIt application Git repository (read only) with this
 
 Here is a full list of BleachBit Git repositories:
 
-*   [BleachBit](https://github.com/az0/bleachbit): main BleachBit application
-*   [bleachbit-misc](https://github.com/az0/bleachbit): supports development
+*   [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
+*   [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
 *   [CleanerML](https://github.com/az0/cleanerml): extra cleaners
-*   [winapp2.ini](https://github.com/az0/winapp2.ini): winapp2.ini cleaners database for Windows
+*   [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
 
 ### Building translations
 
@@ -83,7 +83,7 @@ make -C po local
 
 ### Further reading
 
-*   [Testing](http://bleachbit.sourceforge.net/contribute/testing)
-*   [Contributing patches and bug reports](http://bleachbit.sourceforge.net/contribute)
+*   [Testing](https://www.bleachbit.org/contribute/testing)
+*   [Contributing patches and bug reports](https://www.bleachbit.org/contribute)
 
 

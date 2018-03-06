@@ -7,7 +7,7 @@ order: 1
 ---
 
 
-To install BleachBit, first <a href="http://bleachbit.sourceforge.net/download">download</a> the latest installation package for your system.
+To install BleachBit, first <a href="https://www.bleachbit.org/download">download</a> the latest installation package for your system.
 
 ### Requirements
 
@@ -45,4 +45,4 @@ The following command installs BleachBit using the command line:
 
 ### Digital signatures
 
-The SHA256 sum of all released files is signed using [this public key](http://bleachbit.sourceforge.net/bleachbit_public.key). Look in the [SourceForge release directory](http://sourceforge.net/projects/bleachbit/files/bleachbit/) for files with the name like <tt>bleachbit-(version)-sha256sum.txt.asc</tt>.
+The SHA256 sum of all released files is signed using [this public key](http://bleachbit.sourceforge.net/bleachbit_public.key). Look in the [SourceForge release directory](https://sourceforge.net/projects/bleachbit/files/bleachbit/) for files with the name like <tt>bleachbit-(version)-sha256sum.txt.asc</tt>.
