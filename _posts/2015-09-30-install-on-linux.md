@@ -34,7 +34,7 @@ To install BleachBit using the graphic package manager, double click on the down
 #### Command line
 Alternatively, install using the command line like this.
 
-While installing the public key is not required (a missing key can be ignored), it is recommended to verify the authenticity of the downloaded files.  Without importing the key you may see the following error: "Signature verification failed [4-Signatures public key is not available]." Installing the key is required only once (in other words, not every time you install or upgrade BleachBit). This command downloads and imports the pubic key:
+While installing the public key is not required (a missing key can be ignored), it is recommended to verify the authenticity of the downloaded files.  Without importing the key you may see the following error: "Signature verification failed [4-Signatures public key is not available]." Installing the key is required only once (in other words, not every time you install or upgrade BleachBit). This command downloads and imports the public key:
 
 `wget http://bleachbit.sourceforge.net/bleachbit_public.key -O /tmp/bleachbit_public.key
 sudo rpm --import /tmp/bleachbit_public.key`

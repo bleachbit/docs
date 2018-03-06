@@ -37,7 +37,7 @@ Multiple arguments are allowed. To preview deleting Firefox cache and Opera cach
 
 `bleachbit --preview firefox.cache opera.cache`
 
-Wildcards are allowed for options (though not cleaners), so to preview deleting all of Opera, run:
+Wildcards are allowed for options (though not cleaners), so to preview deleting all options for Opera, run:
 
 `bleachbit --preview opera.*`
 
@@ -55,7 +55,7 @@ When you are ready to delete files and make other permanent changes, replace ```
 
 ### Overwriting files
 
-To overwrite the contents of files so they cannot be undeleted later, add ```--overwrite```:
+To overwrite the contents of files, so they cannot be undeleted later, add ```--overwrite```:
 
 `bleachbit --overwrite --clean firefox.vacuum`
 

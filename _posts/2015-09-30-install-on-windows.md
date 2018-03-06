@@ -26,11 +26,11 @@ Run the installer with the silent switch like this:
 
 `BleachBit-1.6-setup.exe /S`
 
-The switch _is_ case sensitive.
+The switch _is_ case-sensitive.
 
 #### Portable Use
 
-Download the package which has a name like <tt>BleachBit-1.6-portable.zip</tt>. Then use a standard unzip utility to unpackage the file. Such a utility is included with Windows: just right click on the <tt>.zip</tt> file and choose **Extract all files** which creates a new folder.
+Download the package which has a name like <tt>BleachBit-1.6-portable.zip</tt>. Then use a standard unzip utility to unpack the file. Such a utility is included with Windows: just right click on the <tt>.zip</tt> file and choose **Extract all files** which creates a new folder.
 
 Do not double click on the <tt>.zip</tt> file.
 

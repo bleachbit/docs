@@ -41,13 +41,13 @@ On Linux, install the Git client. On Debian and Ubuntu install it with this comm
 
 `sudo apt-get install git`
 
-Similarly on Fedora, Red Hat, and CentOS install the Git client with this command:
+Similarly, on Fedora, Red Hat, and CentOS install the Git client with this command:
 
 `sudo yum install git-core`
 
-On Linux checkout the BleachBIt application Git repository (read only) with this command:
+On Linux clone the Git repository for the BleachBit application with this command:
 
-`git clone https://github.com/az0/bleachbit.git`
+`git clone https://github.com/bleachbit/bleachbit.git`
 
 Here is a full list of BleachBit Git repositories:
 
@@ -62,7 +62,7 @@ If English is not your native language, you must build the translations. On Linu
 
 `make -C po local`
 
-At this time building translations is not supported on Windows, but you can copy the translations from another system or download them from Launchpad. Relative to ```bleachbit.py``` put the ```bleachbit.mo``` file in a directory called ```.\locale\es\LC_MESSAGES\``` (change ```es``` according to the language.)
+Building translations is not supported on Windows, but you can copy the translations from another system or download them from Launchpad. Relative to ```bleachbit.py``` put the ```bleachbit.mo``` file in a directory called ```.\locale\es\LC_MESSAGES\``` (change ```es``` according to the language.)
 
 ### Running from source
 
