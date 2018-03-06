@@ -1,6 +1,6 @@
 # BleachBit Documentation
 
-[Read the documentation.](https://bleachbit.github.io/docs/)
+[Read the documentation.](https://docs.bleachbit.org/)
 
 Feel free to contribute by pull request.
 
