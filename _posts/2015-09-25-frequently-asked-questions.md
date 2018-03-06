@@ -24,23 +24,35 @@ To tell the difference, start BleachBit as Administrator, click on Help - System
 
 Another way to check is first to run BleachBit as administrator. Then run BleachBit as a regular user, and if the preview shows any files, then you may need to run BleachBit as a regular user.
 
-### Q: How many passes does BleachBit make for the overwrite file option (shredding file)?
-A: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
+### Q: How do I recover a file deleted by BleachBit?
+
+The success of recovery depends on whether the file was overwritten, and the ease of recovery depends on whether the metadata was overwritten. If in the preferences the option "Overwrite files to prevent recovery" was enabled, the file probably cannot be deleted. There is an exception if the file system is ext3 or ext4 in `data=journal` mode. The default file system on Ubuntu is ext4 with `data=ordered` mode, which makes recovery unlikely.
+
+If the *wipe free space* command was used on the same file system, the file probably cannot be deleted regardless of the type of file system. See also [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information.
+
+The chances of recovery decline as data is written to the drive and as time passes.
+
+Immediately the file is deleted in a normal way (in other words, if it is not overwritten), the full contents still exist and full recovery is stil possible. To maximize the chance of recovery, avoid writing any data to the file system. This step is most important when there is little free space. Often the file system for which recovery is desired is also the primary file system, so the computer should be turned off and rebooted into a bootable operating system from a bootable CD or USB drive.
+
+Finally, run a file recovery tool. Do a search on the web for "undelete" or "file recovery."
 
 ### Q: Why does BleachBit take a long time (more than five minutes) and fill up by hard drive?
 A: You enabled the option to **System - Free disk space** to wipe free disk space for privacy. This works basically by creating a large, empty file (see [Shred files and wipe disks](/documentation/shred-files-wipe-disk) for more information). When the hard drive is full, the file will be deleted immediately, and there will be no net change in disk space (you will be back where you started). It is generally recommended you disable this option.
+
+
+### Q: How many passes does BleachBit make for the overwrite file option (shredding file)?
+A: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
 
 ### Q: How do I see BleachBit in my own language on Microsoft Windows?
 A: The language chosen in the installer does not affect the application. Open the Windows Control Panel, click on Regionalization, choose your language under Standards and Formats, and restart BleachBit. _Alternatively_, you can set the [environment variable](https://support.microsoft.com/en-us/help/310519/how-to-manage-environment-variables-in-windows-xp) **LANG** to your [ISO 639-1 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (for example, Spanish is ```es```) or locale code (Mexican Spanish is ```es_MX```).
 
 
-### Q: What is format for the versioning number system?
-A: Since BleachBit version 1.0 the numbering system is like that of GNOME, Linux between 1.0 and 2.6, and other projects: the format is basically *a.b*. When *b* is odd like 1.1, it is an unstable release (alpha or beta), and when *b* is even like 1.2, it is a stable release. Also, *b* can be greater than 9, so version 1.10 is newer than version 1.8.
-
-
 ## Things to know
 
 While these may not be asked, they are not common knowledge:
+
+### Q: What is format for the versioning number system?
+A: Since BleachBit version 1.0 the numbering system is like that of GNOME, Linux between 1.0 and 2.6, and other projects: the format is basically *a.b*. When *b* is odd like 1.1, it is an unstable release (alpha or beta), and when *b* is even like 1.2, it is a stable release. Also, *b* can be greater than 9, so version 1.10 is newer than version 1.8.
 
 ### Q: Should I delete cache?
 A: Cache generally improves the performance of your computer. For example, browser cache prevents many files (such as pieces of web pages) from being downloaded again. Getting the file from the cache is much faster than downloading it&mdash;even with fast bandwidth. Applications (such as web browsers) normally delete the useless parts of cache to prevent it from growing too large and to make room for new, potentially-useful data.
@@ -68,14 +80,4 @@ A: BleachBit probably will not make your computer faster in general, but there a
 Yet, deleting cache may make your computer slower because data will have to be re-downloaded or re-generated.
 
 
-### Q: How do I recover a file deleted by BleachBit?
 
-The success of recovery depends on whether the file was overwritten, and the ease of recovery depends on whether the metadata was overwritten. If in the preferences the option "Overwrite files to prevent recovery" was enabled, the file probably cannot be deleted. There is an exception if the file system is ext3 or ext4 in `data=journal` mode. The default file system on Ubuntu is ext4 with `data=ordered` mode, which makes recovery unlikely.
-
-If the *wipe free space* command was used on the same file system, the file probably cannot be deleted regardless of the type of file system. See also [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information.
-
-The chances of recovery decline as data is written to the drive and as time passes.
-
-Immediately the file is deleted in a normal way (in other words, if it is not overwritten), the full contents still exist and full recovery is stil possible. To maximize the chance of recovery, avoid writing any data to the file system. This step is most important when there is little free space. Often the file system for which recovery is desired is also the primary file system, so the computer should be turned off and rebooted into a bootable operating system from a bootable CD or USB drive.
-
-Finally, run a file recovery tool. Do a search on the web for "undelete" or "file recovery."
