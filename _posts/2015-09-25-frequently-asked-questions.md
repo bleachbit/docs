@@ -68,4 +68,14 @@ A: BleachBit probably will not make your computer faster in general, but there a
 Yet, deleting cache may make your computer slower because data will have to be re-downloaded or re-generated.
 
 
+### Q: How do I recover a file deleted by BleachBit?
 
+The success of recovery depends on whether the file was overwritten, and the ease of recovery depends on whether the metadata was overwritten. If in the preferences the option "Overwrite files to prevent recovery" was enabled, the file probably cannot be deleted. There is an exception if the file system is ext3 or ext4 in `data=journal` mode. The default file system on Ubuntu is ext4 with `data=ordered` mode, which makes recovery unlikely.
+
+If the *wipe free space* command was used on the same file system, the file probably cannot be deleted regardless of the type of file system. See also [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information.
+
+The chances of recovery decline as data is written to the drive and as time passes.
+
+Immediately the file is deleted in a normal way (in other words, if it is not overwritten), the full contents still exist and full recovery is stil possible. To maximize the chance of recovery, avoid writing any data to the file system. This step is most important when there is little free space. Often the file system for which recovery is desired is also the primary file system, so the computer should be turned off and rebooted into a bootable operating system from a bootable CD or USB drive.
+
+Finally, run a file recovery tool. Do a search on the web for "undelete" or "file recovery."
