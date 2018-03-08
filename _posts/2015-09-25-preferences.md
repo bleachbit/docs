@@ -22,7 +22,9 @@ BleachBit determines whether a cleaner is relevant two ways: first, it checks wh
 
 When files are deleted normally, the operating system only deletes the _reference_ to the file (not the _contents_), but later file can usually be undeleted. To securely delete files marked for cleaning (such as Firefox cache) to prevent this kind of recovery, enable overwriting files (also called file shredding).
 
-Overwriting files is significantly slower than deleting files normally. Overwriting is supported for standard file deletions (such as deleting Firefox cache) and when deleting Firefox URL history (a special operation), but it is not supported for other special operations (such as deleting locked files in Windows). Overwriting is not effective in some situations such as with NTFS compression and the ext3 filesystem in data=journal mode. Neither of these two example situations are common.
+Overwriting files is significantly slower than deleting files normally. Overwriting is supported for standard file deletions (such as deleting Firefox cache) and when deleting Firefox URL history (a special operation), but it is not supported for other special operations (such as deleting locked files in Windows). Overwriting is not effective with some situations such as the Linux ext3 and ext4 filesystems in `data=journal` mode. On Ubuntu the default is `data=ordered` mode which is effective to overwrite.
+
+Since BleachBit 2.0 when running with administrator privileges, wiping compressed files on NTFS is effective.
 
 To complement the limitations of overwriting individual files, use the **Free disk space** option under **System** to overwrite free disk space and hide previously deleted files.
 
