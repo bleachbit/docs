@@ -104,11 +104,29 @@ For more information, refer to the section [Learning](#learning-cleanerml).
 * winreg: delete a Windows registry key or value
 * yum.clean_all
 
-### Environment variables
+### Variables
 
-Instead of hard coding path names, use an environment variable whenever possible because common paths may change depending on user logged in, the version of Windows, and on the user's language. In addition to expanding ```~``` to the user's home directory (such as ```/home/andrew/```), CleanerML expands environment variables. On both Linux and Windows environment variables must be given in the Bash format ```$foo``` instead of the Windows format ```%foo%```.
+#### Environment Variables
+
+Instead of hard-coding pathnames, use an environment variable whenever possible because common paths may change depending on user logged in, the version of Windows, and on the user's language. In addition to expanding ```~``` to the user's home directory (such as ```/home/andrew/```), CleanerML expands environment variables. On both Linux and Windows environment variables can be given in the Bash format ```$foo```, and on Windows the Windows-style ```%foo%``` is valid.
 
 The most common environment variables are APPDATA, LOCALAPPDATA, PROGRAMFILES, and USERPROFILE. For more information, see Wikipedia's ["Environment variable"](https://en.wikipedia.org/wiki/Environment_variable).
+
+On Windows, BleachBit defines the following environment variables, and they are valid both in CleanerML and in Winapp2.ini:
+
+* CommonAppData
+* Documents
+* LocalAppData
+* LocalAppDataLow
+* Music
+* Pictures
+* Video
+
+#### Multi-Value Variables
+
+BleachBit 2.2 introduces to CleanerML a feature called multi-value variables. Within each cleaner, a variable can be defined with multiple values. This greatly simplifies the development and maintenance of cleaners with path variations for operating system and for application derivatives such as Google Chrome and Chromium.
+
+The syntax to use a multi-value variable is `$$foo$$` on both Linux and Windows. Multi-value variable names are case-sensitive, and values can contain environment variables. See the Adobe Flash cleaner (`flash.xml`) for a basic example.
 
 ### Sharing your cleaner
 
