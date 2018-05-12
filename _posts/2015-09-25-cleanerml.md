@@ -48,12 +48,12 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 ### Finding files to delete
 
 1.  Run the application you want to clean.
-    *   In the applications' preferences, turn on all logging (if applicable). For example, by default Pidgin turns off chat logs.
-    *   Use all the features of the application to try to make it generate as many files as it can. For example, in Nexuiz (a game) you must play a multiplayer game with a new map to cause the game to download the map into its cache. Many Nexuiz multiplayer games don't download maps.
-2.  Discover where the application stores its file. Assume your application is called Firefox: you could use the following commands to begin the find its files.
-    Linux: `ls -d ~/.* | tail -n+3 | xargs -I '{}' find '{}' | grep -i firefox`
-    Windows: `dir /s /b $USERPROFILE | find /i "firefox"`
-3.  In some cases not all files appear using those commands. Perhaps the application checks for a file which doesn't often exist, or it writes a file but deletes it a moment later. In these cases use strace (for Linux) or [Process Monitor](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) (for Windows) to find these files. A standard invokation of strace (assuming you are launching Firefox) is: `strace -f -e trace=open,stat64,lstat64,access,mkdir,unlink,rename,readlink firefox &> /tmp/firefox.log grep -iE "(cache|log|tmp|$HOME)" /tmp/firefox.log | sort | uniq | less`
+    * In the applications' preferences, turn on all logging (if applicable). For example, by default Pidgin turns off chat logs.
+    * Use all the features of the application to try to make it generate as many files as it can. For example, in Nexuiz (a game) you must play a multiplayer game with a new map to cause the game to download the map into its cache. Many Nexuiz multiplayer games don't download maps.
+2.  Discover where the application stores its file. Assume your application is called Firefox: you could use the following commands to find its files.
+    * Linux: `ls -d ~/.* | tail -n+3 | xargs -I '{}' find '{}' | grep -i firefox`
+    * Windows: `dir /s /b $USERPROFILE | find /i "firefox"`
+3.  In some cases not all files appear using those commands. Perhaps the application checks for a file which doesn't often exist, or it writes a file but deletes it a moment later. In these cases use strace (for Linux) or [Process Monitor](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) (for Windows) to find these files. A standard invocation of strace (assuming you are launching Firefox) is: `strace -f -e trace=open,stat64,lstat64,access,mkdir,unlink,rename,readlink firefox &> /tmp/firefox.log grep -iE "(cache|log|tmp|$HOME)" /tmp/firefox.log | sort | uniq | less`
 4.  Search for registry entries in Windows: typically they are under ```HCKU\Software\(app name)```.
 5.  It's not strictly necessary, but it's nice if you put your cleaner in the ```cleaners``` directory of the BleachBit source and run ```make tests``` (to check it against the XSD) and ```make pretty``` (to reformat the XML).
 
@@ -67,7 +67,7 @@ CleanerML allows several ways to match files:
 *   **walk.all**: matches all and directories files under a directory.
 *   **deep**: queues a deep scan
 
-What is the difference between a **deep** and **walk.files**? Deep scan expect matches to be loosely scattered (such as Thumbs.db), but **walk.files** expects to match most files under that directory (such as Firefox's cache). To improve performance, BleachBit combines deep scans for the same directory (such as all deep scans for $HOME). In the future, BleachBit may allow the user to reconfigure the deep scan directory, so, for example, he can scan a network drive in addition to his home directory.
+What is the difference between a **deep** and **walk.files**? Deep scan expects file matches to be loosely scattered (such as Thumbs.db), but **walk.files** expects to match most files under that directory (such as Firefox's cache). To improve performance, BleachBit combines deep scans for the same directory (such as all deep scans for $HOME). In the future, BleachBit may allow the user to reconfigure the deep scan directory, so, for example, he can scan a network drive in addition to his home directory.
 
 Any of these methods can be combined with [Python's Perl regular expressions](https://docs.python.org/2/howto/regex.html) for sophisticated filtering. The regular expression options are:
 
