@@ -14,13 +14,13 @@ This happens when cleaning certain files, such as Windows system logs under ``c:
 A: When you first launch BleachBit it should prompt you with the User Access Control dialog, which asks, "Do you want to allow the following program to make changes to this computer." Answer *Yes* to grant BleachBit the privileges to modify all files.
 
 ### Q: On Linux do I need to run BleachBit both as a normal user and as an administrator?
-A: It depends how your system elevates privileges. Linux has various tools (for example, kdesudo, gksudo sudo, and su-to-root) with various options to elevate to root (administrator) privileges, and they create basically two different situations.
+A: It depends how your system elevates privileges. Linux has various tools (for example, kdesudo, gksudo sudo, su-to-root, and PolicyKit) with various options to elevate to root (administrator) privileges, and they create two different situations.
 
-In the first case, they switch the user to the root account, so BleachBit cleans the root account and not the non-privileged account. For example, BleachBit will clean root's web browsers, which are probably never used. In this case, you will need to run BleachBit again as the non-privileged user.
+In the first case, they switch the user to the root account, so BleachBit cleans the root account and not the non-privileged account. For example, BleachBit will clean root's web browsers, which are probably never used, so it may seem BleachBit is not finding the files you expect. In this case, use the Bleachbit as Administrator option to clean any system files that require special privileges, and then use regular BleachBit to clean files in your personal profile.
 
-In the second case, BleachBit runs with elevated privileges in the context of the non-privileged account: this is probably what you want.
+In the second case, BleachBit runs with elevated privileges in the context of the non-privileged account, so all options can cleaned from one session.
 
-To tell the difference, start BleachBit as Administrator, click on Help - System Information, and look at the value for ```os.path.expanduser('~')```. If it equals ```/root```, then the first case is happening, so run BleachBit both as administrator and as a regular user.
+To check which case applies to you, start BleachBit as Administrator, click on Help - System Information, and look at the value for ```os.path.expanduser('~')```. If it equals ```/root```, then the first case is happening, so run BleachBit both as administrator and as a regular user to clean all files.
 
 Another way to check is first to run BleachBit as administrator. Then run BleachBit as a regular user, and if the preview shows any files, then you may need to run BleachBit as a regular user.
 
