@@ -36,10 +36,18 @@ Immediately the file is deleted in a normal way (in other words, if it is not ov
 
 Finally, run a file recovery tool. Do a search on the web for "undelete" or "file recovery."
 
-### Q: Why does BleachBit take a long time (more than five minutes) and fill up by hard drive?
+### Q: Why does BleachBit take a long time (more than five minutes) while filling up by hard drive?
 A: You enabled the option to **System - Free disk space** to wipe free disk space for privacy. This works basically by creating a large, empty file (see [Shred files and wipe disks](/documentation/shred-files-wipe-disk) for more information). When the hard drive is full, the file will be deleted immediately, and there will be no net change in disk space (you will be back where you started). It is generally recommended you disable this option.
 
 If this option is disabled, and BleachBit is slow, look at the option **Edit - Preferences - General - Overwrite Contents**. Enabling this option makes BleachBit slower because more work is required to make files unrecoverable.
+
+### Q: I closed BleachBit while it was working for a long time, and now my hard drive is full. How do I fix it?
+A: Run BleachBit, and clean the option **System - Temporary Files**. On Linux, also clean **System - Cache**. This will delete one or more files that are gigantic and have random filenames.
+
+If you changed the default options under **Preferences - Drives**, look there for the large files.
+
+These instructions are valid since BleachBit version 1.2 released in 2014.
+
 
 ### Q: How many passes does BleachBit make for the overwrite file option (shredding file)?
 A: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
