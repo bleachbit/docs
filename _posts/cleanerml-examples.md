@@ -8,7 +8,7 @@ order: 8
 
 **Just some CleanerML Examples...**
 
-### INI
+###command="ini"
 
 **Cleaning a Parameter in a INI File**  
 Deletes in `section` the `parameter`.
@@ -23,7 +23,7 @@ Deletes in `section` the `parameter`.
 
 <br>
 
-### WINREG
+###command="winreg"
 
 **Cleaning a Windows Registry Key/Path**  
 Deletes in the `path` (tree in Regedit) a "folder", or a key.
@@ -44,6 +44,55 @@ Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
 
 **Explanaition:**  
 `command` is always `"winreg"`, `path` is the path/tree/folder/key you want to delete, "*" match any string that will be find.
+
+<br>
+
+###command="delete" search="file"
+
+**Deleting a single file**  
+Deletes a single file in the file system.
+
+**Example:**  
+```<action command="delete" search="file" path="$APPDATA\XnView\XnView.db"```
+
+**Explanaition:**  
+`command` is always `"delete"`, `search` is always `"file"`, `path` is the path & name of the file to delete.
+
+<br>
+
+###command="delete" search="walk.files"
+
+**Follows**  
+
+<br>
+
+###command="delete" search="walk.all"
+
+**Follows**  
+
+If you add a "*" at the end of a path by `walk.all`, nothing gets deleted!
+```<action command="delete" search="walk.all" path="%windir%\Temp\*"/>```
+
+And this doesn't work, too.   
+```<action command="delete" search="walk.all" path="%windir%\Temp\WER*.hdmp"/>```
+Use `glob` instead:
+```<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>```
+
+<br>
+
+###command="delete" search="glob"
+
+**Follows**  
+
+<br>
+
+###Delete the content of a folder and the folder itself
+
+**Follows**  
+
+**Example:**  
+```<action command="delete" search="walk.all" path="$LocalAppData\Temp\acrord32_sbx"/>```
+```<action command="delete" search="glob" path="$LocalAppData\Temp\acrord32_sbx"/>```
 
 <br>
 
