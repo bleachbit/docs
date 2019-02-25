@@ -11,13 +11,13 @@ order: 8
 ### INI
 
 Cleaning a Parameter in a INI File:  
-Deletes in `section` the `parameter'.
+Deletes in `section` the `parameter`.
 
 Example:  
 ```<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="0"/>```
 
 `command` is always `"ini"`, `search` is always `"file"`, `path` is the path to the INI file, `section` is the higer section and `parameter` is the parameter you want to delete.  
-#No wildcards allowed (, yet)!
+**No wildcards allowed (, yet)!**
 
 <br>
 
