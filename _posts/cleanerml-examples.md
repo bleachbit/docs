@@ -60,7 +60,7 @@ Deletes a single file in the file system.
 
 <br>
 
-###command="delete" search="walk.files"
+### command="delete" search="walk.files"
 
 **Follows**  
 
@@ -91,7 +91,7 @@ Use `glob` instead:
 **Follows**  
 
 **Example:**  
-```<action command="delete" search="walk.all" path="$LocalAppData\Temp\acrord32_sbx"/>```
+```<action command="delete" search="walk.all" path="$LocalAppData\Temp\acrord32_sbx"/>```  
 ```<action command="delete" search="glob" path="$LocalAppData\Temp\acrord32_sbx"/>```
 
 <br>
