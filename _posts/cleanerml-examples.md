@@ -8,7 +8,7 @@ order: 8
 
 **Just some CleanerML Examples...**
 
-###command="ini"
+### command="ini"
 
 **Cleaning a Parameter in a INI File**  
 Deletes in `section` the `parameter`.
@@ -23,7 +23,7 @@ Deletes in `section` the `parameter`.
 
 <br>
 
-###command="winreg"
+### command="winreg"
 
 **Cleaning a Windows Registry Key/Path**  
 Deletes in the `path` (tree in Regedit) a "folder", or a key.
@@ -47,7 +47,7 @@ Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
 
 <br>
 
-###command="delete" search="file"
+### command="delete" search="file"
 
 **Deleting a single file**  
 Deletes a single file in the file system.
@@ -66,7 +66,7 @@ Deletes a single file in the file system.
 
 <br>
 
-###command="delete" search="walk.all"
+### command="delete" search="walk.all"
 
 **Follows**  
 
@@ -80,13 +80,13 @@ Use `glob` instead:
 
 <br>
 
-###command="delete" search="glob"
+### command="delete" search="glob"
 
 **Follows**  
 
 <br>
 
-###Delete the content of a folder and the folder itself
+### Delete the content of a folder and the folder itself
 
 **Follows**  
 
