@@ -63,12 +63,26 @@ Deletes a single file in the file system.
 ###command="delete" search="walk.files"
 
 **Follows**  
+Follows
+
+**Example:**  
+Follows
+
+**Explanaition:**  
+Follows
 
 <br>
 
 ###command="delete" search="walk.all"
 
 **Follows**  
+Follows
+
+**Example:**  
+Follows
+
+**Explanaition:**  
+Follows
 
 If you add a "*" at the end of a path by `walk.all`, nothing gets deleted!
 ```<action command="delete" search="walk.all" path="%windir%\Temp\*"/>```
@@ -83,16 +97,27 @@ Use `glob` instead:
 ###command="delete" search="glob"
 
 **Follows**  
+Follows
+
+**Example:**  
+```<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>```
+
+**Explanaition:**  
+Follows
 
 <br>
 
 ###Delete the content of a folder and the folder itself
 
 **Follows**  
+Follows
 
 **Example:**  
 ```<action command="delete" search="walk.all" path="$LocalAppData\Temp\acrord32_sbx"/>```
 ```<action command="delete" search="glob" path="$LocalAppData\Temp\acrord32_sbx"/>```
+
+**Explanaition:**  
+Follows
 
 <br>
 
