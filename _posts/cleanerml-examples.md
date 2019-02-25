@@ -36,7 +36,9 @@ Deletes in the `path` (tree in Regedit) a "folder", or a key.
 
 <br>
 
-**Cleaning a Windows Registry Key/Path with a wildcard**  
+### Cleaning a Windows Registry Key/Path with a wildcard
+
+**You can cleaning a Windows Registry Key/Path with a wildcard**  
 Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
 
 **Example:**  
@@ -84,12 +86,12 @@ Follows
 **Explanaition:**  
 Follows
 
-If you add a "*" at the end of a path by `walk.all`, nothing gets deleted!
+If you add a "*" at the end of a path by `walk.all`, nothing gets deleted!  
 ```<action command="delete" search="walk.all" path="%windir%\Temp\*"/>```
 
 And this doesn't work, too.   
-```<action command="delete" search="walk.all" path="%windir%\Temp\WER*.hdmp"/>```
-Use `glob` instead:
+```<action command="delete" search="walk.all" path="%windir%\Temp\WER*.hdmp"/>```  
+Use `glob` instead:  
 ```<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>```
 
 <br>
@@ -109,7 +111,7 @@ Follows
 
 ### Delete the content of a folder and the folder itself
 
-**Follows**  
+**You can delete the content of a folder and the folder itself**  
 Follows
 
 **Example:**  
