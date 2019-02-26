@@ -116,7 +116,7 @@ Follows
 ```<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>```
 
 **Explanaition:**  
-Follows
+Follows ... and don't go into the subfolders.
 
 <br>
 
