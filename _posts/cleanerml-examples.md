@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-02-25 21:15:00
+date: 2019-02-26 16:00:00
 order: 8
 ---
 
@@ -128,6 +128,19 @@ Follows
 **Example:**  
 ```<action command="delete" search="walk.all" path="$LocalAppData\Temp\acrord32_sbx"/>```  
 ```<action command="delete" search="glob" path="$LocalAppData\Temp\acrord32_sbx"/>```
+
+**Explanaition:**  
+Follows
+
+<br>
+
+### command="delete" search="deep"
+
+**Follows**  
+Follows
+
+**Example:**  
+```<action command="delete" search="deep" cache="false" regex="^\.log$"/>```
 
 **Explanaition:**  
 Follows
