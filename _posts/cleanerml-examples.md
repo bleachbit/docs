@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-02-25 08:45:00
+date: 2019-02-25 21:15:00
 order: 8
 ---
 
@@ -19,7 +19,9 @@ Deletes in `section` the `parameter`.
 **Explanaition:**  
 `command` is always `"ini"`, `search` is always `"file"`, `path` is the path to the INI file, `section` is the higer section and `parameter` is the parameter you want to delete.  
 
-**No wildcards allowed (, yet)!**  
+```<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="MkDir*"/>```
+**Doesn't work! No wildcards allowed (, yet)!**  
+**You must list them all with one rule per parameter!**  
 
 <br>
 
@@ -60,6 +62,11 @@ Deletes a single file in the file system.
 **Explanaition:**  
 `command` is always `"delete"`, `search` is always `"file"`, `path` is the path & name of the file to delete.
 
+```<action command="delete" search="file" path="%ProgramFiles%\BiglyBT\*.log"/>```  
+**Doesn't work! No wildcards allowed (, yet)!**  
+**Use `glob`!**  
+
+
 <br>
 
 ### command="delete" search="walk.files"
@@ -72,6 +79,10 @@ Follows
 
 **Explanaition:**  
 Follows
+
+```<action command="delete" search="walk.files" path="%ProgramFiles%\BiglyBT\*.log"/>```  
+**Doesn't work! No wildcards allowed (, yet)!**  
+**Use `glob`!**  
 
 <br>
 
