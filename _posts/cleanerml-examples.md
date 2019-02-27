@@ -95,7 +95,7 @@ Follows
 Follows
 
 **Explanaition:**  
-Follows
+Follows ... walk.all is intended to match directories, not files.
 
 If you add a "*" at the end of a path by `walk.all`, nothing gets deleted!  
 ```<action command="delete" search="walk.all" path="%windir%\Temp\*"/>```
