@@ -140,10 +140,16 @@ Follows
 Follows
 
 **Example:**  
-```<action command="delete" search="deep" cache="false" regex="^\.log$"/>```
+```<action command="delete" search="deep" cache="false" regex="\.[Ll][Oo][Gg]$"/>```
 
 **Explanaition:**  
 Follows
+
+More examples:
+regex="\.[Bb][Aa][Kk]$ -> File Extension, not key sensetive
+regex="^Thumbs\.db$" -> Exact file name
+regex="^[...] -> File name starts with
+regex="\.[...] -> File extension is
 
 <br>
 
