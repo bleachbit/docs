@@ -156,7 +156,7 @@ Follows
 **Explanaition:**  
 Follows
 
-More examples:  
+**More examples:**  
 regex="\.[Bb][Aa][Kk]$ -> File Extension, not key sensetive  
 regex="^Thumbs\.db$" -> Exact file name  
 regex="^[...] -> File name starts with  
