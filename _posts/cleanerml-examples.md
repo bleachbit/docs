@@ -31,10 +31,11 @@ Deletes in `section` the `parameter`.
 Deletes in the `path` (tree in Regedit) a "folder", or a key.
 
 **Example:**  
-```<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecentFiles"/>```
+```<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecentFiles" name="StoreLocation"/>```
 
 **Explanaition:**  
-`command` is always `"winreg"`, `path` is the path/tree/folder/key you want to delete.
+`command` is always `"winreg"`, `path` is the path/tree/folder, `name` is the key that gets delete.  
+If you don't add a `name` to it, the `path` gets deleted!
 
 <br>
 
