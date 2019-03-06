@@ -2,11 +2,21 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-02-26 16:00:00
+date: 2019-03-06 23:40:00
 order: 8
 ---
 
 **Just some CleanerML Examples...**
+
+### Header
+
+```<cleaner id="windows" os="windows">```  
+If the cleaner is only for Windows.
+
+```<label translate="true">Deep Scan - More</label>```  
+If the label should be translated by the translators into local.
+
+<br>
 
 ### command="ini"
 
@@ -19,7 +29,7 @@ Deletes in `section` the `parameter`.
 **Explanaition:**  
 `command` is always `"ini"`, `search` is always `"file"`, `path` is the path to the INI file, `section` is the higer section and `parameter` is the parameter you want to delete.  
 
-```<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="MkDir*"/>```
+```<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="MkDir*"/>```  
 **Doesn't work! No wildcards allowed (, yet)!**  
 **You must list them all with one rule per parameter!**  
 
@@ -146,11 +156,11 @@ Follows
 **Explanaition:**  
 Follows
 
-More examples:
-regex="\.[Bb][Aa][Kk]$ -> File Extension, not key sensetive
-regex="^Thumbs\.db$" -> Exact file name
-regex="^[...] -> File name starts with
-regex="\.[...] -> File extension is
+More examples:  
+regex="\.[Bb][Aa][Kk]$ -> File Extension, not key sensetive  
+regex="^Thumbs\.db$" -> Exact file name  
+regex="^[...] -> File name starts with  
+regex="\.[...] -> File extension is  
 
 <br>
 
