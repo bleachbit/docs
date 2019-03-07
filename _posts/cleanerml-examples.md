@@ -98,6 +98,10 @@ Follows
 **Doesn't work! No wildcards allowed (, yet)!**  
 **Use `glob`!**  
 
+```<action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\*"/>```  
+**Doesn't work! No `*` at the end allowed (, yet)!**  
+**Use `glob`!**  
+
 <br>
 
 ### command="delete" search="walk.all"
