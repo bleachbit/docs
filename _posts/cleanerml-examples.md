@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-03-06 23:40:00
+date: 2019-03-07 10:10:00
 order: 8
 ---
 
@@ -15,6 +15,9 @@ If the cleaner is only for Windows.
 
 ```<label translate="true">Deep Scan - More</label>```  
 If the label should be translated by the translators into local.
+
+```<label translators="In Windows 'Run' is the dialog in the Start menu">Run</label>```  
+Note for translators.
 
 <br>
 
