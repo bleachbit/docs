@@ -167,3 +167,19 @@ regex="\.[...] -> File extension is
 
 <br>
 
+### Run an external program
+
+**Follows**  
+Follows
+
+**Example:**  
+```<action command="process" cmd="taskkill.exe /f /IM explorer.exe"/>```
+
+**Explanaition:**  
+Follows
+
+**More examples:**  
+```<action command="process" wait="false" cmd="%WINDIR%\explorer.exe %WINDIR%\explorer.exe"/>```  
+`wait="false"` -> ...Explanaition...Follows...  
+```<action command="process" cmd="cmd.exe /c Cleanmgr.exe"/>```  
+You can use `cmd.exe` to start other programs.  
