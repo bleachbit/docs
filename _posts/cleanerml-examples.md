@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-03-09 00:40:00
+date: 2019-03-09 03:40:00
 order: 8
 ---
 
@@ -21,6 +21,19 @@ Note for translators.
 
 <br>
 
+### Display a warning
+
+**Display a warning to the user**  
+Displays a warning to the user if the cleaner gets selected in BleachBit.
+
+**Example:**  
+`<warning>Use the option only if you know what you do!</warning>`
+
+**Explanaition:**  
+`<warning>` gets used inside the `<option>` section, on top, as first rule.
+
+<br>
+
 ### command="ini"
 
 **Cleaning a Parameter in a INI File**  
@@ -30,7 +43,7 @@ Deletes in `section` the `parameter`.
 `<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="0"/>`
 
 **Explanaition:**  
-`command` is always `"ini"`, `search` is always `"file"`, `path` is the path to the INI file, `section` is the higer section and `parameter` is the parameter you want to delete.  
+`command` is always `"ini"`, `search` is always `"file"`, `path` is the path to the INI file, `section` is the higer section and `parameter` is the parameter you want to delete.
 
 `<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="MkDir*"/>`  
 **Doesn't work! No wildcards allowed (, yet)!**  
