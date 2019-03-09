@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-03-09 03:40:00
+date: 2019-03-09 04:25:00
 order: 8
 ---
 
@@ -10,14 +10,57 @@ order: 8
 
 ### Header
 
-`<cleaner id="windows" os="windows">`  
-If the cleaner is only for Windows.
+The cleaner starts with the `<cleaner>` element.  
+Example for a `<cleaner>` header: `<cleaner id="smplayer">`  
+`id` is the BleachBit internal ID of the cleaner.
 
-`<label translate="true">Deep Scan - More</label>`  
+`<cleaner>` can define that the cleaner is OS dependent.  
+For more information to this look at: OS dependent parts/cleaners
+
+After that comes `<label>`.  
+`<label>` defines the label shown as name (of the cleaner) in the left column of BleachBit.  
+Example: `<label>SMPlayer</label>`
+
+`<label>` can have some attributes...
+
+Example: `<label translate="true">Deep Scan - More</label>`  
 If the label should be translated by the translators into local.
 
-`<label translators="In Windows 'Run' is the dialog in the Start menu">Run</label>`  
-Note for translators.
+Example: `<label translators="In Windows 'Run' is the dialog in the Start menu">Run</label>`  
+As note for the translators.
+
+And then we need a description of the cleaner (shown on the right side of BleachBit).  
+Example of a `<description>` element: `<description>Video player</description>`
+
+<br>
+
+### Variables
+
+**A cleaner can have multiple variables**  
+You can define one or more variables in a cleaner with `<var>` and `<value>`.
+
+**Example:**  
+`<var name="profile">`  
+`  <value os="windows">%USERPROFILE%\.smplayer</value>`  
+`  <value os="linux">~/.config/smplayer</value>`  
+`</var>`
+
+**Explanaition:**  
+Defines with `<var>` the variable "profile" that is after that definded with `<value>` for `os="windows"` and `os="linux"`.
+
+<br>
+
+### OS dependent parts/cleaners
+
+**Make a part, or the cleaner OS dependent**  
+You can make the cleaner (a part, or the hole cleaner) OS dependent by adding the `os=` attribute.
+
+**Example:**  
+`<cleaner id="windows" os="windows">`
+
+**Explanaition:**  
+Adding the `os=` attribute in the `<cleaner>` element makes the cleaner OS dependent and boosts load time of BleachBit.  
+Version 2.1 of BleachBit adds support for `os=` on the elements `action`, `value`, and `running`.
 
 <br>
 
