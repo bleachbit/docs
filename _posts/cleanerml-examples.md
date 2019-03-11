@@ -84,6 +84,13 @@ You can define one or more variables in a cleaner with `<var>` and `<value>`.
 **Explanaition:**  
 Defines with `<var>` the variable "profile" that is after that definded with `<value>` for `os="windows"` and `os="linux"`.
 
+**Example with two values for one OS:**  
+`<var name="profile">  
+`  <value os="windows">%LocalAppData%\Google\Chrome\User Data\Default</value>`  
+`  <value os="linux">$XDG_CONFIG_HOME/google-chrome/Default</value>`  
+`  <value os="linux">$XDG_CONFIG_HOME/google-chrome-beta/Default</value>`  
+`</var>`
+
 <br>
 
 ### OS dependent parts/cleaners
@@ -274,6 +281,35 @@ Follows
 `regex="^Thumbs\.db$"` -> Exact file name  
 `regex="^`[...] -> File name starts with  
 `regex="\.`[...] -> File extension is  
+
+<br>
+
+### command="json" search="file"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="json" search="file" path="$$profile$$/Preferences" address="dns_prefetching/host_referral_list"/>`
+
+**Explanaition:**  
+Follows
+
+<br>
+
+### command="sqlite.vacuum"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="sqlite.vacuum" search="file" path="$$profile$$/Sync Data/SyncData.sqlite3"/>`
+
+**Explanaition:**  
+Follows
+
+**More examples:**  
+`<action command="sqlite.vacuum" search="glob" path="$$profile$$/History Index ????-??"/>`
 
 <br>
 
