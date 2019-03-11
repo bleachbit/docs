@@ -33,6 +33,7 @@ Example for a other version:
     @url http://www.vuze.com/
     @cleanerversion v0.6.0
     @cleanerdate 2019-03-11
+    @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testedby https://github.com/Tobias-B-Besemer
     @note 
