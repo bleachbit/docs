@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-03-11 04:10:00
+date: 2019-03-11 06:00:00
 order: 8
 ---
 
@@ -20,6 +20,13 @@ We use the coding style that xmllint (Linux Program) use! (More to xmllint at th
 - And no empty lines in code!
 
 XML files get in repo later formated/tested with xmllint...
+
+**Additional information:**  
+Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly. If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/az0/cleanerml/blob/master/openshot.xml):
+
+    @url http://full.url.of/software-project
+    @tested ok softwareversion, OSnameandversion
+    @note Some notes for cleaner maintainers
 
 <br>
 
@@ -278,6 +285,6 @@ You can use `cmd.exe` to start other programs.
 
 <br>
 
-### Pretty 2
+### Pretty, 2
 
 When you be finished, you can run "Makefile" or "Makefile.bat" to make the code of your XML file pretty.
