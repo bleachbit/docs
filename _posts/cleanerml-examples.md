@@ -31,8 +31,8 @@ Your cleaners should retain the copyright and information header found in `relea
 Example for a other version:
 
     @url http://www.vuze.com/
-    @version v0.6.0
-    @versiondate 2019-03-11
+    @cleanerversion v0.6.0
+    @cleanerdate 2019-03-11
     @tested ok v???, Windows 7
     @testedby https://github.com/Tobias-B-Besemer
     @note 
