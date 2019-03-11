@@ -2,11 +2,26 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-03-09 04:25:00
+date: 2019-03-11 04:10:00
 order: 8
 ---
 
-**Just some CleanerML Examples...**
+**Just some notes to (programming) CleanerML...**
+
+### Pretty 1
+
+**Coding style:**  
+We use the coding style that xmllint (Linux Program) use! (More to xmllint at the end of this docu...)
+
+**The coding style is:**  
+- Throw in with two spaces;  
+- Comments can have multiple lines;  
+- Comments are done in new lines;  
+- And no empty lines in code!
+
+XML files get in repo later formated/tested with xmllint...
+
+<br>
 
 ### Header
 
@@ -31,6 +46,9 @@ As note for the translators.
 
 And then we need a description of the cleaner (shown on the right side of BleachBit).  
 Example of a `<description>` element: `<description>Video player</description>`
+
+With `running` you can prevent that the cleaner gets executed as long a special program is running...  
+Example: `<running type="exe" os="windows">firefox.exe</running>`
 
 <br>
 
@@ -257,3 +275,9 @@ Follows
 `wait="false"` -> ...Explanaition...Follows...  
 `<action command="process" cmd="cmd.exe /c Cleanmgr.exe"/>`  
 You can use `cmd.exe` to start other programs.  
+
+<br>
+
+### Pretty 2
+
+When you be finished, you can run "Makefile" or "Makefile.bat" to make the code of your XML file pretty.
