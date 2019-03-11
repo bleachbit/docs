@@ -35,6 +35,7 @@ Example for a other version:
     @cleanerdate 2019-03-11
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
+    @testeddate 2019-03-11
     @testedby https://github.com/Tobias-B-Besemer
     @note 
 
