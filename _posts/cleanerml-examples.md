@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Examples"
 category: doc
-date: 2019-03-11 06:00:00
+date: 2019-03-11 08:30:00
 order: 8
 ---
 
@@ -27,6 +27,15 @@ Your cleaners should retain the copyright and information header found in `relea
     @url http://full.url.of/software-project
     @tested ok softwareversion, OSnameandversion
     @note Some notes for cleaner maintainers
+
+Example for a other version:
+
+    @url http://www.vuze.com/
+    @version v0.6.0
+    @versiondate 2019-03-11
+    @tested ok v???, Windows 7
+    @testedby https://github.com/Tobias-B-Besemer
+    @note 
 
 <br>
 
