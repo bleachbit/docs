@@ -30,14 +30,16 @@ Your cleaners should retain the copyright and information header found in `relea
 
 Example for a other version:
 
-    @url http://www.vuze.com/
-    @cleanerversion v0.6.0
+    @app Double Commander
+    @url https://doublecmd.sourceforge.io/
+    @os Windows, Linux, FreeBSD
+    @cleanerversion v0.2.5
     @cleanerdate 2019-03-11
     @cleanerby https://github.com/Tobias-B-Besemer
-    @tested ok v???, Windows 7
+    @tested ok v0.8.4, Windows 7
     @testeddate 2019-03-11
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note As long we have no command="xml", we need to delete the complete file!
 
 <br>
 
