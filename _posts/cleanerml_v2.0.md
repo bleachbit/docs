@@ -8,6 +8,11 @@ order: 8
 
 **CleanerML Version 2.0 Documentation**
 
+### Example Cleaner
+
+Here is an example cleaner:  
+https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml
+
 ### Pretty 1
 
 **Coding style:**  
