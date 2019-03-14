@@ -1,12 +1,12 @@
 ---
 layout: page
-title: "CleanerML Examples"
+title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-03-11 08:30:00
+date: 2019-03-14 06:45:00
 order: 8
 ---
 
-**Just some notes to (programming) CleanerML...**
+**CleanerML Version 2.0 Documentation**
 
 ### Pretty 1
 
@@ -64,34 +64,35 @@ If the label should be translated by the translators into local.
 Example: `<label translators="In Windows 'Run' is the dialog in the Start menu">Run</label>`  
 As note for the translators.
 
-And then we need a description of the cleaner (shown on the right side of BleachBit).  
+And then we need a description of the cleaner (this time a category!) (shown on the right side of BleachBit).  
 Example of a `<description>` element: `<description>Video player</description>`
 
-With `running` you can prevent that the cleaner gets executed as long a special program is running...  
+Then comes the first `<option>` and then for the `<option>` a `<label>` and a `<description>` (this time a explanaition!), again.  
+Example:  
+`<cleaner id="tomtom" os="windows">  
+  <label>TomTom</label>  
+  <description>Navigation systems</description>  
+  <option id="cookies">  
+    <label>Cookies</label>  
+    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>`
+
+
+Please use (if possible) terms for `<label>`s of `<option>`s and `<description>`s (for `<cleaner>` and `<option>`), that are already used somewhere else in the program! This makes translation easier, because the term can be maybe be already translated!  
+E.g. don't use "Temp files" or "Temporary Files", use "Temporary files"! (Yes, it is case sensetive!)  
+Example:  
+`<label>Temporary files</label>`  
+`<description>Delete the temporary files</description>`
+
+Use the writing/naming form, that is used by the other cleaners/options, too!  
+Example: Don't write "Junk Files", use "Junk files"! (Yes, it is case sensetive!)
+
+We make no dot at the end of `<description>`!
+
+With `running type="exe"` you can prevent that the cleaner gets executed as long a special program/task is running...  
 Example: `<running type="exe" os="windows">firefox.exe</running>`
 
-<br>
-
-### Variables
-
-**A cleaner can have multiple variables**  
-You can define one or more variables in a cleaner with `<var>` and `<value>`.
-
-**Example:**  
-`<var name="profile">`  
-`  <value os="windows">%USERPROFILE%\.smplayer</value>`  
-`  <value os="linux">~/.config/smplayer</value>`  
-`</var>`
-
-**Explanaition:**  
-Defines with `<var>` the variable "profile" that is after that definded with `<value>` for `os="windows"` and `os="linux"`.
-
-**Example with two values for one OS:**  
-`<var name="profile">  
-`  <value os="windows">%LocalAppData%\Google\Chrome\User Data\Default</value>`  
-`  <value os="linux">$XDG_CONFIG_HOME/google-chrome/Default</value>`  
-`  <value os="linux">$XDG_CONFIG_HOME/google-chrome-beta/Default</value>`  
-`</var>`
+With `running type="pathname"` you can also prevent that the cleaner gets executed, but as long as a special file exist!  
+Example: `<running type="pathname">~/.mozilla/firefox/*.default/lock</running>`
 
 <br>
 
@@ -119,6 +120,41 @@ Displays a warning to the user if the cleaner gets selected in BleachBit.
 
 **Explanaition:**  
 `<warning>` gets used inside the `<option>` section, on top, as first rule.
+
+<br>
+
+### Environment Variables
+
+**Use a Environment Variables to have the path relative**  
+You can use a Environment Variables (you should!) to have the path relative!
+
+Read more:  
+https://docs.bleachbit.org/doc/cleanerml.html  
+https://en.wikipedia.org/wiki/Environment_variable  
+https://en.wikipedia.org/wiki/Environment_variable#Default_values
+
+<br>
+
+### Variables
+
+**A cleaner can have multiple variables**  
+You can define one or more variables in a cleaner with `<var>` and `<value>`.
+
+**Example:**  
+`<var name="profile">`  
+`  <value os="windows">%USERPROFILE%\.smplayer</value>`  
+`  <value os="linux">~/.config/smplayer</value>`  
+`</var>`
+
+**Explanaition:**  
+Defines with `<var>` the variable "profile" that is after that definded with `<value>` for `os="windows"` and `os="linux"`.
+
+**Example with two values for one OS:**  
+`<var name="profile">  
+`  <value os="windows">%LocalAppData%\Google\Chrome\User Data\Default</value>`  
+`  <value os="linux">$XDG_CONFIG_HOME/google-chrome/Default</value>`  
+`  <value os="linux">$XDG_CONFIG_HOME/google-chrome-beta/Default</value>`  
+`</var>`
 
 <br>
 
@@ -168,8 +204,8 @@ Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
 
 ### command="delete" search="file"
 
-**Deleting a single file**  
-Deletes a single file in the file system.
+**Deleting a single file/or an empty folder**  
+Deletes a single file or an empty folder in the file system.
 
 **Example:**  
 `<action command="delete" search="file" path="$APPDATA\XnView\XnView.db"`
@@ -181,6 +217,25 @@ Deletes a single file in the file system.
 **Doesn't work! No wildcards allowed (, yet)!**  
 **Use `glob`!**  
 
+`<action command="delete" search="file" path="%ProgramFiles%\BiglyBT*\test.log"/>`  
+**Doesn't work! No wildcards allowed (, yet)!**  
+**Use `glob`!**  
+
+<br>
+
+### command="delete" search="folder"
+
+**Deleting a single folder**  
+Deletes a single folder in the file system. This feature is planed and not yet implemented!
+
+**Example:**  
+`<action command="delete" search="folder" path="%Temp%\DemoFolder\"`
+
+**Explanaition:**  
+`command` is always `"delete"`, `search` is always `"folder"`, `path` is the path & name of the file to delete.
+
+**Not sure if `<action command="delete" search="folder" path="%ProgramFiles%\BiglyBT*\"/>` will work!**  
+**Not sure if `<action command="delete" search="folder" path="%ProgramFiles%\BiglyBT*\"/>` will work when the folder is not empty!**  
 
 <br>
 
@@ -199,6 +254,10 @@ Follows
 **Doesn't work! No wildcards allowed (, yet)!**  
 **Use `glob`!**  
 
+`<action command="delete" search="walk.files" path="%ProgramFiles%\BiglyBT*\test.log"/>`  
+**Doesn't work! No wildcards allowed (, yet)!**  
+**Use `glob`!**  
+
 `<action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\*"/>`  
 **Doesn't work! No `*` at the end allowed (, yet)!**  
 **Use `glob`!**  
@@ -208,7 +267,7 @@ Follows
 ### command="delete" search="walk.all"
 
 **Follows**  
-Follows
+Delete e.g. the content of a folder.
 
 **Example:**  
 Follows
@@ -219,23 +278,34 @@ Follows ... walk.all is intended to match directories, not files.
 If you add a "*" at the end of a path by `walk.all`, nothing gets deleted!  
 `<action command="delete" search="walk.all" path="%windir%\Temp\*"/>`
 
-And this doesn't work, too.   
+And this doesn't work, too.  
 `<action command="delete" search="walk.all" path="%windir%\Temp\WER*.hdmp"/>`  
 Use `glob` instead:  
 `<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>`
+
+This also doesn't work!  
+`<action command="delete" search="walk.all" path="%windir%\Temp*\WER1.hdmp"/>`  
+Use `glob` instead:  
+`<action command="delete" search="glob" path="%windir%\Temp*\WER1.hdmp"/>`
 
 <br>
 
 ### command="delete" search="glob"
 
 **Follows**  
-Follows
+Needed if there gets e.g. a wildcard used!
 
 **Example:**  
 `<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>`
 
 **Explanaition:**  
 Follows ... and don't go into the subfolders.
+
+Other example:  
+`<action command="delete" search="glob" path="%windir%\Temp*\WER1.hdmp"/>`  
+There is also a wildcard used!
+
+More to "glob": https://docs.python.org/2/library/glob.html
 
 <br>
 
@@ -246,10 +316,10 @@ Follows
 
 **Example:**  
 `<action command="delete" search="walk.all" path="$LocalAppData\Temp\acrord32_sbx"/>`  
-`<action command="delete" search="glob" path="$LocalAppData\Temp\acrord32_sbx"/>`
+`<action command="delete" search="file" path="$LocalAppData\Temp\acrord32_sbx"/>`
 
 **Explanaition:**  
-`walk.all` deletes the content of the folder and shows it in BleachBit, while `glob` deletes after that the folder itself.
+`walk.all` deletes the content of the folder and shows it in BleachBit, while `file` deletes after that the empty folder itself.
 
 <br>
 
