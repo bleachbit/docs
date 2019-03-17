@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-03-14 06:45:00
+date: 2019-03-17 22:15:00
 order: 8
 ---
 
@@ -135,8 +135,21 @@ You can use a Environment Variables (you should!) to have the path relative!
 
 Read more:  
 https://docs.bleachbit.org/doc/cleanerml.html  
+
+BleachBit allows all the normal operating system variables, and it adds some extras.  
+Read about the normal operating system variables:  
 https://en.wikipedia.org/wiki/Environment_variable  
 https://en.wikipedia.org/wiki/Environment_variable#Default_values
+
+Special:  
+Windows itself changes %ProgramFiles% for 32-bit processes running in a 64-bit operating system as documented here:  
+https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details  
+Means, BleachBit shows in "Help - System Information" on 686/x64 systems:  
+os.getenv('ProgramFiles') = C:\Program Files (x86)  
+os.getenv('ProgramW6432') = C:\Program Files  
+...and not:  
+os.getenv('ProgramFiles') = C:\Program Files  
+os.getenv('ProgramW6432') = C:\Program Files
 
 <br>
 
@@ -298,7 +311,7 @@ Use `glob` instead:
 ### command="delete" search="glob"
 
 **Follows**  
-Needed if there gets e.g. a wildcard used!
+Needed if you e.g. use a wildcard (`*`)!
 
 **Example:**  
 `<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>`
@@ -339,6 +352,25 @@ Follows
 
 **Explanaition:**  
 `walk.all` deletes the content of the folder and shows it in BleachBit, while `glob` with a `\` at the end of `path` deletes the folders in the folder.
+
+<br>
+
+### Delete recursive
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="delete" search="walk.files" path="$$profile$$\" regex="\.[Bb][Aa][Kk]$"/>`
+
+**Explanaition:**  
+Follows
+
+**More examples:**  
+`regex="\.[Bb][Aa][Kk]$"` -> File Extension, not key sensetive  
+`regex="^Thumbs\.db$"` -> Exact file name  
+`regex="^`[...] -> File name starts with  
+`regex="\.`[...] -> File extension is  
 
 <br>
 
