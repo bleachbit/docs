@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-03-17 22:15:00
+date: 2019-03-18 11:30:00
 order: 8
 ---
 
@@ -174,6 +174,9 @@ Defines with `<var>` the variable "profile" that is after that definded with `<v
 `  <value os="linux">$XDG_CONFIG_HOME/google-chrome-beta/Default</value>`  
 `</var>`
 
+**Example for a value, when the path includes a "*":**  
+`<value search="glob" os="windows">%AppData%\Mozilla\Firefox\Profiles\*</value>`
+
 <br>
 
 ### command="ini"
@@ -293,8 +296,9 @@ Follows
 **Explanaition:**  
 Follows ... walk.all is intended to match directories, not files.
 
-If you add a "*" at the end of a path by `walk.all`, nothing gets deleted!  
+If you add a "*" at the end of a path by `walk.all`, the content of the folder doesn't get deleted!  
 `<action command="delete" search="walk.all" path="%windir%\Temp\*"/>`
+Explanaition: The "*" is a wildcard for a folder - so the content in the subfolders get deleted!
 
 And this doesn't work, too.  
 `<action command="delete" search="walk.all" path="%windir%\Temp\WER*.hdmp"/>`  
