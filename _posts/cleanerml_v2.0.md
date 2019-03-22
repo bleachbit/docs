@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-03-18 11:30:00
+date: 2019-03-18 17:00:00
 order: 8
 ---
 
@@ -208,6 +208,12 @@ Deletes in the `path` (tree in Regedit) a "folder", or a key.
 `command` is always `"winreg"`, `path` is the path/tree/folder, `name` is the key that gets delete.  
 If you don't add a `name` to it, the `path` gets deleted!
 
+**More examples:**  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecent*" name="StoreLocation"/>`  
+...and...  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\*\AVGeneral\cRecentFiles" name="StoreLocation"/>`  
+**...doesn't work! No wildcards allowed (, yet)!**  
+
 <br>
 
 ### Cleaning a Windows Registry Key/Path with a wildcard
@@ -282,6 +288,9 @@ Follows
 `<action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\*"/>`  
 **Doesn't work! No `*` at the end allowed (, yet)!**  
 **Use `glob`!**  
+
+`<action command="delete" search="walk.files" path="%AppData%\Daum\PotPlayer\Log\*"/>`  
+If you mean every directory under %AppData%\Daum\PotPlayer\Log\, then walk.files is right, but if you want every file then you want either `search="glob"` (which will not delete recursively) OR remove the wildcard (which will delete recursively)!
 
 <br>
 
