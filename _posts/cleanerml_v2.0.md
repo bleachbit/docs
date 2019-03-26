@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-03-14 06:45:00
+date: 2019-03-18 17:00:00
 order: 8
 ---
 
@@ -135,8 +135,21 @@ You can use a Environment Variables (you should!) to have the path relative!
 
 Read more:  
 https://docs.bleachbit.org/doc/cleanerml.html  
+
+BleachBit allows all the normal operating system variables, and it adds some extras.  
+Read about the normal operating system variables:  
 https://en.wikipedia.org/wiki/Environment_variable  
 https://en.wikipedia.org/wiki/Environment_variable#Default_values
+
+Special:  
+Windows itself changes %ProgramFiles% for 32-bit processes running in a 64-bit operating system as documented here:  
+https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details  
+Means, BleachBit shows in "Help - System Information" on 686/x64 systems:  
+os.getenv('ProgramFiles') = C:\Program Files (x86)  
+os.getenv('ProgramW6432') = C:\Program Files  
+...and not:  
+os.getenv('ProgramFiles') = C:\Program Files  
+os.getenv('ProgramW6432') = C:\Program Files
 
 <br>
 
@@ -160,6 +173,9 @@ Defines with `<var>` the variable "profile" that is after that definded with `<v
 `  <value os="linux">$XDG_CONFIG_HOME/google-chrome/Default</value>`  
 `  <value os="linux">$XDG_CONFIG_HOME/google-chrome-beta/Default</value>`  
 `</var>`
+
+**Example for a value, when the path includes a "*":**  
+`<value search="glob" os="windows">%AppData%\Mozilla\Firefox\Profiles\*</value>`
 
 <br>
 
@@ -191,6 +207,12 @@ Deletes in the `path` (tree in Regedit) a "folder", or a key.
 **Explanaition:**  
 `command` is always `"winreg"`, `path` is the path/tree/folder, `name` is the key that gets delete.  
 If you don't add a `name` to it, the `path` gets deleted!
+
+**More examples:**  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecent*" name="StoreLocation"/>`  
+...and...  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\*\AVGeneral\cRecentFiles" name="StoreLocation"/>`  
+**...doesn't work! No wildcards allowed (, yet)!**  
 
 <br>
 
@@ -267,6 +289,9 @@ Follows
 **Doesn't work! No `*` at the end allowed (, yet)!**  
 **Use `glob`!**  
 
+`<action command="delete" search="walk.files" path="%AppData%\Daum\PotPlayer\Log\*"/>`  
+If you mean every directory under %AppData%\Daum\PotPlayer\Log\, then walk.files is right, but if you want every file then you want either `search="glob"` (which will not delete recursively) OR remove the wildcard (which will delete recursively)!
+
 <br>
 
 ### command="delete" search="walk.all"
@@ -280,8 +305,9 @@ Follows
 **Explanaition:**  
 Follows ... walk.all is intended to match directories, not files.
 
-If you add a "*" at the end of a path by `walk.all`, nothing gets deleted!  
+If you add a "*" at the end of a path by `walk.all`, the content of the folder doesn't get deleted!  
 `<action command="delete" search="walk.all" path="%windir%\Temp\*"/>`
+Explanaition: The "*" is a wildcard for a folder - so the content in the subfolders get deleted!
 
 And this doesn't work, too.  
 `<action command="delete" search="walk.all" path="%windir%\Temp\WER*.hdmp"/>`  
@@ -298,7 +324,7 @@ Use `glob` instead:
 ### command="delete" search="glob"
 
 **Follows**  
-Needed if there gets e.g. a wildcard used!
+Needed if you e.g. use a wildcard (`*`)!
 
 **Example:**  
 `<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>`
@@ -339,6 +365,25 @@ Follows
 
 **Explanaition:**  
 `walk.all` deletes the content of the folder and shows it in BleachBit, while `glob` with a `\` at the end of `path` deletes the folders in the folder.
+
+<br>
+
+### Delete recursive
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="delete" search="walk.files" path="$$profile$$\" regex="\.[Bb][Aa][Kk]$"/>`
+
+**Explanaition:**  
+Follows
+
+**More examples:**  
+`regex="\.[Bb][Aa][Kk]$"` -> File Extension, not key sensetive  
+`regex="^Thumbs\.db$"` -> Exact file name  
+`regex="^`[...] -> File name starts with  
+`regex="\.`[...] -> File extension is  
 
 <br>
 
