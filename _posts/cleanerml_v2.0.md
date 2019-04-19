@@ -2,16 +2,48 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-03-18 17:00:00
+date: 2019-04-19 10:30:00
 order: 8
 ---
 
-**CleanerML Version 2.0 Documentation**
+### CleanerML Version 2.0 Documentation
+
+**Content:**
+- Example Cleaner  
+- Pretty 1  
+- Cleaner Element  
+- Label  
+- Description  
+- Option  
+- OS dependent parts/cleaners  
+- Display a warning  
+- Environment Variables  
+- Variables  
+- command="ini"  
+- command="winreg"  
+- Cleaning a Windows Registry Key/Path with a wildcard  
+- command="delete" search="file"  
+- command="delete" search="folder"  
+- command="delete" search="walk.files"  
+- command="delete" search="walk.all"  
+- command="delete" search="glob"  
+- Delete the content of a folder and the folder itself  
+- Delete the content of a folder but not the folder itself  
+- Delete recursive  
+- command="delete" search="deep"  
+- command="json" search="file"  
+- command="sqlite.vacuum"  
+- Run an external program  
+- Pretty, 2
+
+<br>
 
 ### Example Cleaner
 
 Here is an example cleaner:  
 https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml
+
+<br>
 
 ### Pretty 1
 
@@ -23,6 +55,8 @@ We use the coding style that xmllint (Linux Program) use! (More to xmllint at th
 - Comments can have multiple lines;  
 - Comments are done in new lines;  
 - And no empty lines in code!
+- Cleaner and option IDs are written in small letters;
+- Conjoined with a underline character.
 
 XML files get in repo later formated/tested with xmllint...
 
@@ -48,7 +82,7 @@ Example for a other version:
 
 <br>
 
-### Header
+### Cleaner Element
 
 The cleaner starts with the `<cleaner>` element.  
 Example for a `<cleaner>` header: `<cleaner id="smplayer">`  
@@ -56,6 +90,10 @@ Example for a `<cleaner>` header: `<cleaner id="smplayer">`
 
 `<cleaner>` can define that the cleaner is OS dependent.  
 For more information to this look at: OS dependent parts/cleaners
+
+<br>
+
+### Label
 
 After that comes `<label>`.  
 `<label>` defines the label shown as name (of the cleaner) in the left column of BleachBit.  
@@ -69,21 +107,28 @@ If the label should be translated by the translators into local.
 Example: `<label translators="In Windows 'Run' is the dialog in the Start menu">Run</label>`  
 As note for the translators.
 
+<br>
+
+### Description
+
 And then we need a description of the cleaner (this time a category!) (shown on the right side of BleachBit).  
 Example of a `<description>` element: `<description>Video player</description>`
 
+<br>
+
+### Option
+
 Then comes the first `<option>` and then for the `<option>` a `<label>` and a `<description>` (this time a explanaition!), again.  
 Example:  
-`<cleaner id="tomtom" os="windows">  
-  <label>TomTom</label>  
-  <description>Navigation systems</description>  
-  <option id="cookies">  
-    <label>Cookies</label>  
-    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>`
+    <cleaner id="tomtom" os="windows">  
+      <label>TomTom</label>  
+      <description>Navigation systems</description>  
+      <option id="cookies">  
+        <label>Cookies</label>  
+        <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
 
-
-Please use (if possible) terms for `<label>`s of `<option>`s and `<description>`s (for `<cleaner>` and `<option>`), that are already used somewhere else in the program! This makes translation easier, because the term can be maybe be already translated!  
-E.g. don't use "Temp files" or "Temporary Files", use "Temporary files"! (Yes, it is case sensetive!)  
+Please use (if possible) terms for `<label>`s of `<option>`s and `<description>`s (for `<cleaner>` and `<option>`), that are already used somewhere else in the program!
+This makes translation easier, because the term can be maybe be already translated! E.g. don't use "Temp files" or "Temporary Files", use "Temporary files"! (Yes, it is case sensetive!)  
 Example:  
 `<label>Temporary files</label>`  
 `<description>Delete the temporary files</description>`
