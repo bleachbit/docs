@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-04-19 16:00:00
+date: 2019-04-19 17:10:00
 order: 8
 ---
 
@@ -15,8 +15,10 @@ order: 8
 [1.00 **General**](#100-general)  
 [1.01 Be pretty](#101-be-pretty)  
 [1.02 Python & "glob" (Unix style pathname pattern expansion)](#102-python--glob-unix-style-pathname-pattern-expansion)  
-[1.03 Environment Variables](#103-environment-variables)  
-[1.04 Example Cleaner](#104-example-cleaner)  
+[1.03 Using Variables](#103-using-variables)  
+[1.04 Windows Variables](#104-windows-variables)  
+[1.05 Unix Variables](#105-unix-variables)  
+[1.06 Example Cleaner](#106-example-cleaner)  
 [2.00 **Header**](#200-header)  
 [2.01 First Line](#201-first-line)  
 [2.02 Copyright & Additional Information](#202-copyright--additional-information)  
@@ -29,7 +31,7 @@ order: 8
 [3.05 Running Element](#305-running-element)  
 [3.06 OS dependent parts/Cleaners](#306-os-dependent-partscleaners)  
 [3.07 Display a Warning](#307-display-a-warning)  
-[3.08 Define Variables](#308-define-variables)  
+[3.08 Define multi-value Variables](#308-define-multi-value-variables)
 [4.00 **command="delete"**](#400-commanddelete)  
 [4.01 command="delete" search="file"](#401-commanddelete-searchfile)  
 [4.02 command="delete" search="folder"](#402-commanddelete-searchfolder)  
@@ -93,21 +95,31 @@ In the following there will be here and there some cases & examples in the docum
 
 <br>
 
-### 1.03 Environment Variables
+### 1.03 Using Variables
 
-**Use a Environment Variables to have the path relative**  
-You can use a Environment Variables (you should!) to have the path relative!
+**Use Variables to have the path relative**  
+You can use Variables (you should!) to have the path relative!
+
+Writing mostly in Windows with `%windows%` and in Unix with `$unix`... You can use both!
+
+Where to use them: FOLLOWS !!! Not in `.ini`!
 
 Read more:  
 https://docs.bleachbit.org/doc/cleanerml.html  
 
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 1.04 Windows Variables
+
 BleachBit allows all the normal operating system variables, and it adds some extras.  
-Read about the normal operating system variables:  
+Read about the normal operating system variables (Environment Variables):  
 https://en.wikipedia.org/wiki/Environment_variable  
 https://en.wikipedia.org/wiki/Environment_variable#Default_values
 
 Special:  
-Windows itself changes %ProgramFiles% for 32-bit processes running in a 64-bit operating system as documented here:  
+Windows itself changes `%ProgramFiles%` for 32-bit processes running in a 64-bit operating system as documented here:  
 https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details  
 Means, BleachBit shows in "Help - System Information" on 686/x64 systems:  
 os.getenv('ProgramFiles') = C:\Program Files (x86)  
@@ -116,11 +128,52 @@ os.getenv('ProgramW6432') = C:\Program Files
 os.getenv('ProgramFiles') = C:\Program Files  
 os.getenv('ProgramW6432') = C:\Program Files
 
+Code for a multi-value variable "ProgramFiles", that should handle this case.  
+Taken from `vuze.xml` from Tobias.  
+For more information about multi-value variables, look into chapter "3.08 Define multi-value Variables".  
+`  <var name="ProgramFiles">`  
+`    <!--`  
+`    Windows itself changes %ProgramFiles% for 32-bit processes running in a 64-bit operating system as documented here:`  
+`    https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details`  
+`    ...so we used "%SystemDrive%\Program Files\" & "%SystemDrive%\Program Files (x86)\"...`  
+`    <value os="windows">%SystemDrive%\Program Files\[ProgramName]</value>`  
+`    <value os="windows">%SystemDrive%\Program Files (x86)\[ProgramName]</value>`  
+`    ...but %ProgramFiles% & %ProgramFiles(x86)% don't need to be on %SystemDrive% !!!`  
+`    So we use: -->`  
+`    <value os="windows">%ProgramW6432%\Vuze</value>`  
+`    <!-- ...that BleachBit as 32-bit program can find "\Program Files\Vuze" and... -->`  
+`    <value os="windows">%ProgramFiles(x86)%\Vuze</value>`  
+`    <!-- ...that BleachBit can find "\Program Files (x86)\Vuze" and... -->`  
+`    <value os="windows">%ProgramFiles%\Vuze</value>`  
+`    <!-- ...that BleachBit can find "\Program Files\Vuze" on a x86 system...`  
+`    ...and later, as 64-bit program, "\Program Files\Vuze" (x64)!`  
+`    So all cases solved! ;-) Tobias. -->`  
+`    <!--`  
+`    Linux $$ProgramFiles$$ not yet figured out! I will do this later! Tobias.`  
+`    <value os="linux">~/.vuze</value>`  
+`    -->`  
+`  </var>`
+
+Extra Variables:  
+On Windows, BleachBit defines `%cd%` (current directory), `%commonappdata%`, `%documents%`, `%localappdata%` (Windows XP), `%music%`, `%pictures%`, `%video%`, `%localappdatalow%`.
+
 [Back to index](#content-of-the-chapter)
 
 <br>
 
-### 1.04 Example Cleaner
+### 1.05 Unix Variables
+
+FOLLOWS !!!
+
+Extra Variables:  
+On Unix, BleachBit defines `$XDG_CONFIG_HOME`, `$XDG_CACHE_HOME`, ...
+For more look here: https://wiki.archlinux.org/index.php/XDG_Base_Directory
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 1.06 Example Cleaner
 
 Here is an example cleaner:  
 https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml
@@ -292,7 +345,7 @@ Displays a warning to the user if the cleaner gets selected in BleachBit.
 
 <br>
 
-### 3.08 Define Variables
+### 3.08 Define multi-value Variables
 
 **A cleaner can have multiple variables**  
 You can define one or more variables in a cleaner with `<var>` and `<value>`.
@@ -305,6 +358,10 @@ You can define one or more variables in a cleaner with `<var>` and `<value>`.
 
 **Explanaition:**  
 Defines with `<var>` the variable "profile" that is after that definded with `<value>` for `os="windows"` and `os="linux"`.
+
+MORE FOLLOWS !!!
+
+Variable syntax: $$multi$$
 
 **Example with two values for one OS:**  
 `<var name="profile">  
