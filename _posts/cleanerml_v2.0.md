@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-04-19 15:30:00
+date: 2019-04-19 16:00:00
 order: 8
 ---
 
@@ -12,44 +12,44 @@ order: 8
 
 ### Content of the chapter
 
-[1.00 **General**](#1.00-General)  
-[1.01 Be pretty](#1.01-Be-pretty)  
-[1.02 Python & "glob" (Unix style pathname pattern expansion)](#1.02-Python-&-"glob"-(Unix-style-pathname-pattern-expansion))  
-[1.03 Environment Variables]  
-[1.04 Example Cleaner]  
-[2.00 **Header**]  
-[2.01 First Line]  
-[2.02 Copyright & Additional Information]  
-[2.03 Cleaner Element & ID]  
-[3.00 **General Structure & Configurations per Cleaner**]  
-[3.01 Label Element]  
-[3.02 Description Element]  
-[3.03 Option Element]  
-[3.04 More pretty (label, option & description)]  
-[3.05 Running Element]  
-[3.06 OS dependent parts/Cleaners]  
-[3.07 Display a Warning]  
-[3.08 Define Variables]  
-[4.00 **command="delete"**]  
-[4.01 command="delete" search="file"]  
-[4.02 command="delete" search="folder"]  
-[4.03 command="delete" search="walk.files"]  
-[4.04 command="delete" search="walk.all"]  
-[4.05 command="delete" search="glob"]  
-[4.06 Delete the content of a folder and the folder itself]  
-[4.07 Delete the content of a folder but not the folder itself]  
-[4.08 Delete recursive]  
-[4.09 Summary - Table with deletion use cases]  
-[4.10 command="delete" search="deep"]  
-[5.00 **Other Commands**]  
-[5.01 command="winreg"]  
-[5.02 Cleaning a Windows Registry Key/Path with a wildcard]  
-[5.03 command="ini"]  
-[5.04 command="sqlite.vacuum"]  
-[5.05 command="json" search="file"]  
-[5.06 Run an external program]  
-[6.00 **When done**]  
-[6.01 Pretty, 2]
+[1.00 **General**](#100-general)  
+[1.01 Be pretty](#101-be-pretty)  
+[1.02 Python & "glob" (Unix style pathname pattern expansion)](#102-python--glob-unix-style-pathname-pattern-expansion)  
+[1.03 Environment Variables](#103-environment-variables)  
+[1.04 Example Cleaner](#104-example-cleaner)  
+[2.00 **Header**](#200-header)  
+[2.01 First Line](#201-first-line)  
+[2.02 Copyright & Additional Information](#202-copyright--additional-information)  
+[2.03 Cleaner Element & ID](#203-cleaner-element--id)  
+[3.00 **General Structure & Configurations per Cleaner**](#300-general-structure--configurations-per-cleaner)  
+[3.01 Label Element](#301-label-element)  
+[3.02 Description Element](#302-description-element)  
+[3.03 Option Element](#303-option-element)  
+[3.04 More pretty (Label, Option & Description)](#304-more-pretty-label-option--description)  
+[3.05 Running Element](#305-running-element)  
+[3.06 OS dependent parts/Cleaners](#306-os-dependent-partscleaners)  
+[3.07 Display a Warning](#307-display-a-warning)  
+[3.08 Define Variables](#308-define-variables)  
+[4.00 **command="delete"**](#400-commanddelete)  
+[4.01 command="delete" search="file"](#401-commanddelete-searchfile)  
+[4.02 command="delete" search="folder"](#402-commanddelete-searchfolder)  
+[4.03 command="delete" search="walk.files"](#403-commanddelete-searchwalkfiles)  
+[4.04 command="delete" search="walk.all"](#404-commanddelete-searchwalkall)  
+[4.05 command="delete" search="glob"](#405-commanddelete-searchglob)  
+[4.06 Delete the content of a folder but not the folder itself](#407-delete-the-content-of-a-folder-but-not-the-folder-itself)  
+[4.07 Delete the content of a folder and the folder itself](#407-delete-the-content-of-a-folder-and-the-folder-itself)  
+[4.08 Delete recursive](#408-delete-recursive)  
+[4.09 Summary - Table with deletion use cases](#409-summary---table-with-deletion-use-cases)  
+[4.10 command="delete" search="deep"](#410-commanddelete-searchdeep)  
+[5.00 **Other Commands**](#500-other-commands)  
+[5.01 command="winreg"](#501-commandwinreg)  
+[5.02 Cleaning a Windows Registry Key/Path with a wildcard](#502-cleaning-a-windows-registry-keypath-with-a-wildcard)  
+[5.03 command="ini"](#503-commandini)  
+[5.04 command="sqlite.vacuum"](#504-commandsqlitevacuum)  
+[5.05 command="json" search="file"](#505-commandjson-searchfile)  
+[5.06 Run an external program](#506-run-an-external-program)  
+[6.00 **When done**](#600-when-done)  
+[6.01 Pretty, 2](#601-pretty-2)
 
 <br>
 
@@ -72,6 +72,8 @@ We use the coding style that xmllint (Linux Program) use! (More to xmllint at th
 
 XML files get in repo later formated/tested with xmllint...
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 1.02 Python & "glob" (Unix style pathname pattern expansion)
@@ -86,6 +88,8 @@ And now the same a bit more simple:
 In *NIX Systems (Linux, Unix, BSD, Darvin, ...) paths and file names can contain special characters like `*` and `?`.  
 To use now wildcard or interrogation mark for a Windows-like search, we have to use in this cases `glob`!  
 In the following there will be here and there some cases & examples in the documenation, where `glob` must be used!
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -112,12 +116,16 @@ os.getenv('ProgramW6432') = C:\Program Files
 os.getenv('ProgramFiles') = C:\Program Files  
 os.getenv('ProgramW6432') = C:\Program Files
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 1.04 Example Cleaner
 
 Here is an example cleaner:  
 https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -130,6 +138,8 @@ https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml
 The first line in a new cleaner file is always `<?xml version="1.0" encoding="UTF-8"?>`.  
 This identifies the file as a XML file.  
 CleanerML files are a special version of XML files.
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -155,6 +165,8 @@ If needed, you can also include extra maintenance information in the header, as 
     @testedby https://github.com/Tobias-B-Besemer
     @note As long we have no command="xml", we need to delete the complete file!
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 2.03 Cleaner Element & ID
@@ -165,6 +177,8 @@ Example for a `<cleaner>` header: `<cleaner id="smplayer">`
 
 `<cleaner>` can define that the cleaner is OS dependent.  
 For more information to this look at: OS dependent parts/cleaners
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -186,12 +200,16 @@ If the label should be translated by the translators into local.
 Example: `<label translators="In Windows 'Run' is the dialog in the Start menu">Run</label>`  
 As note for the translators.
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 3.02 Description Element
 
 And then we need a description of the cleaner (this time a category!) (shown on the right side of BleachBit).  
 Example of a `<description>` element: `<description>Video player</description>`
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -206,9 +224,11 @@ Example:
 `    <label>Cookies</label>`  
 `    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>`
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
-### 3.04 More pretty (label, option & description)
+### 3.04 More pretty (Label, Option & Description)
 
 Please use (if possible) terms for `<label>`s of `<option>`s and `<description>`s (for `<cleaner>` and `<option>`), that are already used somewhere else in the program!
 This makes translation easier, because the term can be maybe be already translated! E.g. don't use "Temp files" or "Temporary Files", use "Temporary files"! (Yes, it is case sensetive!)  
@@ -220,6 +240,8 @@ Use the writing/naming form, that is used by the other cleaners/options, too!
 Example: Don't write "Junk Files", use "Junk files"! (Yes, it is case sensetive!)
 
 We make no dot at the end of `<description>`!
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -233,6 +255,8 @@ Example: `<running type="pathname">~/.mozilla/firefox/*.default/lock</running>`
 
 Generally it is preffered to have this exe/pathname check included in cleaners!  
 And generally the `exe` variation is preffered over the `pathname` variation!
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -249,6 +273,8 @@ Adding the `os=` attribute in the `<cleaner>` element makes the cleaner OS depen
 Version 2.1 of BleachBit adds support for `os=` on the elements `action`, `value`, and `running`.  
 For `os` can be used `windows`, `linux`, `FreeBSD`, `NetBSD`, `OpenBSD` & `unix`. While `os="unix"` includes Linux, the three BSD systems, and Darwin.
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 3.07 Display a Warning
@@ -261,6 +287,8 @@ Displays a warning to the user if the cleaner gets selected in BleachBit.
 
 **Explanaition:**  
 `<warning>` gets used inside the `<option>` section, on top, as first rule.
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -288,6 +316,8 @@ Defines with `<var>` the variable "profile" that is after that definded with `<v
 **Example for a value, when the path includes a "*":**  
 `<value search="glob" os="windows">%AppData%\Mozilla\Firefox\Profiles\*</value>`
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 <H1>4.00 command="delete"</H1>
@@ -313,12 +343,14 @@ Deletes a single file or an empty folder in the file system.
 **Doesn't work! No wildcards allowed (, yet)!**  
 **Use `glob`!**  
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 4.02 command="delete" search="folder"
 
 **Deleting a single folder**  
-Deletes a single folder in the file system. This feature is planed and not yet implemented!
+Deletes a single folder in the file system. **This feature is planed and not yet implemented!**
 
 **Example:**  
 `<action command="delete" search="folder" path="%Temp%\DemoFolder\"`
@@ -328,6 +360,8 @@ Deletes a single folder in the file system. This feature is planed and not yet i
 
 **Not sure if `<action command="delete" search="folder" path="%ProgramFiles%\BiglyBT*\"/>` will work!**  
 **Not sure if `<action command="delete" search="folder" path="%ProgramFiles%\BiglyBT*\"/>` will work when the folder is not empty!**  
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -357,6 +391,8 @@ Follows
 `<action command="delete" search="walk.files" path="%AppData%\Daum\PotPlayer\Log\*"/>`  
 If you mean every directory under %AppData%\Daum\PotPlayer\Log\, then walk.files is right, but if you want every file then you want either `search="glob"` (which will not delete recursively) OR remove the wildcard (which will delete recursively)!
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 4.04 command="delete" search="walk.all"
@@ -384,6 +420,8 @@ This also doesn't work!
 Use `glob` instead:  
 `<action command="delete" search="glob" path="%windir%\Temp*\WER1.hdmp"/>`
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 4.05 command="delete" search="glob"
@@ -403,9 +441,27 @@ There is also a wildcard used!
 
 More to "glob": https://docs.python.org/2/library/glob.html
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
-### 4.06 Delete the content of a folder and the folder itself
+### 4.06 Delete the content of a folder but not the folder itself
+
+**You can delete the content of a folder and not the folder itself**  
+Follows
+
+**Example:**  
+`<action command="delete" search="walk.all" path="$LocalAppData\Temp\acrord32_sbx"/>`  
+`<action command="delete" search="glob" path="$LocalAppData\Temp\acrord32_sbx\*"/>`
+
+**Explanaition:**  
+`walk.all` deletes the content of the folder and shows it in BleachBit, while `glob` with a `\` at the end of `path` deletes the folders in the folder.
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 4.07 Delete the content of a folder and the folder itself
 
 **You can delete the content of a folder and the folder itself**  
 Follows
@@ -417,19 +473,7 @@ Follows
 **Explanaition:**  
 `walk.all` deletes the content of the folder and shows it in BleachBit, while `file` deletes after that the empty folder itself.
 
-<br>
-
-### 4.07 Delete the content of a folder but not the folder itself
-
-**You can delete the content of a folder and not the folder itself**  
-Follows
-
-**Example:**  
-`<action command="delete" search="walk.all" path="$LocalAppData\Temp\acrord32_sbx"/>`  
-`<action command="delete" search="glob" path="$LocalAppData\Temp\acrord32_sbx\*"/>`
-
-**Explanaition:**  
-`walk.all` deletes the content of the folder and shows it in BleachBit, while `glob` with a `\` at the end of `path` deletes the folders in the folder.
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -449,6 +493,8 @@ Follows
 `regex="^Thumbs\.db$"` -> Exact file name  
 `regex="^`[...] -> File name starts with  
 `regex="\.`[...] -> File extension is  
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -486,6 +532,8 @@ Follows
 
 *1: Not yet implemented!
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 4.10 command="delete" search="deep"
@@ -504,6 +552,8 @@ Follows
 `regex="^Thumbs\.db$"` -> Exact file name  
 `regex="^`[...] -> File name starts with  
 `regex="\.`[...] -> File extension is  
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -529,6 +579,8 @@ If you don't add a `name` to it, the `path` gets deleted!
 `<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\*\AVGeneral\cRecentFiles" name="StoreLocation"/>`  
 **...doesn't work! No wildcards allowed (, yet)!**  
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 5.02 Cleaning a Windows Registry Key/Path with a wildcard
@@ -541,6 +593,8 @@ Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
 
 **Explanaition:**  
 `command` is always `"winreg"`, `path` is the path/tree/folder/key you want to delete, "*" match any string that will be find.
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -559,6 +613,8 @@ Deletes in `section` the `parameter`.
 **Doesn't work! No wildcards allowed (, yet)!**  
 **You must list them all with one rule per parameter!**  
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 5.04 command="sqlite.vacuum"
@@ -575,6 +631,8 @@ Follows
 **More examples:**  
 `<action command="sqlite.vacuum" search="glob" path="$$profile$$/History Index ????-??"/>`
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 ### 5.05 command="json" search="file"
@@ -587,6 +645,8 @@ Follows
 
 **Explanaition:**  
 Follows
+
+[Back to index](#content-of-the-chapter)
 
 <br>
 
@@ -607,6 +667,8 @@ Follows
 `<action command="process" cmd="cmd.exe /c Cleanmgr.exe"/>`  
 You can use `cmd.exe` to start other programs.  
 
+[Back to index](#content-of-the-chapter)
+
 <br>
 
 <H1>6.00 When done</H1>
@@ -616,3 +678,6 @@ You can use `cmd.exe` to start other programs.
 ### 6.01 Pretty, 2
 
 When you be finished, you can run "Makefile" or "Makefile.bat" to make the code of your XML file pretty.
+
+[Back to index](#content-of-the-chapter)
+
