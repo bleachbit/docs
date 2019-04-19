@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-04-19 12:30:00
+date: 2019-04-19 15:30:00
 order: 8
 ---
 
@@ -10,51 +10,54 @@ order: 8
 
 <br>
 
-### Content
+### Content of the chapter
 
-- Example Cleaner  
-- Pretty 1  
-- First line  
-- Additional information  
-- Cleaner Element & ID  
-- Label  
-- Description  
-- Option  
-- More pretty  
-- running type="exe"  
-- OS dependent parts/cleaners  
-- Display a warning  
-- Python & "glob" (Unix style pathname pattern expansion)  
-- Environment Variables  
-- Define variables  
-- command="ini"  
-- command="winreg"  
-- Cleaning a Windows Registry Key/Path with a wildcard  
-- command="delete" search="file"  
-- command="delete" search="folder"  
-- command="delete" search="walk.files"  
-- command="delete" search="walk.all"  
-- command="delete" search="glob"  
-- Delete the content of a folder and the folder itself  
-- Delete the content of a folder but not the folder itself  
-- Delete recursive  
-- Summary - Table with deletion use cases  
-- command="delete" search="deep"  
-- command="json" search="file"  
-- command="sqlite.vacuum"  
-- Run an external program  
-- Pretty, 2
+[1.00 **General**](#1.00-General)  
+[1.01 Be pretty](#1.01-Be-pretty)  
+[1.02 Python & "glob" (Unix style pathname pattern expansion)](#1.02-Python-&-"glob"-(Unix-style-pathname-pattern-expansion))  
+[1.03 Environment Variables]  
+[1.04 Example Cleaner]  
+[2.00 **Header**]  
+[2.01 First Line]  
+[2.02 Copyright & Additional Information]  
+[2.03 Cleaner Element & ID]  
+[3.00 **General Structure & Configurations per Cleaner**]  
+[3.01 Label Element]  
+[3.02 Description Element]  
+[3.03 Option Element]  
+[3.04 More pretty (label, option & description)]  
+[3.05 Running Element]  
+[3.06 OS dependent parts/Cleaners]  
+[3.07 Display a Warning]  
+[3.08 Define Variables]  
+[4.00 **command="delete"**]  
+[4.01 command="delete" search="file"]  
+[4.02 command="delete" search="folder"]  
+[4.03 command="delete" search="walk.files"]  
+[4.04 command="delete" search="walk.all"]  
+[4.05 command="delete" search="glob"]  
+[4.06 Delete the content of a folder and the folder itself]  
+[4.07 Delete the content of a folder but not the folder itself]  
+[4.08 Delete recursive]  
+[4.09 Summary - Table with deletion use cases]  
+[4.10 command="delete" search="deep"]  
+[5.00 **Other Commands**]  
+[5.01 command="winreg"]  
+[5.02 Cleaning a Windows Registry Key/Path with a wildcard]  
+[5.03 command="ini"]  
+[5.04 command="sqlite.vacuum"]  
+[5.05 command="json" search="file"]  
+[5.06 Run an external program]  
+[6.00 **When done**]  
+[6.01 Pretty, 2]
 
 <br>
 
-### Example Cleaner
-
-Here is an example cleaner:  
-https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml
+<H1>1.00 General</H1>
 
 <br>
 
-### Pretty 1
+### 1.01 Be pretty
 
 **Coding style:**  
 We use the coding style that xmllint (Linux Program) use! (More to xmllint at the end of this docu...)
@@ -71,141 +74,7 @@ XML files get in repo later formated/tested with xmllint...
 
 <br>
 
-### First line
-
-The first line in a new cleaner file is always `<?xml version="1.0" encoding="UTF-8"?>`.  
-This identifies the file as a XML file.  
-CleanerML files are a special version of XML files.
-
-<br>
-
-### Additional information
-
-Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly.
-If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/az0/cleanerml/blob/master/openshot.xml):
-
-    @url http://full.url.of/software-project
-    @tested ok softwareversion, OSnameandversion
-    @note Some notes for cleaner maintainers
-
-**Example for a other version:**
-
-    @app Double Commander
-    @url https://doublecmd.sourceforge.io/
-    @os Windows, Linux, FreeBSD
-    @cleanerversion v0.2.5
-    @cleanerdate 2019-03-11
-    @cleanerby https://github.com/Tobias-B-Besemer
-    @tested ok v0.8.4, Windows 7
-    @testeddate 2019-03-11
-    @testedby https://github.com/Tobias-B-Besemer
-    @note As long we have no command="xml", we need to delete the complete file!
-
-<br>
-
-### Cleaner Element & ID
-
-The cleaner starts with the `<cleaner>` element.  
-Example for a `<cleaner>` header: `<cleaner id="smplayer">`  
-`id` is the BleachBit internal ID of the cleaner.
-
-`<cleaner>` can define that the cleaner is OS dependent.  
-For more information to this look at: OS dependent parts/cleaners
-
-<br>
-
-### Label
-
-After that comes `<label>`.  
-`<label>` defines the label shown as name (of the cleaner) in the left column of BleachBit.  
-Example: `<label>SMPlayer</label>`
-
-`<label>` can have some attributes...
-
-Example: `<label translate="true">Deep Scan - More</label>`  
-If the label should be translated by the translators into local.
-
-Example: `<label translators="In Windows 'Run' is the dialog in the Start menu">Run</label>`  
-As note for the translators.
-
-<br>
-
-### Description
-
-And then we need a description of the cleaner (this time a category!) (shown on the right side of BleachBit).  
-Example of a `<description>` element: `<description>Video player</description>`
-
-<br>
-
-### Option
-
-Then comes the first `<option>` and then for the `<option>` a `<label>` and a `<description>` (this time a explanaition!), again.  
-Example:  
-`<cleaner id="tomtom" os="windows">`  
-`  <label>TomTom</label>`  
-`  <description>Navigation systems</description>`  
-`  <option id="cookies">`  
-`    <label>Cookies</label>`  
-`    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>`
-
-<br>
-
-### More pretty
-
-Please use (if possible) terms for `<label>`s of `<option>`s and `<description>`s (for `<cleaner>` and `<option>`), that are already used somewhere else in the program!
-This makes translation easier, because the term can be maybe be already translated! E.g. don't use "Temp files" or "Temporary Files", use "Temporary files"! (Yes, it is case sensetive!)  
-Example:  
-`<label>Temporary files</label>`  
-`<description>Delete the temporary files</description>`
-
-Use the writing/naming form, that is used by the other cleaners/options, too!  
-Example: Don't write "Junk Files", use "Junk files"! (Yes, it is case sensetive!)
-
-We make no dot at the end of `<description>`!
-
-<br>
-
-### running type="exe"
-
-With `running type="exe"` you can prevent that the cleaner gets executed as long a special program/task is running...  
-Example: `<running type="exe" os="windows">firefox.exe</running>`
-
-With `running type="pathname"` you can also prevent that the cleaner gets executed, but as long as a special file exist!  
-Example: `<running type="pathname">~/.mozilla/firefox/*.default/lock</running>`
-
-Generally it is preffered to have this exe/pathname check included in cleaners!
-
-<br>
-
-### OS dependent parts/cleaners
-
-**Make a part, or the cleaner OS dependent**  
-You can make the cleaner (a part, or the hole cleaner) OS dependent by adding the `os=` attribute.
-
-**Example:**  
-`<cleaner id="windows" os="windows">`
-
-**Explanaition:**  
-Adding the `os=` attribute in the `<cleaner>` element makes the cleaner OS dependent and boosts load time of BleachBit.  
-Version 2.1 of BleachBit adds support for `os=` on the elements `action`, `value`, and `running`.  
-For `os` can be used `windows`, `linux`, `FreeBSD`, `NetBSD`, `OpenBSD` & `unix`. While `os="unix"` includes Linux, the three BSD systems, and Darwin.
-
-<br>
-
-### Display a warning
-
-**Display a warning to the user**  
-Displays a warning to the user if the cleaner gets selected in BleachBit.
-
-**Example:**  
-`<warning>Use the option only if you know what you do!</warning>`
-
-**Explanaition:**  
-`<warning>` gets used inside the `<option>` section, on top, as first rule.
-
-<br>
-
-### Python & "glob" (Unix style pathname pattern expansion)
+### 1.02 Python & "glob" (Unix style pathname pattern expansion)
 
 According to https://docs.python.org/3/library/glob.html:
 The `glob` module finds all the pathnames matching a specified pattern according to the rules used by the Unix shell, [...].
@@ -220,7 +89,7 @@ In the following there will be here and there some cases & examples in the docum
 
 <br>
 
-### Environment Variables
+### 1.03 Environment Variables
 
 **Use a Environment Variables to have the path relative**  
 You can use a Environment Variables (you should!) to have the path relative!
@@ -245,7 +114,157 @@ os.getenv('ProgramW6432') = C:\Program Files
 
 <br>
 
-### Define variables
+### 1.04 Example Cleaner
+
+Here is an example cleaner:  
+https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml
+
+<br>
+
+<H1>2.00 Header</H1>
+
+<br>
+
+### 2.01 First Line
+
+The first line in a new cleaner file is always `<?xml version="1.0" encoding="UTF-8"?>`.  
+This identifies the file as a XML file.  
+CleanerML files are a special version of XML files.
+
+<br>
+
+### 2.02 Copyright & Additional Information
+
+Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly.  
+If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/az0/cleanerml/blob/master/openshot.xml):
+
+    @url http://full.url.of/software-project
+    @tested ok softwareversion, OSnameandversion
+    @note Some notes for cleaner maintainers
+
+**Example for a other version:**
+
+    @app Double Commander
+    @url https://doublecmd.sourceforge.io/
+    @os Windows, Linux, FreeBSD
+    @cleanerversion v0.2.5
+    @cleanerdate 2019-03-11
+    @cleanerby https://github.com/Tobias-B-Besemer
+    @tested ok v0.8.4, Windows 7
+    @testeddate 2019-03-11
+    @testedby https://github.com/Tobias-B-Besemer
+    @note As long we have no command="xml", we need to delete the complete file!
+
+<br>
+
+### 2.03 Cleaner Element & ID
+
+The cleaner starts with the `<cleaner>` element.  
+Example for a `<cleaner>` header: `<cleaner id="smplayer">`  
+`id` is the BleachBit internal ID of the cleaner.
+
+`<cleaner>` can define that the cleaner is OS dependent.  
+For more information to this look at: OS dependent parts/cleaners
+
+<br>
+
+<H1>3.00 General Structure & Configurations per Cleaner</H1>
+
+<br>
+
+### 3.01 Label Element
+
+After that comes `<label>`.  
+`<label>` defines the label shown as name (of the cleaner) in the left column of BleachBit.  
+Example: `<label>SMPlayer</label>`
+
+`<label>` can have some attributes...
+
+Example: `<label translate="true">Deep Scan - More</label>`  
+If the label should be translated by the translators into local.
+
+Example: `<label translators="In Windows 'Run' is the dialog in the Start menu">Run</label>`  
+As note for the translators.
+
+<br>
+
+### 3.02 Description Element
+
+And then we need a description of the cleaner (this time a category!) (shown on the right side of BleachBit).  
+Example of a `<description>` element: `<description>Video player</description>`
+
+<br>
+
+### 3.03 Option Element
+
+Then comes the first `<option>` and then for the `<option>` a `<label>` and a `<description>` (this time a explanaition!), again.  
+Example:  
+`<cleaner id="tomtom" os="windows">`  
+`  <label>TomTom</label>`  
+`  <description>Navigation systems</description>`  
+`  <option id="cookies">`  
+`    <label>Cookies</label>`  
+`    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>`
+
+<br>
+
+### 3.04 More pretty (label, option & description)
+
+Please use (if possible) terms for `<label>`s of `<option>`s and `<description>`s (for `<cleaner>` and `<option>`), that are already used somewhere else in the program!
+This makes translation easier, because the term can be maybe be already translated! E.g. don't use "Temp files" or "Temporary Files", use "Temporary files"! (Yes, it is case sensetive!)  
+Example:  
+`<label>Temporary files</label>`  
+`<description>Delete the temporary files</description>`
+
+Use the writing/naming form, that is used by the other cleaners/options, too!  
+Example: Don't write "Junk Files", use "Junk files"! (Yes, it is case sensetive!)
+
+We make no dot at the end of `<description>`!
+
+<br>
+
+### 3.05 Running Element
+
+With `running type="exe"` you can prevent that the cleaner gets executed as long a special program/task is running...  
+Example: `<running type="exe" os="windows">firefox.exe</running>`
+
+With `running type="pathname"` you can also prevent that the cleaner gets executed, but as long as a special file exist!  
+Example: `<running type="pathname">~/.mozilla/firefox/*.default/lock</running>`
+
+Generally it is preffered to have this exe/pathname check included in cleaners!  
+And generally the `exe` variation is preffered over the `pathname` variation!
+
+<br>
+
+### 3.06 OS dependent parts/Cleaners
+
+**Make a part, or the cleaner OS dependent**  
+You can make the cleaner (a part, or the hole cleaner) OS dependent by adding the `os=` attribute.
+
+**Example:**  
+`<cleaner id="windows" os="windows">`
+
+**Explanaition:**  
+Adding the `os=` attribute in the `<cleaner>` element makes the cleaner OS dependent and boosts load time of BleachBit.  
+Version 2.1 of BleachBit adds support for `os=` on the elements `action`, `value`, and `running`.  
+For `os` can be used `windows`, `linux`, `FreeBSD`, `NetBSD`, `OpenBSD` & `unix`. While `os="unix"` includes Linux, the three BSD systems, and Darwin.
+
+<br>
+
+### 3.07 Display a Warning
+
+**Display a warning to the user**  
+Displays a warning to the user if the cleaner gets selected in BleachBit.
+
+**Example:**  
+`<warning>Use the option only if you know what you do!</warning>`
+
+**Explanaition:**  
+`<warning>` gets used inside the `<option>` section, on top, as first rule.
+
+<br>
+
+### 3.08 Define Variables
 
 **A cleaner can have multiple variables**  
 You can define one or more variables in a cleaner with `<var>` and `<value>`.
@@ -271,57 +290,11 @@ Defines with `<var>` the variable "profile" that is after that definded with `<v
 
 <br>
 
-### command="ini"
-
-**Cleaning a Parameter in a INI File**  
-Deletes in `section` the `parameter`.
-
-**Example:**  
-`<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="0"/>`
-
-**Explanaition:**  
-`command` is always `"ini"`, `search` is always `"file"`, `path` is the path to the INI file, `section` is the higer section and `parameter` is the parameter you want to delete.
-
-`<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="MkDir*"/>`  
-**Doesn't work! No wildcards allowed (, yet)!**  
-**You must list them all with one rule per parameter!**  
+<H1>4.00 command="delete"</H1>
 
 <br>
 
-### command="winreg"
-
-**Cleaning a Windows Registry Key/Path**  
-Deletes in the `path` (tree in Regedit) a "folder", or a key.
-
-**Example:**  
-`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecentFiles" name="StoreLocation"/>`
-
-**Explanaition:**  
-`command` is always `"winreg"`, `path` is the path/tree/folder, `name` is the key that gets delete.  
-If you don't add a `name` to it, the `path` gets deleted!
-
-**More examples:**  
-`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecent*" name="StoreLocation"/>`  
-...and...  
-`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\*\AVGeneral\cRecentFiles" name="StoreLocation"/>`  
-**...doesn't work! No wildcards allowed (, yet)!**  
-
-<br>
-
-### Cleaning a Windows Registry Key/Path with a wildcard
-
-**You can cleaning a Windows Registry Key/Path with a wildcard**  
-Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
-
-**Example:**  
-`<action command="winreg" path="HKCU\Software\XnView\Start\FileName_*" />`
-
-**Explanaition:**  
-`command` is always `"winreg"`, `path` is the path/tree/folder/key you want to delete, "*" match any string that will be find.
-
-<br>
-
-### command="delete" search="file"
+### 4.01 command="delete" search="file"
 
 **Deleting a single file/or an empty folder**  
 Deletes a single file or an empty folder in the file system.
@@ -342,7 +315,7 @@ Deletes a single file or an empty folder in the file system.
 
 <br>
 
-### command="delete" search="folder"
+### 4.02 command="delete" search="folder"
 
 **Deleting a single folder**  
 Deletes a single folder in the file system. This feature is planed and not yet implemented!
@@ -358,7 +331,7 @@ Deletes a single folder in the file system. This feature is planed and not yet i
 
 <br>
 
-### command="delete" search="walk.files"
+### 4.03 command="delete" search="walk.files"
 
 **Follows**  
 Follows
@@ -386,7 +359,7 @@ If you mean every directory under %AppData%\Daum\PotPlayer\Log\, then walk.files
 
 <br>
 
-### command="delete" search="walk.all"
+### 4.04 command="delete" search="walk.all"
 
 **Follows**  
 Delete e.g. the content of a folder.
@@ -413,7 +386,7 @@ Use `glob` instead:
 
 <br>
 
-### command="delete" search="glob"
+### 4.05 command="delete" search="glob"
 
 **Follows**  
 Needed if you e.g. use a wildcard (`*`)!
@@ -432,7 +405,7 @@ More to "glob": https://docs.python.org/2/library/glob.html
 
 <br>
 
-### Delete the content of a folder and the folder itself
+### 4.06 Delete the content of a folder and the folder itself
 
 **You can delete the content of a folder and the folder itself**  
 Follows
@@ -446,7 +419,7 @@ Follows
 
 <br>
 
-### Delete the content of a folder but not the folder itself
+### 4.07 Delete the content of a folder but not the folder itself
 
 **You can delete the content of a folder and not the folder itself**  
 Follows
@@ -460,7 +433,7 @@ Follows
 
 <br>
 
-### Delete recursive
+### 4.08 Delete recursive
 
 **Follows**  
 Follows
@@ -479,7 +452,7 @@ Follows
 
 <br>
 
-### Summary - Table with deletion use cases
+### 4.09 Summary - Table with deletion use cases
 
 **Delete Files:**
 
@@ -515,7 +488,7 @@ Follows
 
 <br>
 
-### command="delete" search="deep"
+### 4.10 command="delete" search="deep"
 
 **Follows**  
 Follows
@@ -534,20 +507,61 @@ Follows
 
 <br>
 
-### command="json" search="file"
-
-**Follows**  
-Follows
-
-**Example:**  
-`<action command="json" search="file" path="$$profile$$/Preferences" address="dns_prefetching/host_referral_list"/>`
-
-**Explanaition:**  
-Follows
+<H1>5.00 Other Commands</H1>
 
 <br>
 
-### command="sqlite.vacuum"
+### 5.01 command="winreg"
+
+**Cleaning a Windows Registry Key/Path**  
+Deletes in the `path` (tree in Regedit) a "folder", or a key.
+
+**Example:**  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecentFiles" name="StoreLocation"/>`
+
+**Explanaition:**  
+`command` is always `"winreg"`, `path` is the path/tree/folder, `name` is the key that gets delete.  
+If you don't add a `name` to it, the `path` gets deleted!
+
+**More examples:**  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecent*" name="StoreLocation"/>`  
+...and...  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\*\AVGeneral\cRecentFiles" name="StoreLocation"/>`  
+**...doesn't work! No wildcards allowed (, yet)!**  
+
+<br>
+
+### 5.02 Cleaning a Windows Registry Key/Path with a wildcard
+
+**You can cleaning a Windows Registry Key/Path with a wildcard**  
+Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
+
+**Example:**  
+`<action command="winreg" path="HKCU\Software\XnView\Start\FileName_*" />`
+
+**Explanaition:**  
+`command` is always `"winreg"`, `path` is the path/tree/folder/key you want to delete, "*" match any string that will be find.
+
+<br>
+
+### 5.03 command="ini"
+
+**Cleaning a Parameter in a INI File**  
+Deletes in `section` the `parameter`.
+
+**Example:**  
+`<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="0"/>`
+
+**Explanaition:**  
+`command` is always `"ini"`, `search` is always `"file"`, `path` is the path to the INI file, `section` is the higer section and `parameter` is the parameter you want to delete.
+
+`<action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="MkDir*"/>`  
+**Doesn't work! No wildcards allowed (, yet)!**  
+**You must list them all with one rule per parameter!**  
+
+<br>
+
+### 5.04 command="sqlite.vacuum"
 
 **Follows**  
 Follows
@@ -563,7 +577,20 @@ Follows
 
 <br>
 
-### Run an external program
+### 5.05 command="json" search="file"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="json" search="file" path="$$profile$$/Preferences" address="dns_prefetching/host_referral_list"/>`
+
+**Explanaition:**  
+Follows
+
+<br>
+
+### 5.06 Run an external program
 
 **Follows**  
 Follows
@@ -582,6 +609,10 @@ You can use `cmd.exe` to start other programs.
 
 <br>
 
-### Pretty, 2
+<H1>6.00 When done</H1>
+
+<br>
+
+### 6.01 Pretty, 2
 
 When you be finished, you can run "Makefile" or "Makefile.bat" to make the code of your XML file pretty.
