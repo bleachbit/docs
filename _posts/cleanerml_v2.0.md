@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-04-19 17:10:00
+date: 2019-04-19 18:10:00
 order: 8
 ---
 
@@ -45,11 +45,12 @@ order: 8
 [4.10 command="delete" search="deep"](#410-commanddelete-searchdeep)  
 [5.00 **Other Commands**](#500-other-commands)  
 [5.01 command="winreg"](#501-commandwinreg)  
-[5.02 Cleaning a Windows Registry Key/Path with a wildcard](#502-cleaning-a-windows-registry-keypath-with-a-wildcard)  
+[5.02 Cleaning a Windows Registry Key/Path with a wildcard at the end](#502-cleaning-a-windows-registry-keypath-with-a-wildcard-at-the-end)  
 [5.03 command="ini"](#503-commandini)  
-[5.04 command="sqlite.vacuum"](#504-commandsqlitevacuum)  
-[5.05 command="json" search="file"](#505-commandjson-searchfile)  
-[5.06 Run an external program](#506-run-an-external-program)  
+[5.04 command="xml"](#504-commandxml)  
+[5.05 command="sqlite.vacuum"](#505-commandsqlitevacuum)  
+[5.06 command="json" search="file"](#506-commandjson-searchfile)  
+[5.07 Run an external program](#507-run-an-external-program)  
 [6.00 **When done**](#600-when-done)  
 [6.01 Pretty, 2](#601-pretty-2)
 
@@ -416,7 +417,9 @@ Deletes a single folder in the file system. **This feature is planed and not yet
 `command` is always `"delete"`, `search` is always `"folder"`, `path` is the path & name of the file to delete.
 
 **Not sure if `<action command="delete" search="folder" path="%ProgramFiles%\BiglyBT*\"/>` will work!**  
-**Not sure if `<action command="delete" search="folder" path="%ProgramFiles%\BiglyBT*\"/>` will work when the folder is not empty!**  
+**Not sure if `<action command="delete" search="folder" path="%Temp%\DemoFolder\"/>` will work when the folder is not empty!**  
+
+Link to the issue ["command="delete" search="folder" ?"](https://github.com/bleachbit/bleachbit/issues/446).
 
 [Back to index](#content-of-the-chapter)
 
@@ -636,13 +639,15 @@ If you don't add a `name` to it, the `path` gets deleted!
 `<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\*\AVGeneral\cRecentFiles" name="StoreLocation"/>`  
 **...doesn't work! No wildcards allowed (, yet)!**  
 
+Link to the issue ["Allow wildcards in INI & WINREG Rules in CleanerML files"](https://github.com/bleachbit/wishlist/issues/15).
+
 [Back to index](#content-of-the-chapter)
 
 <br>
 
-### 5.02 Cleaning a Windows Registry Key/Path with a wildcard
+### 5.02 Cleaning a Windows Registry Key/Path with a wildcard at the end
 
-**You can cleaning a Windows Registry Key/Path with a wildcard**  
+**You can cleaning a Windows Registry Key/Path with a wildcard at the end**  
 Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
 
 **Example:**  
@@ -650,6 +655,14 @@ Deletes in the `path` (tree in Regedit) a "folder", or a key with a wildcard.
 
 **Explanaition:**  
 `command` is always `"winreg"`, `path` is the path/tree/folder/key you want to delete, "*" match any string that will be find.
+
+**More examples:**  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\5.0\AVGeneral\cRecent*" name="StoreLocation"/>`  
+...and...  
+`<action command="winreg" path="HKCU\Software\Adobe\Acrobat Reader\*\AVGeneral\cRecentFiles" name="StoreLocation"/>`  
+**...doesn't work! No wildcards allowed (, yet)!**  
+
+Link to the issue ["Allow wildcards in INI & WINREG Rules in CleanerML files"](https://github.com/bleachbit/wishlist/issues/15).
 
 [Back to index](#content-of-the-chapter)
 
@@ -670,11 +683,23 @@ Deletes in `section` the `parameter`.
 **Doesn't work! No wildcards allowed (, yet)!**  
 **You must list them all with one rule per parameter!**  
 
+Link to the issue ["Allow wildcards in INI & WINREG Rules in CleanerML files"](https://github.com/bleachbit/wishlist/issues/15).
+
 [Back to index](#content-of-the-chapter)
 
 <br>
 
-### 5.04 command="sqlite.vacuum"
+### 5.04 command="xml"
+
+**NOT SUPPORTED, YET!**
+
+Issue: ["Should have XML Cleaner"](https://github.com/bleachbit/wishlist/issues/29)
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 5.05 command="sqlite.vacuum"
 
 **Follows**  
 Follows
@@ -692,7 +717,7 @@ Follows
 
 <br>
 
-### 5.05 command="json" search="file"
+### 5.06 command="json" search="file"
 
 **Follows**  
 Follows
@@ -707,7 +732,7 @@ Follows
 
 <br>
 
-### 5.06 Run an external program
+### 5.07 Run an external program
 
 **Follows**  
 Follows
