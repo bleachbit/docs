@@ -22,11 +22,19 @@ Verify the installer is from a verified publisher (Andrew Ziem).
 
 #### Silent Installation
 
-Run the installer with the silent switch like this:
+Silent installation installs the application without any prompts from the user, and it is typically used by system administrators to install an application across many systems.
 
-`BleachBit-1.6-setup.exe /S`
+For BleachBit version 2.2, run this command to instal the aupplication for all users:
 
-The switch _is_ case-sensitive.
+`BleachBit-2.2-setup.exe /S /allusers`
+
+To install for only the current user, do this:
+
+`BleachBit-2.2-setup.exe /S /currentuser`
+
+The switches `/allusers` and `/currentuser` were first supported in BleachBit version 2.2
+
+The `/S` switch _is_ case-sensitive.
 
 #### Portable Use
 
