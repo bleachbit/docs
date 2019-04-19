@@ -2,23 +2,31 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-04-19 10:30:00
+date: 2019-04-19 12:30:00
 order: 8
 ---
 
-### CleanerML Version 2.0 Documentation
+<H1>CleanerML Version 2.0 Documentation</H1>
 
-**Content:**
+<br>
+
+### Content
+
 - Example Cleaner  
 - Pretty 1  
-- Cleaner Element  
+- First line  
+- Additional information  
+- Cleaner Element & ID  
 - Label  
 - Description  
 - Option  
+- More pretty  
+- running type="exe"  
 - OS dependent parts/cleaners  
 - Display a warning  
+- Python & "glob" (Unix style pathname pattern expansion)  
 - Environment Variables  
-- Variables  
+- Define variables  
 - command="ini"  
 - command="winreg"  
 - Cleaning a Windows Registry Key/Path with a wildcard  
@@ -30,6 +38,7 @@ order: 8
 - Delete the content of a folder and the folder itself  
 - Delete the content of a folder but not the folder itself  
 - Delete recursive  
+- Summary - Table with deletion use cases  
 - command="delete" search="deep"  
 - command="json" search="file"  
 - command="sqlite.vacuum"  
@@ -56,18 +65,30 @@ We use the coding style that xmllint (Linux Program) use! (More to xmllint at th
 - Comments are done in new lines;  
 - And no empty lines in code!
 - Cleaner and option IDs are written in small letters;
-- Conjoined with a underline character.
+- Underscore is the conventonal delimiter rather than a dash.
 
 XML files get in repo later formated/tested with xmllint...
 
-**Additional information:**  
-Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly. If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/az0/cleanerml/blob/master/openshot.xml):
+<br>
+
+### First line
+
+The first line in a new cleaner file is always `<?xml version="1.0" encoding="UTF-8"?>`.  
+This identifies the file as a XML file.  
+CleanerML files are a special version of XML files.
+
+<br>
+
+### Additional information
+
+Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly.
+If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/az0/cleanerml/blob/master/openshot.xml):
 
     @url http://full.url.of/software-project
     @tested ok softwareversion, OSnameandversion
     @note Some notes for cleaner maintainers
 
-Example for a other version:
+**Example for a other version:**
 
     @app Double Commander
     @url https://doublecmd.sourceforge.io/
@@ -82,7 +103,7 @@ Example for a other version:
 
 <br>
 
-### Cleaner Element
+### Cleaner Element & ID
 
 The cleaner starts with the `<cleaner>` element.  
 Example for a `<cleaner>` header: `<cleaner id="smplayer">`  
@@ -120,12 +141,16 @@ Example of a `<description>` element: `<description>Video player</description>`
 
 Then comes the first `<option>` and then for the `<option>` a `<label>` and a `<description>` (this time a explanaition!), again.  
 Example:  
-    <cleaner id="tomtom" os="windows">  
-      <label>TomTom</label>  
-      <description>Navigation systems</description>  
-      <option id="cookies">  
-        <label>Cookies</label>  
-        <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
+`<cleaner id="tomtom" os="windows">`  
+`  <label>TomTom</label>`  
+`  <description>Navigation systems</description>`  
+`  <option id="cookies">`  
+`    <label>Cookies</label>`  
+`    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>`
+
+<br>
+
+### More pretty
 
 Please use (if possible) terms for `<label>`s of `<option>`s and `<description>`s (for `<cleaner>` and `<option>`), that are already used somewhere else in the program!
 This makes translation easier, because the term can be maybe be already translated! E.g. don't use "Temp files" or "Temporary Files", use "Temporary files"! (Yes, it is case sensetive!)  
@@ -138,11 +163,17 @@ Example: Don't write "Junk Files", use "Junk files"! (Yes, it is case sensetive!
 
 We make no dot at the end of `<description>`!
 
+<br>
+
+### running type="exe"
+
 With `running type="exe"` you can prevent that the cleaner gets executed as long a special program/task is running...  
 Example: `<running type="exe" os="windows">firefox.exe</running>`
 
 With `running type="pathname"` you can also prevent that the cleaner gets executed, but as long as a special file exist!  
 Example: `<running type="pathname">~/.mozilla/firefox/*.default/lock</running>`
+
+Generally it is preffered to have this exe/pathname check included in cleaners!
 
 <br>
 
@@ -156,7 +187,8 @@ You can make the cleaner (a part, or the hole cleaner) OS dependent by adding th
 
 **Explanaition:**  
 Adding the `os=` attribute in the `<cleaner>` element makes the cleaner OS dependent and boosts load time of BleachBit.  
-Version 2.1 of BleachBit adds support for `os=` on the elements `action`, `value`, and `running`.
+Version 2.1 of BleachBit adds support for `os=` on the elements `action`, `value`, and `running`.  
+For `os` can be used `windows`, `linux`, `FreeBSD`, `NetBSD`, `OpenBSD` & `unix`. While `os="unix"` includes Linux, the three BSD systems, and Darwin.
 
 <br>
 
@@ -170,6 +202,21 @@ Displays a warning to the user if the cleaner gets selected in BleachBit.
 
 **Explanaition:**  
 `<warning>` gets used inside the `<option>` section, on top, as first rule.
+
+<br>
+
+### Python & "glob" (Unix style pathname pattern expansion)
+
+According to https://docs.python.org/3/library/glob.html:
+The `glob` module finds all the pathnames matching a specified pattern according to the rules used by the Unix shell, [...].
+No tilde expansion is done, but `*`, `?`, and character ranges expressed with `[]` will be correctly matched. [...]
+Note that [...] glob treats filenames beginning with a dot (`.`) as special cases. [...]  
+For a literal match, wrap the meta-characters in brackets. For example, `'[?]'` matches the character `'?'`.  
+
+And now the same a bit more simple:  
+In *NIX Systems (Linux, Unix, BSD, Darvin, ...) paths and file names can contain special characters like `*` and `?`.  
+To use now wildcard or interrogation mark for a Windows-like search, we have to use in this cases `glob`!  
+In the following there will be here and there some cases & examples in the documenation, where `glob` must be used!
 
 <br>
 
@@ -198,7 +245,7 @@ os.getenv('ProgramW6432') = C:\Program Files
 
 <br>
 
-### Variables
+### Define variables
 
 **A cleaner can have multiple variables**  
 You can define one or more variables in a cleaner with `<var>` and `<value>`.
@@ -429,6 +476,42 @@ Follows
 `regex="^Thumbs\.db$"` -> Exact file name  
 `regex="^`[...] -> File name starts with  
 `regex="\.`[...] -> File extension is  
+
+<br>
+
+### Summary - Table with deletion use cases
+
+**Delete Files:**
+
+| Single file? | Recursive? | "*"/"?" used in path or filename? | Use: |
+| --- | --- | --- | --- |
+| Yes | - | No | search="file" |
+| Yes | - | Yes | search="glob" |
+| No | No | Path=No | search="glob" |
+| No | No | Path=Yes | search="glob" |
+| No | Yes | Path=No | search="walk.files" with regex="[...]" |
+| No | Yes | Path=Yes | search="walk.files" with regex="[...]" |
+
+<br>
+
+**Delete Folders:**
+
+| What to delete? | "*"/"?" used in path or folder-name? | Use: |
+| --- | --- | --- |
+| Folder content, recursive, without sub-folders (structure) | No | search="walk.files" |
+| Folder content, recursive, without sub-folders (structure) | Yes | search="walk.files" |
+| Folder content, recursive, with sub-folders (structure) | No | search="walk.all" |
+| Folder content, recursive, with sub-folders (structure) | Yes | search="walk.all" |
+| Folder content, not recursive, without sub-folders | No | search="glob" |
+| Folder content, not recursive, without sub-folders | Yes | search="glob" |
+| Folder empty | No | search="file" |
+| Folder empty | Yes | search="glob" |
+| Folder not empty | No | search="folder" (*1) |
+| Folder not empty | No | search="walk.all" and the search="file" |
+| Folder not empty | Yes | search="folder" (*1) |
+| Folder not empty | Yes | search="walk.all" and then search="glob" |
+
+*1: Not yet implemented!
 
 <br>
 
