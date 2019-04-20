@@ -65,6 +65,7 @@ CleanerML allows several ways to match files:
 *   **glob**: matches one or more files with a simple pattern. See the Python documentation on [glob](https://docs.python.org/2/library/glob.html).
 *   **walk.files**: matches all files under a directory (but does not match directories).
 *   **walk.all**: matches all and directories files under a directory.
+*   **walk.top**: matches all contents of a directory and the top directory itself.
 *   **deep**: queues a deep scan
 
 What is the difference between a **deep** and **walk.files**? Deep scan expects file matches to be loosely scattered (such as Thumbs.db), but **walk.files** expects to match most files under that directory (such as Firefox's cache). To improve performance, BleachBit combines deep scans for the same directory (such as all deep scans for $HOME). In the future, BleachBit may allow the user to reconfigure the deep scan directory, so, for example, he can scan a network drive in addition to his home directory.
