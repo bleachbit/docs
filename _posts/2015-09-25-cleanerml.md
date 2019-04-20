@@ -113,7 +113,7 @@ See [Variables](/cml/variables.html).
 
 ### Sharing your cleaner
 
-Of course, you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner](https://www.bleachbit.org/contribute/cleaner).
+Of course, you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner](/cml/contributing.html).
 
 
 
