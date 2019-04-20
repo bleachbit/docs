@@ -22,6 +22,7 @@ sections: [
     ['doc', 'Documentation'],
     ['tut', 'Tutorial'],
     ['ref', 'Reference'],
+    ['cml', 'CleanerML'],
     ['dev', 'Developers'],
     ['post', 'Posts']
 ]
