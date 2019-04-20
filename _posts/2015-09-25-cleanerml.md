@@ -4,6 +4,8 @@ title: "Introduction"
 category: cml
 date: 2000-01-01 00:01:00
 # The date is set to an old date to keep this article first in its section.
+redirect_from:
+ - doc/cleanerml
 ---
 
 **CleanerML** is a simple yet powerful markup language for writing cleaners. Most of BleachBit's cleaners are written in CleanerML, and you can write your own cleaners in CleanerML too.
