@@ -13,7 +13,7 @@ is usually on the `C:` drive, but on some systems it is on the `D:` drive.
 
 Use variables in any part of CleanerML and Winapp2.ini that refers to a file path.
 
-# Home
+### Home
 
 Write `~` to refer to the user's profile directory. While this is a
 Unix convention, BleachBit supports it also on Windows.
@@ -21,7 +21,7 @@ Unix convention, BleachBit supports it also on Windows.
 Example: `~/.bashrc`
 
 
-# Environment variables
+### Environment variables
 
 Use any environment variables defined in the operating system.
 
@@ -37,19 +37,19 @@ Example: `%LocalAppData%\Google\Chrome\User Data`
 The most common Windows environment variables are `%AppData%`, `%LocalAppData%`, `%ProgramFiles%`, and `%UserProfile%`. For more information, see Wikipedia's article ["Environment variable"](https://en.wikipedia.org/wiki/Environment_variable).
 
 
-## Defined by BleachBit
+#### Defined by BleachBit
 
 In addition to the environment variables defined by the operating system,
 BleachBit defines enviroment variables for convenience and compatability.
 
-### Linux
+##### Linux
 On Linux, these variables are defined if they do not exist:
 
 * `XDG_DATA_HOME`: typically `~/.local/share`
 * `XDG_CONFIG_HOME`: typically `~/.config`
 * `XDG_CACHE_HOME`: typically `~/.cache`
 
-### Windows
+##### Windows
 On Windows, the following are defined if they do not exist:
 
 * `cd`: current directory
@@ -71,7 +71,7 @@ For compatibility with Winapp2.ini, BleachBit expands `%ProgramFiles%` to
 `%CommonProgramFiles%` to `%CommonProgramW6432%`. This expansion is not
 supported in CleanerML.
 
-## Multi-value variables
+#### Multi-value variables
 
 BleachBit 2.2 introduces to CleanerML a feature called multi-value variables. Within each cleaner, a variable can be defined with multiple values. This greatly simplifies the development and maintenance of cleaners with path variations for operating system and for application derivatives such as Google Chrome and Chromium.
 
