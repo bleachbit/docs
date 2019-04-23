@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-04-19 18:10:00
+date: 2019-04-23 23:50:00
 order: 8
 ---
 
@@ -40,9 +40,9 @@ order: 8
 [4.05 command="delete" search="glob"](#405-commanddelete-searchglob)  
 [4.06 Delete the content of a folder but not the folder itself](#407-delete-the-content-of-a-folder-but-not-the-folder-itself)  
 [4.07 Delete the content of a folder and the folder itself](#407-delete-the-content-of-a-folder-and-the-folder-itself)  
-[4.08 Delete recursive](#408-delete-recursive)  
-[4.09 Summary - Table with deletion use cases](#409-summary---table-with-deletion-use-cases)  
-[4.10 command="delete" search="deep"](#410-commanddelete-searchdeep)  
+[4.08 Delete recursive with regex](#408-delete-recursive-with-regex)  
+[4.09 command="delete" search="deep"](#409-commanddelete-searchdeep)  
+[4.10 Summary - Table with deletion use cases](#410-summary---table-with-deletion-use-cases)  
 [5.00 **Other Commands**](#500-other-commands)  
 [5.01 command="winreg"](#501-commandwinreg)  
 [5.02 Cleaning a Windows Registry Key/Path with a wildcard at the end](#502-cleaning-a-windows-registry-keypath-with-a-wildcard-at-the-end)  
@@ -310,6 +310,8 @@ Example: `<running type="pathname">~/.mozilla/firefox/*.default/lock</running>`
 Generally it is preffered to have this exe/pathname check included in cleaners!  
 And generally the `exe` variation is preffered over the `pathname` variation!
 
+Btw.: `running` need no `search="glob"`, because `running` is always `glob`!
+
 [Back to index](#content-of-the-chapter)
 
 <br>
@@ -537,7 +539,7 @@ Follows
 
 <br>
 
-### 4.08 Delete recursive
+### 4.08 Delete recursive with regex
 
 **Follows**  
 Follows
@@ -553,12 +555,37 @@ Follows
 `regex="^Thumbs\.db$"` -> Exact file name  
 `regex="^`[...] -> File name starts with  
 `regex="\.`[...] -> File extension is  
+`regex="\.log(\.[0-9]+)?$` -> File extension is `.log.[0-9]` + The plus will match one or more such as 1 or 99 and the question mark makes the number optional  
+Test the logic of your regex string: https://regex101.com/
+
+Works also with `walk.all` & `glob` (`file` too, but makes no sence)!
 
 [Back to index](#content-of-the-chapter)
 
 <br>
 
-### 4.09 Summary - Table with deletion use cases
+### 4.09 command="delete" search="deep"
+
+**Follows**  
+`command="delete" search="deep"` searches across the file system, currently just the user profile, and it is optimized for speed to search for multiple patterns at once.
+
+**Example:**  
+`<action command="delete" search="deep" cache="false" regex="\.[Ll][Oo][Gg]$"/>`
+
+**Explanaition:**  
+Follows
+
+**More examples:**  
+For more `regex` examples look one chapter above under "Delete recursive with regex"!
+
+If you find in a cleaner a `search="deep"` with a `cache="false"` (or a `cache="true"`), then you can delete the `cache="false"` (or `cache="true"`)!
+This feature was never fully implemented and later removed, again!
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 4.10 Summary - Table with deletion use cases
 
 **Delete Files:**
 
@@ -570,6 +597,8 @@ Follows
 | No | No | Path=Yes | search="glob" |
 | No | Yes | Path=No | search="walk.files" with regex="[...]" |
 | No | Yes | Path=Yes | search="walk.files" with regex="[...]" |
+
+* `command="delete" search="deep"` is a special case to make a deep scan!
 
 <br>
 
@@ -591,27 +620,6 @@ Follows
 | Folder not empty | Yes | search="walk.all" and then search="glob" |
 
 *1: Not yet implemented!
-
-[Back to index](#content-of-the-chapter)
-
-<br>
-
-### 4.10 command="delete" search="deep"
-
-**Follows**  
-Follows
-
-**Example:**  
-`<action command="delete" search="deep" cache="false" regex="\.[Ll][Oo][Gg]$"/>`
-
-**Explanaition:**  
-Follows
-
-**More examples:**  
-`regex="\.[Bb][Aa][Kk]$"` -> File Extension, not key sensetive  
-`regex="^Thumbs\.db$"` -> Exact file name  
-`regex="^`[...] -> File name starts with  
-`regex="\.`[...] -> File extension is  
 
 [Back to index](#content-of-the-chapter)
 
