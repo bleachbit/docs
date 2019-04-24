@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-04-24 15:15:00
+date: 2019-04-24 16:10:00
 order: 8
 ---
 
@@ -45,22 +45,23 @@ order: 8
 [4.08 Delete recursive with regex](#408-delete-recursive-with-regex)  
 [4.09 command="delete" search="deep"](#409-commanddelete-searchdeep)  
 [4.10 Summary - Table with deletion use cases](#410-summary---table-with-deletion-use-cases)  
-[5.00 **Other Commands**](#500-other-commands)  
+[5.00 **Commands for Registry, INI, XML, DBs, run**](#500-commands-for-registry-ini-xml-dbs-run)  
 [5.01 command="winreg"](#501-commandwinreg)  
 [5.02 Cleaning a Windows Registry Key/Path with a wildcard at the end](#502-cleaning-a-windows-registry-keypath-with-a-wildcard-at-the-end)  
 [5.03 command="ini"](#503-commandini)  
 [5.04 command="xml"](#504-commandxml)  
 [5.05 command="sqlite.vacuum"](#505-commandsqlitevacuum)  
 [5.06 command="json"](#506-commandjson)  
-[5.07 command="mozilla.url.history"](#507-commandmozillaurlhistory)  
-[5.08 command="chrome.databases_db"](#508-commandchromedatabasesdb)  
-[5.09 command="chrome.autofill"](#509-commandchromeautofill)  
-[5.10 command="chrome.history"](#510-commandchromehistory)  
-[5.11 command="chrome.favicons"](#511-commandchromefavicons)  
-[5.12 command="chrome.keywords"](#512-commandchromekeywords)  
-[5.13 Run an external program](#513-run-an-external-program)  
-[6.00 **When done**](#600-when-done)  
-[6.01 Pretty, 2](#601-pretty-2)
+[5.07 Run an external program](#507-run-an-external-program)  
+[6.00 **Commands for Browsers**](#600-commands-for-browsers)  
+[6.01 command="mozilla.url.history"](#601-commandmozillaurlhistory)  
+[6.02 command="chrome.databases_db"](#602-commandchromedatabases_db)  
+[6.03 command="chrome.autofill"](#603-commandchromeautofill)  
+[6.04 command="chrome.history"](#604-commandchromehistory)  
+[6.05 command="chrome.favicons"](#605-commandchromefavicons)  
+[6.06 command="chrome.keywords"](#606-commandchromekeywords)  
+[7.00 **When done**](#700-when-done)  
+[7.01 Pretty, 2](#701-pretty-2)
 
 <br>
 
@@ -68,7 +69,7 @@ order: 8
 
 <br>
 
-### Introduction
+### 1.01 Introduction
 
 CleanerML was designed and written by Andrew Ziem from BleachBit.org for BleachBit.  
 But the documentation and the CleanerML files are open and therefor can be used by any program that fulfill the license.  
@@ -79,7 +80,7 @@ CleanerML is still under development and new features get added.
 
 <br>
 
-### The Editor
+### 1.02 The Editor
 
 If you be a Windows User, we recommend you to use Notepad++ as editor of choice!  
 Notepad++ is Open Source, too and have a wonderfull code highlighting for XML files and therefor your coding experience get much more colored and visual.  
@@ -520,7 +521,8 @@ all folders starting with `BiglyBT*`.
 ### 4.05 command="delete" search="glob"
 
 **Follows**  
-Needed if you e.g. use a wildcard (`*`)!
+Needed if you e.g. use a wildcard (`*`)!  
+**Wherever a glob pattern is supporter, there is no practical limit on the number of wildcards.**
 
 **Example:**  
 `<action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>`
@@ -660,7 +662,7 @@ This feature was never fully implemented and later removed, again!
 
 <br>
 
-<H1>5.00 Other Commands</H1>
+<H1>5.00 Commands for Registry, INI, XML, DBs, run</H1>
 
 <br>
 
@@ -775,97 +777,7 @@ Follows
 
 <br>
 
-### 5.07 command="mozilla.url.history"
-
-**Follows**  
-Follows
-
-**Example:**  
-`<action command="mozilla.url.history" search="file" path="$$profile$$/places.sqlite"/>`
-
-**Explanaition:**  
-Follows
-
-[Back to index](#content-of-the-chapter)
-
-<br>
-
-### 5.08 command="chrome.databases_db"
-
-**Follows**  
-Follows
-
-**Example:**  
-`<action command="chrome.databases_db" search="file" path="$$profile$$/databases/Databases.db"/>`
-
-**Explanaition:**  
-Follows
-
-[Back to index](#content-of-the-chapter)
-
-<br>
-
-### 5.09 command="chrome.autofill"
-
-**Follows**  
-Follows
-
-**Example:**  
-`<action command="chrome.autofill" search="file" path="$$profile$$/Web Data"/>`
-
-**Explanaition:**  
-Follows
-
-[Back to index](#content-of-the-chapter)
-
-<br>
-
-### 5.10 command="chrome.history"
-
-**Follows**  
-Follows
-
-**Example:**  
-`<action command="chrome.history" search="file" path="$$profile$$/History"/>`
-
-**Explanaition:**  
-Follows
-
-[Back to index](#content-of-the-chapter)
-
-<br>
-
-### 5.11 command="chrome.favicons"
-
-**Follows**  
-Follows
-
-**Example:**  
-`<action command="chrome.favicons" search="file" path="$$profile$$/Favicons"/>`
-
-**Explanaition:**  
-Follows
-
-[Back to index](#content-of-the-chapter)
-
-<br>
-
-### 5.12 command="chrome.keywords"
-
-**Follows**  
-Follows
-
-**Example:**  
-`<action command="chrome.keywords" search="file" path="$$profile$$/Web Data"/>`
-
-**Explanaition:**  
-Follows
-
-[Back to index](#content-of-the-chapter)
-
-<br>
-
-### 5.13 Run an external program
+### 5.07 Run an external program
 
 **Follows**  
 Follows
@@ -886,11 +798,105 @@ You can use `cmd.exe` to start other programs.
 
 <br>
 
-<H1>6.00 When done</H1>
+<H1>6.00 Commands for Browsers</H1>
 
 <br>
 
-### 6.01 Pretty, 2
+### 6.01 command="mozilla.url.history"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="mozilla.url.history" search="file" path="$$profile$$/places.sqlite"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 6.02 command="chrome.databases_db"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.databases_db" search="file" path="$$profile$$/databases/Databases.db"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 6.03 command="chrome.autofill"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.autofill" search="file" path="$$profile$$/Web Data"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 6.04 command="chrome.history"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.history" search="file" path="$$profile$$/History"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 6.05 command="chrome.favicons"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.favicons" search="file" path="$$profile$$/Favicons"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 6.06 command="chrome.keywords"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.keywords" search="file" path="$$profile$$/Web Data"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+<H1>7.00 When done</H1>
+
+<br>
+
+### 7.01 Pretty, 2
 
 When you be finished, you can run "Makefile" or "Makefile.bat" to make the code of your XML file pretty.
 
