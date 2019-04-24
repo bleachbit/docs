@@ -2,7 +2,7 @@
 layout: page
 title: "CleanerML Version 2.0 Documentation"
 category: doc
-date: 2019-04-23 23:50:00
+date: 2019-04-24 15:15:00
 order: 8
 ---
 
@@ -36,9 +36,9 @@ order: 8
 [3.08 Define multi-value Variables](#308-define-multi-value-variables)
 [4.00 **command="delete"**](#400-commanddelete)  
 [4.01 command="delete" search="file"](#401-commanddelete-searchfile)  
-[4.02 command="delete" search="folder"](#402-commanddelete-searchfolder)  
-[4.03 command="delete" search="walk.files"](#403-commanddelete-searchwalkfiles)  
-[4.04 command="delete" search="walk.all"](#404-commanddelete-searchwalkall)  
+[4.02 command="delete" search="walk.files"](#402-commanddelete-searchwalkfiles)  
+[4.03 command="delete" search="walk.all"](#403-commanddelete-searchwalkall)  
+[4.04 command="delete" search="walk.top"](#404-commanddelete-searchwalktop)  
 [4.05 command="delete" search="glob"](#405-commanddelete-searchglob)  
 [4.06 Delete the content of a folder but not the folder itself](#407-delete-the-content-of-a-folder-but-not-the-folder-itself)  
 [4.07 Delete the content of a folder and the folder itself](#407-delete-the-content-of-a-folder-and-the-folder-itself)  
@@ -51,8 +51,14 @@ order: 8
 [5.03 command="ini"](#503-commandini)  
 [5.04 command="xml"](#504-commandxml)  
 [5.05 command="sqlite.vacuum"](#505-commandsqlitevacuum)  
-[5.06 command="json" search="file"](#506-commandjson-searchfile)  
-[5.07 Run an external program](#507-run-an-external-program)  
+[5.06 command="json"](#506-commandjson)  
+[5.07 command="mozilla.url.history"](#507-commandmozillaurlhistory)  
+[5.08 command="chrome.databases_db"](#508-commandchromedatabasesdb)  
+[5.09 command="chrome.autofill"](#509-commandchromeautofill)  
+[5.10 command="chrome.history"](#510-commandchromehistory)  
+[5.11 command="chrome.favicons"](#511-commandchromefavicons)  
+[5.12 command="chrome.keywords"](#512-commandchromekeywords)  
+[5.13 Run an external program](#513-run-an-external-program)  
 [6.00 **When done**](#600-when-done)  
 [6.01 Pretty, 2](#601-pretty-2)
 
@@ -430,27 +436,7 @@ Deletes a single file or an empty folder in the file system.
 
 <br>
 
-### 4.02 command="delete" search="folder"
-
-**Deleting a single folder**  
-Deletes a single folder in the file system. **This feature is planed and not yet implemented!**
-
-**Example:**  
-`<action command="delete" search="folder" path="%Temp%\DemoFolder\"`
-
-**Explanaition:**  
-`command` is always `"delete"`, `search` is always `"folder"`, `path` is the path & name of the file to delete.
-
-**Not sure if `<action command="delete" search="folder" path="%ProgramFiles%\BiglyBT*\"/>` will work!**  
-**Not sure if `<action command="delete" search="folder" path="%Temp%\DemoFolder\"/>` will work when the folder is not empty!**  
-
-Link to the issue ["command="delete" search="folder" ?"](https://github.com/bleachbit/bleachbit/issues/446).
-
-[Back to index](#content-of-the-chapter)
-
-<br>
-
-### 4.03 command="delete" search="walk.files"
+### 4.02 command="delete" search="walk.files"
 
 **Follows**  
 Follows
@@ -480,7 +466,7 @@ If you mean every directory under %AppData%\Daum\PotPlayer\Log\, then walk.files
 
 <br>
 
-### 4.04 command="delete" search="walk.all"
+### 4.03 command="delete" search="walk.all"
 
 **Follows**  
 Delete e.g. the content of a folder.
@@ -504,6 +490,28 @@ This also doesn't work!
 `<action command="delete" search="walk.all" path="%windir%\Temp*\WER1.hdmp"/>`  
 Use `glob` instead:  
 `<action command="delete" search="glob" path="%windir%\Temp*\WER1.hdmp"/>`
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 4.04 command="delete" search="walk.top"
+
+**Deleting a single folder**  
+Deletes a single folder including his content in the file system.  
+**This feature is implemented starting with BleachBit v3.0!**  
+**As some users still stay on Windows XP with BleachBit v2.2 (last version for WinXP) but use new cleaners,  
+it is highly recommended to use this new feature at the moment with care!**
+
+**Example:**  
+`<action command="delete" search="walk.top" path="%Temp%\DemoFolder\"`
+
+**Explanaition:**  
+`command` is always `"delete"`, `search` is always `"walk.top"`, `path` is the path & name of the folder to delete.
+
+**More Examples:**  
+`<action command="delete" search="walk.top" path="%ProgramFiles%\BiglyBT*\"/>` will delete in `%ProgramFiles%`  
+all folders starting with `BiglyBT*`.  
 
 [Back to index](#content-of-the-chapter)
 
@@ -557,6 +565,10 @@ Follows
 
 **Explanaition:**  
 `walk.all` deletes the content of the folder and shows it in BleachBit, while `file` deletes after that the empty folder itself.
+
+**Starting with BleachBit v3.0 there is `command="delete" search="walk.top"` as a single command to do that!  
+But as some users still stay on Windows XP with BleachBit v2.2 (last version for WinXP) but use new cleaners,  
+it is highly recommended to use this new feature at the moment with care!**
 
 [Back to index](#content-of-the-chapter)
 
@@ -621,7 +633,7 @@ This feature was never fully implemented and later removed, again!
 | No | Yes | Path=No | search="walk.files" with regex="[...]" |
 | No | Yes | Path=Yes | search="walk.files" with regex="[...]" |
 
-* `command="delete" search="deep"` is a special case to make a deep scan!
+`command="delete" search="deep"` is a special case to make a deep scan!
 
 <br>
 
@@ -637,12 +649,12 @@ This feature was never fully implemented and later removed, again!
 | Folder content, not recursive, without sub-folders | Yes | search="glob" |
 | Folder empty | No | search="file" |
 | Folder empty | Yes | search="glob" |
-| Folder not empty | No | search="folder" (*1) |
+| Folder not empty | No | search="walk.top" (*1) |
 | Folder not empty | No | search="walk.all" and the search="file" |
-| Folder not empty | Yes | search="folder" (*1) |
+| Folder not empty | Yes | search="walk.top" (*1) |
 | Folder not empty | Yes | search="walk.all" and then search="glob" |
 
-*1: Not yet implemented!
+*1: `search="walk.top"` is implemented starting with BleachBit v3.0!
 
 [Back to index](#content-of-the-chapter)
 
@@ -748,7 +760,7 @@ Follows
 
 <br>
 
-### 5.06 command="json" search="file"
+### 5.06 command="json"
 
 **Follows**  
 Follows
@@ -763,7 +775,97 @@ Follows
 
 <br>
 
-### 5.07 Run an external program
+### 5.07 command="mozilla.url.history"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="mozilla.url.history" search="file" path="$$profile$$/places.sqlite"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 5.08 command="chrome.databases_db"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.databases_db" search="file" path="$$profile$$/databases/Databases.db"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 5.09 command="chrome.autofill"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.autofill" search="file" path="$$profile$$/Web Data"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 5.10 command="chrome.history"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.history" search="file" path="$$profile$$/History"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 5.11 command="chrome.favicons"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.favicons" search="file" path="$$profile$$/Favicons"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 5.12 command="chrome.keywords"
+
+**Follows**  
+Follows
+
+**Example:**  
+`<action command="chrome.keywords" search="file" path="$$profile$$/Web Data"/>`
+
+**Explanaition:**  
+Follows
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 5.13 Run an external program
 
 **Follows**  
 Follows
