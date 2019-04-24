@@ -13,12 +13,14 @@ order: 8
 ### Content of the chapter
 
 [1.00 **General**](#100-general)  
-[1.01 Be pretty](#101-be-pretty)  
-[1.02 Python & "glob" (Unix style pathname pattern expansion)](#102-python--glob-unix-style-pathname-pattern-expansion)  
-[1.03 Using Variables](#103-using-variables)  
-[1.04 Windows Variables](#104-windows-variables)  
-[1.05 Unix Variables](#105-unix-variables)  
-[1.06 Example Cleaner](#106-example-cleaner)  
+[1.01 Introduction](#101-introduction)  
+[1.02 The Editor](#102-the-editor)  
+[1.03 Be pretty](#103-be-pretty)  
+[1.04 Python & "glob" (Unix style pathname pattern expansion)](#104-python--glob-unix-style-pathname-pattern-expansion)  
+[1.05 Using Variables](#105-using-variables)  
+[1.06 Windows Variables](#106-windows-variables)  
+[1.07 Unix Variables](#107-unix-variables)  
+[1.08 Example Cleaner](#108-example-cleaner)  
 [2.00 **Header**](#200-header)  
 [2.01 First Line](#201-first-line)  
 [2.02 Copyright & Additional Information](#202-copyright--additional-information)  
@@ -60,7 +62,28 @@ order: 8
 
 <br>
 
-### 1.01 Be pretty
+### Introduction
+
+CleanerML was designed and written by Andrew Ziem from BleachBit.org for BleachBit.  
+But the documentation and the CleanerML files are open and therefor can be used by any program that fulfill the license.  
+CleanerML is a XML-based markup language to write platform independend system cleaners.  
+CleanerML is still under development and new features get added.  
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### The Editor
+
+If you be a Windows User, we recommend you to use Notepad++ as editor of choice!  
+Notepad++ is Open Source, too and have a wonderfull code highlighting for XML files and therefor your coding experience get much more colored and visual.  
+Notepad++ is available for download here: https://notepad-plus-plus.org/
+
+[Back to index](#content-of-the-chapter)
+
+<br>
+
+### 1.03 Be pretty
 
 **Coding style:**  
 We use the coding style that xmllint (Linux Program) use! (More to xmllint at the end of this docu...)
@@ -79,7 +102,7 @@ XML files get in repo later formated/tested with xmllint...
 
 <br>
 
-### 1.02 Python & "glob" (Unix style pathname pattern expansion)
+### 1.04 Python & "glob" (Unix style pathname pattern expansion)
 
 According to https://docs.python.org/3/library/glob.html:
 The `glob` module finds all the pathnames matching a specified pattern according to the rules used by the Unix shell, [...].
@@ -96,7 +119,7 @@ In the following there will be here and there some cases & examples in the docum
 
 <br>
 
-### 1.03 Using Variables
+### 1.05 Using Variables
 
 **Use Variables to have the path relative**  
 You can use Variables (you should!) to have the path relative!
@@ -112,7 +135,7 @@ https://docs.bleachbit.org/doc/cleanerml.html
 
 <br>
 
-### 1.04 Windows Variables
+### 1.06 Windows Variables
 
 BleachBit allows all the normal operating system variables, and it adds some extras.  
 Read about the normal operating system variables (Environment Variables):  
@@ -162,7 +185,7 @@ On Windows, BleachBit defines `%cd%` (current directory), `%commonappdata%`, `%d
 
 <br>
 
-### 1.05 Unix Variables
+### 1.07 Unix Variables
 
 FOLLOWS !!!
 
@@ -174,7 +197,7 @@ For more look here: https://wiki.archlinux.org/index.php/XDG_Base_Directory
 
 <br>
 
-### 1.06 Example Cleaner
+### 1.08 Example Cleaner
 
 Here is an example cleaner:  
 https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml
