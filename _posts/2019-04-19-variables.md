@@ -77,4 +77,9 @@ BleachBit 2.2 introduces to CleanerML a feature called multi-value variables. Wi
 
 The syntax to use a multi-value variable is `$$foo$$` on both Linux and Windows. Multi-value variable names are case-sensitive, and values can contain environment variables. See the Adobe Flash cleaner (`flash.xml`) for a basic example.
 
+BleachBit 3.0 introduces default variables on Windows
+
+* `$$ProgramFiles$$` expands to both `%ProgramFiles%` and `%ProgramW6432%`
+* `$$CommonProgramFiles$$` expands both `%CommonProgramFiles%` and `%CommonProgramW6432%`
+
 
