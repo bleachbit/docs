@@ -66,7 +66,7 @@ CleanerML allows several ways to match files:
 *   **file**: matches a single file.
 *   **glob**: matches one or more files with a simple pattern. See the Python documentation on [glob](https://docs.python.org/2/library/glob.html).
 *   **walk.files**: matches all files under a directory (but does not match directories).
-*   **walk.all**: matches all and directories files under a directory.
+*   **walk.all**: matches all files and directories under a directory (but not the top directory).
 *   **walk.top**: matches all contents of a directory and the top directory itself.
 *   **deep**: queues a deep scan
 
