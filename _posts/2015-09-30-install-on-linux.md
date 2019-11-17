@@ -36,11 +36,18 @@ Installing using apt from the distribution's repositories is _not_ recommended b
 ### Fedora, Red Hat, CentOS
 
 #### Graphical package manager
-To install BleachBit using the graphic package manager, double click on the downloaded installation package which has a name like `bleachbit-2.2-1.1.fc28.noarch.rpm`. Then, follow the prompts.
+
+To install BleachBit using the graphic package manager, double click on the downloaded installation package which has a name like `bleachbit-3.0-1.1.fc28.noarch.rpm`. Then, follow the prompts.
+
+The 3.0 package has a bug: it will not ask you to install the dependency `python2-gobject`, so you will need to install it yourself.
 
 
 #### Command line
 Alternatively, install using the command line like this.
+
+First, install these dependencies for BleachBit 3.0. (BleachBit versions 2.x and 4.0 have different dependencies.)
+
+`sudo dnf install python2-gobject python2-scandir`
 
 To avoid a key error, import the public key:
 
@@ -51,7 +58,7 @@ sudo rpm --import /tmp/bleachbit_public.key
 
 The following command installs BleachBit using the command line:
 
-`sudo rpm -Uvh bleachbit-2.2-1.1.fc28.noarch.rpm`
+`sudo rpm -Uvh bleachbit-3.0-1.1.fc28.noarch.rpm`
 
 ### Digital signatures
 
