@@ -61,6 +61,30 @@ To overwrite the contents of files, so they cannot be undeleted later, add ```--
 
 Without ```--overwrite```, BleachBit checks the configuration set in the graphical user interface.
 
+### Shredding files
+
+To shred any file, so its contents cannot be recovered, use `--shred`. While `--overwrite` refers to the files identified by `--clean`, the option `--shred` shreds any file anywhere. For example, this shreds one file named `yoga_emails.txt`:
+
+`bleachbit --shred ~/yoga_email.txt`
+
+To shred all files under a directory, pass the name of the directory like this:
+
+`bleachbit --shred "C:\Microsoft Exchange\Top Secret Emails\"`
+
+
+### Wiping free space
+
+When files are [deleted without shredding](shred-files-and-wipe-disks.html), the contents might be recoverable from the disk's free space. To prevent recovery from free space, you can wipe the free space. Unlike wiping specific files, wiping free space takes a long time.
+
+You might want to wipe free space for each logical drive. For example, on Windows you might wipe `C:` and `D:`, if you have both and write sensitive files to them both. On Linux, you might want to wipe `/` and `/home` if they are separate partitions and if you write sensitive information to both.
+
+To wipe any partition, pass any writable directory in that partition to `--wipe-free-space`. For example:
+
+`bleachbit --wipe-free-space ~/.cache/`
+
+Wiping free space does not change how much free space is left, when the process is done. For example, if you start with 10GB free, then you will still have 10GB free when the process is done.
+
+
 ### cron example (Linux)
 
 To vacuum Firefox each night at 03:00, run:
