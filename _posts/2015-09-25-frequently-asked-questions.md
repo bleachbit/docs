@@ -7,7 +7,9 @@ order: 5
 ---
 
 ### Q: Why do I see permissions denied errors on Linux?
-A: If you are trying to clean the system (localizations, APT, or Yum), run BleachBit with root permissions by choosing the menu option "BleachBit as Administrator" _or_ using <tt>sudo</tt> on the command line.
+A: If you are trying to clean the system (for example, localizations, APT, or DNF), run BleachBit with root permissions. To elevate permissions, choose the menu option "BleachBit as Administrator" _or_ run <tt>sudo</tt> on the command line.
+
+Alternatively, when running as a normal user, uncheck options that require root permissions.
 
 ### Q: Why do I see permission denied errors on Windows?
 This happens when cleaning certain files, such as Windows system logs under ``c:\windows``.
