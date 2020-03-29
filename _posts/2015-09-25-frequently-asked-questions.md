@@ -73,10 +73,10 @@ Yet, cache contains content you have viewed and can be used to reconstruct some 
 ### Q: Should I delete cookies?
 A: Cookies are not inherently evil or dangerous. The following statements are *false*:
 
-*   Cookies have many uses besides advertising
-*   Cookies cannot infect a computer like a virus
-*   Cookies do not cause popup ads.
-*   Cookies cannot read arbitrary information from your computer (such as your name, your credit card, or private documents)
+*   Cookies have no uses besides advertising
+*   Cookies can infect a computer like a virus
+*   Cookies cause popup ads
+*   Cookies can read arbitrary information from your computer (such as your name, your credit card, or private documents)
 
 Cookies perform useful functions such as maintaining your login information: this saves you the time of logging in again. Many web sites use cookies to make honest improvements such as simplifying confusing navigation. Cookies rarely contain personally identifiable information (such as a name or email address). With a high degree of success (but a greater hassle for the web operator), web sites can still track visitors who have cookies disabled (using unique information such as IP address, user agent, plugins, etc), so disabling cookies may not have the intended effect.
 
