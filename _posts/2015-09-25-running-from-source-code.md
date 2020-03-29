@@ -33,7 +33,7 @@ On Microsoft Windows you must install several dependencies:
 
 Python, GTK+, and all Python extensions should be 32-bit. Mixing 64-bit and 32-bit components will cause errors.
 
-Alternatively, use [gtk-download.sh](https://github.com/az0/bleachbit-misc/blob/master/gtk-download.sh) and [gtk-unpack.sh](https://github.com/az0/bleachbit-misc/blob/master/gtk-unpack.sh).
+Alternatively, use [gtk-download.sh](https://github.com/bleachbit/bleachbit-misc/blob/master/gtk-download.sh) and [gtk-unpack.sh](https://github.com/bleachbit/bleachbit-misc/blob/master/gtk-unpack.sh).
 
 ### BleachBit 4.x
 
@@ -72,7 +72,7 @@ Here is a full list of BleachBit Git repositories:
 
 *   [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
 *   [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
-*   [CleanerML](https://github.com/az0/cleanerml): extra cleaners
+*   [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
 *   [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
 
 ### Building translations

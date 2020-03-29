@@ -42,10 +42,10 @@ Most of these locations are also scanned for [winapp2.ini](/doc/winapp2ini.html)
 
 To learn CleanerML so you can write your own cleaner, read these resources:
 
-*   [Example cleaner](https://github.com/az0/bleachbit/blob/master/doc/example_cleaner.xml) with many annotations
-*   [Cleaners that come standard with BleachBit](https://github.com/az0/bleachbit/tree/master/cleaners)
-*   [Bonus cleaners](https://github.com/az0/cleanerml)
-*   [XSD (XML Schema Definition)](https://github.com/az0/bleachbit/blob/master/doc/cleaner_markup_language.xsd) used for validation
+*   [Example cleaner](https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml) with many annotations
+*   [Cleaners that come standard with BleachBit](https://github.com/bleachbit/bleachbit/tree/master/cleaners)
+*   [Bonus cleaners](https://github.com/bleachbit/cleanerml)
+*   [XSD (XML Schema Definition)](https://github.com/bleachbit/bleachbit/blob/master/doc/cleaner_markup_language.xsd) used for validation
 
 ### Finding files to delete
 

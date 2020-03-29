@@ -27,7 +27,7 @@ To share the cleaner with others, submit it for review:
 
 * Do not submit cleaners as your own in which you copied and pasted other's work.  You must own the copyright.
 * You must license the cleaner under the GNU General License Version 3 or later.
-* Submit the cleaner to [cleanerml on GitHub](https://github.com/az0/cleanerml) as an issue (with a link to a gist) or pull request.
+* Submit the cleaner to [cleanerml on GitHub](https://github.com/bleachbit/cleanerml) as an issue (with a link to a gist) or pull request.
 * Identify the platform you tested (for example, Ubuntu 9.04 or Windows Vista).
 * Identify the application version tested (for example, Firefox 3.0.10).
 * (optional) Describe how much space each option cleans. For example, "the log option deleted 2KB."
@@ -40,7 +40,7 @@ Then, wait for a review. Until the final publication, remember you can add the c
 
 Help review another person's cleaner submission.  Because there are so many applications, versions of applications, differences in operating systems, etc., the help of the community is essential.
 
-Look in [GitHub](https://github.com/az0/cleanerml) and review them
+Look in [GitHub](https://github.com/bleachbit/cleanerml) and review them
 
 * Be polite.
 * Review the testing guidelines, written above.
