@@ -55,7 +55,13 @@ These instructions are valid since BleachBit version 1.2 released in 2014.
 A: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
 
 ### Q: How do I see BleachBit in my own language on Microsoft Windows?
-A: The language chosen in the installer does not affect the application. Open the Windows Control Panel, click on Regionalization, choose your language under Standards and Formats, and restart BleachBit. _Alternatively_, you can set the [environment variable](https://support.microsoft.com/en-us/help/310519/how-to-manage-environment-variables-in-windows-xp) **LANG** to your [ISO 639-1 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (for example, Spanish is ```es```) or locale code (Mexican Spanish is ```es_MX```).
+A: There are a few ways to affect the language of the BleachBit user interface.
+
+In the Windows search bar, type "Language settings" and open it. Under the Windows display language, choose the preferred language, and then restart BleachBit.
+
+To force BleachBit to always show in English, download and install the English installer instead of the regular installer. If using the regular (non-English-only) installer, uncheck the option to install translations.
+
+The language chosen in the BleachBit installer does not affect the BleachBit application: it affects only the language of the installer.
 
 
 ## Things to know
