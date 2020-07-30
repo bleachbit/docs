@@ -46,6 +46,8 @@ If this option is disabled, and BleachBit is slow, look at the option **Edit - P
 ### Q: I closed BleachBit while it was working for a long time, and now my hard drive is full. How do I fix it?
 A: Run BleachBit, and clean the option **System - Temporary Files**. On Linux, also clean **System - Cache**. This will delete one or more files that are gigantic and have random filenames.
 
+In case you are using the command line or another application to delete these files, the default location on Linux is `~/.cache/`. If it is not the same partition, `/tmp/` is also used. On Windows, the default locations are `%TMP%`. If there are other fixed drives such as `D:`, they are also used.
+
 If you changed the default options under **Preferences - Drives**, look there for the large files.
 
 These instructions are valid since BleachBit version 1.2 released in 2014.
