@@ -21,11 +21,11 @@ This video introduces the command line interface for Microsoft Windows.
 
 ### Microsoft Windows
 
-In Windows, use the executable ```bleachbit_console.exe``` to console output. The executable isn't added automatically to the path, so you use the full path ```C:\Program Files\BleachBit\bleachbit_console.exe```. Where acceptable, it is best to substitute the environment variable ```%ProgramFiles%``` for ```C:\Program Files\```.
+In Windows, use the executable `bleachbit_console.exe` to console output. The directory isn't added automatically to the path, so you use the full path `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`. Where acceptable, it is best to substitute the environment variable `%ProgramFiles(x86)%` for `C:\Program Files (x86)\`.
 
 ### Linux
 
-Running ```bleachbit``` (which is in the path) with arguments runs BleachBit in command line mode. Without arguments, BleachBit runs in graphical mode. The clipboard can only be cleaned under an X session (which is generally not available over SSH or in cron).
+Running `bleachbit` (which is in the path) with arguments runs BleachBit in command line mode. Without arguments, BleachBit runs in graphical mode. The clipboard can only be cleaned under an X session (which is generally not available over SSH or in cron).
 
 ### Listing options
 
@@ -51,7 +51,6 @@ To select the same options as in the GUI, use ```--preset```, which may be combi
 
 `bleachbit --preview --preset firefox.cookies`
 
-_--preset requires BleachBit 0.8.7 or later_
 
 ### Deleting files
 
@@ -110,7 +109,7 @@ To vacuum Firefox each night at 03:00:
 *   Click **Add Scheduled Task**.
 *   Click **Next**.
 *   Click **Browse**.
-*   Choose ```C:\Program Files\BleachBit\bleachbit_console.exe```.
+*   Choose ```C:\Program Files (x86)\BleachBit\bleachbit_console.exe```.
 *   Choose **Daily**.
 *   Set the start time.
 *   Click **Next**.
