@@ -64,7 +64,7 @@ The following command installs BleachBit using the command line:
 
 Verifying the digital signature protects you against file corruption and tampering.
 
-To verify the digital signature, first you will need a public key. BleachBit versions 3.0 and later are signed with key 0xd6d447b02b4d4c9d ([MIT](https://pgp.mit.edu/pks/lookup?op=get&search=0xD6D447B02B4D4C9D) or [SF](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2019.key/view)). Older releases before BleachBit version 3.0 were signed with [key 0xD6D447B02B4D4C9D](http://bleachbit.sourceforge.net/bleachbit_public.key).
+To verify the digital signature, first you will need a public key. BleachBit versions 3.0 and later are signed with key 0xd6d447b02b4d4c9d ([gnupg.net](http://keys.gnupg.net/pks/lookup?search=0xD6D447B02B4D4C9D&fingerprint=on&op=index) or [SF](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2019.key/view)). Older releases before BleachBit version 3.0 were signed with key 0x51416DE60E6887FD ([gpupg.net](http://keys.gnupg.net/pks/lookup?search=0x51416DE60E6887FD&fingerprint=on&op=index) or [SF](http://bleachbit.sourceforge.net/bleachbit_public.key)).
 
 Second, you will need either detached signatures or signed checksums. You do not need both.
 
