@@ -13,6 +13,12 @@ Most anything you can do with the graphical user interface, you can do with Blea
 
 This page includes some examples.
 
+### Video
+
+This video introduces the command line interface for Microsoft Windows.
+
+[![YouTube video](http://img.youtube.com/vi/Tdn81MXqcZo/0.jpg)](http://www.youtube.com/watch?v=Tdn81MXqcZo "Introduction to BleachBit command line for Windows")
+
 ### Microsoft Windows
 
 In Windows, use the executable ```bleachbit_console.exe``` to console output. The executable isn't added automatically to the path, so you use the full path ```C:\Program Files\BleachBit\bleachbit_console.exe```. Where acceptable, it is best to substitute the environment variable ```%ProgramFiles%``` for ```C:\Program Files\```.
