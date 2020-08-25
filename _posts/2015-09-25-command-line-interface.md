@@ -17,7 +17,7 @@ This page includes some examples.
 
 This video introduces the command line interface for Microsoft Windows.
 
-[![YouTube video](http://img.youtube.com/vi/Tdn81MXqcZo/0.jpg)](http://www.youtube.com/watch?v=Tdn81MXqcZo "Introduction to BleachBit command line for Windows")
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Tdn81MXqcZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Microsoft Windows
 
