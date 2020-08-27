@@ -13,9 +13,9 @@ To install BleachBit, first [download](https://www.bleachbit.org/download/linux)
 
 BleachBit version 2.2 required Python 2.7 and GTK version 2. It did *not* support Python 2.5, Python 2.7, Python 3, or GTK 3.
 
-BleachBit 3 requires GTK 3 and Python 2.7.
+BleachBit 3 required GTK 3 and Python 2.7.
 
-BleachBit 4 (coming soon) will require GTK 3 and Python 3.
+BleachBit 4 (the latest release) requires GTK 3 and Python 3. (It no longer supports Python 2.)
 
 
 ### Ubuntu, Mint, and Debian
