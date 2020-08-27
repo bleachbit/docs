@@ -64,9 +64,18 @@ The following command installs BleachBit using the command line:
 
 Verifying the digital signature protects you against file corruption and tampering.
 
-To verify the digital signature, first you will need a public key. BleachBit versions 3.0 and later are signed with key 0xd6d447b02b4d4c9d ([gnupg.net](http://keys.gnupg.net/pks/lookup?search=0xD6D447B02B4D4C9D&fingerprint=on&op=index) or [SF](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2019.key/view)). Older releases before BleachBit version 3.0 were signed with key 0x51416DE60E6887FD ([gpupg.net](http://keys.gnupg.net/pks/lookup?search=0x51416DE60E6887FD&fingerprint=on&op=index) or [SF](http://bleachbit.sourceforge.net/bleachbit_public.key)).
+To verify the digital signature, first you will need a public key. BleachBit versions 3.0 and later are signed with key 0xd6d447b02b4d4c9d ([gnupg.net](http://keys.gnupg.net/pks/lookup?search=0xD6D447B02B4D4C9D&fingerprint=on&op=index) or [SF](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2019.key/download)). Older releases before BleachBit version 3.0 were signed with key 0x51416DE60E6887FD ([gpupg.net](http://keys.gnupg.net/pks/lookup?search=0x51416DE60E6887FD&fingerprint=on&op=index) or [SF](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2009.key/download)). After downloading the key to a local file, import it into GnuPG like this:
 
-Second, you will need either detached signatures or signed checksums. You do not need both.
+```
+$ gpg --import andrew2019.key
+gpg: key D6D447B02B4D4C9D: public key "Andrew Ziem <ahz001@gmail.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+```
+
+Notice the key ID D6D447B02B4D4C9D in the console output matches the key ID above on this web page. The key ID is case insensitive, and the leading `0x` is sometimes omitted, so the key IDs match.
+
+Second, download either detached signatures or signed checksums. You do not need both.
 
 There is one detached signature per download. Look in the [SourceForge release directory](https://sourceforge.net/projects/bleachbit/files/bleachbit/) for a folder called `detached_signatures`, and in the folder will be a file with the same name as the download plus the `.sig` extension. For example, the detached signature for `bleachbit_3.0_all_ubuntu1910.deb` is named `bleachbit_3.0_all_ubuntu1910.deb.sig`. Here is an example of how to verfy it.
 
