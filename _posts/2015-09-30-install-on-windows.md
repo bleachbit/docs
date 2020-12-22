@@ -8,7 +8,7 @@ order: 1
 
 To install BleachBit, first <a href="https://www.bleachbit.org/download">download</a> the latest installation package for your system.
 
-BleachBit is supported on Windows XP, 2003, Vista, 7, 8, 8.1, or 10 (32-bit or 64-bit).
+BleachBit version 4 is supported on Windows Vista, 7, 8, 8.1, or 10 (32-bit or 64-bit). BleachBit version 2.2 was the last version [intended to run](https://github.com/bleachbit/bleachbit/issues/947) on Windows XP.
 
 Most Windows users want the standard installation. If you prefer to run in portably on a USB disk or on a system the administrators that prevents installation, use the portable installation.
 
