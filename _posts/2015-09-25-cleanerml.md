@@ -27,16 +27,17 @@ You can think of it as writing XML to delete files, but it is more powerful than
 
 During application startup, BleachBit looks for CleanerML files in a few standard locations:
 
-*   ```/usr/share/bleachbit/cleaners/``` on Linux
-*   ```~/.config/bleachbit/cleaners/``` on Linux
-*   ```share/cleaners/``` relative to the Python script on Linux (useful for running BleachBit from source without installation
-*   ```share\cleaners\``` relative to the BleachBit executable on Windows which typically translates to ```c:\program files\bleachbit\share\cleaners```
+*   `/usr/share/bleachbit/cleaners/` on Linux
+*   `~/.config/bleachbit/cleaners/` on Linux
+*   `share/cleaners/` relative to the Python script on Linux (useful for running BleachBit from source without installation
+*   `share\cleaners\` relative to the BleachBit executable on Windows which typically translates to ```c:\program files\bleachbit\share\cleaners```
     Warning: This directory is deleted when BleachBit is updated or uninstalled.
-*   ```%APPDATA%\BleachBit\cleaners\``` on Windows which typically translates to
-    *   Windows XP: ```C:\Documents and Settings\(username)\Application Data\BleachBit\Cleaners\```
-    *   Windows Vista/7: ```C:\Users\(username)\AppData\Roaming\BleachBit\Cleaners\```
+*   `%APPDATA%\BleachBit\cleaners\` on Windows which typically translates to `C:\Users\(username)\AppData\Roaming\BleachBit\Cleaners\`
 
 Most of these locations are also scanned for [winapp2.ini](/doc/winapp2ini.html) files, but you may only use one winapp2.ini file.
+
+The diagnostics section of the application lists these directories.
+
 
 ### Learning CleanerML
 
@@ -88,51 +89,63 @@ For more information, refer to the section [Learning](#learning-cleanerml).
 
 ### Actions
 
-* apt.autoclean
-* apt.autoremove
-* chrome.autofill
-* chrome.databases_db
-* chrome.favicons
-* chrome.history
-* chrome.keywords
-* delete: delete a file
-* ini: delete part of a .ini configuration file
-* json: delete part of a JSON file
-* mozilla_url_history
-* office_registrymodifications
-* process: launch a process
-* sqlite.vacuum: vacuum an SQLite 3 database
-* truncate: truncate a file
-* win.shell.change.notify
-* winreg: delete a Windows registry key or value
-* yum.clean_all
+The **action** element is a child of the **option** element.
 
-Options take an optional `os` attribute to limit the action to certain operating systems.
+Values for the **comand** attribute of the **action** element:
+
+* **apt.autoclean**
+* **apt.autoremove**
+* **chrome.autofill**
+* **chrome.databases_db**
+* **chrome.favicons**
+* **chrome.history**
+* **chrome.keywords**
+* **delete**: delete a file
+* **ini**: delete part of a .ini configuration file
+* **json**: delete part of a JSON file
+* **mozilla_url_history**
+* **office_registrymodifications**: clean the MRU for OpenOffice.org and LibreOffice
+* **process**: launch a process
+* **sqlite.vacuum**: vacuum an SQLite 3 database
+* **truncate**: truncate a file
+* **win.shell.change.notify**
+* **winreg**: delete a Windows registry key or value
+* **yum.clean_all**
+
+Actions take an optional **os** attribute to limit the action to certain operating systems.
 
 ### Operating system
 
-The elements `running` and `action` take an optional attribute `os` to limit scope to
-certain operating systems.
+The optional attribute **os** limits the scope of an element to certain operating systems.
 
-Valid values are:
+Supported elements are
+
+* **action**
+* **cleaner**
+* **running**
+* **value** under **var**
+
+Valid values for *os* are:
 
 * **bsd**
 * **darwin**
+* **linux**
 * **netbsd**
 * **openbsd**
-* **unix**
+* **unix**: Darwin, Linux, or any BSD
 * **windows**
 
 ### Running process
 
-Set `running` to abort cleaning when an application is running. It accepts two attributes:
+Set the *running* element to abort cleaning when an application is running. It accepts two attributes:
 
-* `type`: required, either: **exe** for process name or **pathname** for a file on the file system
-* `os`: optional, any value for the operating system
+* **type**: required, either: **exe** for process name or **pathname** for a file on the file system
+* **os**: optional, any value for the operating system
 
 ### Variables
 
-See [Variables](/cml/variables.html).
+BleachBit supports expansion of a variety of variables: tilde (home), environment variables, and
+multi-value variables. For more information, see [Variables](/cml/variables.html).
 
 ### Sharing your cleaner
 
