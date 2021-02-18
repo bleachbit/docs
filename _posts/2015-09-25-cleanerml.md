@@ -107,6 +107,29 @@ For more information, refer to the section [Learning](#learning-cleanerml).
 * winreg: delete a Windows registry key or value
 * yum.clean_all
 
+Options take an optional `os` attribute to limit the action to certain operating systems.
+
+### Operating system
+
+The elements `running` and `action` take an optional attribute `os` to limit scope to
+certain operating systems.
+
+Valid values are:
+
+* **bsd**
+* **darwin**
+* **netbsd**
+* **openbsd**
+* **unix**
+* **windows**
+
+### Running process
+
+Set `running` to abort cleaning when an application is running. It accepts two attributes:
+
+* `type`: required, either: **exe** for process name or **pathname** for a file on the file system
+* `os`: optional, any value for the operating system
+
 ### Variables
 
 See [Variables](/cml/variables.html).
