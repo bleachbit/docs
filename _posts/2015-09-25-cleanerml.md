@@ -62,7 +62,7 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 
 ### Matching files
 
-CleanerML allows several ways to match files:
+CleanerML allows several ways to match files. Possible values for `search` are:
 
 *   **file**: matches a single file.
 *   **glob**: matches one or more files with a simple pattern. See the Python documentation on [glob](https://docs.python.org/2/library/glob.html).
