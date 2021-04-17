@@ -100,7 +100,7 @@ make -C po local
 
 ### Further reading
 
-*   [Testing](https://www.bleachbit.org/contribute/testing)
+*   [Testing](/dev/testing.html)
 *   [Contributing patches and bug reports](https://www.bleachbit.org/contribute)
 
 
