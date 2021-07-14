@@ -8,13 +8,13 @@ order: 1
 
 To install BleachBit, first <a href="https://www.bleachbit.org/download">download</a> the latest installation package for your system.
 
-BleachBit version 4 is supported on Windows Vista, 7, 8, 8.1, or 10 (32-bit or 64-bit). BleachBit version 2.2 was the last version [intended to run](https://github.com/bleachbit/bleachbit/issues/947) on Windows XP.
+BleachBit version 4 is supported on Windows 8, 8.1, or 10 (32-bit or 64-bit).
 
 Most Windows users want the standard installation. If you prefer to run in portably on a USB disk or on a system the administrators that prevents installation, use the portable installation.
 
 #### Standard Installation
 
-Run the installer which has a name like <tt>BleachBit-1.6-setup.exe</tt>. Then, follow the prompts.
+Run the installer which has a name like <tt>BleachBit-4.4.1-setup.exe</tt>. Then, follow the prompts.
 
 Verify the installer is from a verified publisher (Andrew Ziem).
 
@@ -24,21 +24,29 @@ Verify the installer is from a verified publisher (Andrew Ziem).
 
 Silent installation installs the application without any prompts from the user, and it is typically used by system administrators to install an application across many systems.
 
-For BleachBit version 2.2, run this command to instal the aupplication for all users:
+Using BleachBit 4.4.1 as an example, run the following command to install the application for all users. It requires the calling process to have administrator privileges;
 
-`BleachBit-2.2-setup.exe /S /allusers`
+`BleachBit-4.4.1-setup.exe /S /allusers`
 
-To install for only the current user, do this:
+To install for only the current user, run this command:
 
-`BleachBit-2.2-setup.exe /S /currentuser`
+`BleachBit-4.4.1-setup.exe /S /currentuser`
 
-The switches `/allusers` and `/currentuser` were first supported in BleachBit version 2.2
+To omit the desktop shortcut, add `/NoDesktopShortcut` directly after `/S`.
 
-The `/S` switch _is_ case-sensitive.
+`BleachBit-4.4.1-setup.exe /S /NoDesktopShortcut /currentuser`
+
+Because the installer is silent, it will not throw an error such as if you forget to choose between `/allusers` and `/currentuser` or if the calling process has insufficient privileges.
+
+The `/S` and `/NoDesktopShortcut` switches _are_ case-sensitive.
+
+The switches `/allusers` and `/currentuser` were first added in BleachBit version 2.2.
+
+The switch `/NoDesktopShortcut` was added in BleachBit 4.4.1.
 
 #### Portable Use
 
-Download the package which has a name like <tt>BleachBit-1.6-portable.zip</tt>. Then use a standard unzip utility to unpack the file. Such a utility is included with Windows: just right click on the <tt>.zip</tt> file and choose **Extract all files** which creates a new folder.
+Download the package which has a name like <tt>BleachBit-4.4.1-portable.zip</tt>. Then use a standard unzip utility to unpack the file. Such a utility is included with Windows: just right click on the <tt>.zip</tt> file and choose **Extract all files** which creates a new folder.
 
 Do not double click on the <tt>.zip</tt> file.
 
