@@ -50,19 +50,20 @@ In case you are using the command line or another application to delete these fi
 
 If you changed the default options under **Preferences - Drives**, look there for the large files.
 
-If you cannot boot Ubuntu because the disk is full, do this:
+If you cannot boot Ubuntu because the disk is full, use the [Ubuntu Recovery Mode](https://wiki.ubuntu.com/RecoveryMode) like this:
 
-1. Reboot
-1. Choose the boot option: _Advanced options for Ubuntu_
-1. Choose a recent kernel labled _(recovery mode)_
-1. In the Recovery Menu, choose the _clean_ option.
-1. If this cleans enough space, try booting normally and then clean the cache as mentioned above.
-1. Otherwise, choose the _root_ option from the Recovery Menu.
-1. Type this command to switch to your normal user account: `su username -` (Replace _username_ with your username.)
+1. Reboot the system.
+1. Choose the boot option *Advanced options for Ubuntu*.
+1. Choose a recent kernel with *(recovery mode)*.
+1. In the Recovery Menu, choose _clean_. Note: this will mount your filesystem.
+1. If this cleans enough space, boot normally and then clean the cache as mentioned above.
+1. Otherwise, choose  _root_ from the Recovery Menu.
+1. Type this command to switch to your normal user account: <tt>su <i>username</i> -</tt>. (Replace _username_ with your username.)
 1. Run this command to clean the user's cache: 'rm -rf ~/.cache/`
-1. Reboot
+1. Reboot.
 
-
+In the future, you may avoid this situation by disabling the BleachBit option **System - Free Disk Space**. Otherwise, do not interrupt BleachBit while it is working.
+a
 ### Q: How many passes does BleachBit make for the overwrite file option (shredding file)?
 A: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
 
