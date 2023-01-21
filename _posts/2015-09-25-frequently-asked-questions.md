@@ -26,6 +26,20 @@ To check which case applies to you, start BleachBit as Administrator, click on H
 
 Another way to check is first to run BleachBit as administrator. Then run BleachBit as a regular user, and if the preview shows any files, then you may need to run BleachBit as a regular user.
 
+### Q: How to run the GUI as root on Linux under Wayland?
+
+As the unprivileged user, run this command to allow the local user's X session:
+
+```xhost si:localuser:root```
+
+When finished, disable the access:
+
+```xhost -si:localuser:root```
+
+Avoid running GUI applications as root.
+
+Source: [[ArchWiki]](https://wiki.archlinux.org/title/Running_GUI_applications_as_root)
+
 ### Q: How do I recover a file deleted by BleachBit?
 
 The success of recovery depends on whether the file was overwritten, and the ease of recovery depends on whether the metadata was overwritten. If in the preferences the option "Overwrite files to prevent recovery" was enabled, the file probably cannot be deleted. There is an exception if the file system is ext3 or ext4 in `data=journal` mode. The default file system on Ubuntu is ext4 with `data=ordered` mode, which makes recovery unlikely.
