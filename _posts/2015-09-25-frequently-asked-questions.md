@@ -6,14 +6,17 @@ date: 2000-01-25 23:30:16
 order: 5
 ---
 
-### Q: Why do I see permissions denied errors on Linux?
-A: If you are trying to clean the system (for example, localizations, APT, or DNF), run BleachBit with root permissions. To elevate permissions, choose the menu option "BleachBit as Administrator" _or_ run <tt>sudo</tt> on the command line.
+### Question: Why do I see permissions denied errors on Linux?
+
+Answer: If you are trying to clean the system (for example, localizations, APT, or DNF), run BleachBit with root permissions. To elevate permissions, choose the menu option "BleachBit as Administrator" _or_ run <tt>sudo</tt> on the command line.
 
 Alternatively, when running as a normal user, uncheck options that require root permissions.
 
 ### Q: Why do I see permission denied errors on Windows?
 This happens when cleaning certain files, such as Windows system logs under ``c:\windows``.
-A: When you first launch BleachBit it should prompt you with the User Access Control dialog, which asks, "Do you want to allow the following program to make changes to this computer." Answer *Yes* to grant BleachBit the privileges to modify all files.
+A: When you first launch BleachBit it should prompt you with the User Access Control dialog, which asks, "Do you want to allow the following program to make changes to this computer." Answer *Yes* to grant BleachBit the privileges to modify all files. 
+
+If you answer *No*, then BleachBit will start, and it will still be able to clean data under your user profile. However, it will not have access to clean system data.
 
 ### Q: On Linux do I need to run BleachBit both as a normal user and as an administrator?
 A: It depends how your system elevates privileges. Linux has various tools (for example, kdesudo, gksudo sudo, su-to-root, and PolicyKit) with various options to elevate to root (administrator) privileges, and they create two different situations.
@@ -28,7 +31,7 @@ Another way to check is first to run BleachBit as administrator. Then run Bleach
 
 ### Q: How to run the GUI as root on Linux under Wayland?
 
-As the unprivileged user, run this command to allow the local user's X session:
+A: As the unprivileged user, run this command to allow the local user's X session:
 
 ```xhost si:localuser:root```
 
@@ -42,7 +45,9 @@ Source: [[ArchWiki]](https://wiki.archlinux.org/title/Running_GUI_applications_a
 
 ### Q: How do I recover a file deleted by BleachBit?
 
-The success of recovery depends on whether the file was overwritten, and the ease of recovery depends on whether the metadata was overwritten. If in the preferences the option "Overwrite files to prevent recovery" was enabled, the file probably cannot be recovered. There is an exception if the file system is ext3 or ext4 in `data=journal` mode. The default file system on Ubuntu is ext4 with `data=ordered` mode, which makes recovery unlikely.
+"I had BleachBit delete data, but now I want it back. Is there an undo command?"
+
+A: The success of recovery depends on whether the file was overwritten, and the ease of recovery depends on whether the metadata was overwritten. If in the preferences the option "Overwrite files to prevent recovery" was enabled, the file probably cannot be recovered. There is an exception if the file system is ext3 or ext4 in `data=journal` mode. The default file system on Ubuntu is ext4 with `data=ordered` mode, which makes recovery unlikely.
 
 If the *wipe free space* command was used on the same file system, the file probably cannot be deleted regardless of the type of file system. See also [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information.
 
@@ -52,8 +57,11 @@ Immediately the file is deleted in a normal way (in other words, if it is not ov
 
 Finally, run a file recovery tool. Do a search on the web for "undelete" or "file recovery."
 
-### Q: Why does BleachBit take a long time (more than five minutes) while filling up by hard drive?
-A: You enabled the option to **System - Free disk space** to wipe free disk space for privacy. This works basically by creating a large, empty file (see [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information). When the hard drive is full, the file will be deleted immediately, and there will be no net change in disk space (you will be back where you started). It is generally recommended you disable this option.
+### Q: Why does BleachBit take a long time while filling up the hard drive?
+
+A: You enabled the option to **System - Free disk space** to wipe free disk space for privacy. This works basically by creating a large, empty file (see [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information). The duration depends on the speed of the hardware and the free capacity, and it is common to take more than five minutes.
+
+When the hard drive is full, BleachBit immediately deletes the file, and there will be no net change in disk space, so you will be back where you started. It is generally recommended you disable this option.
 
 If this option is disabled, and BleachBit is slow, look at the option **Edit - Preferences - General - Overwrite Contents**. Enabling this option makes BleachBit slower because more work is required to make files unrecoverable.
 
@@ -78,6 +86,7 @@ If you cannot boot Ubuntu because the disk is full, use the [Ubuntu Recovery Mod
 
 In the future, you may avoid this situation by disabling the BleachBit option **System - Free Disk Space**. Otherwise, do not interrupt BleachBit while it is working.
 a
+
 ### Q: How many passes does BleachBit make for the overwrite file option (shredding file)?
 A: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
 
