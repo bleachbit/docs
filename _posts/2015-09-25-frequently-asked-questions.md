@@ -85,7 +85,7 @@ If you cannot boot Ubuntu because the disk is full, use the [Ubuntu Recovery Mod
 1. Reboot.
 
 In the future, you may avoid this situation by disabling the BleachBit option **System - Free Disk Space**. Otherwise, do not interrupt BleachBit while it is working.
-a
+
 
 ### Q: How many passes does BleachBit make for the overwrite file option (shredding file)?
 A: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
@@ -95,10 +95,15 @@ A: There are a few ways to affect the language of the BleachBit user interface.
 
 In the Windows search bar, type "Language settings" and open it. Under the Windows display language, choose the preferred language, and then restart BleachBit.
 
-To force BleachBit to always show in English, download and install the English installer instead of the regular installer. If using the regular (non-English-only) installer, uncheck the option to install translations.
+To force BleachBit to always show in English, you have a few options:
+
+* Download and install the English installer instead of the regular installer.
+* If using the regular (non-English-only) installer, uncheck the option to install translations.
+* Manually delete the translations. The default location for translations is `c:\Program Files (x86)\BleachBit\share\locale`.
 
 The language chosen in the BleachBit installer does not affect the BleachBit application: it affects only the language of the installer.
 
+Since [BleachBit 4.9.0 alpha](https://www.bleachbit.org/news/bleachbit-490-alpha), there is an option in the BleachBit preferences to change the language ([video demonstration](https://github.com/bleachbit/bleachbit/issues/1758#issuecomment-2603127349)). Most changes take effect immediately. To reflect changes for the application menu, restart the application.
 
 ## Things to know
 
@@ -131,6 +136,3 @@ A: BleachBit identifies and organizes the files you are most likely want to dele
 A: BleachBit probably will not make your computer faster in general, but there are two specific ways you may see your computer become faster. First, by removing excess files, you may see an improvement in the speed of virus scanning and for disk backups. Second, vacuuming SQLite databases speed up applications that use them. Firefox, Safari, and Google Chrome are some applications that stores various data, such as URL history, in an SQLite database. With heavy browsing, the databases become fragmented and bloated, and this happens at a level higher than the disk storage, so standard disk defragmentation tools are completely useless. BleachBit shrinks the SQLite database (saving disk space and disk I/O effort) and defragments them. You are most likely to see a dramatic benefit by not vacuuming for a while, using the application heavily, and then vacuuming it once, but to keep the application running quickly, vacuum often. Vacuuming is not a single solution to all performance problems, but it does complement other solutions. People buy faster computers with better CPUs and more RAM, but hard drive technology (other than the rare SSDs) has not become much faster than they were years ago. The hard disk is often the bottleneck, and vacuuming is one way to overcome this limitation.
 
 Yet, deleting cache may make your computer slower because data will have to be re-downloaded or re-generated.
-
-
-
