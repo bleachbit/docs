@@ -7,66 +7,62 @@ order: 1
 ---
 
 
-To install BleachBit, first [download](https://www.bleachbit.org/download/linux) the latest installation package for your system.
+### Sources
 
-### Requirements
+Linux users have a few choices for installing BleachBit.
 
-BleachBit version 2.2 required Python 2.7 and GTK version 2. It did *not* support Python 2.5, Python 2.7, Python 3, or GTK 3.
+1. [Download](https://www.bleachbit.org/download/linux) the latest installation package for your system.
+2. Install using your distribution's package manager.
+3. Install from source.
 
-BleachBit 3 required GTK 3 and Python 2.7.
+Most popular distributions have BleachBit in their repositories, and this is a convenient way to install. However, Ubuntu, Debian, Linux Mint, and other distributions have a "no-rolling release policy," which means they do not update their repositories with the latest BleachBit releases.
 
-BleachBit 4 (the latest release) requires GTK 3 and Python 3. (It no longer supports Python 2.)
+Here is an example of this policy. Ubuntu Questing 25.10 (released October 2025) will always have BleachBit 4.6.2, which was released October 2025, even though BleachBit 5.0 was released in May 2025. Users who want to upgrade to BleachBit 5 while using the Ubuntu repositories will have to upgrade to Ubuntu 26.04 in April 2026.
 
+It is your choice to install from the distribution's repositories, but in case of any issues with the software, first check for a newer release.
+
+
+### Software dependencies
+
+BleachBit 5 requires GTK 3.24 and Python 3.8 or later.
+
+### Signatures for .rpm and .deb packages
+
+Starting after BleachBit 5.0.2, the .rpm and .deb packages will be signed with the same key. This will make it easier to verify the signatures.
 
 ### Ubuntu, Mint, and Debian
 
 #### Graphical package manager
 
-Double click on the downloaded installation package which has a name like `bleachbit_3.0_all_ubuntu1910.deb`. Then, follow the prompts.
+Double click on the downloaded installation package which has a name like `bleachbit_5.0.2-0_all_ubuntu2504.deb`. Then, follow the prompts. You may see a security warning about third-party packages, and you may need to enter your password to install BleachBit.
 
 #### Command line
 
 Install using the command line like this:
 
-`sudo dpkg -i bleachbit_3.0_all_ubuntu1910.deb`
+`sudo apt install bleachbit_5.0.2-0_all_ubuntu2504.deb`
 
-Installing using apt from the distribution's repositories is _not_ recommended because they tend to carry old releases of BleachBit.
-
+Using apt is recommended over dpkg because it will automatically install dependencies.
 
 ### Fedora, Red Hat, CentOS
 
 #### Graphical package manager
 
-To install BleachBit using the graphic package manager, double click on the downloaded installation package which has a name like `bleachbit-3.0-1.1.fc28.noarch.rpm`. Then, follow the prompts.
-
-The 3.0 package has a bug: it will not ask you to install the dependency `python2-gobject`, so you will need to install it yourself.
-
+To install BleachBit using the graphical package manager, double click on the downloaded installation package which has a name like `bleachbit-5.0.2-1.1.fc43.noarch.rpm`. Then, follow the prompts.
 
 #### Command line
+
 Alternatively, install using the command line like this.
 
-First, install these dependencies for BleachBit 3.0. (BleachBit versions 2.x and 4.0 have different dependencies.)
-
-`sudo dnf install python2-gobject python2-scandir`
-
-To avoid a key error, import the public key:
-
-```
-wget http://bleachbit.sourceforge.net/bleachbit_public.key -O /tmp/bleachbit_public.key
-sudo rpm --import /tmp/bleachbit_public.key
-```
-
-The following command installs BleachBit using the command line:
-
-`sudo rpm -Uvh bleachbit-3.0-1.1.fc28.noarch.rpm`
+`sudo dnf install bleachbit-5.0.2-1.1.fc43.noarch.rpm`
 
 ### Digital signatures
 
 Verifying the digital signature protects you against file corruption and tampering.
 
-To verify the digital signature, first you will need a public key. BleachBit versions 3.0 and later are signed with key 0xd6d447b02b4d4c9d ([gnupg.net](http://keys.gnupg.net/pks/lookup?search=0xD6D447B02B4D4C9D&fingerprint=on&op=index) or [SF](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2019.key/download)). Older releases before BleachBit version 3.0 were signed with key 0x51416DE60E6887FD ([gpupg.net](http://keys.gnupg.net/pks/lookup?search=0x51416DE60E6887FD&fingerprint=on&op=index) or [SF](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2009.key/download)). After downloading the key to a local file, import it into GnuPG like this:
+To verify the digital signature, first you will need a public key. BleachBit versions 3.0 and later are signed with key 0xd6d447b02b4d4c9d ([Ubuntu Keyserver](https://keyserver.ubuntu.com/pks/lookup?search=ahz001%40gmail.com&fingerprint=on&op=index) or [SourceForge](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2019.key/download)). Older releases before BleachBit version 3.0 were signed with key 0x51416DE60E6887FD ([Sourceforge](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2009.key/download)). After downloading the key to a local file, import it into GnuPG like this:
 
-```
+```sh
 $ gpg --import andrew2019.key
 gpg: key D6D447B02B4D4C9D: public key "Andrew Ziem <ahz001@gmail.com>" imported
 gpg: Total number processed: 1
@@ -77,10 +73,10 @@ Notice the key ID D6D447B02B4D4C9D in the console output matches the key ID abov
 
 Second, download either detached signatures or signed checksums. You do not need both.
 
-There is one detached signature per download. Look in the [SourceForge release directory](https://sourceforge.net/projects/bleachbit/files/bleachbit/) for a folder called `detached_signatures`, and in the folder will be a file with the same name as the download plus the `.sig` extension. For example, the detached signature for `bleachbit_3.0_all_ubuntu1910.deb` is named `bleachbit_3.0_all_ubuntu1910.deb.sig`. Here is an example of how to verfy it.
+There is one detached signature per download. Look in the [SourceForge release directory](https://sourceforge.net/projects/bleachbit/files/bleachbit/) for a folder called `detached_signatures`, and in the folder will be a file with the same name as the download plus the `.sig` extension. For example, the detached signature for `bleachbit_5.0.2-0_all_ubuntu2504.deb` is named `bleachbit_5.0.2-0_all_ubuntu2504.deb.sig`. Here is an example of how to verify it.
 
-```
-$ gpg --verify bleachbit_3.0_all_ubuntu1910.deb.sig bleachbit_3.0_all_ubuntu1910.deb
+```sh
+$ gpg --verify bleachbit_5.0.2-0_all_ubuntu2504.deb.sig bleachbit_5.0.2-0_all_ubuntu2504.deb
 gpg: Signature made Sat 26 Oct 2019 08:04:00 AM MDT
 gpg:                using RSA key A9E582E4054A159315EDC943D6D447B02B4D4C9D
 gpg: Good signature from "Andrew Ziem <ahz001@gmail.com>" [ultimate]
@@ -88,46 +84,45 @@ gpg: Good signature from "Andrew Ziem <ahz001@gmail.com>" [ultimate]
 
 Instead of detached signatures, another option is the signed checksums. There is one signed checksum file per version of BleachBit. Verification is a two-step process. In the first step, verify the signature.
 
-```
-$ gpg --verify bleachbit-3.0-sha256sum.txt.asc
-gpg: Signature made Sat 26 Oct 2019 07:58:09 AM MDT
+```sh
+$ gpg --verify bleachbit-5.0.2-sha256sum.txt.asc
+gpg: Signature made Fri 07 Nov 2025 08:51:03 PM MST
 gpg:                using RSA key A9E582E4054A159315EDC943D6D447B02B4D4C9D
 gpg: Good signature from "Andrew Ziem <ahz001@gmail.com>" [ultimate]
-gpg: WARNING: not a detached signature; file 'bleachbit-3.0-sha256sum.txt' was NOT verified!
+gpg: WARNING: not a detached signature; file 'bleachbit-5.0.2-sha256sum.txt' was NOT verified!
 ```
 Watch for the "Good signature," and ignore the warning.
 
 Second, verify the checksums like this:
 
-```
-$ sha256sum -c bleachbit-3.0-sha256sum.txt.asc
-bleachbit_3.0_all_debian10.deb: OK
-bleachbit_3.0_all_debian8.deb: OK
-bleachbit_3.0_all_debian9.deb: OK
-bleachbit_3.0_all_ubuntu1404.deb: OK
-bleachbit_3.0_all_ubuntu1604.deb: OK
-bleachbit_3.0_all_ubuntu1804.deb: OK
-bleachbit_3.0_all_ubuntu1810.deb: OK
-bleachbit_3.0_all_ubuntu1904.deb: OK
-bleachbit_3.0_all_ubuntu1910.deb: OK
-BleachBit-3.0-portable.zip: OK
-BleachBit-3.0-setup.zip: OK
-bleachbit-3.0-1.1.centos7.noarch.rpm: OK
-bleachbit-3.0-1.1.centosCentOS-6.noarch.rpm: OK
-bleachbit-3.0-1.1.el6.noarch.rpm: OK
-bleachbit-3.0-1.1.el7.noarch.rpm: OK
-bleachbit-3.0-1.1.fc28.noarch.rpm: OK
-bleachbit-3.0-1.1.opensuse423.noarch.rpm: OK
-bleachbit-3.0-1.1.sle11.noarch.rpm: OK
-BleachBit-3.0-setup-English.exe: OK
-BleachBit-3.0-setup.exe: OK
-bleachbit-3.0.tar.gz: OK
-bleachbit-3.0.tar.bz2: OK
-bleachbit-3.0.tar.lzma: OK
-sha256sum: WARNING: 17 lines are improperly formatted
+```sh
+$ sha256sum -c bleachbit-5.0.2-sha256sum.txt.asc
+bleachbit_5.0.2-0_all_debian11.deb: OK
+bleachbit_5.0.2-0_all_debian12.deb: OK
+bleachbit_5.0.2-0_all_debian13.deb: OK
+bleachbit_5.0.2-0_all_ubuntu2004.deb: OK
+bleachbit_5.0.2-0_all_ubuntu2204.deb: OK
+bleachbit_5.0.2-0_all_ubuntu2404.deb: OK
+bleachbit_5.0.2-0_all_ubuntu2504.deb: OK
+BleachBit-5.0.2-portable.zip: OK
+BleachBit-5.0.2-setup.zip: OK
+bleachbit-5.0.2-1.1.alma9.noarch.rpm: OK
+bleachbit-5.0.2-1.1.fc41.noarch.rpm: OK
+bleachbit-5.0.2-1.1.fc42.noarch.rpm: OK
+bleachbit-5.0.2-1.1.fc43.noarch.rpm: OK
+bleachbit-5.0.2-1.1.opensuseSlowroll.noarch.rpm: OK
+bleachbit-5.0.2-1.1.opensuseTumbleweed.noarch.rpm: OK
+bleachbit-5.0.2-lp156.1.1.opensuse156.noarch.rpm: OK
+bleachbit-5.0.2-lp160.1.1.opensuse160.noarch.rpm: OK
+BleachBit-5.0.2-setup-English.exe: OK
+BleachBit-5.0.2-setup.exe: OK
+bleachbit-5.0.2.tar.gz: OK
+bleachbit-5.0.2.tar.bz2: OK
+bleachbit-5.0.2.tar.lzma: OK
+sha256sum: WARNING: 15 lines are improperly formatted
+
 ```
 
 If you don't download all the files, you will see "No such file or directory errors." Instead, focus on the "OK" for the file you downloaded. Also, ignore the "improperly formatted" warning because sha256sum doesn't recognize lines added by PGP.
-
 
 

@@ -6,7 +6,7 @@ Are you a user wanting to learn how to use BleachBit? [Read the documentation.](
 
 ```sh
 sudo apt-get update
-sudo apt-get install gnupg2 ruby jekyll bundle
+sudo apt-get install gnupg2 ruby-full ruby-bundler
 sudo apt-get remove ruby-liquid # in case installed earlier
 bundle install
 bundle exec jekyll serve
