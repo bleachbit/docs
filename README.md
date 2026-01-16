@@ -1,6 +1,8 @@
 # BleachBit Documentation
 
-Are you a user wanting to learn how to use BleachBit? [Read the documentation.](https://docs.bleachbit.org/)
+This is a Jekyll site built with Ruby gems. Are you a user wanting to learn how to use BleachBit? [Read the documentation.](https://docs.bleachbit.org/)
+
+Otherwise, if you want to build the documentation site, follow the instructions below.
 
 # Build
 

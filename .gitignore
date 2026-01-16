@@ -2,3 +2,9 @@
 _site
 _pages
 *~
+
+# Ruby/Jekyll generated files
+.bundle/
+vendor/
+Gemfile.lock
+.jekyll-cache/
