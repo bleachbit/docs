@@ -21,7 +21,7 @@ This video introduces the command line interface for Microsoft Windows.
 
 ### Microsoft Windows
 
-In Windows, use the executable `bleachbit_console.exe` to console output. The directory isn't added automatically to the path, so you use the full path `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`. Where acceptable, it is best to substitute the environment variable `%ProgramFiles(x86)%` for `C:\Program Files (x86)\`.
+In Windows, use the executable `bleachbit_console.exe` to show the console output. The directory isn't added automatically to the path, so you use the full path `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`. Where acceptable, it is best to substitute the environment variable `%ProgramFiles(x86)%` for `C:\Program Files (x86)\`.
 
 ### Linux
 
@@ -31,7 +31,9 @@ Running `bleachbit` (which is in the path) with arguments runs BleachBit in comm
 
 To see a list of cleaners and their options, run:
 
-`bleachbit --list`
+`bleachbit --list-cleaners`
+
+Aliases are `-l` and `--list`.
 
 ### Preview
 
@@ -39,24 +41,65 @@ To preview deleting Firefox cache, run:
 
 `bleachbit --preview firefox.cache`
 
-Multiple arguments are allowed. To preview deleting Firefox cache and Opera cache, run:
-
-`bleachbit --preview firefox.cache opera.cache`
-
-Wildcards are allowed for options (though not cleaners), so to preview deleting all options for Opera, run:
-
-`bleachbit --preview opera.*`
-
-To select the same options as in the GUI, use ```--preset```, which may be combined with other options:
-
-`bleachbit --preview --preset firefox.cookies`
-
+An alias is `--p`.
 
 ### Deleting files
 
-When you are ready to delete files and make other permanent changes, replace ```--preview``` with ```--clean```. To vacuum Firefox, for example, run:
+When you are ready to delete files and make other permanent changes, replace ```--preview``` with ```--clean```. To delete Firefox cache, for example, run:
 
 `bleachbit --clean firefox.vacuum`
+
+An alias is `--c`.
+
+### Including multiple cleaners and options
+
+Preview and cleaning modes accept the same options for including and excluding cleaners and options.
+
+Multiple arguments are allowed. To preview deleting Firefox cache and Opera cache, list them separated by a space:
+
+`bleachbit --preview firefox.cache opera.cache`
+
+Wildcards are allowed for options, so to preview deleting all options for Opera, run:
+
+`bleachbit --preview opera.*`
+
+Wildcards are not allowed for cleaners, so do _not_ run `bleachbit --preview *.*`.
+
+To select the same options as in the GUI, use ```--preset```, which may be combined with other options:
+
+`bleachbit --preview --preset firefox.cache`
+
+To enable all cleaners and options that do not have a warning, use ```--all-but-warning```, which may be combined with other options. Use this with caution, as it will delete many files.
+
+`bleachbit --preview --all-but-warning firefox.cache`
+
+### Excluding options
+
+To except cleaning options, combine ```--except``` with inclusion options. The following previews all of Firefox except cookies.
+
+`bleachbit --preview firefox.* --except firefox.cookies`
+
+These three commands are equivalent: they include all Firefox and Chromium options except their passwords. The first option demonstrates that `--except` accepts multiple cleaner options, separated by commas.
+
+```
+bleachbit --clean firefox.* chromium.* --except firefox.passwords,chromium.passwords
+bleachbit --clean firefox.* chromium.* --except firefox.passwords --except chromium.passwords
+bleachbit --clean chromium.* --except firefox.passwords firefox.*  --except chromium.passwords
+```
+
+However, the following command _will_ delete passwords in Chromium.
+
+`bleachbit --clean firefox.* chromium.* --except firefox.passwords chromium.passwords`
+
+Notes:
+
+- The order of positive and negative options does not matter.
+- `--except` is processed after positive options.
+- Each `--except` accepts exactly one string, which may be comma delimited.
+- `--except` can be used multiple times.
+- `--except` can be combined with `--preset`.
+- `--except` does not accept wildcards.
+- `--except` was introduced after BleachBit 5.0.2.
 
 ### Overwriting files
 
@@ -77,22 +120,24 @@ To shred all files under a directory, pass the name of the directory like this:
 `bleachbit --shred "C:\Microsoft Exchange\Top Secret Emails\"`
 
 
-### Wiping free space
+### Wiping empty space
 
-When files are [deleted without shredding](shred-files-and-wipe-disks.html), the contents might be recoverable from the disk's free space. To prevent recovery from free space, you can wipe the free space. Unlike wiping specific files, wiping free space takes a long time.
+When files are [deleted without shredding](shred-files-and-wipe-disks.html), the contents might be recoverable from the disk's empty free space. To prevent recovery from empty space, you can wipe the empty space. Unlike wiping specific files, wiping empty space takes a long time.
 
-You might want to wipe free space for each logical drive. For example, on Windows you might wipe `C:` and `D:`, if you have both and write sensitive files to them both. On Linux, you might want to wipe `/` and `/home` if they are separate partitions and if you write sensitive information to both.
+You might want to wipe empty space for each logical drive. For example, on Windows you might wipe `C:` and `D:`, if you write sensitive files to both. On Linux, you might want to wipe `/` and `/home` if they are separate partitions and if you write sensitive information to both.
 
-To wipe any partition, pass any writable directory in that partition to `--wipe-free-space`. For example:
+To wipe any partition, pass any writable directory in that partition to `--wipe-empty-space`. For example:
 
-`bleachbit --wipe-free-space ~/.cache/`
+`bleachbit --wipe-empty-space ~/.cache/`
 
-Wiping free space does not change how much free space is left, when the process is done. For example, if you start with 10GB free, then you will still have 10GB free when the process is done.
+Wiping free empty space does not change how much free space is left, when the process is done. For example, if you start with 10GB free, then you will still have 10GB free when the process is done.
+
+BleachBit 5.0.2 and earlier used `--wipe-free-space` instead of `--wipe-empty-space`.
 
 
 ### cron example (Linux)
 
-To vacuum Firefox each night at 03:00, run:
+To vacuum Firefox each night at 03:00, run this to edit cron jobs:
 
 `crontab -e`
 
