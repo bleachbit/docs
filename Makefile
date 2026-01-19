@@ -1,7 +1,7 @@
 # Makefile for BleachBit documentation site
 
 
-.PHONY: help clean serve build install update
+.PHONY: help clean serve build install install-local update
 
 # Default target
 help:
@@ -11,6 +11,7 @@ help:
 	@echo "  serve    - Start local development server"
 	@echo "  build    - Build the static site"
 	@echo "  install  - Install Ruby dependencies"
+	@echo "  install-local - Install Ruby dependencies under vendor/bundle"
 	@echo "  update   - Update Ruby dependencies"
 
 # Clean generated files and dependencies
@@ -33,6 +34,14 @@ install:
 	@echo "Installing Ruby dependencies..."
 	bundle install
 	@echo "Dependencies installed."
+
+# Install Ruby dependencies locally (no global gems required)
+install-local:
+	@echo "Configuring Bundler to install into vendor/bundle..."
+	bundle config set --local path 'vendor/bundle'
+	@echo "Installing Ruby dependencies locally..."
+	bundle install
+	@echo "Dependencies installed in vendor/bundle."
 
 # Update Ruby dependencies
 update:
