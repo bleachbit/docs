@@ -22,7 +22,16 @@ Backup any files which may be deleted before testing. Then, use this checklist f
 * Use [variables](/cml/variables.html) rather than hard-coding paths.
 * Run BleachBit in a console window (`bleachbit_console.exe` on Windows) to check for any warnings.
 
+### Preparation
+
+It is helpful if you prepare your cleaner before submitting it.
+
+1. Put your cleaner in the ```cleaners``` directory of the BleachBit source.
+2. Run ```make tests``` to check the XML against the XSD.
+3. Run ```make pretty``` to reformat the XML.
+
 ### Submitting the cleaner
+
 To share the cleaner with others, submit it for review:
 
 * Do not submit cleaners as your own in which you copied and pasted other's work.  You must own the copyright.

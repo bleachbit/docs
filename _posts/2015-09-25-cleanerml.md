@@ -6,6 +6,7 @@ date: 2000-01-01 00:01:00
 # The date is set to an old date to keep this article first in its section.
 redirect_from:
  - doc/cleanerml
+order: 1
 ---
 
 **CleanerML** is a simple yet powerful markup language for writing cleaners. Most of BleachBit's cleaners are written in CleanerML, and you can write your own cleaners in CleanerML too.
@@ -50,15 +51,7 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 
 ### Finding files to delete
 
-1.  Run the application you want to clean.
-    * In the applications' preferences, turn on all logging (if applicable). For example, by default Pidgin turns off chat logs.
-    * Use all the features of the application to try to make it generate as many files as it can. For example, in Nexuiz (a game) you must play a multiplayer game with a new map to cause the game to download the map into its cache. Many Nexuiz multiplayer games don't download maps.
-2.  Discover where the application stores its file. Assume your application is called Firefox: you could use the following commands to find its files.
-    * Linux: `ls -d ~/.* | tail -n+3 | xargs -I '{}' find '{}' | grep -i firefox`
-    * Windows: `dir /s /b $USERPROFILE | find /i "firefox"`
-3.  In some cases not all files appear using those commands. Perhaps the application checks for a file which doesn't often exist, or it writes a file but deletes it a moment later. In these cases use strace (for Linux) or [Process Monitor](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) (for Windows) to find these files. A standard invocation of strace (assuming you are launching Firefox) is: `strace -f -e trace=open,stat64,lstat64,access,mkdir,unlink,rename,readlink firefox &> /tmp/firefox.log grep -iE "(cache|log|tmp|$HOME)" /tmp/firefox.log | sort | uniq | less`
-4.  Search for registry entries in Windows: typically they are under ```HCKU\Software\(app name)```.
-5.  It's not strictly necessary, but it's nice if you put your cleaner in the ```cleaners``` directory of the BleachBit source and run ```make tests``` (to check it against the XSD) and ```make pretty``` (to reformat the XML).
+See [Finding files to delete](/cml/finding_files_to_delete.html).
 
 ### Matching files
 
