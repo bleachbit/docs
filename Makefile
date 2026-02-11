@@ -27,6 +27,8 @@ clean:
 	@echo "Cleaning editor temporary files..."
 	find . -name "*.sw?" -delete
 	find . -name "*~" -delete
+	@echo "Collecting garbage in git..."
+	git gc
 	@echo "Clean complete."
 
 # Install Ruby dependencies
