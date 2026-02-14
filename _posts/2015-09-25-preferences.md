@@ -40,7 +40,8 @@ When this option is enabled, the cleaning button requires a confirmation prompt 
 
 ### Use IEC sizes
 
-This option affects only how sizes are reported, and it does not affect how the application functions. When enabled, one KiB is 1000 bytes. When disabled, 1 kB is 1000 bytes.
+This option affects only how sizes are reported, and it does not affect how the application functions.
+When enabled, one KiB is 1024 bytes. When disabled, 1 kB is 1000 bytes.
 
 ### Dark mode
 
