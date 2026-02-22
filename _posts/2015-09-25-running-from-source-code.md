@@ -9,35 +9,39 @@ Running BleachBit from source code is intended for developers and testers: other
 
 ## Linux
 
-Linux systems often have the necessary dependencies installed for running BleachBit from source code. 
-
-### BleachBit 3.x
-
-On Debian and Ubuntu, install the `python-gtk2` package. On Fedora, CentOS, and Red Hat, install the `pygtk2` package.
-
-### BleachBit 4.x
+Linux systems often have the necessary dependencies installed for running BleachBit from source code.
 
 On Debian and Ubuntu, install these packages: `gir1.2-gtk-3.0`, `libgtk-3-0`, and `python3-gi`. On Fedora, CentOS, and Red Hat, install `gtk3`, `python3-chardet`, and `python3-gobject`.
 
-
 ## Microsoft Windows
 
-On Microsoft Windows you must install several dependencies:
+### Official release environment
 
+On Microsoft Windows to replicate the environment used for publishing official releases,
+install the special 32-bit build of Python, PyGObject, and GTK. Like vanilla Python,
+the special build uses the MSVC compiler. It is built using the vcpkg package manager.
 
-### BleachBit 3.x
+Follow the installation steps in [appveyor.yml](https://github.com/bleachbit/bleachbit/blob/master/appveyor.yml),
+which installs a [prebuilt environment from pygtwkin](https://github.com/bleachbit/pygtkwin). (You do not need
+to build it yourself.)
 
-*   [Python 2.7 32-bit](https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
-*   [PyGTK all-in-one installer](https://ftp.gnome.org/pub/GNOME/binaries/win32/pygtk/2.24/pygtk-all-in-one-2.24.2.win32-py2.7.msi)
-*   [Python for Windows Extensions](https://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download)
+### Vanilla 64-bit Python
 
-Python, GTK+, and all Python extensions should be 32-bit. Mixing 64-bit and 32-bit components will cause errors.
+One way to get 64-bit support is with a vanilla 64-bit Python. It is easy,
+but it is CLI only: there is no GUI. It is experimental.
 
-Alternatively, use [gtk-download.sh](https://github.com/bleachbit/bleachbit-misc/blob/master/gtk-download.sh) and [gtk-unpack.sh](https://github.com/bleachbit/bleachbit-misc/blob/master/gtk-unpack.sh).
+1. Download and install Python 3.13.12 64-bit. Choose to install for all users. Choose the path `c:\python313` (instead of under Program Files).
+2. Download BleachBit source from the main repository.
+3. Unpack the BleachBit source, like to `c:\projects\bleachbit`.
+4. Change directory: `cd /d c:\projects\bleachbit`
+5. Create venv: `c:\python313\python.exe -m venv c:\projects\bleachbit\venv`
+6. Activate venv. If in cmd.exe, run: `call c:\projects\bleachbit\venv\scripts\activate.bat`
+7. Set up the venv: `pip install -r windows\requirements.txt`
+8. Run BleachBit CLI using `python.exe bleachbit.py` instead of `bleachbit.exe`.
 
-### BleachBit 4.x
+### MSYS2
 
-Follow the installation steps in [appveyor.yml](https://github.com/bleachbit/bleachbit/blob/master/appveyor.yml).
+Another experimental method for 64-bit support on Windows is with MSYS2. See the [guide by LagunaJim](https://github.com/bleachbit/bleachbit/issues/2019#issuecomment-3941571322). This supports the GUI.
 
 ## Getting the source code
 
@@ -47,9 +51,9 @@ To get the source code, either download the latest tarball (.tar.bz2) or checkou
 
 On Linux unpack a tarball run these commands:
 
-```
-tar xvjf bleachbit-3.2.0.tar.bz2
-cd bleachbit-0.3.2.0
+```terminal
+tar xvjf bleachbit-5.0.2.tar.bz2
+cd bleachbit-5.0.2
 ```
 
 On Windows unpack the tarball with [7-Zip](http://www.7-zip.org/) or similar application.
@@ -58,19 +62,26 @@ On Windows unpack the tarball with [7-Zip](http://www.7-zip.org/) or similar app
 
 On Linux, install the Git client. On Debian and Ubuntu install it with this command:
 
-`sudo apt-get install git`
+```terminal
+sudo apt-get install git
+```
 
 Similarly, on Fedora, Red Hat, and CentOS install the Git client with this command:
 
-`sudo yum install git-core`
+```terminal
+sudo yum install git-core
+```
 
 On Linux clone the Git repository for the BleachBit application with this command:
 
-`git clone https://github.com/bleachbit/bleachbit.git`
+```terminal
+git clone https://github.com/bleachbit/bleachbit.git
+```
 
 Here is a full list of BleachBit Git repositories:
 
 *   [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
+*   [pygtwkin](https://github.com/bleachbit/pygtwkin): special build of Python, PyGObject, and GTK
 *   [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
 *   [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
 *   [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
@@ -79,7 +90,9 @@ Here is a full list of BleachBit Git repositories:
 
 If English is not your native language, you must build the translations. On Linux, run:
 
-`make -C po local`
+```terminal
+make -C po local
+```
 
 Building translations is not supported on Windows, but you can copy the translations from another system or download them from Launchpad. Relative to ```bleachbit.py``` put the ```bleachbit.mo``` file in a directory called ```.\locale\es\LC_MESSAGES\``` (change ```es``` according to the language.)
 
@@ -91,11 +104,29 @@ On Windows, double click on `bleachbit.py`.
 
 ### Staying up to date with Git
 
-The Git repository changes frequently. To download changes, run these commands:
+The Git repository changes frequently. To download changes, run:
 
-```
-git pull
+```bash
+git pull --rebase
 make -C po local
+```
+
+To see recent changes, run:
+
+```terminal
+git log --oneline --graph --decorate -n 20
+```
+
+To switch to a tagged release, run:
+
+```terminal
+git checkout v5.0.2
+```
+
+To switch back to the master branch, run:
+
+```terminal
+git checkout master
 ```
 
 ### Further reading

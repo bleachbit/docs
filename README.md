@@ -10,6 +10,7 @@ Otherwise, if you want to build the documentation site, follow the instructions 
 sudo apt-get update
 sudo apt-get install gnupg2 ruby-full ruby-bundler
 sudo apt-get remove ruby-liquid # in case installed earlier
+bundle config set --local path vendor/bundle # optional
 bundle install
 bundle exec jekyll serve
 bundle exec jekyll build
