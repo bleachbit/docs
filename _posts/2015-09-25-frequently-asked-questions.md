@@ -14,7 +14,7 @@ Alternatively, when running as a normal user, uncheck options that require root 
 
 ### Q: Why do I see permission denied errors on Windows?
 This happens when cleaning certain files, such as Windows system logs under ``c:\windows``.
-A: When you first launch BleachBit it should prompt you with the User Access Control dialog, which asks, "Do you want to allow the following program to make changes to this computer." Answer *Yes* to grant BleachBit the privileges to modify all files. 
+A: When you first launch BleachBit it should prompt you with the User Access Control dialog, which asks, "Do you want to allow the following program to make changes to this computer." Answer *Yes* to grant BleachBit the privileges to modify all files.
 
 If you answer *No*, then BleachBit will start, and it will still be able to clean data under your user profile. However, it will not have access to clean system data.
 
@@ -59,11 +59,25 @@ Finally, run a file recovery tool. Do a search on the web for "undelete" or "fil
 
 ### Q: Why does BleachBit take a long time while filling up the hard drive?
 
-A: You enabled the option to **System - Free disk space** to wipe free disk space for privacy. This works basically by creating a large, empty file (see [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information). The duration depends on the speed of the hardware and the free capacity, and it is common to take more than five minutes.
+A: Check under the System cleaner whether the option **Free disk space**
+(version 5.0.2 and prior) or **Empty Space** (version 5.1.0 and later) is enabled.
+The purpose is not to increase the amount of available space. Instead, its purpose
+is to make previously deleted files unrecoverable.
 
-When the hard drive is full, BleachBit immediately deletes the file, and there will be no net change in disk space, so you will be back where you started. It is generally recommended you disable this option.
+This feature works by creating large, empty files (see [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html)
+for more information). The duration to wipe empty space depends on the speed of the
+hardware and the free capacity, and it commonly takes more than five minutes.
 
-If this option is disabled, and BleachBit is slow, look at the option **Edit - Preferences - General - Overwrite Contents**. Enabling this option makes BleachBit slower because more work is required to make files unrecoverable.
+When the hard drive is full, BleachBit immediately deletes the file, and there will
+be no net change in disk space.
+
+Wiping empty space is not necessary if your drive is protected with full-disk encryption
+such as BitLocker or LUKS. Wiping works best on traditional hard drives. On solid-state
+drives, it is less reliable, and frequent use contributes to wear.
+
+If wiping empty space is disabled, but BleachBit is still slow, look at the option
+**Edit - Preferences - General - Overwrite Contents**. Enabling this option makes BleachBit
+slower because more work is required to make files unrecoverable.
 
 ### Q: I closed BleachBit while it was working for a long time, and now my hard drive is full. How do I fix it?
 A: Run BleachBit, and clean the option **System - Temporary Files**. On Linux, also clean **System - Cache**. This will delete one or more files that are gigantic and have random filenames.
@@ -81,7 +95,7 @@ If you cannot boot Ubuntu because the disk is full, use the [Ubuntu Recovery Mod
 1. If this cleans enough space, boot normally and then clean the cache as mentioned above.
 1. Otherwise, choose  _root_ from the Recovery Menu.
 1. Type this command to switch to your normal user account: <tt>su <i>username</i> -</tt>. (Replace _username_ with your username.)
-1. Run this command to clean the user's cache: 'rm -rf ~/.cache/`
+1. Run this command to clean the user's cache: `rm -rf ~/.cache/`.
 1. Reboot.
 
 In the future, you may avoid this situation by disabling the BleachBit option **System - Free Disk Space**. Otherwise, do not interrupt BleachBit while it is working.
