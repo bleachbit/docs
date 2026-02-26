@@ -27,17 +27,24 @@ to build it yourself.)
 
 ### Vanilla 64-bit Python
 
-One way to get 64-bit support is with a vanilla 64-bit Python. It is easy,
-but it is CLI only: there is no GUI. It is experimental.
+One way to get 64-bit support is with vanilla 64-bit Python. This method is easy
+but experimental and CLI-only: there is no GUI.
 
-1. Download and install Python 3.13.12 64-bit. Choose to install for all users. Choose the path `c:\python313` (instead of under Program Files).
-2. Download BleachBit source from the main repository.
-3. Unpack the BleachBit source, like to `c:\projects\bleachbit`.
-4. Change directory: `cd /d c:\projects\bleachbit`
-5. Create venv: `c:\python313\python.exe -m venv c:\projects\bleachbit\venv`
-6. Activate venv. If in cmd.exe, run: `call c:\projects\bleachbit\venv\scripts\activate.bat`
-7. Set up the venv: `pip install -r windows\requirements.txt`
-8. Run BleachBit CLI using `python.exe bleachbit.py` instead of `bleachbit.exe`.
+Do this setup once:
+
+1. Download the latest [Python Windows installer (64-bit)](https://www.python.org/downloads/windows/).
+1. Run the installer. Under **Optional Features**, enable **for all users**. (If you like, disable **tcl/tk and IDLE**.)
+1. Click **Next**.
+1. Customize the install location to `c:\python313` (for version 3.13.x), and finish the Python installation.
+1. Download BleachBit source from the main repository ([zip](https://github.com/bleachbit/bleachbit/archive/refs/heads/master.zip)).
+1. Unpack the BleachBit source, like to `c:\projects\bleachbit`.
+1. Change directory: `cd /d c:\projects\bleachbit`
+1. Create venv: `c:\python313\python.exe -m venv c:\projects\bleachbit\venv`
+1. Activate venv. If in cmd.exe, run: `call c:\projects\bleachbit\venv\scripts\activate.bat`
+1. Set up the venv: `pip install -r windows\requirements.txt`
+1. Run BleachBit CLI using `python.exe bleachbit.py` instead of `bleachbit.exe`.
+
+The next time, just activate the venv and run the application (via `python.exe`).
 
 ### MSYS2
 
