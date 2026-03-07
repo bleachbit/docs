@@ -23,7 +23,7 @@ install the special 32-bit build of Python, PyGObject, and GTK. Like vanilla Pyt
 the special build uses the MSVC compiler. It is built using the vcpkg package manager.
 
 Follow the installation steps in [appveyor.yml](https://github.com/bleachbit/bleachbit/blob/master/appveyor.yml),
-which installs a [prebuilt environment from pygtwkin](https://github.com/bleachbit/pygtkwin). (You do not need
+which installs a [prebuilt environment from pygtkwin](https://github.com/bleachbit/pygtkwin). (You do not need
 to build it yourself.)
 
 ### Vanilla 64-bit Python
@@ -89,7 +89,7 @@ git clone https://github.com/bleachbit/bleachbit.git
 Here is a full list of BleachBit Git repositories:
 
 *   [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
-*   [pygtwkin](https://github.com/bleachbit/pygtwkin): special build of Python, PyGObject, and GTK
+*   [pygtkwin](https://github.com/bleachbit/pygtkwin): special build of Python, PyGObject, and GTK
 *   [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
 *   [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
 *   [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows

@@ -52,7 +52,7 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 
 ## Finding files to delete
 
-See [Finding files to delete](/cml/finding_files_to_delete.html).
+See [Finding files to delete](/cml/finding-files-to-delete.html).
 
 ## Matching files
 
