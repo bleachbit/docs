@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Introduction"
+title: "CleanerML Introduction – Write Custom BleachBit Cleaners"
+nav_title: "CleanerML Intro"
 category: cml
 date: 2000-01-01 00:01:00
 # The date is set to an old date to keep this article first in its section.

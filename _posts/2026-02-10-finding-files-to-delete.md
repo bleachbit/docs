@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Finding files to delete"
+title: "Finding Files to Delete – BleachBit CleanerML Guide"
+nav_title: "Finding Files"
 category: cml
 date: 2026-02-10 00:00:00
 order: 2

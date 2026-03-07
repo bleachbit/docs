@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Variables"
+title: "CleanerML Variables Reference – BleachBit Documentation"
+nav_title: "Variables"
 category: cml
 date: 2000-01-01 00:00:00
 ---

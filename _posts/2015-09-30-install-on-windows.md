@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Install on Windows"
+title: "How to Install BleachBit on Windows – Step-by-Step Guide"
+nav_title: "Windows Install"
 category: doc
 date: 2015-09-30 20:37:24
 order: 1

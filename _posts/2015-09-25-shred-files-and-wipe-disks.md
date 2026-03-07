@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Shred files and wipe disks"
+title: "How to Shred Files and Wipe Disks with BleachBit"
+nav_title: "Shred Files"
 category: doc
 date: 2015-09-25 23:33:58
 order: 6

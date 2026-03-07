@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Contributing"
+title: "Contributing to BleachBit CleanerML – Developer Guide"
+nav_title: "Contributing"
 category: cml
 date: 2000-01-01 00:00:00
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Frequently Asked Questions"
+title: "BleachBit FAQ – Frequently Asked Questions & Answers"
+nav_title: "FAQ"
 category: doc
 date: 2000-01-25 23:30:16
 order: 5

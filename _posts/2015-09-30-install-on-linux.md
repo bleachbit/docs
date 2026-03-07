@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Install on Linux"
+title: "How to Install BleachBit on Linux – Step-by-Step Guide"
+nav_title: "Linux Install"
 category: doc
 date: 2015-09-30 20:37:20
 order: 1

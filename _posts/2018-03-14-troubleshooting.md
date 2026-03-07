@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Troubleshooting"
+title: "BleachBit Troubleshooting – Fix Common Errors & Problems"
+nav_title: "Troubleshooting"
 category: doc
 date: 2000-03-14 21:36:58
 order: 10
