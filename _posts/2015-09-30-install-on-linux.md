@@ -7,7 +7,7 @@ order: 1
 ---
 
 
-### Sources
+## Sources
 
 Linux users have a few choices for installing BleachBit.
 
@@ -22,21 +22,21 @@ Here is an example of this policy. Ubuntu Questing 25.10 (released October 2025)
 It is your choice to install from the distribution's repositories, but in case of any issues with the software, first check for a newer release.
 
 
-### Software dependencies
+## Software dependencies
 
 BleachBit 5 requires GTK 3.24 and Python 3.8 or later.
 
-### Signatures for .rpm and .deb packages
+## Signatures for .rpm and .deb packages
 
 Starting after BleachBit 5.0.2, the .rpm and .deb packages will be signed with the same key. This will make it easier to verify the signatures.
 
-### Ubuntu, Mint, and Debian
+## Ubuntu, Mint, and Debian
 
-#### Graphical package manager
+### Graphical package manager
 
 Double click on the downloaded installation package which has a name like `bleachbit_5.0.2-0_all_ubuntu2504.deb`. Then, follow the prompts. You may see a security warning about third-party packages, and you may need to enter your password to install BleachBit.
 
-#### Command line
+### Command line
 
 Install using the command line like this:
 
@@ -44,19 +44,19 @@ Install using the command line like this:
 
 Using apt is recommended over dpkg because it will automatically install dependencies.
 
-### Fedora, Red Hat, CentOS
+## Fedora, Red Hat, CentOS
 
-#### Graphical package manager
+### Graphical package manager
 
 To install BleachBit using the graphical package manager, double click on the downloaded installation package which has a name like `bleachbit-5.0.2-1.1.fc43.noarch.rpm`. Then, follow the prompts.
 
-#### Command line
+### Command line
 
 Alternatively, install using the command line like this.
 
 `sudo dnf install bleachbit-5.0.2-1.1.fc43.noarch.rpm`
 
-### Digital signatures
+## Digital signatures
 
 Verifying the digital signature protects you against file corruption and tampering.
 

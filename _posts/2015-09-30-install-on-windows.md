@@ -10,7 +10,7 @@ To install BleachBit, first [download BleachBit 5 for Windows](https://www.bleac
 
 Using Windows 7? [Download BleachBit 4.6.2 for Windows 7](https://www.bleachbit.org/bleachbit-windows-7).
 
-#### Standard Installation
+### Standard Installation
 
 Most Windows users want the standard installation.
 
@@ -20,7 +20,7 @@ Verify the installer comes from the verified publisher shown in the screenshot.
 
 ![BleachBit 4.6.2 Windows 10 User Access Control verified publisher](/images/windows-10-verified-publisher-certum.png)
 
-#### Portable Use
+### Portable Use
 
 While installation is the typical way of using BleachBit, some users prefer an alternative. They may
 want to put the application on a removable drive or use it on a system without system permission to
@@ -32,7 +32,7 @@ right-click on the `.zip` file and choose **Extract all files** which creates a 
 
 Do not double-click on the `.zip` file.
 
-#### Silent Installation
+### Silent Installation
 
 Silent installation is for advanced users or system administrators. This feature installs the
 application without any prompts from the user, and system administrators use it to automate the
@@ -58,7 +58,7 @@ insufficient privileges.
 The `/S` and `/NoDesktopShortcut` switches _are_ case-sensitive.
 
 
-#### After Installation
+### After Installation
 
 After installation, review the [preference options](/doc/preferences.html) or skip
 to [general usage](/doc/general-usage.html).

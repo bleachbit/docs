@@ -7,7 +7,7 @@ order: 5
 ---
 
 {% for faq in site.data.faqs.main %}
-### Q: {{ faq.question }}
+## Q: {{ faq.question }}
 
 A: {{ faq.answer }}
 
@@ -18,7 +18,7 @@ A: {{ faq.answer }}
 While these may not be asked, they are not common knowledge:
 
 {% for faq in site.data.faqs.things_to_know %}
-### Q: {{ faq.question }}
+## Q: {{ faq.question }}
 
 A: {{ faq.answer }}
 

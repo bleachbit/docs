@@ -4,7 +4,7 @@ title: "BleachBit Documentation"
 redirect_from: "/doc/install.html"
 ---
 
-### BleachBit
+# BleachBit
 
 This is the manual for [BleachBit](https://www.bleachbit.org), a fast and safe system cleaner. By simply checking boxes, you can delete unnecessary files such as cache, logs, cookies, recently-used-files lists, and more.
 

@@ -9,7 +9,7 @@ order: 6
 Normally when software deletes a file, only the "metadata" is erased: that means the complete contents often can easily be recovered, so BleachBit (and similar applications) offer secure erase features (also called secure wipe, secure overwriting, or file shredding) to permanently remove data. Some applications even advertise "advanced" erasure methods referencing important names in security such as Gutmann, the United States Department of Defense, and the NSA, but these references often mislead people to waste time on snake oil technological remedies while ignoring important basics. Any product or method suggesting a convenient, comprehensive solution to security is deceptive: convenience and security oppose each other. This guide will explain **how 1 pass is enough, but 35 passes are not enough.** Regardless of the tools you use, please read this guide carefully and completely.
 
 
-### Myths and legends
+## Myths and legends
 
 Most of the confusion regarding the topic of data remanence (data left behind after it is deleted) is because of myths and urban legends. Before discussing what is true, let's preview what is not:
 
@@ -22,7 +22,7 @@ Most of the confusion regarding the topic of data remanence (data left behind af
 
 The details are explained below.
 
-### What features does BleachBit have to securely wipe files?
+## What features does BleachBit have to securely wipe files?
 
 Today BleachBit offers these features
 
@@ -37,13 +37,13 @@ Because additional passes add no value and only offer a false sense of security 
 
 Unlike other cleaner applications, BleachBit shreds Internet history in Firefox without deleting the whole Firefox Places database.
 
-### Are these features secure?
+## Are these features secure?
 
 Concerned about the security of my house, once I asked a locksmith whether I should upgrade the standard lock on my front door. Not a good salesman, he replied, "Why bother? A burglar would just break the window."
 
 Is driving a new car with air bags and a good crash test rating safe? Probably. How about when the car is operated by a 15-year old on a busy road at night while texting on his cell phone? Probably not. This analogy demonstrates two things. First, security is not black or white: there is always risk ranging from near (but not completely) zero to near 100%. Indeed, sometimes people even walk away from catastrophic car accidents. Second, the context is important: what is good in one situation is not good in another. Therefore, a better question is...
 
-### How secure are BleachBit's methods?
+## How secure are BleachBit's methods?
 
 When used appropriately, BleachBit's data wiping features are generally enough to hide traces of most data from most people.
 
@@ -56,7 +56,7 @@ Even more important than asking how secure an application or technique is, start
 
 The answers to these questions will lead you to the appropriate level of caution.
 
-### Are multiple passes better than one pass?
+## Are multiple passes better than one pass?
 
 Some applications offer "advanced" and "high security" erasure techniques such as Gutmann method (35 passes), Department of Defense (DOD) standard (7 passes), National Security Agency (NSA) "approved" (3 passes), etc. Introduced by a poor reading of Peter Gutmann's ancient paper, people incorrectly believe that overwriting the same data multiple times makes it more difficult to recover. Years after his original paper, Peter Gutmann himself tried to clear up the confusion caused by his original paper [[*](https://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html#Epilogue)]:
 
@@ -70,7 +70,7 @@ If recovery of data on modern media overwritten by a single pass were possible, 
 
 Second, shredding software which advertises these features often glosses over the application of the technique. **The DoD 5220.22-M standard was never intended be shred individual files or to wipe free disk space**: it was intended to wipe the entire hard drive causing a complete data loss including the operating system and all software, settings, and documents. Also, Department of Defense approves software shredding techniques only within the DoD: for storage devices released out of the Department of Defense, only mechanical destruction is approved. In other words, any software which shreds individual files or free disk space cannot be DOD or NSA compliant.
 
-### Limits of shredding files and wiping free disk space
+## Limits of shredding files and wiping free disk space
 
 Shredding individual files and free disk space has limited benefits for any cleaner application, including BleachBit. Once you understand the limits, you will know whether taking extra mitigation steps is worthwhile.
 
@@ -90,7 +90,7 @@ However, wiping free disk space has several of its own challenges:
 2.  File systems allocate space in fixed chunks called a block size, and many files do not use all the last block. A 5,000,000 byte file on a 4096 size block file system would use 1220 full blocks and 1 partial block with 2880 bytes. Say the file was deleted and a new file in the same place used 1024 bytes of the last block. That means 1856 bytes of the old file (0.03%) is not overwritten in what is called the "slack space" of the new file. Because cleaning slack space is tricky and realistically little useful data can be recovered from such tiny pieces (typically not more than 4096 bytes), BleachBit does not clean slack space when wiping free disk space. (Remember: BleachBit _does_ wipe slack when wiping individual files.)
 3.  When an area of a modern hard drive is damaged, it automatically remaps the bad sector to a spare. The operating system and applications are unaware of the move, so wiping the drive ignores the damaged area. According to [DBAN](https://dban.org/), a powerful disk wiping tool, it does not erase remapped sectors and hidden areas.
 
-### How to securely delete data
+## How to securely delete data
 
 To permanently delete data, there is an order of progression with trade-offs of convenience and time vs privacy:
 
@@ -102,7 +102,7 @@ To permanently delete data, there is an order of progression with trade-offs of 
 
 However, in practice things become more complicated.
 
-### Keeping data private
+## Keeping data private
 
 Here are some suggestions to keep your data private
 
@@ -115,7 +115,7 @@ Here are some suggestions to keep your data private
 7.  Don't assume you control all the data. Say you download a file from www.example.com: there may be records on your computer, your ISP, www.example.com's server, www.example.com's ISP, www.example.com's backup site, the Internet backbone, etc. Think about how much data is stored on your email server, Facebook account, etc.
 8.  Don't use any computers because the Nosy Secret Agents may looking over your shoulder using Van Eck phreaking.
 
-### Suggested reading
+## Suggested reading
 
 *   ["Data Remanence"](https://en.wikipedia.org/wiki/Data_remanence) (Wikipedia)
 *   ["Gutmann method: criticism"](https://en.wikipedia.org/wiki/Gutmann_method#Criticism) (Wikipedia)

@@ -24,7 +24,7 @@ You can think of it as writing XML to delete files, but it is more powerful than
 * Operating system detection to discard OS-specific cleaners (such as Winamp) at runtime
 * XSD (XML Schema Definition) for validation
 
-### Storage
+## Storage
 
 During application startup, BleachBit looks for CleanerML files in a few standard locations:
 
@@ -40,7 +40,7 @@ Most of these locations are also scanned for [winapp2.ini](/doc/winapp2ini.html)
 The diagnostics section of the application lists these directories.
 
 
-### Learning CleanerML
+## Learning CleanerML
 
 To learn CleanerML so you can write your own cleaner, read these resources:
 
@@ -49,11 +49,11 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 *   [Bonus cleaners](https://github.com/bleachbit/cleanerml)
 *   [XSD (XML Schema Definition)](https://github.com/bleachbit/bleachbit/blob/master/doc/cleaner_markup_language.xsd) used for validation
 
-### Finding files to delete
+## Finding files to delete
 
 See [Finding files to delete](/cml/finding_files_to_delete.html).
 
-### Matching files
+## Matching files
 
 CleanerML allows several ways to match files:
 
@@ -80,7 +80,7 @@ Another way to filter is using with **type**:
 
 For more information, refer to the section [Learning](#learning-cleanerml).
 
-### Actions
+## Actions
 
 The **action** element is a child of the **option** element.
 
@@ -107,7 +107,7 @@ Values for the **comand** attribute of the **action** element:
 
 Actions take an optional **os** attribute to limit the action to certain operating systems.
 
-### Operating system
+## Operating system
 
 The optional attribute **os** limits the scope of an element to certain operating systems.
 
@@ -128,19 +128,19 @@ Valid values for *os* are:
 * **unix**: Darwin, Linux, or any BSD
 * **windows**
 
-### Running process
+## Running process
 
 Set the *running* element to abort cleaning when an application is running. It accepts two attributes:
 
 * **type**: required, either: **exe** for process name or **pathname** for a file on the file system
 * **os**: optional, any value for the operating system
 
-### Variables
+## Variables
 
 BleachBit supports expansion of a variety of variables: tilde (home), environment variables, and
 multi-value variables. For more information, see [Variables](/cml/variables.html).
 
-### Sharing your cleaner
+## Sharing your cleaner
 
 Of course, you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner](/cml/contributing.html).
 
