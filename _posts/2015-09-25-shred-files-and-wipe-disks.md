@@ -107,21 +107,18 @@ However, in practice things become more complicated.
 
 Here are some suggestions to keep your data private
 
-1.  Don't keep secrets. It's easier to sleep.
-2.  Don't waste time with multiple passes for data sanitation.
-3.  Second guess any software which advertises multiple passes to wipe files or free disk space. Do the authors not honestly know what they are doing, or is a useless feature for marketing purposes?
-4.  Use full volume encryption, though someone may [hit you with a $5 wrench](https://xkcd.com/538/) until you reveal the key.
-5.  If giving a hard drive (or whole computer) to someone else, use DBAN to wipe the entire drive, including the remapped sectors—even though reinstalling an operating system, security updates, applications, and settings is a pain. It's not enough to delete files, empty the recycle bin (or trash can), and wipe the free space because some useful data may be in the swap file, hibernation file, Windows registry, and application registries (such as passwords in Firefox's configuration). If you are not willing to do that, minimally delete the user accounts on the system and _then_ wipe free disk space.
-6.  If you need DoD class security, use the only sanitation method approved by the DoD 5220.22-M standard: degauss or mechanically destroy the storage device.
-7.  Don't assume you control all the data. Say you download a file from www.example.com: there may be records on your computer, your ISP, www.example.com's server, www.example.com's ISP, www.example.com's backup site, the Internet backbone, etc. Think about how much data is stored on your email server, Facebook account, etc.
-8.  Don't use any computers because the Nosy Secret Agents may looking over your shoulder using Van Eck phreaking.
+0.  Don't keep secrets. It's easier to sleep.
+0.  Don't waste time with multiple passes for data sanitation.
+0.  Second guess any software which advertises multiple passes to wipe files or free disk space. Is it snake oil?
+0.  Use full volume encryption, though someone may [hit you with a $5 wrench](https://xkcd.com/538/) until you reveal the key.
+0.  If you want to make forensic recovery slower and more expensive, generate large volumes of semi-realistic decoy data with [Chaff](/doc/chaff.html). This complements other methods; it does not replace them.
+0.  If giving a hard drive or whole computer to someone else, use DBAN to wipe the entire drive, including the remapped sectors—even though reinstalling an operating system, security updates, applications, and settings is a pain. It's not enough to delete files, empty the recycle bin (or trash can), and wipe the free space because some useful data may be in the swap file, hibernation file, Windows registry, and application registries (such as passwords in Firefox's configuration). If you are not willing to do that, minimally delete the user accounts on the system and _then_ wipe free disk space.
+0.  If you need DoD class security, use the only sanitation method approved by the DoD 5220.22-M standard: degauss or mechanically destroy the storage device. No software can physically do this.
+0.  Don't assume you control all the data. Say you download a file from www.example.com: there may be records on your computer, your ISP, www.example.com's server, www.example.com's ISP, www.example.com's backup site, the Internet backbone, etc. Think about how much data is stored on your email server, Facebook account, etc.
+0.  Don't use any computers because the Nosy Secret Agents may be looking over your shoulder using Van Eck phreaking.
 
 ## Suggested reading
 
 *   ["Data Remanence"](https://en.wikipedia.org/wiki/Data_remanence) (Wikipedia)
 *   ["Gutmann method: criticism"](https://en.wikipedia.org/wiki/Gutmann_method#Criticism) (Wikipedia)
 *   [One big file is not enough: A critical evaluation of the dominant free-space sanitization technique](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.117.694&rep=rep1&type=pdf) (Garfinkel and Malan, 2006)
-
-
-
-
