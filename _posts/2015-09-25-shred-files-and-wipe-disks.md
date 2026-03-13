@@ -9,6 +9,22 @@ order: 6
 
 Normally when software deletes a file, only the "metadata" is erased: that means the complete contents often can easily be recovered, so BleachBit (and similar applications) offer secure erase features (also called secure wipe, secure overwriting, or file shredding) to permanently remove data. Some applications even advertise "advanced" erasure methods referencing important names in security such as Gutmann, the United States Department of Defense, and the NSA, but these references often mislead people to waste time on snake oil technological remedies while ignoring important basics. Any product or method suggesting a convenient, comprehensive solution to security is deceptive: convenience and security oppose each other. This guide will explain **how 1 pass is enough, but 35 passes are not enough.** Regardless of the tools you use, please read this guide carefully and completely.
 
+## tl;dr: Secure File Deletion
+
+**1 pass is enough. 35 passes are snake oil.**
+
+"DoD 7-pass" and "Gutmann 35-pass" are widely misunderstood: even
+Gutmann called the 35-pass method "voodoo." The DoD standard only
+applies to wiping entire drives, not individual files. For drives
+leaving DoD custody, only physical destruction is approved.
+
+**Limits to know:**
+- File shredding may miss old data if the file shrank or moved
+- Free-space wiping misses remapped bad sectors
+- Neither touches backups, cloud, ISPs, etc.
+
+**Escalating options:** shred files → wipe empty space → DBAN the
+whole drive → physical destruction.
 
 ## Myths and legends
 
@@ -29,7 +45,7 @@ Today BleachBit offers these features
 
 1.  Overwrite specific files found by its cleaners to hide the contents of these files (such as Firefox Internet cache).
 2.  Overwrite specific files found anywhere on the hard drive (such as a confidential spreadsheet on your desktop).
-3.  Wipe free disk space to hide the contents of files previously deleted by any software.
+3.  Wipe empty disk space to hide the contents of files previously deleted by any software.
 4.  Wipe memory and swap to wipe data stored in RAM such as passwords and web pages (currently, only on Linux).
 
 Shredding is much slower than deleting because deleting changes only the file system metadata, which is small and a consistent size for all files: the metadata is the name of the file, its location on the disk, a time stamp, owner, etc. On the other hand, shredding takes time proportional to the size of the file.
@@ -59,21 +75,51 @@ The answers to these questions will lead you to the appropriate level of caution
 
 ## Are multiple passes better than one pass?
 
-Some applications offer "advanced" and "high security" erasure techniques such as Gutmann method (35 passes), Department of Defense (DOD) standard (7 passes), National Security Agency (NSA) "approved" (3 passes), etc. Introduced by a poor reading of Peter Gutmann's ancient paper, people incorrectly believe that overwriting the same data multiple times makes it more difficult to recover. Years after his original paper, Peter Gutmann himself tried to clear up the confusion caused by his original paper [[*](https://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html#Epilogue)]:
+Some applications advertise "advanced" erasure techniques such as the Gutmann
+method (35 passes), DoD standard (7 passes), or NSA "approved" (3 passes).
+These are based on a misreading of Peter Gutmann's original paper---the idea
+being that overwriting data multiple times makes recovery harder. Years later,
+Gutmann himself tried to correct the record
+[[source](https://web.archive.org/web/20260310054328/https://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html#Epilogue)]:
 
-> Some people have treated the 35-pass overwrite technique described in it more as a kind of voodoo incantation to banish evil spirit. [... ] In fact performing the full 35-pass overwrite is pointless for any drive since it targets a blend of scenarios involving all types of (normally-used) encoding technology.
+> "Some people have treated the 35-pass overwrite technique described in it
+> more as a kind of voodoo incantation to banish evil spirits."
 
-Wikipedia explains further that a single pass is enough [[*](https://secure.wikimedia.org/wikipedia/en/wiki/Data_remanence#Feasibility_of_recovering_overwritten_data)]:
+In fact, a single pass is sufficient for modern drives. As Wikipedia notes, the
+chances of recovering overwritten data from a modern hard drive amount to "urban
+legend." If single-pass recovery were genuinely possible, scientists would
+publish papers on it, data recovery firms would charge premium rates for it, and
+drive manufacturers would exploit it to boost storage density. None of that has
+happened.
 
-> The chances of overwritten data being recovered from a modern hard drive amount to "urban legend". He also points to the "18 1/2 minute gap" Rose Mary Woods created on a tape of Richard Nixon discussing the Watergate break-in. Erased information in the gap has not been recovered, and Feenberg claims doing so would be an easy task compared to recovery of a modern high density digital signal.
+There's a second problem with these advertised standards: the fine print. **The
+DoD 5220.22-M standard was never designed to shred individual files or wipe empty
+disk space**: it was designed to wipe an entire drive, destroying the OS,
+software, settings, and all data. Furthermore, the Department of Defense only
+approves software shredding *within* the DoD itself; for drives leaving DoD
+custody, only physical destruction is approved. Any software claiming to shred
+individual files or empty space in a "DoD-" or "NSA-compliant" manner is
+misrepresenting the standard.
 
-If recovery of data on modern media overwritten by a single pass were possible, scientists would publish papers about it, data recovery companies would charge top dollar for it, the use of it by government organizations would leak out in court cases, and drive manufactures would exploit it to increase storage capacity..
+## Are multiple passes better than one pass?
 
-Second, shredding software which advertises these features often glosses over the application of the technique. **The DoD 5220.22-M standard was never intended be shred individual files or to wipe free disk space**: it was intended to wipe the entire hard drive causing a complete data loss including the operating system and all software, settings, and documents. Also, Department of Defense approves software shredding techniques only within the DoD: for storage devices released out of the Department of Defense, only mechanical destruction is approved. In other words, any software which shreds individual files or free disk space cannot be DOD or NSA compliant.
+Some applications advertise "advanced" erasure techniques such as the Gutmann method (35 passes), DoD standard (7 passes), or NSA "approved" (3 passes). These are based on a misreading of Peter Gutmann's original paper — the idea being that overwriting data multiple times makes recovery harder. Years later, Gutmann himself tried to correct the record:
 
-## Limits of shredding files and wiping free disk space
+> "Some people have treated the 35-pass overwrite technique described in it more as a kind of voodoo incantation to banish evil spirits."
 
-Shredding individual files and free disk space has limited benefits for any cleaner application, including BleachBit. Once you understand the limits, you will know whether taking extra mitigation steps is worthwhile.
+In fact, a single pass is sufficient for modern drives. As Wikipedia notes, the chances of recovering overwritten data from a modern hard drive amount to "urban legend." If single-pass recovery were genuinely possible, scientists would publish papers on it, data recovery firms would charge premium rates for it, and drive manufacturers would exploit it to boost storage density. None of that has happened.
+
+There's a second problem with these advertised standards: the fine print. **The DoD 5220.22-M
+standard was never designed to shred individual files or wipe empty disk space** — it was
+designed to wipe an entire drive, destroying the OS, software, settings, and all data.
+Furthermore, the Department of Defense only approves software shredding *within* the DoD
+itself; for drives leaving DoD custody, only physical destruction is approved. Any software
+claiming to shred individual files or empty space in a "DoD-" or "NSA-compliant" manner is
+misrepresenting the standard.
+
+## Limits of shredding files and wiping empty disk space
+
+Shredding individual files and empty disk space has limited benefits for any cleaner application, including BleachBit. Once you understand the limits, you will know whether taking extra mitigation steps is worthwhile.
 
 Shredding an individual file properly assumes its location can be completely known, but basically it can only be known in one ideal case. The ideal case has three characteristics:
 
@@ -83,12 +129,12 @@ Shredding an individual file properly assumes its location can be completely kno
 
 Though BleachBit cannot know the location of file after it is deleted or moved, neither can any other software. The deleted data is now floating in a giant pool of noise. In other words, a file shredded by BleachBit _even in these non-ideal scenarios_ is difficult to recover _partially_ and likely impossible to recover _fully_. A file shredding in the ideal case should be impossible to recover—even partially.
 
-The three problems above are addressed by wiping free disk space: it doesn't matter where the previous file was located. If the deleted file is allocated now by a new file, the new file has overwritten it. If the previous location is not allocated now, the cleaner will overwrite it.
+The three problems above are addressed by wiping empty disk space: it doesn't matter where the previous file was located. If the deleted file is allocated now by a new file, the new file has overwritten it. If the previous location is not allocated now, the cleaner will overwrite it.
 
-However, wiping free disk space has several of its own challenges:
+However, wiping empty disk space has several of its own challenges:
 
 1.  It can be slow, so many people are not willing to use it.
-2.  File systems allocate space in fixed chunks called a block size, and many files do not use all the last block. A 5,000,000 byte file on a 4096 size block file system would use 1220 full blocks and 1 partial block with 2880 bytes. Say the file was deleted and a new file in the same place used 1024 bytes of the last block. That means 1856 bytes of the old file (0.03%) is not overwritten in what is called the "slack space" of the new file. Because cleaning slack space is tricky and realistically little useful data can be recovered from such tiny pieces (typically not more than 4096 bytes), BleachBit does not clean slack space when wiping free disk space. (Remember: BleachBit _does_ wipe slack when wiping individual files.)
+2.  File systems allocate space in fixed chunks called a block size, and many files do not use all the last block. A 5,000,000 byte file on a 4096 size block file system would use 1220 full blocks and 1 partial block with 2880 bytes. Say the file was deleted and a new file in the same place used 1024 bytes of the last block. That means 1856 bytes of the old file (0.03%) is not overwritten in what is called the "slack space" of the new file. Because cleaning slack space is tricky and realistically little useful data can be recovered from such tiny pieces (typically not more than 4096 bytes), BleachBit does not clean slack space when wiping empty disk space. (Remember: BleachBit _does_ wipe slack when wiping individual files.)
 3.  When an area of a modern hard drive is damaged, it automatically remaps the bad sector to a spare. The operating system and applications are unaware of the move, so wiping the drive ignores the damaged area. According to [DBAN](https://dban.org/), a powerful disk wiping tool, it does not erase remapped sectors and hidden areas.
 
 ## How to securely delete data
@@ -96,7 +142,7 @@ However, wiping free disk space has several of its own challenges:
 To permanently delete data, there is an order of progression with trade-offs of convenience and time vs privacy:
 
 1.  Shred the file (with one pass).
-2.  Overwrite the free disk space.
+2.  Overwrite the empty disk space.
 3.  Overwrite the whole drive (including the operating system and all data).
 4.  Mechanically destroy or degauss the drive.
 5.  Destroy data on backups, ISPs, online accounts, etc.
@@ -109,10 +155,10 @@ Here are some suggestions to keep your data private
 
 0.  Don't keep secrets. It's easier to sleep.
 0.  Don't waste time with multiple passes for data sanitation.
-0.  Second guess any software which advertises multiple passes to wipe files or free disk space. Is it snake oil?
+0.  Second guess any software which advertises multiple passes to wipe files or empty disk space. Is it snake oil?
 0.  Use full volume encryption, though someone may [hit you with a $5 wrench](https://xkcd.com/538/) until you reveal the key.
 0.  If you want to make forensic recovery slower and more expensive, generate large volumes of semi-realistic decoy data with [Chaff](/doc/chaff.html). This complements other methods; it does not replace them.
-0.  If giving a hard drive or whole computer to someone else, use DBAN to wipe the entire drive, including the remapped sectors—even though reinstalling an operating system, security updates, applications, and settings is a pain. It's not enough to delete files, empty the recycle bin (or trash can), and wipe the free space because some useful data may be in the swap file, hibernation file, Windows registry, and application registries (such as passwords in Firefox's configuration). If you are not willing to do that, minimally delete the user accounts on the system and _then_ wipe free disk space.
+0.  If giving a hard drive or whole computer to someone else, use DBAN to wipe the entire drive, including the remapped sectors—even though reinstalling an operating system, security updates, applications, and settings is a pain. It's not enough to delete files, empty the recycle bin (or trash can), and wipe the free space because some useful data may be in the swap file, hibernation file, Windows registry, and application registries (such as passwords in Firefox's configuration). If you are not willing to do that, minimally delete the user accounts on the system and _then_ wipe empty disk space.
 0.  If you need DoD class security, use the only sanitation method approved by the DoD 5220.22-M standard: degauss or mechanically destroy the storage device. No software can physically do this.
 0.  Don't assume you control all the data. Say you download a file from www.example.com: there may be records on your computer, your ISP, www.example.com's server, www.example.com's ISP, www.example.com's backup site, the Internet backbone, etc. Think about how much data is stored on your email server, Facebook account, etc.
 0.  Don't use any computers because the Nosy Secret Agents may be looking over your shoulder using Van Eck phreaking.
@@ -121,4 +167,4 @@ Here are some suggestions to keep your data private
 
 *   ["Data Remanence"](https://en.wikipedia.org/wiki/Data_remanence) (Wikipedia)
 *   ["Gutmann method: criticism"](https://en.wikipedia.org/wiki/Gutmann_method#Criticism) (Wikipedia)
-*   [One big file is not enough: A critical evaluation of the dominant free-space sanitization technique](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.117.694&rep=rep1&type=pdf) (Garfinkel and Malan, 2006)
+*   [One big file is not enough: A critical evaluation of the dominant free-space sanitization technique](https://cs.harvard.edu/malan/assets/pdfjs-2.9.359-dist/web/viewer.html?file=/malan/publications/pet06.pdf) (Garfinkel and Malan, 2006)
