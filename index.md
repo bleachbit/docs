@@ -5,12 +5,41 @@ nav_title: "Home"
 redirect_from: "/doc/install.html"
 ---
 
-# BleachBit
+# BleachBit Documentation
 
-This is the manual for [BleachBit](https://www.bleachbit.org), a fast and safe system cleaner. By simply checking boxes, you can delete unnecessary files such as cache, logs, cookies, recently-used-files lists, and more.
+Welcome to the official documentation for [BleachBit](https://www.bleachbit.org), a free and open-source system cleaner designed to free disk space and protect your privacy.
 
-Use the navigation on left to browse the documentation.
+## What is BleachBit?
 
-![BleachBit 1.9.3 on Windows 10](https://lh3.googleusercontent.com/-ZHs6M_r9odI/VnbrV7sK1cI/AAAAAAAAD6A/WBdTf4DUVbs/s800-Ic42/BleachBit%2525201.9.3%252520on%252520Windows%25252010%252520showing%252520Firefox%252520preview.png "The main screen of BleachBit 1.9.3 on Windows 10")
+BleachBit helps you quickly and safely clean your computer by removing unnecessary files such as:
 
-[Edit this documentation](https://github.com/bleachbit/docs) on GitHub.
+- **Cache** – Temporary files that accumulate over time
+- **Cookies** – Web tracking data stored by browsers
+- **Logs** – System and application log files
+- **Recent file lists** – History of recently accessed documents
+- **Temporary files** – Leftover files from installations and updates
+
+Simply select the options you want to clean, preview what will be deleted, and click to clean. BleachBit supports Windows and Linux.
+
+BleachBit supports advanced features including:
+
+- [Command line interface](/doc/command-line-interface.html)
+- Cookie manager
+- [Customer cleaners](/cml/cleanerml.html)
+- Wipe empty space
+
+## Getting Started
+
+Use the navigation on the left to browse the documentation. If you're new to BleachBit, we recommend starting with:
+
+1. [Download BleachBit](https://www.bleachbit.org/download/)
+1. [Install on Windows](/doc/install-on-windows.html) or [Linux](/doc/install-on-linux.html)
+1. [Configure preferences](/doc/preferences.html)
+1. [General usage](/doc/general-usage.html)
+1. [Review the FAQ](/doc/frequently-asked-questions.html) for common questions
+
+![BleachBit 5.1.1 on Windows 11](images/bleachbit_5_1_1_main_window_windows_11.png "The main screen of BleachBit 5.1.1 on Windows 11")
+
+## Contributing
+
+Found an error or want to improve this documentation? [Edit on GitHub](https://github.com/bleachbit/docs).
