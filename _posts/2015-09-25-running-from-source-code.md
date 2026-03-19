@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Running BleachBit from Source Code – Developer Setup Guide"
+title: "Running BleachBit from source code"
+subtitle: "Developer setup guide"
 nav_title: "Source Code"
 category: dev
 date: 2015-09-25 23:40:58

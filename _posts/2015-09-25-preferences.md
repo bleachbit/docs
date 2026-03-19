@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "BleachBit Preferences – Settings & Configuration Guide"
+title: "Preferences"
+subtitle: "Settings and configuration"
 nav_title: "Preferences"
 category: doc
 date: 2015-09-25 23:17:25

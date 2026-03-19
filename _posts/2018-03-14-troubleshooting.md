@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "BleachBit Troubleshooting – Fix Common Errors & Problems"
+title: "Troubleshooting"
+subtitle: "Fix common errors and problems"
 nav_title: "Troubleshooting"
 category: doc
 date: 2000-03-14 21:36:58
@@ -11,12 +12,13 @@ When something goes wrong, these steps will help you gather information to ask f
 
 ## Show system information
 
-Sometimes the system information is helpful to include when asking for help, and here is how to find it.
+Sometimes the system information is helpful to include when asking for help.
+Here is how to find it:
 
-1. Open BleachBit
-2. Click on the Help menu
-3. Click on System Information
-4. Click the Copy button to copy the information the clipboard.
+1. Open BleachBit.
+2. Click **Help**.
+3. Click **System Information**.
+4. Click **Copy** to copy the information to the clipboard.
 
 Then paste the information in your help request.
 
@@ -24,32 +26,41 @@ Then paste the information in your help request.
 
 ### When installed on Windows 10
 
-When BleachBit is installed on Windows 10, use these steps to show logging information in the console. This sets the logging level to the normal level for normal releases, and it sets it to verbose level for beta releases.
+When BleachBit is installed on Windows 10, use these steps to show logging
+information in the console. This sets the logging level to the normal level
+for normal releases, and it sets it to verbose level for beta releases.
 
-1. Click in the Windows search box
-2. Type `debug` to search for it
-2. Click on **BleachBit Debugging Terminal**
+1. Click in the Windows search box.
+2. Type `debug` to search for it.
+3. Click **BleachBit Debugging Terminal**.
 
 ![Screenshot showing how to launch the debugging terminal](/images/debug-windows10.png)
 
-To make logging more verbose for normal releases or to write the log to a file, instead follow these steps.
+To make logging more verbose for normal releases or to write the log to a
+file, follow these steps instead:
 
-1. Hold down the **Windows** key while pressing the **R** button. This brings up the Run dialog.
-2. Type or paste the command `"%ProgramFiles(x86)%\BleachBit\bleachbit_console.exe" --gui --debug-log=%USERPROFILE%\desktop\bleachbit.log`
-3. Click **Run**
+1. Hold down the `Windows` key while pressing `R`. This brings up the Run
+   dialog.
+2. Type or paste the command
+   `"%ProgramFiles(x86)%\BleachBit\bleachbit_console.exe" --gui --debug-log=%USERPROFILE%\desktop\bleachbit.log`
+3. Click **Run**.
 
 ![Screenshot of the Windows run dialog](/images/run-dialog-windows10.png)
 
-Please note that in the screenshot above, the whole command cannot be seen because it is wider than the field.
+Please note that in the screenshot above, the whole command cannot be seen
+because it is wider than the field.
 
-The log will appear on the desktop, and you will also see it live in the console window.
+The log will appear on the desktop, and you will also see it live in the
+console window.
 
 ### On Linux
 
-On Linux systems use these steps to show verbose logging information:
+On Linux systems, use these steps to show verbose logging information:
 
-1. Open a terminal such as GNOME Terminal
-2. Type or paste the command `bleachbit --gui --debug-log=/home/username/bleachbit.log` (while replacing *username* with your system username)
+1. Open a terminal such as GNOME Terminal.
+2. Type or paste the command
+   `bleachbit --gui --debug-log=/home/username/bleachbit.log`
+   (replace *username* with your system username).
 
 The log will appear in your home directory.
 

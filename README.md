@@ -23,6 +23,66 @@ bundle exec jekyll build
 3. Make the edits in your own repository.
 4. Submit a pull request to merge your changes.
 
+
+# Style guide
+
+## Writing style
+
+- Use sentence case for all headings.
+- Avoid em-dashes; use commas, colons, or rewrite the sentence.
+- Use the Oxford comma.
+- Write "for example" instead of "e.g."
+- Write "that is" instead of "i.e."
+- Omit "Microsoft" when referring to Windows.
+
+## UI instructions
+
+- Bold UI elements the user clicks, selects, or toggles:
+  - buttons: click **Delete**
+  - menu items: go to **Edit > Preferences**
+  - tabs, labels, checkboxes: select the **Custom** tab
+- Code for text the user types: type `bleachbit --list`
+- Describe the action in plain English first, UI element second:
+  - yes: click **Shred files**
+  - no: **Shred files** should be clicked
+- Use "click" for buttons, "select" for menus/dropdowns,
+  "check"/"uncheck" for checkboxes, "type" for keyboard input
+- Code for keyboard shortcuts: press `Ctrl+Z`, press `Shift+Delete`
+  - Use `+` to join keys, no spaces
+  - Capitalize key names: `Ctrl`, `Shift`, `Alt`, `Enter`, `Delete`
+
+## Headings
+
+- Set `title` and optionally `subtitle` in the front matter;
+  the template renders both: do not repeat them in the body
+- Use `subtitle` for a tagline or scope note (one sentence max;
+  okay to omit).
+- Do not write `#` (h1) in the body: the template renders it
+  from `page.title`.
+- Start body headings at `##` (h2), then `###` (h3).
+- Do not skip levels (no h2 → h4).
+- Use sentence case for both title and subtitle (in front matter)
+  and for body headings: `## Limits to know`, not `## Limits To Know`
+
+## Horizontal rules
+
+- Use `---` only for major structural breaks, not between every section
+- Do not use `---` immediately after a heading
+
+## Formatting
+
+- Use `-` for unordered lists, not `*`.
+- Use numbered lists for steps or sequences.
+- Use bullet lists for items that don't need numbering.
+- Wrap long lines to keep diffs readable.
+
+## Capitalization of proper nouns
+
+- BleachBit: always CamelCase
+- Winapp2: capitalized when referring to the community project
+- `winapp2.ini`: always lowercase in code ticks; it is a filename
+- Windows, Linux, macOS: follow each platform's own styling
+
 # License
 
 The documentation is under the GNU General Public License version 3 or later

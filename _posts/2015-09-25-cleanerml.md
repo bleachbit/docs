@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "CleanerML Introduction – Write Custom BleachBit Cleaners"
+title: "CleanerML introduction"
+subtitle: "Write custom BleachBit cleaners"
 nav_title: "CleanerML Intro"
 category: cml
 date: 2000-01-01 00:01:00

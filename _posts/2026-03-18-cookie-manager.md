@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Cookie Manager – Browser Cookie Management Guide"
+title: "Cookie manager"
+subtitle: "Browser cookie management guide"
 nav_title: "Cookie Manager"
 category: doc
 date: 2026-03-18 09:47:00

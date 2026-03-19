@@ -110,6 +110,15 @@ h2 {
 
 .page-header h1 {
     margin-top: 0;
+    margin-bottom: 0.1em;
+}
+
+.page-header .subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.2em;
+    color: #555;
+    font-weight: 400;
 }
 
 #content > .page-header:first-child {

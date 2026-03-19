@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "BleachBit Command Line Interface (CLI) – Usage & Options"
+title: "BleachBit command line interface"
+subtitle: "Usage and options"
 nav_title: "CLI"
 category: doc
 date: 2015-09-25 23:27:26
