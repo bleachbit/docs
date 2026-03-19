@@ -39,7 +39,3 @@ Use the navigation on the left to browse the documentation. If you're new to Ble
 1. [Review the FAQ](/doc/frequently-asked-questions.html) for common questions
 
 ![BleachBit 5.1.1 on Windows 11](images/bleachbit_5_1_1_main_window_windows_11.png "The main screen of BleachBit 5.1.1 on Windows 11")
-
-## Contributing
-
-Found an error or want to improve this documentation? [Edit on GitHub](https://github.com/bleachbit/docs).
