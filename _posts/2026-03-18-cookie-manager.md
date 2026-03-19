@@ -5,6 +5,28 @@ nav_title: "Cookie Manager"
 category: doc
 date: 2026-03-18 09:47:00
 order: 3
+faqs:
+  - question: What is a cookie?
+    answer: A cookie is a small file a website saves to your browser to remember information about you. For example, a cookie might store your login session, language preference, or shopping cart contents.
+  - question: Why would I want to delete cookies?
+    answer: Deleting cookies reduces traces of your browsing activity, removes tracking data collected by advertisers, and clears stale session data from sites you no longer use.
+  - question: Why would I want to keep a cookie?
+    answer: Deleting a cookie from a site usually signs you out and resets your preferences there.
+  - question: Which cookies should I keep?
+    answer: |
+      You may want to keep cookies for sites that you trust, regularly visit, and want to stay logged in.
+
+      Examples:
+
+      - Email provider
+      - Banking website
+      - Social media site or discussion form
+  - question: Can I be tracked without cookies?
+    answer: Yes. Websites can use other techniques such as browser fingerprinting, localStorage, IndexedDB, ETags, and tracking pixels. Deleting cookies is one of multiple ways to reduce tracking but does not eliminate it entirely.
+  - question: How do cookies show in the preview and cleaning log?
+    answer: Instead of showing "Delete" in the log, you will see "Clean cookies" followed by the filename containing cookies. There will be one entry for each supported browser. The log will not list individual cookies.
+  - question: Does Cookie Manager separate cookies by browser?
+    answer: Cookies from all web browsers are shown together.
 ---
 
 *New in BleachBit 5.1.0*
@@ -138,47 +160,6 @@ scope of the Cookie Manager.
 
 Both can be used together for comprehensive control over what BleachBit
 deletes.
-
----
-
-## Frequently Asked Questions
-
-**What is a cookie?**
-: A cookie is a small file a website saves to your browser to remember
-information about you. For example, a cookie might store your login session,
-language preference, or shopping cart contents.
-
-**Why would I want to delete cookies?**
-: Deleting cookies reduces traces of your browsing activity, removes tracking
-data collected by advertisers, and clears stale session data from sites you
-no longer use.
-
-**Why would I want to keep a cookie?**
-: Deleting a cookie from a site usually signs you out and resets your
-preferences there.
-
-**Which cookies should I keep?**
-
-: You may want to keep cookies for sites that you trust, regularly visit,
-and want to stay logged in.
-
-Examples:
-
-- Email provider
-- Banking website
-- Social media site or discussion form
-
-**Can I be tracked without cookies?**
-
-: Yes. Websites can use other techniques such as browser fingerprinting, localStorage, IndexedDB, ETags, and tracking pixels. Deleting cookies is one of multiple ways to reduce tracking but does not eliminate it entirely.
-
-**How do cookies show in the preview and cleaning log**
-
-: Instead of showing "Delete" in the log, you will see "Clean cookies" followed by the filename containing cookies. There will be one entry for each supported browser. The log will not list individual cookies.
-
-**Does Cookie Manager separate cookies by browser?**
-
-: Cookies from all web browsers are shown together.
 
 ---
 

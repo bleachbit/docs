@@ -10,3 +10,7 @@ layout: default
 </div>
 
 {{ content }}
+
+{% if page.faqs %}
+  {% include faqs.html %}
+{% endif %}

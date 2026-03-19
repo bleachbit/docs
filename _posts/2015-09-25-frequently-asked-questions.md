@@ -7,49 +7,15 @@ date: 2000-01-25 23:30:16
 order: 5
 ---
 
-{% for faq in site.data.faqs.main %}
-## Q: {{ faq.question }}
-
-A: {{ faq.answer }}
-
-{% endfor %}
+{% assign main_faqs = site.data.faqs.main %}
+{% include faqs.html faqs=main_faqs heading="Frequently Asked Questions" schema=false %}
 
 ## Things to know
 
 While these may not be asked, they are not common knowledge:
 
-{% for faq in site.data.faqs.things_to_know %}
-## Q: {{ faq.question }}
+{% assign extra_faqs = site.data.faqs.things_to_know %}
+{% include faqs.html faqs=extra_faqs heading=false schema=false %}
 
-A: {{ faq.answer }}
-
-{% endfor %}
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-{% for faq in site.data.faqs.main %}
-    {
-      "@type": "Question",
-      "name": {{ faq.question | jsonify }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ faq.answer | markdownify | jsonify }}
-      }
-    }{% if forloop.last == false %},{% else %}{% if site.data.faqs.things_to_know.size > 0 %},{% endif %}{% endif %}
-{% endfor %}
-{% for faq in site.data.faqs.things_to_know %}
-    {
-      "@type": "Question",
-      "name": {{ faq.question | jsonify }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ faq.answer | markdownify | jsonify }}
-      }
-    }{% if forloop.last == false %},{% endif %}
-{% endfor %}
-  ]
-}
-</script>
+{% assign all_faqs = main_faqs | concat: extra_faqs %}
+{% include faqs.html faqs=all_faqs render_content=false %}
