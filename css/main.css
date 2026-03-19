@@ -8,6 +8,11 @@ body {
     font-weight: 400;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 a {
     color: #1f6db5;
 }
