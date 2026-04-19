@@ -7,13 +7,17 @@ category: doc
 date: 2026-03-18 09:47:00
 order: 3
 faqs:
+  - question: How do cookies show in BleachBit's preview and cleaning log?
+    answer: Instead of showing "Delete" in the log, you will see "Clean cookies" followed by the filename containing cookies. There will be one entry for each supported browser. The log will not list individual cookies.
+  - question: Does Cookie Manager separate cookies by browser?
+    answer: Cookies from all web browsers are shown together.
   - question: What is a cookie?
-    answer: A cookie is a small file a website saves to your browser to remember information about you. For example, a cookie might store your login session, language preference, or shopping cart contents.
+    answer: A browser cookie is a small file a website saves to your browser to remember information about you. For example, a cookie might store your login session, language preference, or shopping cart contents.
   - question: Why would I want to delete cookies?
     answer: Deleting cookies reduces traces of your browsing activity, removes tracking data collected by advertisers, and clears stale session data from sites you no longer use.
   - question: Why would I want to keep a cookie?
     answer: Deleting a cookie from a site usually signs you out and resets your preferences there.
-  - question: Which cookies should I keep?
+  - question: Which browser cookies should I keep?
     answer: |
       You may want to keep cookies for sites that you trust, regularly visit, and want to stay logged in.
 
@@ -22,12 +26,47 @@ faqs:
       - Email provider
       - Banking website
       - Social media site or discussion form
+  - question: What types of browser cookies are there?
+    answer: |
+      Cookies are often categorized by duration or lifetime. *Session cookies* are deleted when the browser closes, while *persistent cookies* remain until their expiration date.
+
+      Cookies can also be categorized by their purposes. Common purposes include: login information, analytics, advertising, and preferences.
+
+      When you log in to a website and enable the option "Remember me", the website may store it in a persistent cookie to keep you logged in, even after closing the browser. Otherwise, the login information may be stored in a session cookie.
+  - question: How much identification is stored in a browser cookie?
+    answer: |
+      A cookie does not store identification information directly. For example, it does not directly store your name, email address, IP address, or other personal information. Instead, it stores a randomly-generated, unique identifier that the website uses to recognize the user, so in practice, it can be used to look up personal information.
+
+      The types of information associated with a cookie vary, but typically include session identifiers, user preferences, advertising or analytical tracking, and account information.
+
+      When you log into your bank, the cookie connects to your bank account information. When you log into your doctor's portal, then the cookie connects to health information. However, each system maintains its own separate cookie store.
+
+      Advertising cookies are used to track your browsing habits and deliver targeted ads. They contain information about the sites you visit, which ads you click, and other tracking data. These work across websites, but only on those that participate in the same advertising network. Many website publishers participate in multiple advertising networks. Advertisers form profiles that are a combination of observed behaviors, like visiting a particular webpage, and general inferences, like an interest in topics or product categories or inferred demographics.
+
+      Over time, advertisers can build detailed profiles that contain more information than some people are comfortable with, so people may delete these cookies, which makes the browser appear to advertisers like a new device.
+  - question: What is a supercookie?
+    answer: A supercookie, also called an evercookie or zombie cookie, stores an identifier across multiple different parts of the web browser, including those not normally deleted by cleaning, so when the normal cookie jar is cleared, the system can reconstruct the identification from other sources, so BleachBit offers many cleaning options for different places data can be stored.
+  - question: What are localStorage and IndexedDB?
+    answer: |
+      localStorage and IndexedDB are ways that websites can save information in your browser, similar to cookies. All three help websites remember things about you between visits.
+
+      **What they have in common:**
+
+      - They store data on your computer, not on the website's server
+      - The data stays even after you close your browser
+      - Websites can use them to keep you logged in or remember your preferences
+
+      **How they differ:**
+
+      | | Cookies | localStorage | IndexedDB |
+      |---|---------|--------------|-----------|
+      | How much can be stored | Very little | More | Much more |
+      | Sent to website automatically | Yes | No | No |
+      | Common uses | Logins, tracking | Saving settings | Storing files for offline use |
+
+      In BleachBit version 5.1.2 and later, use the *Site data* category to clear localStorage and IndexedDB data. The selections in the Cookie Manager do not apply to them.
   - question: Can I be tracked without cookies?
-    answer: Yes. Websites can use other techniques such as browser fingerprinting, localStorage, IndexedDB, ETags, and tracking pixels. Deleting cookies is one of multiple ways to reduce tracking but does not eliminate it entirely.
-  - question: How do cookies show in the preview and cleaning log?
-    answer: Instead of showing "Delete" in the log, you will see "Clean cookies" followed by the filename containing cookies. There will be one entry for each supported browser. The log will not list individual cookies.
-  - question: Does Cookie Manager separate cookies by browser?
-    answer: Cookies from all web browsers are shown together.
+    answer: Yes. Websites can use other techniques such as browser fingerprinting, localStorage, IndexedDB, ETags, and tracking pixels. Deleting browser cookies is one of multiple ways to reduce tracking but does not eliminate it entirely.
 ---
 
 *New in BleachBit 5.1.0*
@@ -181,4 +220,3 @@ Solution: Re-open the Cookie Manager, search for variations of the site's domain
 : Cause: The cookie may be stored in localStorage or IndexedDB, not as an HTTP cookie.
 
 Solution: Add that directory to the Keep list in Preferences.
-
