@@ -23,6 +23,8 @@ Backup any files which may be deleted before testing. Then, use this checklist f
 * The descriptions are generic and reuse strings, so translators have less work.  For example, Firefox should simply be labeled "Web browser" instead of "A popular, fast, free web browser." Look at other cleaners to see which strings they use.
 * Use [variables](/cml/variables.html) rather than hard-coding paths.
 * Run BleachBit in a console window (`bleachbit_console.exe` on Windows) to check for any warnings.
+* In the XML, options are sorted alphabetically.
+* XML attributes in the action element are in the standard order: command, search, path.
 
 ### Preparation
 
