@@ -53,6 +53,11 @@ When enabled, the application uses a dark theme. When disabled, the application 
 
 When enabled, both the GUI and the console will show technical messages that sometimes help trouleshooting. Most users do not need to enable this option.
 
+### Expert mode
+
+For advanced users who want direct control over cleaning operations
+and confirmation dialogs, see [Expert mode](/doc/expert-mode.html).
+
 ### Custom
 
 In the custom tab, choose a file or folder to delete. It will be deleted only when the Custom option is enabled under the System category.
