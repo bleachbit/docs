@@ -31,13 +31,17 @@ Enable expert mode if you:
 
 To enable expert mode:
 
-1. Select **Edit > Preferences**.
-2. Select the **General** tab.
-3. Check the **Expert mode** option.
-4. Review the warning message and confirm your selection.
+![BleachBit Preferences dialog showing Expert mode option](/images/bleachbit_6_0_0_windows11_preferences_dark_mode.png)
 
-BleachBit will display a confirmation dialog stating: *"Expert mode enables advanced
+1. On Linux, **click the hamburger menu** (three horizontal lines in the top-left corner). On Windows, click the application icon (logo) in the top-right corner.
+2. Select **Preferences**.
+3. Select the **General** tab.
+4. Check the **Expert mode** option.
+5. Review the warning message and confirm your selection.
+
+BleachBit displays a confirmation dialog stating: *"Expert mode enables advanced
 features and relaxes guardrails. Use extra caution in expert mode."*
+
 
 ## What changes with expert mode
 
