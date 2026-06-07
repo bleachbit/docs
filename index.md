@@ -24,9 +24,9 @@ Simply select the options you want to clean, preview what will be deleted, and c
 BleachBit supports advanced features including:
 
 - [Command line interface](/doc/command-line-interface.html)
-- Cookie manager
-- [Customer cleaners](/cml/cleanerml.html)
-- Wipe empty space
+- [Cookie manager](/doc/cookie-manager.html)
+- [Custom cleaners](/cml/cleanerml.html)
+- [Wipe empty space](/doc/shred-files-and-wipe-disks.html)
 
 ## Getting Started
 

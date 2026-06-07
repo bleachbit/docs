@@ -70,7 +70,6 @@ main:
   answer: '"I had BleachBit delete data, but now I want it back. Is there an undo
     command?"
 
-
     The success of recovery depends on whether the file was overwritten, and the ease
     of recovery depends on whether the metadata was overwritten. If in the preferences
     the option "Overwrite files to prevent recovery" was enabled, the file probably
@@ -78,14 +77,11 @@ main:
     in `data=journal` mode. The default file system on Ubuntu is ext4 with `data=ordered`
     mode, which makes recovery unlikely.
 
-
-    If the *wipe free space* command was used on the same file system, the file probably
+    If the *wipe empty space*  (formerly *wipe free space*) command was used on the same file system, the file probably
     cannot be deleted regardless of the type of file system. See also [Shred files
     and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information.
 
-
     The chances of recovery decline as data is written to the drive and as time passes.
-
 
     Immediately the file is deleted in a normal way (in other words, if it is not
     overwritten), the full contents still exist and full recovery is stil possible.

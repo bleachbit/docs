@@ -217,7 +217,7 @@ but also increases time, effort, or cost:
   shredding**: it's often marketing, not security.
 - **Use full-disk encryption** for ongoing protection, not just
   at deletion time. This is especially important on SSDs.
-- **Don't over-use "Wipe Free Space"** on SSDs. While it can help
+- **Don't over-use "Wipe Empty Space"** (formerly "Wipe Free Space") on SSDs. While it can help
   clear remnants, it causes significant "write wear." Use it sparingly,
   or rely on TRIM and encryption instead.
 - **Use ShredOS before giving away a spinning hard drive**: deleting

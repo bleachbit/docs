@@ -124,7 +124,7 @@ To shred all files under a directory, pass the name of the directory like this:
 
 ## Wiping empty space
 
-When files are [deleted without shredding](shred-files-and-wipe-disks.html), the contents might be recoverable from the disk's empty free space. To prevent recovery from empty space, you can wipe the empty space. Unlike wiping specific files, wiping empty space takes a long time.
+When files are [deleted without shredding](shred-files-and-wipe-disks.html), the contents might be recoverable from the disk's empty space. To prevent recovery from empty space, you can wipe the empty space. Unlike wiping specific files, wiping empty space takes a long time.
 
 You might want to wipe empty space for each logical drive. For example, on Windows you might wipe `C:` and `D:`, if you write sensitive files to both. On Linux, you might want to wipe `/` and `/home` if they are separate partitions and if you write sensitive information to both.
 
@@ -132,7 +132,7 @@ To wipe any partition, pass any writable directory in that partition to `--wipe-
 
 `bleachbit --wipe-empty-space ~/.cache/`
 
-Wiping free empty space does not change how much free space is left, when the process is done. For example, if you start with 10GB free, then you will still have 10GB free when the process is done.
+Wiping empty space does not change how much free space is left, when the process is done. For example, if you start with 10GB free, then you will still have 10GB free when the process is done.
 
 BleachBit 5.0.2 and earlier used `--wipe-free-space` instead of `--wipe-empty-space`.
 
