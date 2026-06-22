@@ -25,16 +25,46 @@ Linux users have a few choices for installing BleachBit.
 
 Most popular distributions have BleachBit in their repositories, and this is a convenient way to install. However, Ubuntu, Debian, Linux Mint, and other distributions have a "no-rolling release policy," which means they do not update their repositories with the latest BleachBit releases.
 
-Here is an example of this policy. Ubuntu Questing 25.10 (released October 2025) will always have BleachBit 4.6.2, which was released October 2025, even though BleachBit 5.0 was released in May 2025. Users who want to upgrade to BleachBit 5 while using the Ubuntu repositories will have to upgrade to Ubuntu 26.04 in April 2026.
+Here is an example of this policy. Ubuntu Questing 25.10 (released October 2025) always had BleachBit 4.6.2, which was released October 2025, even though BleachBit 5.0 was released in May 2025. Users who wanted to upgrade to BleachBit 5 while using the Ubuntu repositories had to upgrade to Ubuntu 26.04 in April 2026.
 
 It is your choice to install from the distribution's repositories, but in case of any issues with the software, first check for a newer release.
 
 
 ## Software dependencies
 
-BleachBit 5 requires GTK 3.24 and Python 3.8 or later.
-These are commonly preinstalled or available as packages
-on most Linux distributions.
+BleachBit 5 and 6 require GTK 3.24 and Python 3.8 or later.
+These are commonly preinstalled or available as packages on most Linux distributions.
+GTK is required only for the GUI version; the CLI works without GTK.
+
+Red Hat Enterprise Linux 9 and AlmaLinux 9 are the oldest active Linux distributions
+that ship with Python 3.9. After Red Hat drops full support for RHEL 9 in May 2027,
+new releases of BleachBit may require Python 3.11.
+
+BleachBit 6 works best with these optional Python packages: chardet, psutil, and requests.
+
+The new AppImage introduced in BleachBit 6.0.1 contains Python,
+these Python packages, and GTK, so it does not require any dependencies.
+
+There are experimental branches of BleachBit with alternative user
+interfaces that require wxPython (wxWidgets GUI) or Textual (TUI).
+
+### Debian/Ubuntu
+
+All dependencies are already flagged in the official .deb
+packages available on the BleachBit website, so this section
+is useful only if you are running from source.
+
+Here is how to install the hard requirements for the GTK GUI.
+
+```terminal
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0
+```
+
+Here is how to install the soft dependencies
+
+```terminal
+sudo apt install python3-{chardet,psutil,requests}
+```
 
 ## Verifying packages
 
