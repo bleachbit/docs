@@ -7,3 +7,6 @@ _pages
 .bundle/
 vendor/
 .jekyll-cache/
+
+# Local Netlify folder
+.netlify
