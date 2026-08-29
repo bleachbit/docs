@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - "dependabot/**"
+    tags:
+      - "*"
+  pull_request:
+  workflow_dispatch:
+
+env:
+  FORCE_COLOR: 2
+  RUBY: "3.4"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0
+        with:
+          ruby-version: ${{ env.RUBY }}
+          bundler-cache: true
+
+      - name: Run jekyll doctor
+        run: bundle exec jekyll doctor
+
+      - name: Build docs
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
