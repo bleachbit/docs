@@ -1,10 +1,7 @@
 source "https://rubygems.org"
 
-#https://talk.jekyllrb.com/t/liquid-4-0-3-tainted/7946/12
-
-gem 'liquid', '>= 4.0', '< 6.0'
-gem 'jekyll', '>= 4.3.2'
-gem 'jekyll-redirect-from'
-
-
-
+gem 'jekyll', '~> 4.4.1'
+gem 'jekyll-redirect-from', '~> 0.16.0'
+gem 'jekyll-seo-tag', '~> 2.9.0'
+gem 'jekyll-sitemap', '~> 1.4.0'
+gem 'wdm', '~> 0.2.0', :install_if => Gem.win_platform?

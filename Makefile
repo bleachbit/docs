@@ -23,7 +23,6 @@ clean:
 	@echo "Cleaning Ruby dependencies..."
 	rm -rf .bundle/
 	rm -rf vendor/
-	rm -f Gemfile.lock
 	@echo "Cleaning editor temporary files..."
 	find . -name "*.sw?" -delete
 	find . -name "*~" -delete
