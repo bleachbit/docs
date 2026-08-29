@@ -38,6 +38,14 @@ permalink: none
 # Syntax highlighting
 highlighter: rouge
 
+encoding: "utf-8"
+strict_front_matter: true
+
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
 # Sass
 sass:
     style: compressed
@@ -46,21 +54,14 @@ sass:
 future: true
 
 # Exclude non-site files
-exclude: ['bin', 'Makefile', 'README.md']
+exclude:
+    - bin
+    - COPYING
+    - Makefile
+    - README.md
 
 # Use the kramdown Markdown renderer
 markdown: kramdown
-redcarpet:
-    extensions: [
-        'no_intra_emphasis',
-        'fenced_code_blocks',
-        'autolink',
-        'strikethrough',
-        'superscript',
-        'with_toc_data',
-        'tables',
-        'hardwrap'
-    ]
 
 plugins:
     # https://help.github.com/articles/redirects-on-github-pages/
