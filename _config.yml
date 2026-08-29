@@ -38,6 +38,10 @@ permalink: none
 # Syntax highlighting
 highlighter: rouge
 
+# Sass
+sass:
+    style: compressed
+
 # Since these are pages, it doesn't really matter
 future: true
 
