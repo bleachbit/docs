@@ -4,7 +4,8 @@ title: "Contributing to CleanerML"
 subtitle: "A guide for cleaner developers"
 nav_title: "Contributing"
 category: cml
-date: 2000-01-01 00:00:00
+date: 2019-04-19 00:00:00
+order: 4
 ---
 
 Write your own cleaners to use yourself and to share with others. These cleaners define which files to delete or perform some other action.  BleachBit includes one cleaner each for Firefox, Google Chrome, and so on.

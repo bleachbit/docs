@@ -4,8 +4,7 @@ title: "CleanerML introduction"
 subtitle: "Write custom BleachBit cleaners"
 nav_title: "CleanerML Intro"
 category: cml
-date: 2000-01-01 00:01:00
-# The date is set to an old date to keep this article first in its section.
+date: 2015-09-25 00:01:00
 redirect_from:
  - doc/cleanerml
 order: 1
