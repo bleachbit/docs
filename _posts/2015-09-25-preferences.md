@@ -56,7 +56,7 @@ When enabled, both the GUI and the console will show technical messages that som
 ### Expert mode
 
 For advanced users who want direct control over cleaning operations
-and confirmation dialogs, see [Expert mode](/doc/expert-mode.html).
+and confirmation dialogs, see [Expert mode]({% link _posts/2026-04-29-expert-mode.md %}).
 
 ### Custom
 

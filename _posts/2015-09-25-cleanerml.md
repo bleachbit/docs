@@ -36,7 +36,7 @@ During application startup, BleachBit looks for CleanerML files in a few standar
     Warning: This directory is deleted when BleachBit is updated or uninstalled.
 * `%APPDATA%\BleachBit\cleaners\` on Windows which typically translates to `C:\Users\(username)\AppData\Roaming\BleachBit\Cleaners\`
 
-Most of these locations are also scanned for [winapp2.ini](/doc/winapp2ini.html) files, but you may only use one winapp2.ini file.
+Most of these locations are also scanned for [winapp2.ini]({% link _posts/2015-09-25-winapp2ini.md %}) files, but you may only use one winapp2.ini file.
 
 The diagnostics section of the application lists these directories.
 
@@ -52,7 +52,7 @@ To learn CleanerML so you can write your own cleaner, read these resources:
 
 ## Finding files to delete
 
-See [Finding files to delete](/cml/finding-files-to-delete.html).
+See [Finding files to delete]({% link _posts/2026-02-10-finding-files-to-delete.md %}).
 
 ## Matching files
 
@@ -139,11 +139,11 @@ Set the *running* element to abort cleaning when an application is running. It a
 ## Variables
 
 BleachBit supports expansion of a variety of variables: tilde (home), environment variables, and
-multi-value variables. For more information, see [Variables](/cml/variables.html).
+multi-value variables. For more information, see [Variables]({% link _posts/2019-04-19-variables.md %}).
 
 ## Sharing your cleaner
 
-Of course, you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner](/cml/contributing.html).
+Of course, you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner]({% link _posts/2019-04-19-contributing.md %}).
 
 
 

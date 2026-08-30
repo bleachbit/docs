@@ -124,7 +124,7 @@ To shred all files under a directory, pass the name of the directory like this:
 
 ## Wiping empty space
 
-When files are [deleted without shredding](shred-files-and-wipe-disks.html), the contents might be recoverable from the disk's empty space. To prevent recovery from empty space, you can wipe the empty space. Unlike wiping specific files, wiping empty space takes a long time.
+When files are [deleted without shredding]({% link _posts/2015-09-25-shred-files-and-wipe-disks.md %}), the contents might be recoverable from the disk's empty space. To prevent recovery from empty space, you can wipe the empty space. Unlike wiping specific files, wiping empty space takes a long time.
 
 You might want to wipe empty space for each logical drive. For example, on Windows you might wipe `C:` and `D:`, if you write sensitive files to both. On Linux, you might want to wipe `/` and `/home` if they are separate partitions and if you write sensitive information to both.
 

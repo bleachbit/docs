@@ -140,7 +140,7 @@ git checkout master
 
 ### Further reading
 
-* [Testing](/dev/testing.html)
+* [Testing]({% link _posts/2021-04-17-testing.md %})
 * [Contributing patches and bug reports](https://www.bleachbit.org/contribute)
 
 
