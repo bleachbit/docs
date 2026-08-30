@@ -1,7 +1,6 @@
 # Makefile for BleachBit documentation site
 
-
-.PHONY: help clean serve build install install-local update
+.PHONY: help clean serve build install update
 
 # Default target
 help:
@@ -11,21 +10,12 @@ help:
 	@echo "  serve    - Start local development server"
 	@echo "  build    - Build the static site"
 	@echo "  install  - Install Ruby dependencies"
-	@echo "  install-local - Install Ruby dependencies under vendor/bundle"
 	@echo "  update   - Update Ruby dependencies"
 
 # Clean generated files and dependencies
 clean:
 	@echo "Cleaning generated files..."
-	rm -rf _site/
-	rm -rf .jekyll-cache/
-	rm -rf _pages/
-	@echo "Cleaning Ruby dependencies..."
-	rm -rf .bundle/
-	rm -rf vendor/
-	@echo "Cleaning editor temporary files..."
-	find . -name "*.sw?" -delete
-	find . -name "*~" -delete
+	git clean -dfx
 	@echo "Collecting garbage in git..."
 	git gc
 	@echo "Clean complete."
@@ -34,21 +24,15 @@ clean:
 install:
 	@echo "Installing Ruby dependencies..."
 	bundle install
-	@echo "Dependencies installed."
-
-# Install Ruby dependencies locally (no global gems required)
-install-local:
-	@echo "Configuring Bundler to install into vendor/bundle..."
-	bundle config set --local path 'vendor/bundle'
-	@echo "Installing Ruby dependencies locally..."
-	bundle install
-	@echo "Dependencies installed in vendor/bundle."
+	@echo "Dependencies installed"
 
 # Update Ruby dependencies
 update:
 	@echo "Updating Ruby dependencies..."
 	bundle update
 	@echo "Dependencies updated."
+	@echo "Listing outdated dependencies..."
+	bundle outdated
 
 # Build the static site
 build:
@@ -59,9 +43,9 @@ build:
 # Serve locally for development
 serve:
 	@echo "Starting development server..."
-	bundle exec jekyll serve --watch --drafts
+	bundle exec jekyll serve --drafts
 
 # Serve locally without drafts (production-like)
 serve-prod:
 	@echo "Starting production-like server..."
-	bundle exec jekyll serve --watch
+	bundle exec jekyll serve
