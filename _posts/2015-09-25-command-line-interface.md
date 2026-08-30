@@ -162,7 +162,5 @@ To vacuum Firefox each night at 03:00:
 * Click **Next**.
 * Click **Next**.
 * Check **Advanced Properties**.
-* At the end of **Run**, add <tt>--clean firefox.vacuum</tt>.
+* At the end of **Run**, add `--clean firefox.vacuum`.
 * Click **OK**.
-
-

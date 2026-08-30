@@ -3,7 +3,7 @@ main:
   answer: |
     If you are trying to clean the system (for example, localizations, APT, or DNF), run
     BleachBit with root permissions. To elevate permissions, choose the menu option "BleachBit
-    as Administrator" _or_ run <tt>sudo</tt> on the command line.
+    as Administrator" _or_ run `sudo` on the command line.
 
     Alternatively, when running as a normal user, uncheck options that require root
     permissions.
@@ -124,7 +124,7 @@ main:
     1. In the Recovery Menu, choose _clean_. Note: this will mount your filesystem.
     1. If this cleans enough space, boot normally and then clean the cache as mentioned above.
     1. Otherwise, choose  _root_ from the Recovery Menu.
-    1. Type this command to switch to your normal user account: <tt>su <i>username</i> -</tt>. (Replace _username_ with your username.)
+    1. Type this command to switch to your normal user account: `su username -`. (Replace _username_ with your username.)
     1. Run this command to clean the user's cache: `rm -rf ~/.cache/`.
     1. Reboot.
 

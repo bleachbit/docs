@@ -66,7 +66,7 @@ In the custom tab, choose a file or folder to delete. It will be deleted only wh
 
 Before using the **Free disk space** option under **System**, select a writable directory for each drive (also called logical partition or mount point). The unallocated disk space in the chosen drives will be wiped.
 
-When starting for the first time, BleachBit tries to guess the correct value. In Linux, a good setting is typically <tt>/home/(username)</tt> and <tt>/tmp</tt>, but only one should be used if both are on the same partition. In Windows, typically <tt>C:\\</tt> is a good choice.
+When starting for the first time, BleachBit tries to guess the correct value. In Linux, a good setting is typically `/home/(username)` and `/tmp`, but only one should be used if both are on the same partition. In Windows, typically `C:\` is a good choice.
 
 ### Languages
 
