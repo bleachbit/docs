@@ -28,10 +28,10 @@
 {% endif %}
 {% if faqs and faqs.size > 0 %}
 {% if render_content %}
-{% if heading %}<h2>{{ heading }}</h2>{% endif %}
+{% if heading %}<h2>{{ heading | markdownify }}</h2>{% endif %}
 <dl>
 {% for faq in faqs %}
-<dt><strong>{{ faq.question }}</strong></dt>
+<dt><strong>{{ faq.question | markdownify }}</strong></dt>
 <dd>{{ faq.answer | markdownify }}</dd>
 {% endfor %}
 </dl>
