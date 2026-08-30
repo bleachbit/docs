@@ -1,20 +1,9 @@
-{% assign faqs = include.faqs | default: page.faqs %}
-{% if include.heading != nil %}
-  {% assign heading = include.heading %}
-{% else %}
-  {% assign heading = page.faq_heading %}
-  {% if heading == nil %}
-    {% assign heading = "Frequently Asked Questions" %}
-  {% endif %}
-{% endif %}
-{% if heading == false or heading == 'false' %}
-  {% assign heading = nil %}
-{% endif %}
-{% if faqs and faqs.size > 0 %}
-{% if heading %}<h2>{{ heading | markdownify }}</h2>{% endif %}
+{%- assign faqs = include.faqs | default: page.faqs -%}
+{%- if faqs.size > 0 %}
+{% if include.heading %}<h2>{{ include.heading | markdownify }}</h2>{% endif %}
 <dl>
 {% for faq in faqs %}
-<dt><strong>{{ faq.question | markdownify }}</strong></dt>
+<dt>{{ faq.question | markdownify }}</dt>
 <dd>{{ faq.answer | markdownify }}</dd>
 {% endfor %}
 </dl>

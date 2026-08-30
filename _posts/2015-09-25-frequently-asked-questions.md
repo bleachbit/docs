@@ -15,4 +15,4 @@ order: 5
 While these may not be asked, they are not common knowledge:
 
 {% assign extra_faqs = site.data.faqs.things_to_know %}
-{% include faqs.html faqs=extra_faqs heading=false %}
+{% include faqs.html faqs=extra_faqs %}
