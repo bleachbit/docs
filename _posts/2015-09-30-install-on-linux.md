@@ -56,13 +56,13 @@ is useful only if you are running from source.
 
 Here is how to install the hard requirements for the GTK GUI.
 
-```terminal
+```sh
 sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0
 ```
 
 Here is how to install the soft dependencies
 
-```terminal
+```sh
 sudo apt install python3-{chardet,psutil,requests}
 ```
 

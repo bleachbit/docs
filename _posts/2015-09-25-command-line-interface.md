@@ -10,8 +10,8 @@ order: 4
 
 Most anything you can do with the graphical user interface, you can do with BleachBit's command line interface which serves two needs:
 
-*   Automating cleaning in scripts, batch files, and scheduled tasks
-*   Running BleachBit headless in terminal-only connections.
+* Automating cleaning in scripts, batch files, and scheduled tasks
+* Running BleachBit headless in terminal-only connections.
 
 This page includes some examples.
 
@@ -47,7 +47,7 @@ An alias is `--p`.
 
 ## Deleting files
 
-When you are ready to delete files and make other permanent changes, replace ```--preview``` with ```--clean```. To delete Firefox cache, for example, run:
+When you are ready to delete files and make other permanent changes, replace `--preview` with `--clean`. To delete Firefox cache, for example, run:
 
 `bleachbit --clean firefox.vacuum`
 
@@ -67,23 +67,23 @@ Wildcards are allowed for options, so to preview deleting all options for Opera,
 
 Wildcards are not allowed for cleaners, so do _not_ run `bleachbit --preview *.*`.
 
-To select the same options as in the GUI, use ```--preset```, which may be combined with other options:
+To select the same options as in the GUI, use `--preset`, which may be combined with other options:
 
 `bleachbit --preview --preset firefox.cache`
 
-To enable all cleaners and options that do not have a warning, use ```--all-but-warning```, which may be combined with other options. Use this with caution, as it will delete many files.
+To enable all cleaners and options that do not have a warning, use `--all-but-warning`, which may be combined with other options. Use this with caution, as it will delete many files.
 
 `bleachbit --preview --all-but-warning firefox.cache`
 
 ## Excluding options
 
-To except cleaning options, combine ```--except``` with inclusion options. The following previews all of Firefox except cookies.
+To except cleaning options, combine `--except` with inclusion options. The following previews all of Firefox except cookies.
 
 `bleachbit --preview firefox.* --except firefox.cookies`
 
 These three commands are equivalent: they include all Firefox and Chromium options except their passwords. The first option demonstrates that `--except` accepts multiple cleaner options, separated by commas.
 
-```
+```text
 bleachbit --clean firefox.* chromium.* --except firefox.passwords,chromium.passwords
 bleachbit --clean firefox.* chromium.* --except firefox.passwords --except chromium.passwords
 bleachbit --clean chromium.* --except firefox.passwords firefox.*  --except chromium.passwords
@@ -105,11 +105,11 @@ Notes:
 
 ## Overwriting files
 
-To overwrite the contents of files, so they cannot be undeleted later, add ```--overwrite```:
+To overwrite the contents of files, so they cannot be undeleted later, add `--overwrite`:
 
 `bleachbit --overwrite --clean firefox.vacuum`
 
-Without ```--overwrite```, BleachBit checks the configuration set in the graphical user interface.
+Without `--overwrite`, BleachBit checks the configuration set in the graphical user interface.
 
 ## Shredding files
 
@@ -151,18 +151,18 @@ and add this line:
 
 To vacuum Firefox each night at 03:00:
 
-*   Open the Control Panel.
-*   Open Scheduled Tasks.
-*   Click **Add Scheduled Task**.
-*   Click **Next**.
-*   Click **Browse**.
-*   Choose ```C:\Program Files (x86)\BleachBit\bleachbit_console.exe```.
-*   Choose **Daily**.
-*   Set the start time.
-*   Click **Next**.
-*   Click **Next**.
-*   Check **Advanced Properties**.
-*   At the end of **Run**, add <tt>--clean firefox.vacuum</tt>.
-*   Click **OK**.
+* Open the Control Panel.
+* Open Scheduled Tasks.
+* Click **Add Scheduled Task**.
+* Click **Next**.
+* Click **Browse**.
+* Choose `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`.
+* Choose **Daily**.
+* Set the start time.
+* Click **Next**.
+* Click **Next**.
+* Check **Advanced Properties**.
+* At the end of **Run**, add <tt>--clean firefox.vacuum</tt>.
+* Click **OK**.
 
 

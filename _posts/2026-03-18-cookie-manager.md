@@ -179,7 +179,7 @@ Support for those is planned for a future release.
 Until then, to prevent BleachBit from deleting localStorage or IndexedDB
 data, add their directories to the **Keep list** in Preferences. Example path:
 
-```
+```text
 [...]/google-chrome/Default/IndexedDB/https_example.com_0.indexeddb.leveldb/
 ```
 

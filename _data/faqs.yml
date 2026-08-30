@@ -1,291 +1,225 @@
 main:
 - question: Why do I see permissions denied errors on Linux?
-  answer: 'If you are trying to clean the system (for example, localizations, APT,
-    or DNF), run BleachBit with root permissions. To elevate permissions, choose the
-    menu option "BleachBit as Administrator" _or_ run <tt>sudo</tt> on the command
-    line.
-
+  answer: |
+    If you are trying to clean the system (for example, localizations, APT, or DNF), run
+    BleachBit with root permissions. To elevate permissions, choose the menu option "BleachBit
+    as Administrator" _or_ run <tt>sudo</tt> on the command line.
 
     Alternatively, when running as a normal user, uncheck options that require root
-    permissions.'
+    permissions.
 - question: Why do I see permission denied errors on Windows?
-  answer: 'This happens when cleaning certain files, such as Windows system logs under
-    ``c:\windows``.
+  answer: |
+    This happens when cleaning certain files, such as Windows system logs under `c:\windows`.
 
-    When you first launch BleachBit it should prompt you with the User Access Control
-    dialog, which asks, "Do you want to allow the following program to make changes
-    to this computer." Answer *Yes* to grant BleachBit the privileges to modify all
-    files.
+    When you first launch BleachBit it should prompt you with the User Access Control dialog,
+    which asks, "Do you want to allow the following program to make changes to this computer."
+    Answer *Yes* to grant BleachBit the privileges to modify all files.
 
-
-    If you answer *No*, then BleachBit will start, and it will still be able to clean
-    data under your user profile. However, it will not have access to clean system
-    data.'
+    If you answer *No*, then BleachBit will start, and it will still be able to clean data
+    under your user profile. However, it will not have access to clean system data.
 - question: On Linux do I need to run BleachBit both as a normal user and as an administrator?
-  answer: 'It depends how your system elevates privileges. Linux has various tools
-    (for example, kdesudo, gksudo sudo, su-to-root, and PolicyKit) with various options
-    to elevate to root (administrator) privileges, and they create two different situations.
+  answer: |
+    It depends how your system elevates privileges. Linux has various tools (for example,
+    kdesudo, gksudo sudo, su-to-root, and PolicyKit) with various options to elevate to root
+    (administrator) privileges, and they create two different situations.
 
+    In the first case, they switch the user to the root account, so BleachBit cleans the root
+    account and not the non-privileged account. For example, BleachBit will clean root's web
+    browsers, which are probably never used, so it may seem BleachBit is not finding the files
+    you expect. In this case, use the Bleachbit as Administrator option to clean any system
+    files that require special privileges, and then use regular BleachBit to clean files in
+    your personal profile.
 
-    In the first case, they switch the user to the root account, so BleachBit cleans
-    the root account and not the non-privileged account. For example, BleachBit will
-    clean root''s web browsers, which are probably never used, so it may seem BleachBit
-    is not finding the files you expect. In this case, use the Bleachbit as Administrator
-    option to clean any system files that require special privileges, and then use
-    regular BleachBit to clean files in your personal profile.
+    In the second case, BleachBit runs with elevated privileges in the context of the
+    non-privileged account, so all options can cleaned from one session.
 
+    To check which case applies to you, start BleachBit as Administrator, click on Help -
+    System Information, and look at the value for `os.path.expanduser('~')`. If it equals
+    `/root`, then the first case is happening, so run BleachBit both as administrator and as a
+    regular user to clean all files.
 
-    In the second case, BleachBit runs with elevated privileges in the context of
-    the non-privileged account, so all options can cleaned from one session.
-
-
-    To check which case applies to you, start BleachBit as Administrator, click on
-    Help - System Information, and look at the value for ```os.path.expanduser(''~'')```.
-    If it equals ```/root```, then the first case is happening, so run BleachBit both
-    as administrator and as a regular user to clean all files.
-
-
-    Another way to check is first to run BleachBit as administrator. Then run BleachBit
-    as a regular user, and if the preview shows any files, then you may need to run
-    BleachBit as a regular user.'
+    Another way to check is first to run BleachBit as administrator. Then run BleachBit as a
+    regular user, and if the preview shows any files, then you may need to run BleachBit as a
+    regular user.
 - question: How to run the GUI as root on Linux under Wayland?
-  answer: 'As the unprivileged user, run this command to allow the local user''s X
-    session:
+  answer: |
+    As the unprivileged user, run this command to allow the local user's X session:
 
-
-    ```xhost si:localuser:root```
-
+    ```text
+    xhost si:localuser:root
+    ```
 
     When finished, disable the access:
 
-
-    ```xhost -si:localuser:root```
-
+    ```text
+    xhost -si:localuser:root
+    ```
 
     Avoid running GUI applications as root.
 
-
-    Source: [[ArchWiki]](https://wiki.archlinux.org/title/Running_GUI_applications_as_root)'
+    Source: [[ArchWiki]](https://wiki.archlinux.org/title/Running_GUI_applications_as_root)
 - question: How do I recover a file deleted by BleachBit?
-  answer: '"I had BleachBit delete data, but now I want it back. Is there an undo
-    command?"
-
-    The success of recovery depends on whether the file was overwritten, and the ease
-    of recovery depends on whether the metadata was overwritten. If in the preferences
-    the option "Overwrite files to prevent recovery" was enabled, the file probably
-    cannot be recovered. There is an exception if the file system is ext3 or ext4
-    in `data=journal` mode. The default file system on Ubuntu is ext4 with `data=ordered`
-    mode, which makes recovery unlikely.
-
-    If the *wipe empty space*  (formerly *wipe free space*) command was used on the same file system, the file probably
-    cannot be deleted regardless of the type of file system. See also [Shred files
-    and wipe disks](/doc/shred-files-and-wipe-disks.html) for more information.
-
-    The chances of recovery decline as data is written to the drive and as time passes.
-
-    Immediately the file is deleted in a normal way (in other words, if it is not
-    overwritten), the full contents still exist and full recovery is stil possible.
-    To maximize the chance of recovery, avoid writing any data to the file system.
-    This step is most important when there is little free space. Often the file system
-    for which recovery is desired is also the primary file system, so the computer
-    should be turned off and rebooted into a bootable operating system from a bootable
-    CD or USB drive.
-
+  answer: |
+    "I had BleachBit delete data, but now I want it back. Is there an undo command?" The
+    success of recovery depends on whether the file was overwritten, and the ease of recovery
+    depends on whether the metadata was overwritten. If in the preferences the option
+    "Overwrite files to prevent recovery" was enabled, the file probably cannot be recovered.
+    There is an exception if the file system is ext3 or ext4 in `data=journal` mode. The
+    default file system on Ubuntu is ext4 with `data=ordered` mode, which makes recovery
+    unlikely. If the *wipe empty space* (formerly *wipe free space*) command was used on the
+    same file system, the file probably cannot be deleted regardless of the type of file
+    system. See also [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for
+    more information. The chances of recovery decline as data is written to the drive and as
+    time passes. Immediately the file is deleted in a normal way (in other words, if it is not
+    overwritten), the full contents still exist and full recovery is stil possible. To
+    maximize the chance of recovery, avoid writing any data to the file system. This step is
+    most important when there is little free space. Often the file system for which recovery
+    is desired is also the primary file system, so the computer should be turned off and
+    rebooted into a bootable operating system from a bootable CD or USB drive.
 
     Finally, run a file recovery tool. Do a search on the web for "undelete" or "file
-    recovery."'
+    recovery."
 - question: Why does BleachBit take a long time while filling up the hard drive?
-  answer: 'Check under the System cleaner whether the option **Free disk space**
+  answer: |
+    Check under the System cleaner whether the option **Free disk space** (version 5.0.2 and
+    prior) or **Empty Space** (version 5.1.0 and later) is enabled. The purpose is not to
+    increase the amount of available space. Instead, its purpose is to make previously deleted
+    files unrecoverable.
 
-    (version 5.0.2 and prior) or **Empty Space** (version 5.1.0 and later) is enabled.
+    This feature works by creating large, empty files (see [Shred files and wipe
+    disks](/doc/shred-files-and-wipe-disks.html) for more information). The duration to wipe
+    empty space depends on the speed of the hardware and the free capacity, and it commonly
+    takes more than five minutes.
 
-    The purpose is not to increase the amount of available space. Instead, its purpose
+    When the hard drive is full, BleachBit immediately deletes the file, and there will be no
+    net change in disk space.
 
-    is to make previously deleted files unrecoverable.
-
-
-    This feature works by creating large, empty files (see [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html)
-
-    for more information). The duration to wipe empty space depends on the speed of
-    the
-
-    hardware and the free capacity, and it commonly takes more than five minutes.
-
-
-    When the hard drive is full, BleachBit immediately deletes the file, and there
-    will
-
-    be no net change in disk space.
-
-
-    Wiping empty space is not necessary if your drive is protected with full-disk
-    encryption
-
+    Wiping empty space is not necessary if your drive is protected with full-disk encryption
     such as BitLocker or LUKS. Wiping works best on traditional hard drives. On solid-state
-
     drives, it is less reliable, and frequent use contributes to wear.
 
-
     If wiping empty space is disabled, but BleachBit is still slow, look at the option
+    **Edit - Preferences - General - Overwrite Contents**. Enabling this option makes BleachBit
+    slower because more work is required to make files unrecoverable.
+- question: I closed BleachBit while it was working for a long time, and now my hard drive is full. How do I fix it?
+  answer: |
+    Run BleachBit, and clean the option **System - Temporary Files**. On Linux, also clean
+    **System - Cache**. This will delete one or more files that are gigantic and have random
+    filenames.
 
-    **Edit - Preferences - General - Overwrite Contents**. Enabling this option makes
-    BleachBit
+    In case you are using the command line or another application to delete these files, the
+    default location on Linux is `~/.cache/`. If it is not the same partition, `/tmp/` is also
+    used. On Windows, the default locations are `%TMP%`. If there are other fixed drives such
+    as `D:`, they are also used.
 
-    slower because more work is required to make files unrecoverable.'
-- question: I closed BleachBit while it was working for a long time, and now my hard
-    drive is full. How do I fix it?
-  answer: 'Run BleachBit, and clean the option **System - Temporary Files**. On Linux,
-    also clean **System - Cache**. This will delete one or more files that are gigantic
-    and have random filenames.
+    If you changed the default options under **Preferences - Drives**, look there for the
+    large files.
 
-
-    In case you are using the command line or another application to delete these
-    files, the default location on Linux is `~/.cache/`. If it is not the same partition,
-    `/tmp/` is also used. On Windows, the default locations are `%TMP%`. If there
-    are other fixed drives such as `D:`, they are also used.
-
-
-    If you changed the default options under **Preferences - Drives**, look there
-    for the large files.
-
-
-    If you cannot boot Ubuntu because the disk is full, use the [Ubuntu Recovery Mode](https://wiki.ubuntu.com/RecoveryMode)
-    like this:
-
+    If you cannot boot Ubuntu because the disk is full, use the [Ubuntu Recovery
+    Mode](https://wiki.ubuntu.com/RecoveryMode) like this:
 
     1. Reboot the system.
-
     1. Choose the boot option *Advanced options for Ubuntu*.
-
     1. Choose a recent kernel with *(recovery mode)*.
-
     1. In the Recovery Menu, choose _clean_. Note: this will mount your filesystem.
-
-    1. If this cleans enough space, boot normally and then clean the cache as mentioned
-    above.
-
+    1. If this cleans enough space, boot normally and then clean the cache as mentioned above.
     1. Otherwise, choose  _root_ from the Recovery Menu.
-
-    1. Type this command to switch to your normal user account: <tt>su <i>username</i>
-    -</tt>. (Replace _username_ with your username.)
-
-    1. Run this command to clean the user''s cache: `rm -rf ~/.cache/`.
-
+    1. Type this command to switch to your normal user account: <tt>su <i>username</i> -</tt>. (Replace _username_ with your username.)
+    1. Run this command to clean the user's cache: `rm -rf ~/.cache/`.
     1. Reboot.
 
-
-    In the future, you may avoid this situation by disabling the BleachBit option
-    **System - Free Disk Space**. Otherwise, do not interrupt BleachBit while it is
-    working.'
-- question: How many passes does BleachBit make for the overwrite file option (shredding
-    file)?
+    In the future, you may avoid this situation by disabling the BleachBit option **System -
+    Free Disk Space**. Otherwise, do not interrupt BleachBit while it is working.
+- question: How many passes does BleachBit make for the overwrite file option (shredding file)?
   answer: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html).
 - question: How do I see BleachBit in my own language on Microsoft Windows?
-  answer: 'There are a few ways to affect the language of the BleachBit user interface.
+  answer: |
+    There are a few ways to affect the language of the BleachBit user interface.
 
-
-    In the Windows search bar, type "Language settings" and open it. Under the Windows
-    display language, choose the preferred language, and then restart BleachBit.
-
+    In the Windows search bar, type "Language settings" and open it. Under the Windows display
+    language, choose the preferred language, and then restart BleachBit.
 
     To force BleachBit to always show in English, you have a few options:
 
-
     * Download and install the English installer instead of the regular installer.
-
-    * If using the regular (non-English-only) installer, uncheck the option to install
-    translations.
-
-    * Manually delete the translations. The default location for translations is `c:\Program
-    Files (x86)\BleachBit\share\locale`.
-
+    * If using the regular (non-English-only) installer, uncheck the option to install translations.
+    * Manually delete the translations. The default location for translations is `c:\Program Files (x86)\BleachBit\share\locale`.
 
     The language chosen in the BleachBit installer does not affect the BleachBit application:
     it affects only the language of the installer.
 
-
-    Since [BleachBit 4.9.0 alpha](https://www.bleachbit.org/news/bleachbit-490-alpha),
-    there is an option in the BleachBit preferences to change the language ([video
+    Since [BleachBit 4.9.0 alpha](https://www.bleachbit.org/news/bleachbit-490-alpha), there
+    is an option in the BleachBit preferences to change the language ([video
     demonstration](https://github.com/bleachbit/bleachbit/issues/1758#issuecomment-2603127349)).
-    Most changes take effect immediately. To reflect changes for the application menu,
-    restart the application.'
+    Most changes take effect immediately. To reflect changes for the application menu, restart
+    the application.
 things_to_know:
 - question: What is format for the versioning number system?
-  answer: 'Since BleachBit version 1.0 the numbering system is like that of GNOME,
-    Linux between 1.0 and 2.6, and other projects: the format is basically *a.b*.
-    When *b* is odd like 1.1, it is an unstable release (alpha or beta), and when
-    *b* is even like 1.2, it is a stable release. Also, *b* can be greater than 9,
-    so version 1.10 is newer than version 1.8.'
+  answer: |
+    Since BleachBit version 1.0 the numbering system is like that of GNOME, Linux between 1.0
+    and 2.6, and other projects: the format is basically *a.b*. When *b* is odd like 1.1, it
+    is an unstable release (alpha or beta), and when *b* is even like 1.2, it is a stable
+    release. Also, *b* can be greater than 9, so version 1.10 is newer than version 1.8.
 - question: Should I delete cache?
-  answer: 'Cache generally improves the performance of your computer. For example,
-    browser cache prevents many files (such as pieces of web pages) from being downloaded
-    again. Getting the file from the cache is much faster than downloading it&mdash;even
-    with fast bandwidth. Applications (such as web browsers) normally delete the useless
-    parts of cache to prevent it from growing too large and to make room for new,
-    potentially-useful data.
+  answer: |
+    Cache generally improves the performance of your computer. For example, browser cache
+    prevents many files (such as pieces of web pages) from being downloaded again. Getting the
+    file from the cache is much faster than downloading it&mdash;even with fast bandwidth.
+    Applications (such as web browsers) normally delete the useless parts of cache to prevent
+    it from growing too large and to make room for new, potentially-useful data.
 
-
-    Yet, cache contains content you have viewed and can be used to reconstruct some
-    of your browsing history. Especially for applications that you deleted, some cache
-    is never used, so the space is wasted. Finally, deleting a large cache saves time
-    and storage space before making a backup.'
+    Yet, cache contains content you have viewed and can be used to reconstruct some of your
+    browsing history. Especially for applications that you deleted, some cache is never used,
+    so the space is wasted. Finally, deleting a large cache saves time and storage space
+    before making a backup.
 - question: Should I delete cookies?
-  answer: 'Cookies are not inherently evil or dangerous. The following statements
-    are *false*:
+  answer: |
+    Cookies are not inherently evil or dangerous. The following statements are *false*:
 
+    * Cookies have no uses besides advertising
+    * Cookies can infect a computer like a virus
+    * Cookies cause popup ads
+    * Cookies can read arbitrary information from your computer (such as your name, your credit card, or private documents)
 
-    *   Cookies have no uses besides advertising
+    Cookies perform useful functions such as maintaining your login information: this saves
+    you the time of logging in again. Many web sites use cookies to make honest improvements
+    such as simplifying confusing navigation. Cookies rarely contain personally identifiable
+    information (such as a name or email address). With a high degree of success (but a
+    greater hassle for the web operator), web sites can still track visitors who have cookies
+    disabled (using unique information such as IP address, user agent, plugins, etc), so
+    disabling cookies may not have the intended effect.
 
-    *   Cookies can infect a computer like a virus
-
-    *   Cookies cause popup ads
-
-    *   Cookies can read arbitrary information from your computer (such as your name,
-    your credit card, or private documents)
-
-
-    Cookies perform useful functions such as maintaining your login information: this
-    saves you the time of logging in again. Many web sites use cookies to make honest
-    improvements such as simplifying confusing navigation. Cookies rarely contain
-    personally identifiable information (such as a name or email address). With a
-    high degree of success (but a greater hassle for the web operator), web sites
-    can still track visitors who have cookies disabled (using unique information such
-    as IP address, user agent, plugins, etc), so disabling cookies may not have the
-    intended effect.
-
-
-    On the other hand, some web sites use tricks (e.g., "evercookie" technology) to
-    resurrect deleted cookies and try to track users between browsers on the same
-    computer. Using another trick, cookies can track visitors between web sites for
-    behavioural ad targeting: for example, once you visited an online camping store,
-    and suddenly every other web site shows you ads for that camping store.'
+    On the other hand, some web sites use tricks (e.g., "evercookie" technology) to resurrect
+    deleted cookies and try to track users between browsers on the same computer. Using
+    another trick, cookies can track visitors between web sites for behavioural ad targeting:
+    for example, once you visited an online camping store, and suddenly every other web site
+    shows you ads for that camping store.
 - question: Is BleachBit "safe"?
-  answer: BleachBit identifies and organizes the files you are most likely want to
-    delete. For a few options which are most likely to cause you regret, it shows
-    a popup warning. In that sense, BleachBit is much safer for a novice computer
-    user than poking through the random directories hunting for files to delete. On
-    the other hand, if the saying "One man's trash is another man's treasure" were
-    not true or the saying "one size fits all" applied here, BleachBit would have
-    no options. Carefully read the descriptions and warnings, and do not choose any
-    options you do not understand or which make you uncomfortable.
+  answer: |
+    BleachBit identifies and organizes the files you are most likely want to delete. For a few
+    options which are most likely to cause you regret, it shows a popup warning. In that
+    sense, BleachBit is much safer for a novice computer user than poking through the random
+    directories hunting for files to delete. On the other hand, if the saying "One man's trash
+    is another man's treasure" were not true or the saying "one size fits all" applied here,
+    BleachBit would have no options. Carefully read the descriptions and warnings, and do not
+    choose any options you do not understand or which make you uncomfortable.
 - question: Will BleachBit make my computer faster?
-  answer: 'BleachBit probably will not make your computer faster in general, but there
-    are two specific ways you may see your computer become faster. First, by removing
-    excess files, you may see an improvement in the speed of virus scanning and for
-    disk backups. Second, vacuuming SQLite databases speed up applications that use
-    them. Firefox, Safari, and Google Chrome are some applications that stores various
-    data, such as URL history, in an SQLite database. With heavy browsing, the databases
-    become fragmented and bloated, and this happens at a level higher than the disk
-    storage, so standard disk defragmentation tools are completely useless. BleachBit
-    shrinks the SQLite database (saving disk space and disk I/O effort) and defragments
-    them. You are most likely to see a dramatic benefit by not vacuuming for a while,
-    using the application heavily, and then vacuuming it once, but to keep the application
-    running quickly, vacuum often. Vacuuming is not a single solution to all performance
-    problems, but it does complement other solutions. People buy faster computers
-    with better CPUs and more RAM, but hard drive technology (other than the rare
-    SSDs) has not become much faster than they were years ago. The hard disk is often
-    the bottleneck, and vacuuming is one way to overcome this limitation.
-
+  answer: |
+    BleachBit probably will not make your computer faster in general, but there are two
+    specific ways you may see your computer become faster. First, by removing excess files,
+    you may see an improvement in the speed of virus scanning and for disk backups. Second,
+    vacuuming SQLite databases speed up applications that use them. Firefox, Safari, and
+    Google Chrome are some applications that stores various data, such as URL history, in an
+    SQLite database. With heavy browsing, the databases become fragmented and bloated, and
+    this happens at a level higher than the disk storage, so standard disk defragmentation
+    tools are completely useless. BleachBit shrinks the SQLite database (saving disk space and
+    disk I/O effort) and defragments them. You are most likely to see a dramatic benefit by
+    not vacuuming for a while, using the application heavily, and then vacuuming it once, but
+    to keep the application running quickly, vacuum often. Vacuuming is not a single solution
+    to all performance problems, but it does complement other solutions. People buy faster
+    computers with better CPUs and more RAM, but hard drive technology (other than the rare
+    SSDs) has not become much faster than they were years ago. The hard disk is often the
+    bottleneck, and vacuuming is one way to overcome this limitation.
 
     Yet, deleting cache may make your computer slower because data will have to be
-    re-downloaded or re-generated.'
+    re-downloaded or re-generated.

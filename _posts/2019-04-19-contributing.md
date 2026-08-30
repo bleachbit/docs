@@ -31,9 +31,9 @@ Backup any files which may be deleted before testing. Then, use this checklist f
 
 It is helpful if you prepare your cleaner before submitting it.
 
-1. Put your cleaner in the ```cleaners``` directory of the BleachBit source.
-2. Run ```make tests``` to check the XML against the XSD.
-3. Run ```make pretty``` to reformat the XML.
+1. Put your cleaner in the `cleaners` directory of the BleachBit source.
+2. Run `make tests` to check the XML against the XSD.
+3. Run `make pretty` to reformat the XML.
 
 ### Submitting the cleaner
 

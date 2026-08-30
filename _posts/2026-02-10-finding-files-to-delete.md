@@ -86,7 +86,7 @@ Sometimes it is helpful to search for a string that appears in the files you wan
 3. Close Google Chrome.
 4. Look for any remaining files related to TikTok.
 
-```bash
+```sh
 grep -RiPl "tiktok|byteoversea|tiktokcdn" ~/.config/google-chrome 2>/dev/null
 ```
 
