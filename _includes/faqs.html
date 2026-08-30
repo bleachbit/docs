@@ -10,24 +10,7 @@
 {% if heading == false or heading == 'false' %}
   {% assign heading = nil %}
 {% endif %}
-{% assign render_content = include.render_content %}
-{% if render_content == nil %}
-  {% assign render_content = true %}
-{% elsif render_content == false or render_content == 'false' %}
-  {% assign render_content = false %}
-{% else %}
-  {% assign render_content = true %}
-{% endif %}
-{% assign render_schema = include.schema %}
-{% if render_schema == nil %}
-  {% assign render_schema = true %}
-{% elsif render_schema == false or render_schema == 'false' %}
-  {% assign render_schema = false %}
-{% else %}
-  {% assign render_schema = true %}
-{% endif %}
 {% if faqs and faqs.size > 0 %}
-{% if render_content %}
 {% if heading %}<h2>{{ heading | markdownify }}</h2>{% endif %}
 <dl>
 {% for faq in faqs %}
@@ -35,25 +18,4 @@
 <dd>{{ faq.answer | markdownify }}</dd>
 {% endfor %}
 </dl>
-{% endif %}
-{% if render_schema %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-{% for faq in faqs %}
-    {
-      "@type": "Question",
-      "name": {{ faq.question | jsonify }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ faq.answer | markdownify | jsonify }}
-      }
-    }{% if forloop.last == false %},{% endif %}
-{% endfor %}
-  ]
-}
-</script>
-{% endif %}
 {% endif %}
