@@ -43,6 +43,8 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-last-modified-at (1.3.2)
+      jekyll (>= 3.7, < 5.0)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (3.1.0)
@@ -95,6 +97,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.4.1)
+  jekyll-last-modified-at (~> 1.3.2)
   jekyll-redirect-from (~> 0.16.0)
   jekyll-seo-tag (~> 2.9.0)
   jekyll-sitemap (~> 1.4.0)
@@ -118,6 +121,7 @@ CHECKSUMS
   http_parser.rb (0.8.1) sha256=9ae8df145b39aa5398b2f90090d651c67bd8e2ebfe4507c966579f641e11097a
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
   jekyll (4.4.1) sha256=4c1144d857a5b2b80d45b8cf5138289579a9f8136aadfa6dd684b31fe2bc18c1
+  jekyll-last-modified-at (1.3.2) sha256=c4c08f137453e9b40764a769450870d05970e0934651a1fd9ef081f4a6e9a815
   jekyll-redirect-from (0.16.0) sha256=6635cae569ef9b0f90ffb71ec014ba977177fafb44d32a2b0526288d4d9be6db
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
   jekyll-seo-tag (2.9.0) sha256=0260015a8e1df9bf195cdfb0c675b7b2883fd8cbf12556e1c1cbe36a831c6852
