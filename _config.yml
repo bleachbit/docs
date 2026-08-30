@@ -39,6 +39,7 @@ permalink: none
 highlighter: rouge
 
 encoding: "utf-8"
+timezone: UTC
 strict_front_matter: true
 
 liquid:

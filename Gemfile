@@ -4,4 +4,5 @@ gem 'jekyll', '~> 4.4.1'
 gem 'jekyll-redirect-from', '~> 0.16.0'
 gem 'jekyll-seo-tag', '~> 2.9.0'
 gem 'jekyll-sitemap', '~> 1.4.0'
+gem 'tzinfo-data', :install_if => Gem.win_platform?
 gem 'wdm', '~> 0.2.0', :install_if => Gem.win_platform?
