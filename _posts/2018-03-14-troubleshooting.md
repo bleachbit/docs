@@ -5,7 +5,7 @@ subtitle: "Fix common errors and problems"
 nav_title: "Troubleshooting"
 category: doc
 date: 2018-03-14 21:36:58
-order: 10
+order: 12
 ---
 
 When something goes wrong, these steps will help you gather information to ask for help or to file a bug report.

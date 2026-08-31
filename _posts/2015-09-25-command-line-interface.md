@@ -5,7 +5,7 @@ subtitle: "Usage and options"
 nav_title: "CLI"
 category: doc
 date: 2015-09-25 23:27:26
-order: 4
+order: 7
 ---
 
 Most anything you can do with the graphical user interface, you can do with BleachBit's command line interface which serves two needs:

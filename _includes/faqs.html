@@ -1,10 +1,12 @@
 {%- assign faqs = include.faqs | default: page.faqs -%}
 {%- if faqs.size > 0 %}
-{% if include.heading %}<h2>{{ include.heading | markdownify }}</h2>{% endif %}
+    {%- if include.heading %}
+        <h2>{{ include.heading | markdownify }}</h2>
+    {%- endif %}
 <dl>
-{% for faq in faqs %}
-<dt>{{ faq.question | markdownify }}</dt>
-<dd>{{ faq.answer | markdownify }}</dd>
-{% endfor %}
+    {%- for faq in faqs %}
+    <dt>{{ faq.question | markdownify | strip }}</dt>
+    <dd>{{ faq.answer | markdownify | strip }}</dd>
+    {%- endfor %}
 </dl>
-{% endif %}
+{%- endif %}

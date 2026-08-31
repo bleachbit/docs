@@ -4,7 +4,7 @@ title: "How to shred files and wipe disks"
 nav_title: "Shred Files"
 category: doc
 date: 2015-09-25 23:33:58
-order: 6
+order: 9
 ---
 
 When software deletes a file, it typically erases only the file's metadata,
