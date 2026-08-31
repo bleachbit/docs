@@ -4,14 +4,15 @@ title: "Contributing to CleanerML"
 subtitle: "A guide for cleaner developers"
 nav_title: "Contributing"
 category: cml
-date: 2000-01-01 00:00:00
+date: 2019-04-19 00:00:00
+order: 4
 ---
 
 Write your own cleaners to use yourself and to share with others. These cleaners define which files to delete or perform some other action.  BleachBit includes one cleaner each for Firefox, Google Chrome, and so on.
 
 ### Writing the cleaner
 
-First, follow the [CleanerML documentation](/cml/cleanerml.html) for technical instructions on writing the cleaner.
+First, follow the [CleanerML documentation]({% link _posts/2015-09-25-cleanerml.md %}) for technical instructions on writing the cleaner.
 
 
 ### Testing the cleaner
@@ -21,7 +22,7 @@ Backup any files which may be deleted before testing. Then, use this checklist f
 * BleachBit is not an uninstaller.
 * Each option accurately describes what it will delete.  For example, an option labeled "logs" should not delete cache.
 * The descriptions are generic and reuse strings, so translators have less work.  For example, Firefox should simply be labeled "Web browser" instead of "A popular, fast, free web browser." Look at other cleaners to see which strings they use.
-* Use [variables](/cml/variables.html) rather than hard-coding paths.
+* Use [variables]({% link _posts/2019-04-19-variables.md %}) rather than hard-coding paths.
 * Run BleachBit in a console window (`bleachbit_console.exe` on Windows) to check for any warnings.
 * In the XML, options are sorted alphabetically.
 * XML attributes in the action element are in the standard order: command, search, path.
@@ -30,9 +31,9 @@ Backup any files which may be deleted before testing. Then, use this checklist f
 
 It is helpful if you prepare your cleaner before submitting it.
 
-1. Put your cleaner in the ```cleaners``` directory of the BleachBit source.
-2. Run ```make tests``` to check the XML against the XSD.
-3. Run ```make pretty``` to reformat the XML.
+1. Put your cleaner in the `cleaners` directory of the BleachBit source.
+2. Run `make tests` to check the XML against the XSD.
+3. Run `make pretty` to reformat the XML.
 
 ### Submitting the cleaner
 

@@ -4,8 +4,7 @@ title: "CleanerML introduction"
 subtitle: "Write custom BleachBit cleaners"
 nav_title: "CleanerML Intro"
 category: cml
-date: 2000-01-01 00:01:00
-# The date is set to an old date to keep this article first in its section.
+date: 2015-09-25 00:01:00
 redirect_from:
  - doc/cleanerml
 order: 1
@@ -30,14 +29,14 @@ You can think of it as writing XML to delete files, but it is more powerful than
 
 During application startup, BleachBit looks for CleanerML files in a few standard locations:
 
-*   `/usr/share/bleachbit/cleaners/` on Linux
-*   `~/.config/bleachbit/cleaners/` on Linux
-*   `share/cleaners/` relative to the Python script on Linux (useful for running BleachBit from source without installation
-*   `share\cleaners\` relative to the BleachBit executable on Windows which typically translates to ```c:\program files\bleachbit\share\cleaners```
+* `/usr/share/bleachbit/cleaners/` on Linux
+* `~/.config/bleachbit/cleaners/` on Linux
+* `share/cleaners/` relative to the Python script on Linux (useful for running BleachBit from source without installation
+* `share\cleaners\` relative to the BleachBit executable on Windows which typically translates to `c:\program files\bleachbit\share\cleaners`
     Warning: This directory is deleted when BleachBit is updated or uninstalled.
-*   `%APPDATA%\BleachBit\cleaners\` on Windows which typically translates to `C:\Users\(username)\AppData\Roaming\BleachBit\Cleaners\`
+* `%APPDATA%\BleachBit\cleaners\` on Windows which typically translates to `C:\Users\(username)\AppData\Roaming\BleachBit\Cleaners\`
 
-Most of these locations are also scanned for [winapp2.ini](/doc/winapp2ini.html) files, but you may only use one winapp2.ini file.
+Most of these locations are also scanned for [winapp2.ini]({% link _posts/2015-09-25-winapp2ini.md %}) files, but you may only use one winapp2.ini file.
 
 The diagnostics section of the application lists these directories.
 
@@ -46,25 +45,25 @@ The diagnostics section of the application lists these directories.
 
 To learn CleanerML so you can write your own cleaner, read these resources:
 
-*   [Example cleaner](https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml) with many annotations
-*   [Cleaners that come standard with BleachBit](https://github.com/bleachbit/bleachbit/tree/master/cleaners)
-*   [Bonus cleaners](https://github.com/bleachbit/cleanerml)
-*   [XSD (XML Schema Definition)](https://github.com/bleachbit/bleachbit/blob/master/doc/cleaner_markup_language.xsd) used for validation
+* [Example cleaner](https://github.com/bleachbit/bleachbit/blob/master/doc/example_cleaner.xml) with many annotations
+* [Cleaners that come standard with BleachBit](https://github.com/bleachbit/bleachbit/tree/master/cleaners)
+* [Bonus cleaners](https://github.com/bleachbit/cleanerml)
+* [XSD (XML Schema Definition)](https://github.com/bleachbit/bleachbit/blob/master/doc/cleaner_markup_language.xsd) used for validation
 
 ## Finding files to delete
 
-See [Finding files to delete](/cml/finding-files-to-delete.html).
+See [Finding files to delete]({% link _posts/2026-02-10-finding-files-to-delete.md %}).
 
 ## Matching files
 
 CleanerML allows several ways to match files:
 
-*   **file**: matches a single file.
-*   **glob**: matches one or more files with a simple pattern. See the Python documentation on [glob](https://docs.python.org/2/library/glob.html).
-*   **walk.files**: matches all files under a directory (but does not match directories).
-*   **walk.all**: matches all files and directories under a directory (but not the top directory).
-*   **walk.top**: matches all contents of a directory and the top directory itself.
-*   **deep**: queues a deep scan
+* **file**: matches a single file.
+* **glob**: matches one or more files with a simple pattern. See the Python documentation on [glob](https://docs.python.org/2/library/glob.html).
+* **walk.files**: matches all files under a directory (but does not match directories).
+* **walk.all**: matches all files and directories under a directory (but not the top directory).
+* **walk.top**: matches all contents of a directory and the top directory itself.
+* **deep**: queues a deep scan
 
 What is the difference between a **deep** and **walk.files**? Deep scan expects file matches to be loosely scattered (such as Thumbs.db), but **walk.files** expects to match most files under that directory (such as Firefox's cache). To improve performance, BleachBit combines deep scans for the same directory (such as all deep scans for $HOME). In the future, BleachBit may allow the user to reconfigure the deep scan directory, so, for example, he can scan a network drive in addition to his home directory.
 
@@ -140,11 +139,11 @@ Set the *running* element to abort cleaning when an application is running. It a
 ## Variables
 
 BleachBit supports expansion of a variety of variables: tilde (home), environment variables, and
-multi-value variables. For more information, see [Variables](/cml/variables.html).
+multi-value variables. For more information, see [Variables]({% link _posts/2019-04-19-variables.md %}).
 
 ## Sharing your cleaner
 
-Of course, you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner](/cml/contributing.html).
+Of course, you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner]({% link _posts/2019-04-19-contributing.md %}).
 
 
 

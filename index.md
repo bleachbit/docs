@@ -23,19 +23,19 @@ Simply select the options you want to clean, preview what will be deleted, and c
 
 BleachBit supports advanced features including:
 
-- [Command line interface](/doc/command-line-interface.html)
-- [Cookie manager](/doc/cookie-manager.html)
-- [Custom cleaners](/cml/cleanerml.html)
-- [Wipe empty space](/doc/shred-files-and-wipe-disks.html)
+- [Command line interface]({% link _posts/2015-09-25-command-line-interface.md %})
+- [Cookie manager]({% link _posts/2026-03-18-cookie-manager.md %})
+- [Custom cleaners]({% link _posts/2015-09-25-cleanerml.md %})
+- [Wipe empty space]({% link _posts/2015-09-25-shred-files-and-wipe-disks.md %})
 
 ## Getting Started
 
 Use the navigation on the left to browse the documentation. If you're new to BleachBit, we recommend starting with:
 
 1. [Download BleachBit](https://www.bleachbit.org/download/)
-1. [Install on Windows](/doc/install-on-windows.html) or [Linux](/doc/install-on-linux.html)
-1. [Configure preferences](/doc/preferences.html)
-1. [General usage](/doc/general-usage.html)
-1. [Review the FAQ](/doc/frequently-asked-questions.html) for common questions
+1. [Install on Windows]({% link _posts/2015-09-30-install-on-windows.md %}) or [Linux]({% link _posts/2015-09-30-install-on-linux.md %})
+1. [Configure preferences]({% link _posts/2015-09-25-preferences.md %})
+1. [General usage]({% link _posts/2015-09-25-general-usage.md %})
+1. [Review the FAQ]({% link _posts/2015-09-25-frequently-asked-questions.md %}) for common questions
 
-![BleachBit 5.1.1 on Windows 11](images/bleachbit_5_1_1_main_window_windows_11.png "The main screen of BleachBit 5.1.1 on Windows 11")
+![BleachBit 5.1.1 on Windows 11](/images/bleachbit_5_1_1_main_window_windows_11.png "The main screen of BleachBit 5.1.1 on Windows 11")

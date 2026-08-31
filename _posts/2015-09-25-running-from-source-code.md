@@ -60,7 +60,7 @@ To get the source code, either download the latest tarball (.tar.bz2) or checkou
 
 On Linux unpack a tarball run these commands:
 
-```terminal
+```sh
 tar xvjf bleachbit-5.0.2.tar.bz2
 cd bleachbit-5.0.2
 ```
@@ -71,39 +71,39 @@ On Windows unpack the tarball with [7-Zip](http://www.7-zip.org/) or similar app
 
 On Linux, install the Git client. On Debian and Ubuntu install it with this command:
 
-```terminal
+```sh
 sudo apt-get install git
 ```
 
 Similarly, on Fedora, Red Hat, and CentOS install the Git client with this command:
 
-```terminal
+```sh
 sudo yum install git-core
 ```
 
 On Linux clone the Git repository for the BleachBit application with this command:
 
-```terminal
+```sh
 git clone https://github.com/bleachbit/bleachbit.git
 ```
 
 Here is a full list of BleachBit Git repositories:
 
-*   [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
-*   [pygtkwin](https://github.com/bleachbit/pygtkwin): special build of Python, PyGObject, and GTK
-*   [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
-*   [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
-*   [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
+* [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
+* [pygtkwin](https://github.com/bleachbit/pygtkwin): special build of Python, PyGObject, and GTK
+* [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
+* [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
+* [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
 
 ### Building translations
 
 If English is not your native language, you must build the translations. On Linux, run:
 
-```terminal
+```sh
 make -C po local
 ```
 
-Building translations is not supported on Windows, but you can copy the translations from another system or download them from Launchpad. Relative to ```bleachbit.py``` put the ```bleachbit.mo``` file in a directory called ```.\locale\es\LC_MESSAGES\``` (change ```es``` according to the language.)
+Building translations is not supported on Windows, but you can copy the translations from another system or download them from Launchpad. Relative to `bleachbit.py` put the `bleachbit.mo` file in a directory called `.\locale\es\LC_MESSAGES\` (change `es` according to the language.)
 
 ### Running from source
 
@@ -115,32 +115,32 @@ On Windows, double click on `bleachbit.py`.
 
 The Git repository changes frequently. To download changes, run:
 
-```bash
+```sh
 git pull --rebase
 make -C po local
 ```
 
 To see recent changes, run:
 
-```terminal
+```sh
 git log --oneline --graph --decorate -n 20
 ```
 
 To switch to a tagged release, run:
 
-```terminal
+```sh
 git checkout v5.0.2
 ```
 
 To switch back to the master branch, run:
 
-```terminal
+```sh
 git checkout master
 ```
 
 ### Further reading
 
-*   [Testing](/dev/testing.html)
-*   [Contributing patches and bug reports](https://www.bleachbit.org/contribute)
+* [Testing]({% link _posts/2021-04-17-testing.md %})
+* [Contributing patches and bug reports](https://www.bleachbit.org/contribute)
 
 

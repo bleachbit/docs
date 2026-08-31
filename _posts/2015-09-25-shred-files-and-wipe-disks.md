@@ -174,7 +174,7 @@ impossible to recover fully.
 
 Even when some data can't be fully wiped, you can make forensic
 recovery far slower and more expensive by burying it in noise.
-BleachBit's [Chaff](/doc/chaff.html) feature generates large volumes
+BleachBit's [Chaff]({% link _posts/2019-08-14-chaff.md %}) feature generates large volumes
 of semi-realistic decoy data, turning a needle-in-a-haystack problem
 into an overwhelming one. This complements other methods; it doesn't
 replace them, but it raises the cost and time required for anyone

@@ -1,6 +1,7 @@
 # Site title and subtitle. This is used in _includes/header.html
 title: BleachBit Documentation
 #subtitle: 'Documentation for BleachBit'
+url: "https://docs.bleachbit.org"
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ''
@@ -37,27 +38,35 @@ permalink: none
 # Syntax highlighting
 highlighter: rouge
 
+encoding: "utf-8"
+timezone: UTC
+strict_front_matter: true
+
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+# Sass
+sass:
+    style: compressed
+
 # Since these are pages, it doesn't really matter
 future: true
 
 # Exclude non-site files
-exclude: ['bin', 'README.md']
+exclude:
+    - bin
+    - COPYING
+    - Makefile
+    - README.md
 
 # Use the kramdown Markdown renderer
 markdown: kramdown
-redcarpet:
-    extensions: [
-        'no_intra_emphasis',
-        'fenced_code_blocks',
-        'autolink',
-        'strikethrough',
-        'superscript',
-        'with_toc_data',
-        'tables',
-        'hardwrap'
-    ]
 
-# https://help.github.com/articles/redirects-on-github-pages/
 plugins:
+  - jekyll-last-modified-at
+    # https://help.github.com/articles/redirects-on-github-pages/
   - jekyll-redirect-from
-
+  - jekyll-seo-tag
+  - jekyll-sitemap

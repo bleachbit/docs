@@ -114,7 +114,7 @@ deleted files. Keep in mind:
 - Effectiveness depends on storage type, encryption, and other factors.
 - It can increase wear on SSDs.
 
-See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks.html) for more
+See [Shred files and wipe disks]({% link _posts/2015-09-25-shred-files-and-wipe-disks.md %}) for more
 information.
 
 ### Windows File Explorer options

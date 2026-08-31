@@ -3,7 +3,8 @@ layout: page
 title: "CleanerML variables reference"
 nav_title: "Variables"
 category: cml
-date: 2000-01-01 00:00:00
+date: 2019-04-19 00:00:00
+order: 3
 ---
 
 BleachBit supports several kinds of variables for use in writing cleaning rules.
