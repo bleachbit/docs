@@ -5,7 +5,7 @@ subtitle: "Getting started"
 nav_title: "Usage"
 category: doc
 date: 2015-09-25 23:25:52
-order: 3
+order: 6
 ---
 
 The general usage is as follows:

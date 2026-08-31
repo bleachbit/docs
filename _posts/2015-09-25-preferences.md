@@ -5,7 +5,7 @@ subtitle: "Settings and configuration"
 nav_title: "Preferences"
 category: doc
 date: 2015-09-25 23:17:25
-order: 2
+order: 3
 ---
 
 BleachBit provides preferences (also called options or settings) which change how it works. To edit the preferences, click **Edit** - **Preferences**.

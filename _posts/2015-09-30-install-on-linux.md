@@ -5,7 +5,7 @@ subtitle: "Step-by-step guide"
 nav_title: "Linux Install"
 category: doc
 date: 2015-09-30 20:37:20
-order: 1
+order: 2
 ---
 
 This article covers

@@ -5,7 +5,7 @@ subtitle: "Browser cookie management guide"
 nav_title: "Cookie Manager"
 category: doc
 date: 2026-03-18 09:47:00
-order: 3
+order: 5
 faqs:
   - question: How do cookies show in BleachBit's preview and cleaning log?
     answer: Instead of showing "Delete" in the log, you will see "Clean cookies" followed by the filename containing cookies. There will be one entry for each supported browser. The log will not list individual cookies.
