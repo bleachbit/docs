@@ -8,7 +8,7 @@ order: 5
 ---
 
 {% assign main_faqs = site.data.faqs.main %}
-{% include faqs.html faqs=main_faqs heading="Frequently Asked Questions" %}
+{% include faqs.html faqs=main_faqs heading=false %}
 
 ## Things to know
 
