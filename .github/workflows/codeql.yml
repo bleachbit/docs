@@ -3,11 +3,11 @@ name: CodeQL
 on:
   push:
     branches:
-      - main
+      - gh-pages
       - "!dependabot/**"
   pull_request:
     branches:
-      - main
+      - gh-pages
       - "!dependabot/**"
   workflow_dispatch:
 
