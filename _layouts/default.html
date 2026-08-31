@@ -71,7 +71,8 @@
                 button.textContent = 'Copy';
 
                 button.addEventListener('click', function() {
-                    var code = codeBlock.querySelector('code').textContent;
+                    // Rouge always ends the block with a newline
+                    var code = codeBlock.querySelector('code').textContent.replace(/\n+$/, '');
                     navigator.clipboard.writeText(code).then(function() {
                         button.textContent = 'Copied!';
                         setTimeout(function() {
