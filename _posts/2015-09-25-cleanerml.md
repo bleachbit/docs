@@ -56,7 +56,7 @@ See [Finding files to delete]({% link _posts/2026-02-10-finding-files-to-delete.
 
 ## Matching files
 
-CleanerML allows several ways to match files:
+CleanerML allows several ways to match files. Possible values for `search` are:
 
 * **file**: matches a single file.
 * **glob**: matches one or more files with a simple pattern. See the Python documentation on [glob](https://docs.python.org/2/library/glob.html).
