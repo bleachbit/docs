@@ -78,7 +78,7 @@
                     var order, li = navLis[i];
 
                     if (li.classList.contains('nav-header')) {
-                        section = li.textContent || li.innerText;
+                        section = li.textContent || li.textContent;
                         sections.push(section);
                         headers[section] = li;
                         continue;
@@ -116,14 +116,14 @@
                 button.className = 'copy-button';
                 button.type = 'button';
                 button.ariaLabel = 'Copy code to clipboard';
-                button.innerText = 'Copy';
+                button.textContent = 'Copy';
 
                 button.addEventListener('click', function() {
-                    var code = codeBlock.querySelector('code').innerText;
+                    var code = codeBlock.querySelector('code').textContent;
                     navigator.clipboard.writeText(code).then(function() {
-                        button.innerText = 'Copied!';
+                        button.textContent = 'Copied!';
                         setTimeout(function() {
-                            button.innerText = 'Copy';
+                            button.textContent = 'Copy';
                         }, 2000);
                     }).catch(function(err) {
                         console.error('Failed to copy: ', err);
