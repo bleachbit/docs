@@ -10,3 +10,6 @@ vendor/
 
 # Local Netlify folder
 .netlify
+
+# Host uid/gid for docker compose, see the Makefile
+.env

@@ -1,6 +1,7 @@
 # Makefile for BleachBit documentation site
 
-.PHONY: help clean serve build install update
+.PHONY: help clean serve build install update \
+	docker-serve docker-build docker-shell docker-down
 
 # Default target
 help:
@@ -11,6 +12,11 @@ help:
 	@echo "  build    - Build the static site"
 	@echo "  install  - Install Ruby dependencies"
 	@echo "  update   - Update Ruby dependencies"
+	@echo ""
+	@echo "  docker-serve - Start the development server in a container"
+	@echo "  docker-build - Build the static site in a container"
+	@echo "  docker-shell - Open a shell in the container"
+	@echo "  docker-down  - Stop the container"
 
 # Clean generated files and dependencies
 clean:
@@ -49,3 +55,26 @@ serve:
 serve-prod:
 	@echo "Starting production-like server..."
 	bundle exec jekyll serve
+
+# Compose reads .env automatically, so the container runs as the host user
+# instead of root. Delete this file if your uid changes.
+.env:
+	@printf 'HOST_UID=%s\nHOST_GID=%s\n' $$(id -u) $$(id -g) > $@
+	@echo "Wrote $@"
+
+# Serve in a container
+docker-serve: .env
+	docker compose up --build
+
+# Build the static site in a container
+docker-build: .env
+	docker compose run --rm --build docs jekyll build
+	@echo "Site built in _site/"
+
+# Shell in the container, for bundle update and friends
+docker-shell: .env
+	docker compose run --rm --build --entrypoint bash docs
+
+# Stop the container
+docker-down:
+	docker compose down
