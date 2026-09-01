@@ -30,7 +30,7 @@ Use any environment variables defined in the operating system.
 
 On Unix systems, BleachBit supports the styles `$foo$` and `${foo}`. It is a
 best practice to use the
-[XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html#variables).
+[XDG Base Directory Specification](https://specifications.freedesktop.org/basedir/latest/#variables).
 
 Example: `$XDG_CONFIG_HOME/google-chrome`
 
@@ -74,7 +74,7 @@ The variable `%ProgramFiles%` can behave in an unexpected way because 64-bit
 Windows will modify it for 32-bit applications, and BleachBit is a 32-bit
 application. To refer to the 64-bit folder on 64-bit Windows, use
 `%ProgramW6432%` instead. For more information, see Microsoft's article
-["WOW64 Implementation Details"](https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details).
+["WOW64 Implementation Details"](https://learn.microsoft.com/en-us/windows/win32/winprog64/wow64-implementation-details).
 
 For compatibility with Winapp2, BleachBit expands `%ProgramFiles%` to
 `%ProgramW6432%` as if both were written. Likewise, BleachBit expands
@@ -99,4 +99,3 @@ BleachBit defines default variables on Windows:
 - `$$ProgramFiles$$` expands to both `%ProgramFiles%` and `%ProgramW6432%`
 - `$$CommonProgramFiles$$` expands to both `%CommonProgramFiles%` and
   `%CommonProgramW6432%`
-
