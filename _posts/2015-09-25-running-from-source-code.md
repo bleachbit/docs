@@ -66,7 +66,7 @@ tar xvjf bleachbit-5.0.2.tar.bz2
 cd bleachbit-5.0.2
 ```
 
-On Windows unpack the tarball with [7-Zip](http://www.7-zip.org/) or similar application.
+On Windows unpack the tarball with [7-Zip](https://www.7-zip.org/) or similar application.
 
 ### Git
 
