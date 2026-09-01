@@ -1,0 +1,33 @@
+services:
+  docs:
+    build:
+      context: .
+      target: dev
+      args:
+        UID: ${HOST_UID:-1000}
+        GID: ${HOST_GID:-1000}
+    environment:
+      JEKYLL_ENV: development
+    ports:
+      - "127.0.0.1:4000:4000"
+      - "127.0.0.1:35729:35729"
+    volumes:
+      # Append :z under podman or a docker daemon with selinux-enabled. That
+      # relabels this directory to container_file_t on the host.
+      - .:/app
+    # Inherits `jekyll serve` from the image. Docker Desktop on macOS and
+    # Windows needs inotify replaced with polling:
+    # command: [jekyll, serve, --host, 0.0.0.0, --livereload, --drafts, --force_polling]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "ruby",
+          "-rnet/http",
+          "-e",
+          "exit Net::HTTP.get_response(URI('http://127.0.0.1:4000/')).is_a?(Net::HTTPSuccess) ? 0 : 1",
+        ]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3

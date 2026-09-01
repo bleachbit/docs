@@ -1,0 +1,20 @@
+# .git is deliberately not ignored: jekyll-last-modified-at needs the history
+
+_site
+_pages
+.jekyll-cache
+.jekyll-metadata
+vendor
+.bundle
+.netlify
+
+Dockerfile
+compose.yaml
+.env
+.dockerignore
+.github
+.gitignore
+.gitattributes
+
+*.sw?
+*~
