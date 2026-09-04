@@ -16,6 +16,20 @@ bundle exec jekyll serve
 bundle exec jekyll build
 ```
 
+# Build with Docker
+
+To skip installing Ruby and gems locally, use Docker or Podman:
+
+```sh
+make docker-serve   # serve on http://127.0.0.1:4000
+make docker-build   # build static site into _site/
+make docker-shell   # shell in the container
+make docker-down    # stop the container
+```
+
+The first run writes `.env` with your host uid/gid, so generated files
+are owned by you.
+
 # Help improve
 
 1. Log in to GitHub.
