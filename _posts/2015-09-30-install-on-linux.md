@@ -86,7 +86,7 @@ Older releases before BleachBit version 3.0 were signed with key 0x51416DE60E688
 ([Sourceforge](https://sourceforge.net/projects/bleachbit/files/public_key/andrew2009.key/download)).
 After downloading the key to a local file, import it into GnuPG like this:
 
-```sh
+```console?prompt=$
 $ gpg --import andrew2019.key
 gpg: key D6D447B02B4D4C9D: public key "Andrew Ziem <ahz001@gmail.com>" imported
 gpg: Total number processed: 1
@@ -105,13 +105,13 @@ This makes it easier to verify the signatures.
 To verify a .deb file.
 
 ```sh
-$ debsigs --verify bleachbit_5.0.2-0_all_ubuntu2504.deb
+debsigs --verify bleachbit_5.0.2-0_all_ubuntu2504.deb
 ```
 
 To verify a .rpm file.
 
 ```sh
-$ rpm --checksig bleachbit-5.0.2-1.1.fc42.noarch.rpm
+rpm --checksig bleachbit-5.0.2-1.1.fc42.noarch.rpm
 ```
 
 ### Detatched signatures
@@ -122,7 +122,7 @@ without modifying the original file.
 
 There is one detached signature per download. Look in the [SourceForge release directory](https://sourceforge.net/projects/bleachbit/files/bleachbit/) for a folder called `detached_signatures`, and in the folder will be a file with the same name as the download plus the `.sig` extension. For example, the detached signature for `bleachbit_5.0.2-0_all_ubuntu2504.deb` is named `bleachbit_5.0.2-0_all_ubuntu2504.deb.sig`. Here is an example of how to verify it.
 
-```sh
+```console?prompt=$
 $ gpg --verify bleachbit_5.0.2-0_all_ubuntu2504.deb.sig bleachbit_5.0.2-0_all_ubuntu2504.deb
 gpg: Signature made Sat 26 Oct 2019 08:04:00 AM MDT
 gpg:                using RSA key A9E582E4054A159315EDC943D6D447B02B4D4C9D
@@ -146,7 +146,7 @@ Verification is a two-step process: first confirm the .asc file carries
 a valid signature, then use the checksums inside it to validate your
 downloaded file.
 
-```sh
+```console?prompt=$
 $ gpg --verify bleachbit-5.0.2-sha256sum.txt.asc
 gpg: Signature made Fri 07 Nov 2025 08:51:03 PM MST
 gpg:                using RSA key A9E582E4054A159315EDC943D6D447B02B4D4C9D
@@ -157,7 +157,7 @@ Watch for the "Good signature," and ignore the warning.
 
 Second, verify the checksums like this:
 
-```sh
+```console
 $ sha256sum -c bleachbit-5.0.2-sha256sum.txt.asc
 bleachbit_5.0.2-0_all_debian11.deb: OK
 bleachbit_5.0.2-0_all_debian12.deb: OK
