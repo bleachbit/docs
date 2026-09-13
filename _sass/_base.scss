@@ -12,10 +12,10 @@ img {
 
 a {
     color: #1f6db5;
-}
 
-a:hover {
-    color: #154e87;
+    &:hover {
+        color: #154e87;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,65 +36,65 @@ h2 {
     border-bottom: 2px solid #1f6db5;
     margin-bottom: 24px;
     padding-bottom: 10px;
-}
 
-#header .brand {
-    color: #1f6db5;
-    font-weight: 700;
-}
+    .brand {
+        color: #1f6db5;
+        font-weight: 700;
+    }
 
-#header a:hover {
-    text-decoration: none;
-}
+    a:hover {
+        text-decoration: none;
+    }
 
-#header p {
-    margin-bottom: 0;
-    font-size: 0.9em;
-    color: #555;
-}
+    p {
+        margin-bottom: 0;
+        font-size: 0.9em;
+        color: #555;
 
-#header p a {
-    color: #555;
-}
+        a {
+            color: #555;
 
-#header p a:hover {
-    color: #1f6db5;
+            &:hover {
+                color: #1f6db5;
+            }
+        }
+    }
 }
 
 /* ── Navigation ────────────────────────────────────────────── */
 #navigation {
     font-size: 0.88em;
-}
 
-#navigation .nav-list {
-    padding: 0;
-}
+    .nav-list {
+        padding: 0;
 
-#navigation .nav-list > li > a {
-    padding: 5px 10px;
-    border-radius: 4px;
-    color: #3a3a3a;
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
+        > li > a {
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: #3a3a3a;
+            transition: background-color 0.15s ease, color 0.15s ease;
 
-#navigation .nav-list > li > a:hover {
-    background-color: #e4eef9;
-    color: #1f6db5;
-    text-decoration: none;
-}
+            &:hover {
+                background-color: #e4eef9;
+                color: #1f6db5;
+                text-decoration: none;
+            }
+        }
 
-#navigation .nav-list > li.active > a {
-    background-color: #1f6db5;
-    color: #fff;
-}
+        > li.active > a {
+            background-color: #1f6db5;
+            color: #fff;
+        }
+    }
 
-#navigation .nav-header {
-    padding: 10px 10px 3px;
-    font-size: 0.75em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: #888;
+    .nav-header {
+        padding: 10px 10px 3px;
+        font-size: 0.75em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: #888;
+    }
 }
 
 /* ── Page header ───────────────────────────────────────────── */
@@ -102,25 +102,25 @@ h2 {
     border-bottom: 2px solid #1f6db5;
     margin-top: 0;
     padding-bottom: 10px;
-}
 
-.page-header h1 {
-    margin-top: 0;
-    margin-bottom: 0.1em;
-}
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0.1em;
+    }
 
-.page-header .subtitle {
-    margin-bottom: 0;
-    font-size: 1.2em;
-    color: #555;
+    .subtitle {
+        margin-bottom: 0;
+        font-size: 1.2em;
+        color: #555;
+    }
 }
 
 #content > .page-header:first-child {
     margin-top: 0;
-}
 
-#content > .page-header:first-child h2 {
-    margin-top: 0;
+    h2 {
+        margin-top: 0;
+    }
 }
 
 /* ── Code ──────────────────────────────────────────────────── */
@@ -143,39 +143,39 @@ code {
     background-color: #fdf2f2;
     padding: 2px 5px;
     border-radius: 3px;
-}
 
-pre code {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0;
+    pre & {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
 }
 
 /* ── Tables ────────────────────────────────────────────────── */
 table {
     width: 100%;
     margin-bottom: 1em;
-}
 
-table th {
-    background-color: #f0f4f9;
-    border-bottom: 2px solid #c8d8ea;
-    padding: 8px 12px;
-    font-weight: 600;
-    color: #1a1a2e;
-}
+    th {
+        background-color: #f0f4f9;
+        border-bottom: 2px solid #c8d8ea;
+        padding: 8px 12px;
+        font-weight: 600;
+        color: #1a1a2e;
+    }
 
-table td {
-    padding: 7px 12px;
-    border-bottom: 1px solid #e8edf2;
-}
+    td {
+        padding: 7px 12px;
+        border-bottom: 1px solid #e8edf2;
+    }
 
-table tr:last-child td {
-    border-bottom: none;
-}
+    tr:last-child td {
+        border-bottom: none;
+    }
 
-table tr:hover td {
-    background-color: #f8fafc;
+    tr:hover td {
+        background-color: #f8fafc;
+    }
 }
 
 /* ── Blockquotes ───────────────────────────────────────────── */
@@ -185,10 +185,10 @@ blockquote {
     padding: 10px 16px;
     color: #444;
     border-radius: 0 4px 4px 0;
-}
 
-blockquote p:last-child {
-    margin-bottom: 0;
+    p:last-child {
+        margin-bottom: 0;
+    }
 }
 
 /* ── Footer ────────────────────────────────────────────────── */
@@ -204,25 +204,25 @@ blockquote p:last-child {
 /* ── RTL support ───────────────────────────────────────────── */
 body.rtl {
     direction: rtl;
-}
 
-body.rtl #header .brand {
-    float: right;
-    margin-left: 5px;
-}
+    #header .brand {
+        float: right;
+        margin-left: 5px;
+    }
 
-body.rtl .row-fluid [class*="span"] {
-    float: right !important;
-    margin-left: 0;
-    margin-right: 2.564102564102564%;
-}
+    .row-fluid [class*="span"] {
+        float: right !important;
+        margin-left: 0;
+        margin-right: 2.564102564102564%;
 
-body.rtl .row-fluid [class*="span"]:first-child {
-    margin-right: 0;
-}
+        &:first-child {
+            margin-right: 0;
+        }
+    }
 
-body.rtl ul, body.rtl ol {
-    margin: 0 25px 10px 0;
+    ul, ol {
+        margin: 0 25px 10px 0;
+    }
 }
 
 /* ── Copy button ───────────────────────────────────────────── */
@@ -238,14 +238,14 @@ body.rtl ul, body.rtl ol {
     border-radius: 4px;
     opacity: 0;
     transition: opacity 0.2s ease-in-out, background-color 0.15s ease;
-}
 
-div.highlighter-rouge:hover .copy-button {
-    opacity: 1;
-}
+    div.highlighter-rouge:hover & {
+        opacity: 1;
+    }
 
-.copy-button:hover {
-    background-color: #e4eef9;
-    border-color: #1f6db5;
-    color: #1f6db5;
+    &:hover {
+        background-color: #e4eef9;
+        border-color: #1f6db5;
+        color: #1f6db5;
+    }
 }
