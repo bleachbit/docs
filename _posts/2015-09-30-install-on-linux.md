@@ -105,13 +105,13 @@ This makes it easier to verify the signatures.
 To verify a .deb file.
 
 ```sh
-$ debsigs --verify bleachbit_5.0.2-0_all_ubuntu2504.deb
+debsigs --verify bleachbit_5.0.2-0_all_ubuntu2504.deb
 ```
 
 To verify a .rpm file.
 
 ```sh
-$ rpm --checksig bleachbit-5.0.2-1.1.fc42.noarch.rpm
+rpm --checksig bleachbit-5.0.2-1.1.fc42.noarch.rpm
 ```
 
 ### Detatched signatures
