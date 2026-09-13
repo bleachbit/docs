@@ -57,7 +57,9 @@ future: true
 # Exclude non-site files
 exclude:
     - bin
+    - compose.yaml
     - COPYING
+    - Dockerfile
     - Makefile
     - README.md
 
