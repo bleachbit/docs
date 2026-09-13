@@ -44,8 +44,10 @@ h2 {
     }
 
     p {
-        --bs-link-color-rgb: 85, 85, 85;
-        --bs-link-hover-color-rgb: 31, 109, 181;
+        /* Bootstrap derives link colors from these vars (no `a` rule needed):
+           links here are gray, normal link blue on hover */
+        --bs-link-color-rgb: 85, 85, 85;        /* #555 */
+        --bs-link-hover-color-rgb: 31, 109, 181; /* #1f6db5 */
         margin-bottom: 0;
         font-size: 0.9em;
         color: #555;
