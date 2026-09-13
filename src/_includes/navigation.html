@@ -3,8 +3,8 @@
     {%- for section in site.sections %}
         {%- assign attr = section[0] %}
         {%- assign label = section[1] %}
-        {%- if site.categories[attr] %}
-            {%- assign pages = site.categories[attr] | sort: 'order' %}
+        {%- assign pages = site.docs | where: 'category', attr | sort: 'order' %}
+        {%- if pages.size > 0 %}
             <li class="nav-header">{{ label }}</li>
             {%- for page in pages %}
                 <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.nav_title | default: page.title }}</a></li>

@@ -52,8 +52,8 @@ RUN git config --system --add safe.directory /app
 
 COPY --from=gems --chown=${UID}:${GID} ${BUNDLE_PATH} ${BUNDLE_PATH}
 
-# WORKDIR would create these root-owned, and jekyll writes to all three
-RUN install -d -o "${UID}" -g "${GID}" /app /app/_site /app/.jekyll-cache
+# WORKDIR would create these root-owned, and jekyll writes to them
+RUN install -d -o "${UID}" -g "${GID}" /app /app/_site /app/src /app/src/.jekyll-cache
 
 WORKDIR /app
 COPY --chown=${UID}:${GID} . .

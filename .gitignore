@@ -1,6 +1,5 @@
 *.sw?
 _site
-_pages
 *~
 
 # Ruby/Jekyll generated files
