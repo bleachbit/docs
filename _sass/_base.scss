@@ -1,11 +1,8 @@
 /* ── Base typography ───────────────────────────────────────── */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                 "Helvetica Neue", Arial, sans-serif;
     font-size: 15px;
     line-height: 1.75;
     color: #2c2c2c;
-    font-weight: 400;
 }
 
 img {
@@ -19,7 +16,6 @@ a {
 
 a:hover {
     color: #154e87;
-    text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -114,11 +110,9 @@ h2 {
 }
 
 .page-header .subtitle {
-    margin-top: 0;
     margin-bottom: 0;
     font-size: 1.2em;
     color: #555;
-    font-weight: 400;
 }
 
 #content > .page-header:first-child {
@@ -135,7 +129,6 @@ pre, code {
     border-radius: 4px;
     background-color: #f5f7fa;
     font-size: 0.85em;
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 pre {
@@ -143,7 +136,6 @@ pre {
     padding: 12px 15px;
     border-left: 3px solid #1f6db5;
     border-radius: 0 4px 4px 0;
-    overflow-x: auto;
 }
 
 code {
@@ -154,7 +146,6 @@ code {
 }
 
 pre code {
-    color: inherit;
     background-color: transparent;
     padding: 0;
     border-radius: 0;
@@ -164,14 +155,12 @@ pre code {
 table {
     width: 100%;
     margin-bottom: 1em;
-    border-collapse: collapse;
 }
 
 table th {
     background-color: #f0f4f9;
     border-bottom: 2px solid #c8d8ea;
     padding: 8px 12px;
-    text-align: left;
     font-weight: 600;
     color: #1a1a2e;
 }
@@ -196,7 +185,6 @@ blockquote {
     padding: 10px 16px;
     color: #444;
     border-radius: 0 4px 4px 0;
-    margin-left: 0;
 }
 
 blockquote p:last-child {
@@ -248,7 +236,6 @@ body.rtl ul, body.rtl ol {
     background-color: #fff;
     border: 1px solid #c8d8ea;
     border-radius: 4px;
-    cursor: pointer;
     opacity: 0;
     transition: opacity 0.2s ease-in-out, background-color 0.15s ease;
 }
