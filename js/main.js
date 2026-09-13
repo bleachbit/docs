@@ -1,60 +1,60 @@
-// Add copy buttons to code blocks
-var codeBlocks = document.querySelectorAll('div.highlighter-rouge');
+(() => {
+    'use strict';
 
-// For console blocks, copy only the commands, not the prompt or output.
-// Rouge marks the prompt with span.gp and the output with span.go.
-function extractCommands(codeEl) {
-    var lines = [];
-    var line = { hasPrompt: false, text: '' };
-    function walk(node) {
-        if (node.nodeType === Node.TEXT_NODE) {
-            var parts = node.textContent.split('\n');
-            parts.forEach(function(part, i) {
-                if (i > 0) {
-                    lines.push(line);
-                    line = { hasPrompt: false, text: '' };
-                }
-                line.text += part;
-            });
-        } else if (node.nodeType === Node.ELEMENT_NODE) {
-            if (node.classList.contains('gp')) {
-                line.hasPrompt = true;
-                return; // exclude the prompt itself from the copied text
-            }
-            node.childNodes.forEach(walk);
-        }
+    // The Clipboard API is only available in secure contexts
+    if (!navigator.clipboard) {
+        return;
     }
-    Array.prototype.forEach.call(codeEl.childNodes, walk);
-    lines.push(line);
-    return lines.filter(function(l) { return l.hasPrompt; })
-                .map(function(l) { return l.text.trim(); })
-                .join('\n');
-}
 
-codeBlocks.forEach(function(codeBlock) {
-    var button = document.createElement('button');
-    button.className = 'copy-button';
-    button.type = 'button';
-    button.ariaLabel = 'Copy code to clipboard';
-    button.textContent = 'Copy';
+    // Console blocks: copy the command after each prompt (.gp), skip the output (.go)
+    function getCommands(code) {
+        return [...code.querySelectorAll('.gp')].map(prompt => {
+            const range = document.createRange();
+            range.setStartAfter(prompt);
+            range.setEnd(code, code.childNodes.length);
+            return range.toString().split('\n', 1)[0].trim();
+        }).join('\n');
+    }
 
-    button.addEventListener('click', function() {
-        var codeEl = codeBlock.querySelector('code');
-        var isConsole = codeEl.querySelectorAll('span.gp').length > 0;
+    function getText(code) {
+        if (code.querySelector('.gp')) {
+            return getCommands(code);
+        }
+
         // Rouge always ends the block with a newline
-        var code = isConsole
-            ? extractCommands(codeEl)
-            : codeEl.textContent.replace(/\n+$/, '');
-        navigator.clipboard.writeText(code).then(function() {
-            button.textContent = 'Copied!';
-            setTimeout(function() {
+        return code.textContent.replace(/\n+$/, '');
+    }
+
+    function addCopyButton(block, code) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'copy-button';
+        button.textContent = 'Copy';
+        button.setAttribute('aria-label', 'Copy code to clipboard');
+
+        let timeout;
+        button.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(getText(code));
+                button.textContent = 'Copied!';
+            } catch (error) {
+                console.error('Failed to copy:', error);
+                button.textContent = 'Failed';
+            }
+
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
                 button.textContent = 'Copy';
             }, 2000);
-        }).catch(function(err) {
-            console.error('Failed to copy: ', err);
         });
-    });
 
-    codeBlock.style.position = 'relative';
-    codeBlock.appendChild(button);
-});
+        block.append(button);
+    }
+
+    for (const block of document.querySelectorAll('div.highlighter-rouge')) {
+        const code = block.querySelector('code');
+        if (code) {
+            addCopyButton(block, code);
+        }
+    }
+})();

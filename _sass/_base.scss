@@ -218,6 +218,10 @@ body.rtl {
 }
 
 /* ── Copy button ───────────────────────────────────────────── */
+div.highlighter-rouge {
+    position: relative;
+}
+
 .copy-button {
     position: absolute;
     top: 5px;
@@ -231,7 +235,8 @@ body.rtl {
     opacity: 0;
     transition: opacity 0.2s ease-in-out, background-color 0.15s ease;
 
-    div.highlighter-rouge:hover & {
+    div.highlighter-rouge:hover &,
+    &:focus-visible {
         opacity: 1;
     }
 
