@@ -43,15 +43,21 @@ process of installing an application across many systems.
 Using BleachBit 5.0.2 as an example, run the following command to install the application for all
 users. It requires the calling process to have administrator privileges:
 
-`BleachBit-5.0.2-setup.exe /S /allusers`
+```bat
+BleachBit-5.0.2-setup.exe /S /allusers
+```
 
 To install for only the current user, run this command:
 
-`BleachBit-5.0.2-setup.exe /S /currentuser`
+```bat
+BleachBit-5.0.2-setup.exe /S /currentuser
+```
 
 To omit the desktop shortcut, add `/NoDesktopShortcut` directly after `/S`:
 
-`BleachBit-5.0.2-setup.exe /S /NoDesktopShortcut /currentuser`
+```bat
+BleachBit-5.0.2-setup.exe /S /NoDesktopShortcut /currentuser
+```
 
 Because the installer is silent, it will not throw an error such as if you forget
 to choose between `/allusers` and `/currentuser` or if the calling process has

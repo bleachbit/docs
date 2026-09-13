@@ -33,7 +33,9 @@ Running `bleachbit` (which is in the path) with arguments runs BleachBit in comm
 
 To see a list of cleaners and their options, run:
 
-`bleachbit --list-cleaners`
+```sh
+bleachbit --list-cleaners
+```
 
 Aliases are `-l` and `--list`.
 
@@ -41,7 +43,9 @@ Aliases are `-l` and `--list`.
 
 To preview deleting Firefox cache, run:
 
-`bleachbit --preview firefox.cache`
+```sh
+bleachbit --preview firefox.cache
+```
 
 An alias is `--p`.
 
@@ -49,7 +53,9 @@ An alias is `--p`.
 
 When you are ready to delete files and make other permanent changes, replace `--preview` with `--clean`. To delete Firefox cache, for example, run:
 
-`bleachbit --clean firefox.vacuum`
+```sh
+bleachbit --clean firefox.vacuum
+```
 
 An alias is `--c`.
 
@@ -59,39 +65,57 @@ Preview and cleaning modes accept the same options for including and excluding c
 
 Multiple arguments are allowed. To preview deleting Firefox cache and Opera cache, list them separated by a space:
 
-`bleachbit --preview firefox.cache opera.cache`
+```sh
+bleachbit --preview firefox.cache opera.cache
+```
 
 Wildcards are allowed for options, so to preview deleting all options for Opera, run:
 
-`bleachbit --preview opera.*`
+```sh
+bleachbit --preview opera.*
+```
 
 Wildcards are not allowed for cleaners, so do _not_ run `bleachbit --preview *.*`.
 
 To select the same options as in the GUI, use `--preset`, which may be combined with other options:
 
-`bleachbit --preview --preset firefox.cache`
+```sh
+bleachbit --preview --preset firefox.cache
+```
 
 To enable all cleaners and options that do not have a warning, use `--all-but-warning`, which may be combined with other options. Use this with caution, as it will delete many files.
 
-`bleachbit --preview --all-but-warning firefox.cache`
+```sh
+bleachbit --preview --all-but-warning firefox.cache
+```
 
 ## Excluding options
 
 To except cleaning options, combine `--except` with inclusion options. The following previews all of Firefox except cookies.
 
-`bleachbit --preview firefox.* --except firefox.cookies`
+```sh
+bleachbit --preview firefox.* --except firefox.cookies
+```
 
 These three commands are equivalent: they include all Firefox and Chromium options except their passwords. The first option demonstrates that `--except` accepts multiple cleaner options, separated by commas.
 
-```text
+```sh
 bleachbit --clean firefox.* chromium.* --except firefox.passwords,chromium.passwords
+```
+
+```sh
 bleachbit --clean firefox.* chromium.* --except firefox.passwords --except chromium.passwords
+```
+
+```sh
 bleachbit --clean chromium.* --except firefox.passwords firefox.*  --except chromium.passwords
 ```
 
 However, the following command _will_ delete passwords in Chromium.
 
-`bleachbit --clean firefox.* chromium.* --except firefox.passwords chromium.passwords`
+```sh
+bleachbit --clean firefox.* chromium.* --except firefox.passwords chromium.passwords
+```
 
 Notes:
 
@@ -107,7 +131,9 @@ Notes:
 
 To overwrite the contents of files, so they cannot be undeleted later, add `--overwrite`:
 
-`bleachbit --overwrite --clean firefox.vacuum`
+```sh
+bleachbit --overwrite --clean firefox.vacuum
+```
 
 Without `--overwrite`, BleachBit checks the configuration set in the graphical user interface.
 
@@ -115,11 +141,15 @@ Without `--overwrite`, BleachBit checks the configuration set in the graphical u
 
 To shred any file, so its contents cannot be recovered, use `--shred`. While `--overwrite` refers to the files identified by `--clean`, the option `--shred` shreds any file anywhere. For example, this shreds one file named `yoga_emails.txt`:
 
-`bleachbit --shred ~/yoga_email.txt`
+```sh
+bleachbit --shred ~/yoga_email.txt
+```
 
 To shred all files under a directory, pass the name of the directory like this:
 
-`bleachbit --shred "C:\Microsoft Exchange\Top Secret Emails\"`
+```bat
+bleachbit --shred "C:\Microsoft Exchange\Top Secret Emails\"
+```
 
 
 ## Wiping empty space
@@ -130,7 +160,9 @@ You might want to wipe empty space for each logical drive. For example, on Windo
 
 To wipe any partition, pass any writable directory in that partition to `--wipe-empty-space`. For example:
 
-`bleachbit --wipe-empty-space ~/.cache/`
+```sh
+bleachbit --wipe-empty-space ~/.cache/
+```
 
 Wiping empty space does not change how much free space is left, when the process is done. For example, if you start with 10GB free, then you will still have 10GB free when the process is done.
 
@@ -141,11 +173,15 @@ BleachBit 5.0.2 and earlier used `--wipe-free-space` instead of `--wipe-empty-sp
 
 To vacuum Firefox each night at 03:00, run this to edit cron jobs:
 
-`crontab -e`
+```sh
+crontab -e
+```
 
 and add this line:
 
-`0 3 * * * bleachbit --clean firefox.vacuum`
+```text
+0 3 * * * bleachbit --clean firefox.vacuum
+```
 
 ## Windows Task Scheduler
 
