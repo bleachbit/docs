@@ -153,6 +153,7 @@ gpg:                using RSA key A9E582E4054A159315EDC943D6D447B02B4D4C9D
 gpg: Good signature from "Andrew Ziem <ahz001@gmail.com>" [ultimate]
 gpg: WARNING: not a detached signature; file 'bleachbit-5.0.2-sha256sum.txt' was NOT verified!
 ```
+
 Watch for the "Good signature," and ignore the warning.
 
 Second, verify the checksums like this:
@@ -182,8 +183,8 @@ bleachbit-5.0.2.tar.gz: OK
 bleachbit-5.0.2.tar.bz2: OK
 bleachbit-5.0.2.tar.lzma: OK
 sha256sum: WARNING: 15 lines are improperly formatted
-
 ```
+
 If you did not download all the files in the release, you will see
 "No such file or directory" errors for the missing files. This is expected.
 Focus on confirming that the file you downloaded shows "OK" in the output.
@@ -201,7 +202,9 @@ Double click on the downloaded installation package which has a name like `bleac
 
 Install using the command line like this:
 
-`sudo apt install bleachbit_5.0.2-0_all_ubuntu2504.deb`
+```sh
+sudo apt install bleachbit_5.0.2-0_all_ubuntu2504.deb
+```
 
 Using apt is recommended over dpkg because it will automatically install dependencies.
 
@@ -215,5 +218,6 @@ To install BleachBit using the graphical package manager, double click on the do
 
 Alternatively, install using the command line like this.
 
-`sudo dnf install bleachbit-5.0.2-1.1.fc43.noarch.rpm`
-
+```sh
+sudo dnf install bleachbit-5.0.2-1.1.fc43.noarch.rpm
+```

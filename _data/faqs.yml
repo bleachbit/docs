@@ -45,13 +45,13 @@ main:
   answer: |
     As the unprivileged user, run this command to allow the local user's X session:
 
-    ```text
+    ```sh
     xhost si:localuser:root
     ```
 
     When finished, disable the access:
 
-    ```text
+    ```sh
     xhost -si:localuser:root
     ```
 

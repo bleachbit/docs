@@ -42,7 +42,11 @@ file, follow these steps instead:
 1. Hold down the `Windows` key while pressing `R`. This brings up the Run
    dialog.
 2. Type or paste the command
-   `"%ProgramFiles(x86)%\BleachBit\bleachbit_console.exe" --gui --debug-log=%USERPROFILE%\desktop\bleachbit.log`
+
+   ```text
+   "%ProgramFiles(x86)%\BleachBit\bleachbit_console.exe" --gui --debug-log=%USERPROFILE%\desktop\bleachbit.log
+   ```
+
 3. Click **Run**.
 
 ![Screenshot of the Windows run dialog](/images/run-dialog-windows10.png)
@@ -58,9 +62,11 @@ console window.
 On Linux systems, use these steps to show verbose logging information:
 
 1. Open a terminal such as GNOME Terminal.
-2. Type or paste the command
-   `bleachbit --gui --debug-log=/home/username/bleachbit.log`
-   (replace *username* with your system username).
+2. Type or paste the command (replace *username* with your system username)
+
+   ```sh
+   bleachbit --gui --debug-log=/home/username/bleachbit.log
+   ```
 
 The log will appear in your home directory.
 
