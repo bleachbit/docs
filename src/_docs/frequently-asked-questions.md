@@ -4,6 +4,7 @@ title: "Frequently asked questions"
 nav_title: "FAQ"
 category: doc
 date: 2015-09-25 23:30:16
+redirect_from: /doc/frequently-asked-questions.html
 order: 8
 ---
 

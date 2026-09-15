@@ -5,6 +5,7 @@ subtitle: "Extend BleachBit cleaning on Windows"
 nav_title: "Winapp2.ini"
 category: doc
 date: 2015-09-25 23:38:45
+redirect_from: /doc/winapp2ini.html
 order: 10
 ---
 

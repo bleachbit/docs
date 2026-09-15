@@ -5,6 +5,7 @@ subtitle: "Getting started"
 nav_title: "Usage"
 category: doc
 date: 2015-09-25 23:25:52
+redirect_from: /doc/general-usage.html
 order: 6
 ---
 

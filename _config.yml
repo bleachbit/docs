@@ -31,13 +31,12 @@ sections:
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
 baseurl: ''
 
-# Dates are not included in permalinks
-permalink: none
+permalink: pretty
 
 collections:
   docs:
     output: true
-    permalink: /:categories/:name:output_ext
+    permalink: /:categories/:name/
 
 # Syntax highlighting
 highlighter: rouge
@@ -63,6 +62,10 @@ source: src
 
 # Use the kramdown Markdown renderer
 markdown: kramdown
+
+# Netlify preview rules
+include:
+  - _redirects
 
 plugins:
   - jekyll-last-modified-at
