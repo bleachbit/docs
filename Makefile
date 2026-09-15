@@ -1,6 +1,6 @@
 # Makefile for BleachBit documentation site
 
-.PHONY: help clean serve build install update \
+.PHONY: help clean serve serve-prod build install update \
 	docker-serve docker-build docker-shell docker-down
 
 # Default target
@@ -9,6 +9,7 @@ help:
 	@echo "  help     - Show this help message"
 	@echo "  clean    - Remove generated files and dependencies"
 	@echo "  serve    - Start local development server"
+	@echo "  serve-prod - Start local server without drafts"
 	@echo "  build    - Build the static site"
 	@echo "  install  - Install Ruby dependencies"
 	@echo "  update   - Update Ruby dependencies"
