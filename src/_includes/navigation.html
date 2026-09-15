@@ -1,5 +1,5 @@
 <ul class="nav-list">
-    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
     {%- for section in site.sections %}
         {%- assign attr = section[0] %}
         {%- assign label = section[1] %}
@@ -7,7 +7,7 @@
         {%- if pages.size > 0 %}
             <li class="nav-header">{{ label }}</li>
             {%- for page in pages %}
-                <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.nav_title | default: page.title }}</a></li>
+                <li><a href="{{ page.url | relative_url }}">{{ page.nav_title | default: page.title }}</a></li>
             {%- endfor %}
         {%- endif %}
     {%- endfor %}
