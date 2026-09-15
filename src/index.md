@@ -12,11 +12,11 @@ Welcome to the official documentation for [BleachBit](https://www.bleachbit.org)
 
 BleachBit helps you quickly and safely clean your computer by removing unnecessary files such as:
 
-- **Cache** – Temporary files that accumulate over time
-- **Cookies** – Web tracking data stored by browsers
-- **Logs** – System and application log files
-- **Recent file lists** – History of recently accessed documents
-- **Temporary files** – Leftover files from installations and updates
+- **Cache**: temporary files that accumulate over time
+- **Cookies**: web tracking data stored by browsers
+- **Logs**: system and application log files
+- **Recent file lists**: history of recently accessed documents
+- **Temporary files**: leftover files from installations and updates
 
 Simply select the options you want to clean, preview what will be deleted, and click to clean. BleachBit supports Windows and Linux.
 

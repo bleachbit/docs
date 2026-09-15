@@ -99,14 +99,14 @@ The Cookie Manager works with the following browsers:
 
 There are two ways to open the Cookie Manager.
 
-### Method A — Right-click context menu
+### Method A: right-click context menu
 
 1. In the BleachBit left pane, expand a supported browser (for example,
    **Google Chrome**).
 2. Right-click on the **Cookies** option under that browser.
 3. Select **Cookie Manager** from the context menu.
 
-### Method B — Preferences dialog
+### Method B: Preferences dialog
 
 1. Open **Preferences** from the application menu.
 2. Click **Cookies** in the left sidebar.

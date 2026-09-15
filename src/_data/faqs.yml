@@ -164,7 +164,7 @@ things_to_know:
   answer: |
     Cache generally improves the performance of your computer. For example, browser cache
     prevents many files (such as pieces of web pages) from being downloaded again. Getting the
-    file from the cache is much faster than downloading it&mdash;even with fast bandwidth.
+    file from the cache is much faster than downloading it, even with fast bandwidth.
     Applications (such as web browsers) normally delete the useless parts of cache to prevent
     it from growing too large and to make room for new, potentially-useful data.
 
