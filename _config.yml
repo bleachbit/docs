@@ -3,13 +3,10 @@ title: BleachBit Documentation
 url: "https://docs.bleachbit.org"
 
 # if you wish to integrate disqus on pages set your shortname here
-disqus_shortname: ''
+disqus_shortname: ""
 
 # if you use google analytics, add your tracking id here
-google_analytics_id: ''
-
-# URL to source code, used in _includes/footer.html
-#codeurl: 'https://github.com/bruth/jekyll-docs-template'
+google_analytics_id: ""
 
 # Navigation sections, in order. Key is the page's `category`.
 sections:
@@ -20,9 +17,7 @@ sections:
   dev: Developers
   post: Posts
 
-# Keep as an empty string if served up at the root. If served up at a specific
-# path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
-baseurl: ''
+baseurl: ""
 
 permalink: pretty
 
@@ -38,30 +33,22 @@ defaults:
     values:
       layout: page
 
-# Syntax highlighting
-highlighter: rouge
-
-encoding: "utf-8"
 timezone: UTC
 strict_front_matter: true
 
 liquid:
-  error_mode: warn
-  strict_filters: false
-  strict_variables: false
+  error_mode: strict
+  strict_filters: true
 
 # Sass
 sass:
-    style: compressed
+  style: compressed
 
-# Since these are pages, it doesn't really matter
+# Docs have dates, so don't skip ones dated in the future
 future: true
 
 # Site files live in src/, repo tooling stays in the root
 source: src
-
-# Use the kramdown Markdown renderer
-markdown: kramdown
 
 # Netlify preview rules
 include:
@@ -69,7 +56,6 @@ include:
 
 plugins:
   - jekyll-last-modified-at
-    # https://help.github.com/articles/redirects-on-github-pages/
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
