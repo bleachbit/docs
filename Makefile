@@ -1,6 +1,6 @@
 # Makefile for BleachBit documentation site
 
-.PHONY: help clean serve serve-prod build install update spelling \
+.PHONY: help clean serve serve-prod build test install update spelling \
 	docker-serve docker-build docker-shell docker-down
 
 # Default target
@@ -11,6 +11,7 @@ help:
 	@echo "  serve    - Start local development server"
 	@echo "  serve-prod - Start local server without drafts"
 	@echo "  build    - Build the static site"
+	@echo "  test     - Build and check the site for broken links"
 	@echo "  spelling - Check Markdown sources for spelling errors"
 	@echo "  install  - Install Ruby dependencies"
 	@echo "  update   - Update Ruby dependencies"
@@ -47,6 +48,10 @@ build:
 	@echo "Building site..."
 	bundle exec jekyll build
 	@echo "Site built in _site/"
+
+# Check links, images and scripts in the built site
+test: build
+	bundle exec htmlproofer ./_site --disable-external
 
 # Check spelling in the Markdown sources
 spelling:

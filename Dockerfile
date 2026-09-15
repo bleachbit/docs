@@ -18,9 +18,11 @@ ENV LANG=C.UTF-8 \
     BUNDLE_JOBS=4 \
     BUNDLE_RETRY=3
 
-# jekyll-last-modified-at reads each file's last commit date
+# git for jekyll-last-modified-at, which reads each file's last commit date.
+# libcurl for html-proofer, which loads it through ffi. The name is the trixie
+# one, older releases call it libcurl4.
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git \
+    && apt-get install -y --no-install-recommends git libcurl4t64 \
     && rm -rf /var/lib/apt/lists/*
 
 
