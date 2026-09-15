@@ -37,6 +37,6 @@ To manually import `winapp2.ini` cleaners:
    Piriform, maker of CCleaner. An alternative file [winapp2.ini plus](https://github.com/bleachbit/winapp2.ini)
    is modified for BleachBit.
 2. Place the `winapp2.ini` file in the right directory, which is most of the same directories as
-   [CleanerML]({% link _docs/cleanerml.md %}). If you install BleachBit (i.e., non-portable mode), use
+   [CleanerML]({% link _docs/cleanerml.md %}). If you install BleachBit (that is, non-portable mode), use
    the directory `C:\Users\(username)\AppData\Roaming\BleachBit\Cleaners\`
 3. Restart BleachBit.

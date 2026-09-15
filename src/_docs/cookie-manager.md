@@ -135,7 +135,7 @@ supported browsers that are installed.
 | **Checkboxes** | Check a host to keep its cookies; leave unchecked to delete |
 | **Select All** | Checks every host in the list |
 | **Deselect All** | Unchecks every host in the list |
-| **Cookie count** (e.g., *10 of 35 cookies kept*) | Running tally of how many cookies are marked to keep |
+| **Cookie count** (for example, *10 of 35 cookies kept*) | Running tally of how many cookies are marked to keep |
 | **Close** | Saves your selections and closes the dialog |
 
 ### Step-by-step workflow
@@ -211,7 +211,7 @@ deletes.
  - Verify the browser is supported.
 
 **After cleaning, I am logged out of a site**
-: Cause: The site's cookie host was not checked in the Cookie Manager, or it appears under a variation of the hostname (e.g., `www.example.com` vs. `example.com` or `.example.com`).
+: Cause: The site's cookie host was not checked in the Cookie Manager, or it appears under a variation of the hostname (for example, `www.example.com` vs. `example.com` or `.example.com`).
 
 Solution: Re-open the Cookie Manager, search for variations of the site's domain, check all matching hosts, then clean again.
 

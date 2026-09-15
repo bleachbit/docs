@@ -199,7 +199,7 @@ results.
   a directory structure and replaces sensitive content with random data. No
   longer maintained.
 - **Vovsoft Dummy File Generator**: Creates realistic file containers (PDFs,
-  etc.), but the contents are trivially simple (e.g., "hello world"), making
+  etc.), but the contents are trivially simple (for example, "hello world"), making
   them easy to identify.
 - **Large downloads (Linux kernel ~7 GB, Wikipedia ~20 GB)**: Good if your
   real data is source code or reference articles, respectively, since the

@@ -189,7 +189,7 @@ things_to_know:
     disabled (using unique information such as IP address, user agent, plugins, etc), so
     disabling cookies may not have the intended effect.
 
-    On the other hand, some web sites use tricks (e.g., "evercookie" technology) to resurrect
+    On the other hand, some web sites use tricks (for example, "evercookie" technology) to resurrect
     deleted cookies and try to track users between browsers on the same computer. Using
     another trick, cookies can track visitors between web sites for behavioural ad targeting:
     for example, once you visited an online camping store, and suddenly every other web site
