@@ -5,6 +5,7 @@ subtitle: "Developer setup guide"
 nav_title: "Source Code"
 category: dev
 date: 2015-09-25 23:40:58
+redirect_from: /dev/running-from-source-code.html
 order: 3
 ---
 

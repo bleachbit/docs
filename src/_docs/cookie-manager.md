@@ -5,6 +5,7 @@ subtitle: "Browser cookie management guide"
 nav_title: "Cookie Manager"
 category: doc
 date: 2026-03-18 09:47:00
+redirect_from: /doc/cookie-manager.html
 order: 5
 faqs:
   - question: How do cookies show in BleachBit's preview and cleaning log?

@@ -6,7 +6,8 @@ nav_title: "CleanerML Intro"
 category: cml
 date: 2015-09-25 00:01:00
 redirect_from:
- - doc/cleanerml
+  - /cml/cleanerml.html
+  - /doc/cleanerml.html
 order: 1
 ---
 

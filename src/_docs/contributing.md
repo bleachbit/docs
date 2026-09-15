@@ -5,6 +5,7 @@ subtitle: "A guide for cleaner developers"
 nav_title: "Contributing"
 category: cml
 date: 2019-04-19 00:00:00
+redirect_from: /cml/contributing.html
 order: 4
 ---
 
