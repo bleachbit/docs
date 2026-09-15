@@ -10,12 +10,13 @@ order: 4
 
 Write your own cleaners to use yourself and to share with others. These cleaners define which files to delete or perform some other action.  BleachBit includes one cleaner each for Firefox, Google Chrome, and so on.
 
-### Writing the cleaner
+## Writing the cleaner
 
 First, follow the [CleanerML documentation]({% link _docs/cleanerml.md %}) for technical instructions on writing the cleaner.
 
 
-### Testing the cleaner
+## Testing the cleaner
+
 Backup any files which may be deleted before testing. Then, use this checklist for testing your cleaner:
 
 - BleachBit should not delete settings that the user may regret.
@@ -27,7 +28,7 @@ Backup any files which may be deleted before testing. Then, use this checklist f
 - In the XML, options are sorted alphabetically.
 - XML attributes in the action element are in the standard order: command, search, path.
 
-### Preparation
+## Preparation
 
 It is helpful if you prepare your cleaner before submitting it.
 
@@ -35,7 +36,7 @@ It is helpful if you prepare your cleaner before submitting it.
 2. Run `make tests` to check the XML against the XSD.
 3. Run `make pretty` to reformat the XML.
 
-### Submitting the cleaner
+## Submitting the cleaner
 
 To share the cleaner with others, submit it for review:
 
@@ -50,7 +51,7 @@ To share the cleaner with others, submit it for review:
 Then, wait for a review. Until the final publication, remember you can add the cleaner to your own collection for immediete use in BleachBit.
 
 
-### Reviewing a cleaner
+## Reviewing a cleaner
 
 Help review another person's cleaner submission.  Because there are so many applications, versions of applications, differences in operating systems, etc., the help of the community is essential.
 

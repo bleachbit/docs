@@ -10,14 +10,14 @@ order: 2
 
 This is one procedure to audit the BleachBit's effectiveness.
 
-### Prerequisite
+## Prerequisite
 
 Make sure you have the latest version of BleachBit. Preferably, it is
 the latest version in Git or [the latest CI build](https://ci.bleachbit.org/).
 
-### Google Chrome
+## Google Chrome
 
-#### Exercise
+### Exercise
 
 These steps "exercise" the browser to use all its functionality.
 
@@ -31,14 +31,14 @@ These steps "exercise" the browser to use all its functionality.
 8. Play media ([demo](https://www.webmfiles.org/demo-files/)). (This is not equivalent to downloading the media.)
 9. Use other functionality in Google Chrome, and make a note of the associated URLs or other strings.
 
-#### Clean
+### Clean
 
 1. Close Google Chrome.
 2. Start BleachBit.
 3. In the BleachBit preferences, enable the option *Overwrite contents*.
 4. Use BleachBit to clean all of Google Chrome.
 
-#### Audit
+### Audit
 
 1. Use a tool such as `grep` to search the Google Chrome profile folder for the random string (used in Google Search, above), the site address `samy.pl`, and other strings from the exercise phase. There should be no matches.
 2. Start Google Chrome.
