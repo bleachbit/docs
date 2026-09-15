@@ -35,6 +35,9 @@ jobs:
           ruby-version: ${{ env.RUBY }}
           bundler-cache: true
 
+      - name: Lint Markdown
+        run: bundle exec mdl README.md src
+
       - name: Run jekyll doctor
         run: bundle exec jekyll doctor
 
