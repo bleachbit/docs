@@ -32,9 +32,9 @@ BleachBit supports advanced features including:
 Use the navigation on the left to browse the documentation. If you're new to BleachBit, we recommend starting with:
 
 1. [Download BleachBit](https://www.bleachbit.org/download)
-1. [Install on Windows]({% link _docs/install-on-windows.md %}) or [Linux]({% link _docs/install-on-linux.md %})
-1. [Configure preferences]({% link _docs/preferences.md %})
-1. [General usage]({% link _docs/general-usage.md %})
-1. [Review the FAQ]({% link _docs/frequently-asked-questions.md %}) for common questions
+2. [Install on Windows]({% link _docs/install-on-windows.md %}) or [Linux]({% link _docs/install-on-linux.md %})
+3. [Configure preferences]({% link _docs/preferences.md %})
+4. [General usage]({% link _docs/general-usage.md %})
+5. [Review the FAQ]({% link _docs/frequently-asked-questions.md %}) for common questions
 
 ![BleachBit 5.1.1 on Windows 11](/images/bleachbit_5_1_1_main_window_windows_11.png "The main screen of BleachBit 5.1.1 on Windows 11")

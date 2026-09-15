@@ -36,16 +36,16 @@ but experimental and CLI-only: there is no GUI.
 Do this setup once:
 
 1. Download the latest [Python Windows installer (64-bit)](https://www.python.org/downloads/windows/).
-1. Run the installer. Under **Optional Features**, enable **for all users**. (If you like, disable **tcl/tk and IDLE**.)
-1. Click **Next**.
-1. Customize the install location to `c:\python313` (for version 3.13.x), and finish the Python installation.
-1. Download BleachBit source from the main repository ([zip](https://github.com/bleachbit/bleachbit/archive/refs/heads/master.zip)).
-1. Unpack the BleachBit source, like to `c:\projects\bleachbit`.
-1. Change directory: `cd /d c:\projects\bleachbit`
-1. Create venv: `c:\python313\python.exe -m venv c:\projects\bleachbit\venv`
-1. Activate venv. If in cmd.exe, run: `call c:\projects\bleachbit\venv\scripts\activate.bat`
-1. Set up the venv: `pip install -r windows\requirements.txt`
-1. Run BleachBit CLI using `python.exe bleachbit.py` instead of `bleachbit.exe`.
+2. Run the installer. Under **Optional Features**, enable **for all users**. (If you like, disable **tcl/tk and IDLE**.)
+3. Click **Next**.
+4. Customize the install location to `c:\python313` (for version 3.13.x), and finish the Python installation.
+5. Download BleachBit source from the main repository ([zip](https://github.com/bleachbit/bleachbit/archive/refs/heads/master.zip)).
+6. Unpack the BleachBit source, like to `c:\projects\bleachbit`.
+7. Change directory: `cd /d c:\projects\bleachbit`
+8. Create venv: `c:\python313\python.exe -m venv c:\projects\bleachbit\venv`
+9. Activate venv. If in cmd.exe, run: `call c:\projects\bleachbit\venv\scripts\activate.bat`
+10. Set up the venv: `pip install -r windows\requirements.txt`
+11. Run BleachBit CLI using `python.exe bleachbit.py` instead of `bleachbit.exe`.
 
 The next time, just activate the venv and run the application (via `python.exe`).
 
