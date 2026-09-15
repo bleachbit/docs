@@ -1,5 +1,8 @@
 # Site title, used in _includes/header.html
 title: BleachBit Documentation
+# Used by jekyll-seo-tag for the home page title and default meta description
+tagline: Official user and developer guides
+description: Official user and developer guides for BleachBit, a free and open-source system cleaner.
 url: "https://docs.bleachbit.org"
 
 # if you wish to integrate disqus on pages set your shortname here

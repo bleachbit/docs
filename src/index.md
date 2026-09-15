@@ -1,7 +1,6 @@
 ---
 layout: default
-title: "BleachBit Documentation – Official User & Developer Guides"
-nav_title: "Home"
+title: "BleachBit Documentation"
 redirect_from: "/doc/install.html"
 ---
 
