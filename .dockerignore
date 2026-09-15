@@ -1,9 +1,8 @@
 # .git is deliberately not ignored: jekyll-last-modified-at needs the history
 
 _site
-_pages
-.jekyll-cache
-.jekyll-metadata
+src/.jekyll-cache
+src/.jekyll-metadata
 vendor
 .bundle
 .netlify

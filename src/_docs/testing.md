@@ -28,7 +28,7 @@ focus on different tests rather than repeating tests you already completed.
 ## Testing environment
 
 Ideally you would be testing the
-[latest, bleeding-edge code from Git]({% link _posts/2015-09-25-running-from-source-code.md %}).
+[latest, bleeding-edge code from Git]({% link _docs/running-from-source-code.md %}).
 Otherwise, test the latest [beta](https://www.bleachbit.org/category/blog-tags/beta)
 or [latest stable release](https://www.bleachbit.org/download).
 
@@ -128,7 +128,7 @@ After cleaning an application, run the application to make sure:
 - No unannounced changes were made.
 - All the requested changes were made. For example, BleachBit 0.7.1 did not delete
   stored passwords for Firefox 3. See
-  [CleanerML documentation]({% link _posts/2015-09-25-cleanerml.md %}) for advanced instructions on
+  [CleanerML documentation]({% link _docs/cleanerml.md %}) for advanced instructions on
   finding more files to clean.
 
 ### Google Chrome
@@ -167,7 +167,7 @@ or Windows Task Manager.
 ## Unit tests
 
 If you are comfortable using the command line and are
-[prepared to run BleachBit from source code]({% link _posts/2015-09-25-running-from-source-code.md %}),
+[prepared to run BleachBit from source code]({% link _docs/running-from-source-code.md %}),
 run the unit tests with this command:
 
 ```sh
