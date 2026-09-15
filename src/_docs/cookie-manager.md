@@ -206,8 +206,10 @@ deletes.
 
 **Cookie Manager is not in the context menu**
 
-: - Verify you are using BleachBit version 5.1.0 or later.
- - Verify the browser is supported.
+: Check the following:
+
+  - Verify you are using BleachBit version 5.1.0 or later.
+  - Verify the browser is supported.
 
 **After cleaning, I am logged out of a site**
 : Cause: The site's cookie host was not checked in the Cookie Manager, or it appears under a variation of the hostname (for example, `www.example.com` vs. `example.com` or `.example.com`).
