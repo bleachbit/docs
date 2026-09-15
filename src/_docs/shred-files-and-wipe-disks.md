@@ -119,6 +119,7 @@ SSDs are more complicated:
   inaccessible to the OS and any software running on it.
 
 For SSDs, the most reliable sanitization methods are:
+
 1. **Full-drive encryption** before storing data, so leftover blocks
    are unreadable without the key.
 2. **Manufacturer secure erase** commands (for example, ATA Secure Erase or

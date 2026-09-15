@@ -75,6 +75,7 @@ Any of these methods can be combined with [Python's Perl regular expressions](ht
 - **nwholeregex**: require the full path to *not* match the expression
 
 Another way to filter is using with **type**:
+
 - **type="f"**: matches files
 - **type="d"**: matches directories
 - When unspecified, any kind of file system object will match
