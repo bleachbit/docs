@@ -18,15 +18,14 @@ navigation: 2
 # URL to source code, used in _includes/footer.html
 #codeurl: 'https://github.com/bruth/jekyll-docs-template'
 
-# Default categories (in order) to appear in the navigation
-sections: [
-    ['doc', 'Documentation'],
-    ['tut', 'Tutorial'],
-    ['ref', 'Reference'],
-    ['cml', 'CleanerML'],
-    ['dev', 'Developers'],
-    ['post', 'Posts']
-]
+# Navigation sections, in order. Key is the page's `category`.
+sections:
+  doc: Documentation
+  tut: Tutorial
+  ref: Reference
+  cml: CleanerML
+  dev: Developers
+  post: Posts
 
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
