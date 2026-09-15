@@ -10,8 +10,8 @@ order: 7
 
 Most anything you can do with the graphical user interface, you can do with BleachBit's command line interface which serves two needs:
 
-* Automating cleaning in scripts, batch files, and scheduled tasks
-* Running BleachBit headless in terminal-only connections.
+- Automating cleaning in scripts, batch files, and scheduled tasks
+- Running BleachBit headless in terminal-only connections.
 
 This page includes some examples.
 
@@ -193,16 +193,16 @@ and add this line:
 
 To vacuum Firefox each night at 03:00:
 
-* Open the Control Panel.
-* Open Scheduled Tasks.
-* Click **Add Scheduled Task**.
-* Click **Next**.
-* Click **Browse**.
-* Choose `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`.
-* Choose **Daily**.
-* Set the start time.
-* Click **Next**.
-* Click **Next**.
-* Check **Advanced Properties**.
-* At the end of **Run**, add `--clean firefox.vacuum`.
-* Click **OK**.
+- Open the Control Panel.
+- Open Scheduled Tasks.
+- Click **Add Scheduled Task**.
+- Click **Next**.
+- Click **Browse**.
+- Choose `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`.
+- Choose **Daily**.
+- Set the start time.
+- Click **Next**.
+- Click **Next**.
+- Check **Advanced Properties**.
+- At the end of **Run**, add `--clean firefox.vacuum`.
+- Click **OK**.

@@ -141,9 +141,9 @@ main:
 
     To force BleachBit to always show in English, you have a few options:
 
-    * Download and install the English installer instead of the regular installer.
-    * If using the regular (non-English-only) installer, uncheck the option to install translations.
-    * Manually delete the translations. The default location for translations is `c:\Program Files (x86)\BleachBit\share\locale`.
+    - Download and install the English installer instead of the regular installer.
+    - If using the regular (non-English-only) installer, uncheck the option to install translations.
+    - Manually delete the translations. The default location for translations is `c:\Program Files (x86)\BleachBit\share\locale`.
 
     The language chosen in the BleachBit installer does not affect the BleachBit application:
     it affects only the language of the installer.
@@ -176,10 +176,10 @@ things_to_know:
   answer: |
     Cookies are not inherently evil or dangerous. The following statements are *false*:
 
-    * Cookies have no uses besides advertising
-    * Cookies can infect a computer like a virus
-    * Cookies cause popup ads
-    * Cookies can read arbitrary information from your computer (such as your name, your credit card, or private documents)
+    - Cookies have no uses besides advertising
+    - Cookies can infect a computer like a virus
+    - Cookies cause popup ads
+    - Cookies can read arbitrary information from your computer (such as your name, your credit card, or private documents)
 
     Cookies perform useful functions such as maintaining your login information: this saves
     you the time of logging in again. Many web sites use cookies to make honest improvements

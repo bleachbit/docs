@@ -90,11 +90,11 @@ git clone https://github.com/bleachbit/bleachbit.git
 
 Here is a full list of BleachBit Git repositories:
 
-* [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
-* [pygtkwin](https://github.com/bleachbit/pygtkwin): special build of Python, PyGObject, and GTK
-* [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
-* [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
-* [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
+- [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
+- [pygtkwin](https://github.com/bleachbit/pygtkwin): special build of Python, PyGObject, and GTK
+- [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
+- [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
+- [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
 
 ### Building translations
 
@@ -141,7 +141,7 @@ git checkout master
 
 ### Further reading
 
-* [Testing]({% link _docs/testing.md %})
-* [Contributing patches and bug reports](https://www.bleachbit.org/contribute)
+- [Testing]({% link _docs/testing.md %})
+- [Contributing patches and bug reports](https://www.bleachbit.org/contribute)
 
 
