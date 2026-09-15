@@ -12,33 +12,33 @@
     <body>
         <div class="container">
             <div class="row">
-                <div id="header" class="col-sm-12">
+                <header id="header" class="col-12">
                     {% include header.html %}
-                </div>
+                </header>
             </div>
 
             <div class="row">
-                <div id="navigation" class="col-sm-2">
+                <nav id="navigation" class="col-md-3 col-lg-2 order-last order-md-first" aria-label="Documentation">
                     {% include navigation.html %}
-                </div>
+                </nav>
 
-                <div id="content" class="col-sm-10">
+                <main id="content" class="col-md-9 col-lg-10">
                     {{ content }}
-                </div>
+                </main>
             </div>
 
             {%- if page.disqus == 1 %}
             <div class="row">
-                <div id="disqus" class="col-sm-10 offset-sm-2">
+                <div id="disqus" class="col-md-9 offset-md-3 col-lg-10 offset-lg-2">
                     {% include disqus.html %}
                 </div>
             </div>
             {%- endif %}
 
             <div class="row">
-                <div id="footer" class="col-sm-12">
+                <footer id="footer" class="col-12">
                     {% include footer.html %}
-                </div>
+                </footer>
             </div>
         </div>
 
