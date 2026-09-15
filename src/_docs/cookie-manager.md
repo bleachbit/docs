@@ -169,7 +169,7 @@ supported browsers that are installed.
 
 ---
 
-## localStorage and IndexDB
+## localStorage and IndexedDB
 
 **Only HTTP/HTTPS cookies are supported.** LocalStorage and IndexedDB files,
 which function similarly to cookies, are not yet managed by the Cookie Manager.
