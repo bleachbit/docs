@@ -29,7 +29,7 @@ BleachBit supports advanced features including:
 
 ## Getting Started
 
-Use the navigation on the left to browse the documentation. If you're new to BleachBit, we recommend starting with:
+Use the navigation menu to browse the documentation. If you're new to BleachBit, we recommend starting with:
 
 1. [Download BleachBit](https://www.bleachbit.org/download)
 2. [Install on Windows]({% link _docs/install-on-windows.md %}) or [Linux]({% link _docs/install-on-linux.md %})

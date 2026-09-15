@@ -22,8 +22,16 @@
             </div>
 
             <div class="row">
-                <nav id="navigation" class="col-md-3 col-lg-2 order-last order-md-first" aria-label="Documentation">
-                    {% include navigation.html %}
+                <nav id="navigation" class="col-md-3 col-lg-2" aria-label="Documentation">
+                    <div id="docs-nav" class="offcanvas-md offcanvas-start" tabindex="-1" aria-labelledby="docs-nav-label">
+                        <div class="offcanvas-header">
+                            <p id="docs-nav-label" class="offcanvas-title fs-5 mb-0">{{ site.title }}</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#docs-nav" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            {% include navigation.html %}
+                        </div>
+                    </div>
                 </nav>
 
                 <main id="content" class="col-md-9 col-lg-10">
