@@ -108,14 +108,6 @@ h2 {
     }
 }
 
-#content > .page-header:first-child {
-    margin-top: 0;
-
-    h2 {
-        margin-top: 0;
-    }
-}
-
 /* ── Code ──────────────────────────────────────────────────── */
 pre, code {
     border: none;
@@ -191,30 +183,6 @@ blockquote {
     font-size: 0.85em;
     color: #999;
     text-align: center;
-}
-
-/* ── RTL support ───────────────────────────────────────────── */
-body.rtl {
-    direction: rtl;
-
-    #header .brand {
-        float: right;
-        margin-left: 5px;
-    }
-
-    .row-fluid [class*="span"] {
-        float: right !important;
-        margin-left: 0;
-        margin-right: 2.564102564102564%;
-
-        &:first-child {
-            margin-right: 0;
-        }
-    }
-
-    ul, ol {
-        margin: 0 25px 10px 0;
-    }
 }
 
 /* ── Copy button ───────────────────────────────────────────── */
