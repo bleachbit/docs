@@ -8,6 +8,10 @@
         <link rel="icon" href="{{ '/images/logo-square.svg' | relative_url }}" type="image/svg+xml">
 
         {% seo %}
+
+        {%- if page.layout == "page" and jekyll.environment == "production" %}
+        {% include ad.html %}
+        {%- endif %}
     </head>
     <body>
         <div class="container">
