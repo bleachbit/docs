@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Effectiveness audit"
 subtitle: "Cleaning developer reference"
 nav_title: "Audit"

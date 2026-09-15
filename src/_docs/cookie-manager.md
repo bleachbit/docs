@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Cookie manager"
 subtitle: "Browser cookie management guide"
 nav_title: "Cookie Manager"

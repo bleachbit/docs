@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Expert mode"
 subtitle: "Safety guardrails and advanced features"
 nav_title: "Expert mode"

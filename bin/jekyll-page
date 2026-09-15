@@ -57,7 +57,6 @@ end
 
 content = <<END
 ---
-layout: page
 title: \"#{title}\"
 category: #{category}
 date: #{now}

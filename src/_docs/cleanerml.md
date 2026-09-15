@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "CleanerML introduction"
 subtitle: "Write custom BleachBit cleaners"
 nav_title: "CleanerML Intro"

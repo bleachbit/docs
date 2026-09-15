@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Testing guide"
 subtitle: "A guide for developers and QA testers"
 nav_title: "Testing"

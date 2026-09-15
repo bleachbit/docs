@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Winapp2.ini Guide"
 subtitle: "Extend BleachBit cleaning on Windows"
 nav_title: "Winapp2.ini"

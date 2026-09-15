@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "BleachBit command line interface"
 subtitle: "Usage and options"
 nav_title: "CLI"

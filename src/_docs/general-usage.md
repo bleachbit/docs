@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "General usage"
 subtitle: "Getting started"
 nav_title: "Usage"

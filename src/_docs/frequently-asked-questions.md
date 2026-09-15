@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Frequently asked questions"
 nav_title: "FAQ"
 category: doc

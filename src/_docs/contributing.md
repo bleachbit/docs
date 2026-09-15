@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Contributing to CleanerML"
 subtitle: "A guide for cleaner developers"
 nav_title: "Contributing"

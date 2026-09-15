@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Finding files to delete"
 subtitle: "A guide for CleanerML developers"
 nav_title: "Finding Files"

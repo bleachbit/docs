@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "How to shred files and wipe disks"
 nav_title: "Shred Files"
 category: doc

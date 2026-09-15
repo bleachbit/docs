@@ -31,6 +31,13 @@ collections:
     output: true
     permalink: /:categories/:name/
 
+defaults:
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: page
+
 # Syntax highlighting
 highlighter: rouge
 

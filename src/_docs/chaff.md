@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Chaff"
 subtitle: "Hide private files using decoy data"
 nav_title: "Chaff"

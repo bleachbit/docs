@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "How to install BleachBit on Windows"
 subtitle: "Step-by-step guide"
 nav_title: "Windows Install"

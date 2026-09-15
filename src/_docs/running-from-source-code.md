@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Running BleachBit from source code"
 subtitle: "Developer setup guide"
 nav_title: "Source Code"

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Troubleshooting"
 subtitle: "Fix common errors and problems"
 nav_title: "Troubleshooting"

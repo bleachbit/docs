@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Preferences"
 subtitle: "Settings and configuration"
 nav_title: "Preferences"
