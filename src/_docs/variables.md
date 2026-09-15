@@ -4,6 +4,7 @@ title: "CleanerML variables reference"
 nav_title: "Variables"
 category: cml
 date: 2019-04-19 00:00:00
+redirect_from: /cml/variables.html
 order: 3
 ---
 

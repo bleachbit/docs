@@ -5,6 +5,7 @@ subtitle: "Usage and options"
 nav_title: "CLI"
 category: doc
 date: 2015-09-25 23:27:26
+redirect_from: /doc/command-line-interface.html
 order: 7
 ---
 

@@ -5,6 +5,7 @@ subtitle: "A guide for CleanerML developers"
 nav_title: "Finding Files"
 category: cml
 date: 2026-02-10 00:00:00
+redirect_from: /cml/finding-files-to-delete.html
 order: 2
 ---
 

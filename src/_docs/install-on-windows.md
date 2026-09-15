@@ -5,6 +5,7 @@ subtitle: "Step-by-step guide"
 nav_title: "Windows Install"
 category: doc
 date: 2015-09-30 20:37:24
+redirect_from: /doc/install-on-windows.html
 order: 1
 ---
 
