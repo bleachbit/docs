@@ -58,33 +58,22 @@ h2 {
 #navigation {
     font-size: 0.88em;
 
-    .nav-list {
-        padding: 0;
+    .nav {
+        --bs-nav-link-padding-x: 10px;
+        --bs-nav-link-padding-y: 2px;
+        --bs-nav-link-color: #3a3a3a;
+        --bs-nav-link-hover-color: var(--bs-link-color);
+        --bs-nav-pills-border-radius: 4px;
+        --bs-nav-pills-link-active-bg: var(--bs-link-color);
+    }
 
-        > li > a {
-            padding: 5px 10px;
-            border-radius: 4px;
-            color: #3a3a3a;
-            transition: background-color 0.15s ease, color 0.15s ease;
-
-            &:hover {
-                background-color: #e4eef9;
-                color: var(--bs-link-color);
-                text-decoration: none;
-            }
-        }
-
-        > li.active > a {
-            background-color: var(--bs-link-color);
-            color: #fff;
-        }
+    .nav-link:hover:not(.active) {
+        background-color: #e4eef9;
     }
 
     .nav-header {
         padding: 10px 10px 3px;
         font-size: 0.75em;
-        font-weight: 700;
-        text-transform: uppercase;
         letter-spacing: 0.07em;
         color: #888;
     }

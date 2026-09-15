@@ -1,18 +1,18 @@
-<ul class="nav-list">
-    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item">
+        <a {% if page.url == "/" %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ '/' | relative_url }}">Home</a>
+    </li>
     {%- for section in site.sections %}
-        {%- assign attr = section[0] %}
+        {%- assign category = section[0] %}
         {%- assign label = section[1] %}
-        {%- assign pages = site.docs | where: 'category', attr | sort: 'order' %}
-        {%- if pages.size > 0 %}
-            <li class="nav-header">{{ label }}</li>
-            {%- for page in pages %}
-                <li><a href="{{ page.url | relative_url }}">{{ page.nav_title | default: page.title }}</a></li>
+        {%- assign docs = site.docs | where: 'category', category | sort: 'order' %}
+        {%- if docs.size > 0 %}
+            <li class="nav-header text-uppercase fw-bold">{{ label }}</li>
+            {%- for doc in docs %}
+                <li class="nav-item">
+                    <a {% if doc.url == page.url %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ doc.url | relative_url }}">{{ doc.nav_title | default: doc.title }}</a>
+                </li>
             {%- endfor %}
         {%- endif %}
     {%- endfor %}
-    {%- comment %}
-    List additional links here. It is recommended to add a divider
-    e.g. <li class="divider"></li> first to break up the content.
-    {%- endcomment %}
 </ul>
