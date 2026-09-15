@@ -16,11 +16,11 @@ Linux systems often have the necessary dependencies installed for running Bleach
 
 On Debian and Ubuntu, install these packages: `gir1.2-gtk-3.0`, `libgtk-3-0`, and `python3-gi`. On Fedora, CentOS, and Red Hat, install `gtk3`, `python3-chardet`, and `python3-gobject`.
 
-## Microsoft Windows
+## Windows
 
 ### Official release environment
 
-On Microsoft Windows to replicate the environment used for publishing official releases,
+On Windows to replicate the environment used for publishing official releases,
 install the special 32-bit build of Python, PyGObject, and GTK. Like vanilla Python,
 the special build uses the MSVC compiler. It is built using the vcpkg package manager.
 

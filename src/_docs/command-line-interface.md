@@ -17,7 +17,7 @@ This page includes some examples.
 
 ## Video
 
-This video introduces the command line interface for Microsoft Windows.
+This video introduces the command line interface for Windows.
 
 <div class="row">
   <div class="col-lg-8">
@@ -27,7 +27,7 @@ This video introduces the command line interface for Microsoft Windows.
   </div>
 </div>
 
-## Microsoft Windows
+## Windows
 
 In Windows, use the executable `bleachbit_console.exe` to show the console output. The directory isn't added automatically to the path, so you use the full path `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`. Where acceptable, it is best to substitute the environment variable `%ProgramFiles(x86)%` for `C:\Program Files (x86)\`.
 

@@ -132,7 +132,7 @@ main:
     Free Disk Space**. Otherwise, do not interrupt BleachBit while it is working.
 - question: How many passes does BleachBit make for the overwrite file option (shredding file)?
   answer: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks/).
-- question: How do I see BleachBit in my own language on Microsoft Windows?
+- question: How do I see BleachBit in my own language on Windows?
   answer: |
     There are a few ways to affect the language of the BleachBit user interface.
 
