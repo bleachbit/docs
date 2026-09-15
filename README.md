@@ -37,7 +37,6 @@ are owned by you.
 3. Make the edits in your own repository.
 4. Submit a pull request to merge your changes.
 
-
 ## Style guide
 
 ### Writing style

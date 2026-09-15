@@ -157,7 +157,6 @@ To shred all files under a directory, pass the name of the directory like this:
 bleachbit --shred "C:\Microsoft Exchange\Top Secret Emails\"
 ```
 
-
 ## Wiping empty space
 
 When files are [deleted without shredding]({% link _docs/shred-files-and-wipe-disks.md %}), the contents might be recoverable from the disk's empty space. To prevent recovery from empty space, you can wipe the empty space. Unlike wiping specific files, wiping empty space takes a long time.
@@ -173,7 +172,6 @@ bleachbit --wipe-empty-space ~/.cache/
 Wiping empty space does not change how much free space is left, when the process is done. For example, if you start with 10GB free, then you will still have 10GB free when the process is done.
 
 BleachBit 5.0.2 and earlier used `--wipe-free-space` instead of `--wipe-empty-space`.
-
 
 ## cron example (Linux)
 

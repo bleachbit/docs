@@ -14,7 +14,6 @@ Write your own cleaners to use yourself and to share with others. These cleaners
 
 First, follow the [CleanerML documentation]({% link _docs/cleanerml.md %}) for technical instructions on writing the cleaner.
 
-
 ## Testing the cleaner
 
 Backup any files which may be deleted before testing. Then, use this checklist for testing your cleaner:
@@ -50,7 +49,6 @@ To share the cleaner with others, submit it for review:
 
 Then, wait for a review. Until the final publication, remember you can add the cleaner to your own collection for immediete use in BleachBit.
 
-
 ## Reviewing a cleaner
 
 Help review another person's cleaner submission.  Because there are so many applications, versions of applications, differences in operating systems, etc., the help of the community is essential.
@@ -65,5 +63,3 @@ Look in [GitHub](https://github.com/bleachbit/cleanerml) and review them
 > "I tested gFTP 2.0.18 on Fedora 10.  The cleaner removed 2KB of logs and 500KB of cache.  It did not remove any settings.  I recommend changing the description from "FTP client" to "File transfer client," so it shares the same description with Azureus for ease of translating. Otherwise I recommend the cleaner for publication."
 
 > "I tested gFTP 2.0.18 on Fedora 10.  It deleted my settings."
-
-

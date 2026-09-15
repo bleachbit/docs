@@ -65,7 +65,6 @@ insufficient privileges.
 
 The `/S` and `/NoDesktopShortcut` switches _are_ case-sensitive.
 
-
 ## After installation
 
 After installation, review the [preference options]({% link _docs/preferences.md %}) or skip

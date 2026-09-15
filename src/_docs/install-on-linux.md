@@ -29,7 +29,6 @@ Here is an example of this policy. Ubuntu Questing 25.10 (released October 2025)
 
 It is your choice to install from the distribution's repositories, but in case of any issues with the software, first check for a newer release.
 
-
 ## Software dependencies
 
 BleachBit 5 and 6 require GTK 3.24 and Python 3.8 or later.
@@ -190,7 +189,6 @@ If you did not download all the files in the release, you will see
 Focus on confirming that the file you downloaded shows "OK" in the output.
 You can also ignore the "improperly formatted" warning, which appears
 because `sha256sum` does not recognize the PGP signature lines in the file.
-
 
 ## Ubuntu, Mint, and Debian
 

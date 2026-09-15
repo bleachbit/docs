@@ -40,7 +40,6 @@ Most of these locations are also scanned for [winapp2.ini]({% link _docs/winapp2
 
 The diagnostics section of the application lists these directories.
 
-
 ## Learning CleanerML
 
 To learn CleanerML so you can write your own cleaner, read these resources:
@@ -145,6 +144,3 @@ multi-value variables. For more information, see [Variables]({% link _docs/varia
 ## Sharing your cleaner
 
 Of course, you may use your cleaner privately. If you wish to share it with others, see [Contribute Cleaner]({% link _docs/contributing.md %}).
-
-
-

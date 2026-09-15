@@ -20,5 +20,3 @@ The general usage is as follows:
 8. Click the **Delete** button.
 
 Watch the [videos](https://www.bleachbit.org/videos) for narrated walk-through of usage.
-
-

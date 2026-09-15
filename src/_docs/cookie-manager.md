@@ -152,7 +152,6 @@ supported browsers that are installed.
 7. Click **Preview** on the main headerbar.
 8. Click **Clean** to actually delete the cookies.
 
-
 ---
 
 ## Tips and Best Practices

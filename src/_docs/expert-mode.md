@@ -42,7 +42,6 @@ To enable expert mode:
 BleachBit displays a confirmation dialog stating: *"Expert mode enables advanced
 features and relaxes guardrails. Use extra caution in expert mode."*
 
-
 ## What changes with expert mode
 
 ### Access to protected cleaning options
