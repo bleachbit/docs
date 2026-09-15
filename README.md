@@ -4,7 +4,7 @@ This is a Jekyll site built with Ruby gems. Are you a user wanting to learn how 
 
 Otherwise, if you want to build the documentation site, follow the instructions below.
 
-# Build
+## Build
 
 ```sh
 sudo apt-get update
@@ -16,7 +16,7 @@ bundle exec jekyll serve
 bundle exec jekyll build
 ```
 
-# Build with Docker
+## Build with Docker
 
 To skip installing Ruby and gems locally, use Docker or Podman:
 
@@ -30,7 +30,7 @@ make docker-down    # stop the container
 The first run writes `.env` with your host uid/gid, so generated files
 are owned by you.
 
-# Help improve
+## Help improve
 
 1. Log in to GitHub.
 2. Fork this repository to make your own copy.
@@ -38,9 +38,9 @@ are owned by you.
 4. Submit a pull request to merge your changes.
 
 
-# Style guide
+## Style guide
 
-## Writing style
+### Writing style
 
 - Use sentence case for all headings.
 - Avoid em-dashes; use commas, colons, or rewrite the sentence.
@@ -49,7 +49,7 @@ are owned by you.
 - Write "that is" instead of "i.e."
 - Omit "Microsoft" when referring to Windows.
 
-## UI instructions
+### UI instructions
 
 - Bold UI elements the user clicks, selects, or toggles:
   - buttons: click **Delete**
@@ -65,7 +65,7 @@ are owned by you.
   - Use `+` to join keys, no spaces
   - Capitalize key names: `Ctrl`, `Shift`, `Alt`, `Enter`, `Delete`
 
-## Headings
+### Headings
 
 - Set `title` and optionally `subtitle` in the front matter;
   the template renders both: do not repeat them in the body
@@ -78,25 +78,25 @@ are owned by you.
 - Use sentence case for both title and subtitle (in front matter)
   and for body headings: `## Limits to know`, not `## Limits To Know`
 
-## Horizontal rules
+### Horizontal rules
 
 - Use `---` only for major structural breaks, not between every section
 - Do not use `---` immediately after a heading
 
-## Formatting
+### Formatting
 
 - Use `-` for unordered lists, not `*`.
 - Use numbered lists for steps or sequences.
 - Use bullet lists for items that don't need numbering.
 - Wrap long lines to keep diffs readable.
 
-## Capitalization of proper nouns
+### Capitalization of proper nouns
 
 - BleachBit: always CamelCase
 - Winapp2: capitalized when referring to the community project
 - `winapp2.ini`: always lowercase in code ticks; it is a filename
 - Windows, Linux, macOS: follow each platform's own styling
 
-# License
+## License
 
 The documentation is under the GNU General Public License version 3 or later
