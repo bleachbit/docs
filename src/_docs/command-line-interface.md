@@ -193,16 +193,16 @@ and add this line:
 
 To vacuum Firefox each night at 03:00:
 
-- Open the Control Panel.
-- Open Scheduled Tasks.
-- Click **Add Scheduled Task**.
-- Click **Next**.
-- Click **Browse**.
-- Choose `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`.
-- Choose **Daily**.
-- Set the start time.
-- Click **Next**.
-- Click **Next**.
-- Check **Advanced Properties**.
-- At the end of **Run**, add `--clean firefox.vacuum`.
-- Click **OK**.
+1. Open the Control Panel.
+2. Open Scheduled Tasks.
+3. Click **Add Scheduled Task**.
+4. Click **Next**.
+5. Click **Browse**.
+6. Choose `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`.
+7. Choose **Daily**.
+8. Set the start time.
+9. Click **Next**.
+10. Click **Next**.
+11. Check **Advanced Properties**.
+12. At the end of **Run**, add `--clean firefox.vacuum`.
+13. Click **OK**.
