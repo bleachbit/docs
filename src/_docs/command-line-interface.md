@@ -19,7 +19,13 @@ This page includes some examples.
 
 This video introduces the command line interface for Microsoft Windows.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Tdn81MXqcZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.youtube-nocookie.com/embed/Tdn81MXqcZo" title="Introduction to BleachBit command line for Windows" width="560" height="315" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
 
 ## Microsoft Windows
 
