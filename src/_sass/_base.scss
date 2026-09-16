@@ -22,9 +22,33 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: .5rem;
 }
 
+/* Bootstrap's scale is built for landing pages. Step every heading down a
+   level, reusing its fluid sizes so headings still shrink on phones. */
+h1 {
+    font-size: calc(1.325rem + .9vw); /* Bootstrap's h2 */
+
+    @media (min-width: 1200px) {
+        font-size: 2rem;
+    }
+}
+
 h2 {
+    font-size: calc(1.275rem + .3vw); /* Bootstrap's h4 */
     border-bottom: 1px solid var(--bs-border-color);
     padding-bottom: .25rem;
+
+    @media (min-width: 1200px) {
+        font-size: 1.5rem;
+    }
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* h4 and below only differ from body text by weight */
+h4, h5, h6 {
+    font-size: 1rem;
 }
 
 /* Header */
