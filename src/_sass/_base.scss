@@ -1,7 +1,6 @@
-/* ── Base typography ───────────────────────────────────────── */
+/* Base typography */
 :root {
-    --bs-body-font-size: 15px;
-    --bs-body-line-height: 1.75;
+    --bs-body-line-height: 1.6;
     --bs-body-color: #2c2c2c;
     --bs-heading-color: #1a1a2e;
     --bs-link-color: #1f6db5;
@@ -19,24 +18,21 @@ img {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.3;
-    margin-top: 1.4em;
-    margin-bottom: 0.4em;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 h2 {
-    border-bottom: 1px solid #e0e6ee;
-    padding-bottom: 5px;
+    border-bottom: 1px solid var(--bs-border-color);
+    padding-bottom: .25rem;
 }
 
-/* ── Header ────────────────────────────────────────────────── */
+/* Header */
 #header {
     border-bottom: 2px solid var(--bs-link-color);
-    margin-bottom: 24px;
-    padding-bottom: 10px;
 
     .brand {
         color: var(--bs-link-color);
-        font-weight: 700;
     }
 
     a:hover {
@@ -46,21 +42,18 @@ h2 {
     p {
         /* Bootstrap derives link colors from these vars (no `a` rule needed):
            links here are gray, normal link blue on hover */
-        --bs-link-color-rgb: 85, 85, 85;        /* #555 */
+        --bs-link-color-rgb: 85, 85, 85;         /* #555 */
         --bs-link-hover-color-rgb: 31, 109, 181; /* #1f6db5 */
-        margin-bottom: 0;
-        font-size: 0.9em;
-        color: #555;
     }
 }
 
-/* ── Navigation ────────────────────────────────────────────── */
+/* Navigation */
 #navigation {
-    font-size: 0.88em;
+    font-size: .9rem;
 
     .nav {
-        --bs-nav-link-padding-x: 10px;
-        --bs-nav-link-padding-y: 2px;
+        --bs-nav-link-padding-x: .25rem;
+        --bs-nav-link-padding-y: .1rem;
         --bs-nav-link-color: #3a3a3a;
         --bs-nav-link-hover-color: var(--bs-link-color);
         --bs-nav-pills-border-radius: 4px;
@@ -70,51 +63,29 @@ h2 {
     .nav-link:hover:not(.active) {
         background-color: #e4eef9;
     }
-
-    .nav-header {
-        padding: 10px 10px 3px;
-        font-size: 0.75em;
-        letter-spacing: 0.07em;
-        color: #888;
-    }
 }
 
-/* ── Page header ───────────────────────────────────────────── */
+/* Page header */
 .page-header {
     border-bottom: 2px solid var(--bs-link-color);
-    margin-top: 0;
-    padding-bottom: 10px;
-
-    h1 {
-        margin-top: 0;
-        margin-bottom: 0.1em;
-    }
-
-    .subtitle {
-        margin-bottom: 0;
-        font-size: 1.2em;
-        color: #555;
-    }
 }
 
-/* ── Code ──────────────────────────────────────────────────── */
+/* Code */
 pre, code {
     border: none;
     border-radius: 4px;
     background-color: #f5f7fa;
-    font-size: 0.85em;
 }
 
 pre {
-    font-size: 0.9em;
-    padding: 12px 15px;
+    padding: .75rem 1rem;
     border-left: 3px solid var(--bs-link-color);
     border-radius: 0 4px 4px 0;
 }
 
 code {
     background-color: #fdf2f2;
-    padding: 2px 5px;
+    padding: .125rem .25rem;
     border-radius: 3px;
 
     pre & {
@@ -124,21 +95,21 @@ code {
     }
 }
 
-/* ── Tables ────────────────────────────────────────────────── */
+/* Tables */
 table {
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 
     th {
         background-color: #f0f4f9;
         border-bottom: 2px solid #c8d8ea;
-        padding: 8px 12px;
+        padding: .5rem .75rem;
         font-weight: 600;
         color: #1a1a2e;
     }
 
     td {
-        padding: 7px 12px;
+        padding: .5rem .75rem;
         border-bottom: 1px solid #e8edf2;
     }
 
@@ -151,11 +122,11 @@ table {
     }
 }
 
-/* ── Blockquotes ───────────────────────────────────────────── */
+/* Blockquotes */
 blockquote {
     border-left: 4px solid var(--bs-link-color);
     background-color: #f0f5fc;
-    padding: 10px 16px;
+    padding: .75rem 1rem;
     color: #444;
     border-radius: 0 4px 4px 0;
 
@@ -164,17 +135,7 @@ blockquote {
     }
 }
 
-/* ── Footer ────────────────────────────────────────────────── */
-#footer {
-    margin: 30px 0 15px;
-    padding-top: 15px;
-    border-top: 1px solid #e0e6ee;
-    font-size: 0.85em;
-    color: #999;
-    text-align: center;
-}
-
-/* ── Copy button ───────────────────────────────────────────── */
+/* Copy button */
 div.highlighter-rouge {
     position: relative;
 }
@@ -183,14 +144,14 @@ div.highlighter-rouge {
     position: absolute;
     top: 5px;
     right: 5px;
-    padding: 3px 8px;
-    font-size: 0.78em;
+    padding: .25rem .5rem;
+    font-size: .8rem;
     color: #444;
     background-color: #fff;
     border: 1px solid #c8d8ea;
     border-radius: 4px;
     opacity: 0;
-    transition: opacity 0.2s ease-in-out, background-color 0.15s ease;
+    transition: opacity .2s ease-in-out, background-color .15s ease;
 
     div.highlighter-rouge:hover &,
     &:focus-visible {
