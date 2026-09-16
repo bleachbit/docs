@@ -90,7 +90,7 @@ h4, h5, h6 {
         --bs-nav-link-padding-y: .1rem;
         --bs-nav-link-color: var(--bs-body-color);
         --bs-nav-link-hover-color: var(--bs-link-color);
-        --bs-nav-pills-border-radius: 4px;
+        --bs-nav-pills-border-radius: var(--bs-border-radius-sm);
         --bs-nav-pills-link-active-bg: var(--bs-link-color);
     }
 
@@ -107,19 +107,18 @@ h4, h5, h6 {
 /* Code */
 pre, code {
     border: none;
-    border-radius: 4px;
+    border-radius: var(--bs-border-radius-sm);
     background-color: var(--docs-surface);
 }
 
 pre {
     padding: .75rem 1rem;
     border-left: 3px solid var(--bs-link-color);
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 var(--bs-border-radius-sm) var(--bs-border-radius-sm) 0;
 }
 
 code {
     padding: .125rem .25rem;
-    border-radius: 3px;
 
     pre & {
         background-color: transparent;
@@ -160,7 +159,7 @@ blockquote {
     border-left: 4px solid var(--bs-link-color);
     background-color: var(--docs-surface);
     padding: .75rem 1rem;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 var(--bs-border-radius-sm) var(--bs-border-radius-sm) 0;
 
     p:last-child {
         margin-bottom: 0;
@@ -180,7 +179,7 @@ div.highlighter-rouge {
     font-size: .8rem;
     background-color: var(--bs-body-bg);
     border: 1px solid var(--docs-border);
-    border-radius: 4px;
+    border-radius: var(--bs-border-radius-sm);
     opacity: 0;
     transition: opacity .2s ease-in-out, background-color .15s ease;
 
