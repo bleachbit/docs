@@ -83,7 +83,7 @@ h4, h5, h6 {
     .nav {
         --bs-nav-link-padding-x: .25rem;
         --bs-nav-link-padding-y: .1rem;
-        --bs-nav-link-color: #3a3a3a;
+        --bs-nav-link-color: var(--bs-body-color);
         --bs-nav-link-hover-color: var(--bs-link-color);
         --bs-nav-pills-border-radius: 4px;
         --bs-nav-pills-link-active-bg: var(--bs-link-color);
@@ -134,7 +134,7 @@ table {
         border-bottom: 2px solid #c8d8ea;
         padding: .5rem .75rem;
         font-weight: 600;
-        color: #1a1a2e;
+        color: var(--bs-heading-color);
     }
 
     td {
@@ -156,7 +156,6 @@ blockquote {
     border-left: 4px solid var(--bs-link-color);
     background-color: #f0f5fc;
     padding: .75rem 1rem;
-    color: #444;
     border-radius: 0 4px 4px 0;
 
     p:last-child {
@@ -175,7 +174,6 @@ div.highlighter-rouge {
     right: 5px;
     padding: .25rem .5rem;
     font-size: .8rem;
-    color: #444;
     background-color: #fff;
     border: 1px solid #c8d8ea;
     border-radius: 4px;
