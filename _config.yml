@@ -4,6 +4,8 @@ title: BleachBit Documentation
 tagline: Official user and developer guides
 description: Official user and developer guides for BleachBit, a free and open-source system cleaner.
 url: "https://docs.bleachbit.org"
+# Base for the "View source" link, page.path is relative to `source`
+source_url: "https://github.com/bleachbit/docs/blob/gh-pages/src"
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ""
