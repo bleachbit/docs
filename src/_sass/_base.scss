@@ -59,8 +59,13 @@ h4, h5, h6 {
         color: var(--bs-link-color);
     }
 
-    a:hover {
+    /* these are navigation, not content links */
+    a {
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     p {
