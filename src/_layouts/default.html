@@ -9,6 +9,13 @@
 
         {% seo %}
 
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script defer src="{{ '/js/main.js' | relative_url }}"></script>
+
+        {%- if site.google_analytics_id != "" %}
+        {% include google_analytics.html %}
+        {%- endif %}
+
         {%- if page.layout == "page" and jekyll.environment == "production" %}
         {% include ad.html %}
         {%- endif %}
@@ -53,11 +60,5 @@
                 </footer>
             </div>
         </div>
-
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <script defer src="{{ '/js/main.js' | relative_url }}"></script>
-        {%- if site.google_analytics_id != "" %}
-        {% include google_analytics.html %}
-        {%- endif %}
     </body>
 </html>
