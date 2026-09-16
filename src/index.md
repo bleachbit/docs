@@ -1,6 +1,5 @@
 ---
 layout: default
-title: "BleachBit Documentation"
 redirect_from: "/doc/install.html"
 ---
 
