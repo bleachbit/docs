@@ -8,6 +8,11 @@
     --bs-link-hover-color: #154e87;
     --bs-link-hover-color-rgb: 21, 78, 135;
     --bs-code-color: #c0392b;
+
+    /* one tinted surface for code, tables and quotes */
+    --docs-surface: #f5f7fa;
+    --docs-surface-hover: #e4eef9;
+    --docs-border: #c8d8ea;
 }
 
 img {
@@ -90,7 +95,7 @@ h4, h5, h6 {
     }
 
     .nav-link:hover:not(.active) {
-        background-color: #e4eef9;
+        background-color: var(--docs-surface-hover);
     }
 }
 
@@ -103,7 +108,7 @@ h4, h5, h6 {
 pre, code {
     border: none;
     border-radius: 4px;
-    background-color: #f5f7fa;
+    background-color: var(--docs-surface);
 }
 
 pre {
@@ -113,7 +118,6 @@ pre {
 }
 
 code {
-    background-color: #fdf2f2;
     padding: .125rem .25rem;
     border-radius: 3px;
 
@@ -130,8 +134,8 @@ table {
     margin-bottom: 1rem;
 
     th {
-        background-color: #f0f4f9;
-        border-bottom: 2px solid #c8d8ea;
+        background-color: var(--docs-surface);
+        border-bottom: 2px solid var(--docs-border);
         padding: .5rem .75rem;
         font-weight: 600;
         color: var(--bs-heading-color);
@@ -139,7 +143,7 @@ table {
 
     td {
         padding: .5rem .75rem;
-        border-bottom: 1px solid #e8edf2;
+        border-bottom: 1px solid var(--bs-border-color);
     }
 
     tr:last-child td {
@@ -147,14 +151,14 @@ table {
     }
 
     tr:hover td {
-        background-color: #f8fafc;
+        background-color: var(--docs-surface);
     }
 }
 
 /* Blockquotes */
 blockquote {
     border-left: 4px solid var(--bs-link-color);
-    background-color: #f0f5fc;
+    background-color: var(--docs-surface);
     padding: .75rem 1rem;
     border-radius: 0 4px 4px 0;
 
@@ -174,8 +178,8 @@ div.highlighter-rouge {
     right: 5px;
     padding: .25rem .5rem;
     font-size: .8rem;
-    background-color: #fff;
-    border: 1px solid #c8d8ea;
+    background-color: var(--bs-body-bg);
+    border: 1px solid var(--docs-border);
     border-radius: 4px;
     opacity: 0;
     transition: opacity .2s ease-in-out, background-color .15s ease;
@@ -186,7 +190,7 @@ div.highlighter-rouge {
     }
 
     &:hover {
-        background-color: #e4eef9;
+        background-color: var(--docs-surface-hover);
         border-color: var(--bs-link-color);
         color: var(--bs-link-color);
     }
