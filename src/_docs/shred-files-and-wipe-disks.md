@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "How to shred files and wipe disks"
 nav_title: "Shred Files"
 category: doc
@@ -48,9 +47,9 @@ Before diving in, there's one important thing to understand:
 
 BleachBit offers four secure wiping features:
 
-1. **Overwrite files found by its cleaners** (e.g., Firefox cache,
+1. **Overwrite files found by its cleaners** (for example, Firefox cache,
    browser history)
-2. **Overwrite specific files** anywhere on your drive (e.g., a
+2. **Overwrite specific files** anywhere on your drive (for example, a
    confidential spreadsheet)
 3. **Wipe empty disk space**: overwrites areas where previously deleted
    files lived
@@ -120,9 +119,10 @@ SSDs are more complicated:
   inaccessible to the OS and any software running on it.
 
 For SSDs, the most reliable sanitization methods are:
+
 1. **Full-drive encryption** before storing data, so leftover blocks
    are unreadable without the key.
-2. **Manufacturer secure erase** commands (e.g., ATA Secure Erase or
+2. **Manufacturer secure erase** commands (for example, ATA Secure Erase or
    NVMe Format), issued from a trusted environment.
 3. **Physical destruction** for the highest-stakes situations.
 
@@ -205,7 +205,7 @@ but also increases time, effort, or cost:
    minimal disruption but won't catch fragments elsewhere
 2. **Wipe empty disk space**: catches fragments from previously deleted
    files; slower and limited effectiveness on SSDs
-3. **Wipe the entire drive** (e.g., with ShredOS): removes everything,
+3. **Wipe the entire drive** (for example, with ShredOS): removes everything,
    including the OS and swap files; requires reinstallation afterward
 4. **Physically destroy the drive**: the only method approved for the
    highest security needs.

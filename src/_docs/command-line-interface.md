@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "BleachBit command line interface"
 subtitle: "Usage and options"
 nav_title: "CLI"
@@ -11,18 +10,24 @@ order: 7
 
 Most anything you can do with the graphical user interface, you can do with BleachBit's command line interface which serves two needs:
 
-* Automating cleaning in scripts, batch files, and scheduled tasks
-* Running BleachBit headless in terminal-only connections.
+- Automating cleaning in scripts, batch files, and scheduled tasks
+- Running BleachBit headless in terminal-only connections.
 
 This page includes some examples.
 
 ## Video
 
-This video introduces the command line interface for Microsoft Windows.
+This video introduces the command line interface for Windows.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Tdn81MXqcZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.youtube-nocookie.com/embed/Tdn81MXqcZo" title="Introduction to BleachBit command line for Windows" width="560" height="315" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
 
-## Microsoft Windows
+## Windows
 
 In Windows, use the executable `bleachbit_console.exe` to show the console output. The directory isn't added automatically to the path, so you use the full path `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`. Where acceptable, it is best to substitute the environment variable `%ProgramFiles(x86)%` for `C:\Program Files (x86)\`.
 
@@ -152,7 +157,6 @@ To shred all files under a directory, pass the name of the directory like this:
 bleachbit --shred "C:\Microsoft Exchange\Top Secret Emails\"
 ```
 
-
 ## Wiping empty space
 
 When files are [deleted without shredding]({% link _docs/shred-files-and-wipe-disks.md %}), the contents might be recoverable from the disk's empty space. To prevent recovery from empty space, you can wipe the empty space. Unlike wiping specific files, wiping empty space takes a long time.
@@ -168,7 +172,6 @@ bleachbit --wipe-empty-space ~/.cache/
 Wiping empty space does not change how much free space is left, when the process is done. For example, if you start with 10GB free, then you will still have 10GB free when the process is done.
 
 BleachBit 5.0.2 and earlier used `--wipe-free-space` instead of `--wipe-empty-space`.
-
 
 ## cron example (Linux)
 
@@ -188,16 +191,16 @@ and add this line:
 
 To vacuum Firefox each night at 03:00:
 
-* Open the Control Panel.
-* Open Scheduled Tasks.
-* Click **Add Scheduled Task**.
-* Click **Next**.
-* Click **Browse**.
-* Choose `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`.
-* Choose **Daily**.
-* Set the start time.
-* Click **Next**.
-* Click **Next**.
-* Check **Advanced Properties**.
-* At the end of **Run**, add `--clean firefox.vacuum`.
-* Click **OK**.
+1. Open the Control Panel.
+2. Open Scheduled Tasks.
+3. Click **Add Scheduled Task**.
+4. Click **Next**.
+5. Click **Browse**.
+6. Choose `C:\Program Files (x86)\BleachBit\bleachbit_console.exe`.
+7. Choose **Daily**.
+8. Set the start time.
+9. Click **Next**.
+10. Click **Next**.
+11. Check **Advanced Properties**.
+12. At the end of **Run**, add `--clean firefox.vacuum`.
+13. Click **OK**.

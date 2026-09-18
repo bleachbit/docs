@@ -1,22 +1,15 @@
-# Site title and subtitle. This is used in _includes/header.html
+# Site title, used in _includes/header.html
 title: BleachBit Documentation
-#subtitle: 'Documentation for BleachBit'
+# Used by jekyll-seo-tag for the home page title and default meta description
+tagline: Official user and developer guides
+description: Official user and developer guides for BleachBit, a free and open-source system cleaner.
 url: "https://docs.bleachbit.org"
 
 # if you wish to integrate disqus on pages set your shortname here
-disqus_shortname: ''
+disqus_shortname: ""
 
 # if you use google analytics, add your tracking id here
-google_analytics_id: ''
-
-# Enable/show navigation. There are there options:
-#   0 - always hide
-#   1 - always show
-#   2 - show only if docs are present
-navigation: 2
-
-# URL to source code, used in _includes/footer.html
-#codeurl: 'https://github.com/bruth/jekyll-docs-template'
+google_analytics_id: ""
 
 # Navigation sections, in order. Key is the page's `category`.
 sections:
@@ -27,9 +20,7 @@ sections:
   dev: Developers
   post: Posts
 
-# Keep as an empty string if served up at the root. If served up at a specific
-# path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
-baseurl: ''
+baseurl: ""
 
 permalink: pretty
 
@@ -38,30 +29,29 @@ collections:
     output: true
     permalink: /:categories/:name/
 
-# Syntax highlighting
-highlighter: rouge
+defaults:
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: page
 
-encoding: "utf-8"
 timezone: UTC
 strict_front_matter: true
 
 liquid:
-  error_mode: warn
-  strict_filters: false
-  strict_variables: false
+  error_mode: strict
+  strict_filters: true
 
 # Sass
 sass:
-    style: compressed
+  style: compressed
 
-# Since these are pages, it doesn't really matter
+# Docs have dates, so don't skip ones dated in the future
 future: true
 
 # Site files live in src/, repo tooling stays in the root
 source: src
-
-# Use the kramdown Markdown renderer
-markdown: kramdown
 
 # Netlify preview rules
 include:
@@ -69,7 +59,6 @@ include:
 
 plugins:
   - jekyll-last-modified-at
-    # https://help.github.com/articles/redirects-on-github-pages/
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap

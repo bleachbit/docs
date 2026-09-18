@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Finding files to delete"
 subtitle: "A guide for CleanerML developers"
 nav_title: "Finding Files"
@@ -19,20 +18,20 @@ run the application first. Here are some tips to get you started:
 ### General tips
 
 - **Turn on all features**: Explore the menu, settings, documentation, command line options,
-and environment variables. Turn on features that record data, and disable features that prevent data recording.
+  and environment variables. Turn on features that record data, and disable features that prevent data recording.
 - **Enable logging**: In the application's preferences, turn on all logging (if applicable).
-For example, by default, Pidgin turns off chat logs.
+  For example, by default, Pidgin turns off chat logs.
 - **Exercise all features**: Use the application to generate as many kinds of files as possible.
-For example, in Nexuiz (a game), you must play a multiplayer game with a new map to cause
-the game to download the map into its cache. Many Nexuiz multiplayer games don't download
-maps by default.
+  For example, in Nexuiz (a game), you must play a multiplayer game with a new map to cause
+  the game to download the map into its cache. Many Nexuiz multiplayer games don't download
+  maps by default.
 
 ### Exercising browsers
 
 So that it records various kinds of data, exercise the web browser:
 
 - In the browser settings, enable features that may record data (for example, enhanced safe browsing,
-third party cookies, profile sync, continue where you left off).
+  third party cookies, profile sync, continue where you left off).
 - Disable all ad blockers (for example, browser extension, DNS, firewall).
 - Visit popular sites that use trackers or show ads, such as Google, Facebook, and YouTube.
 - Fill out a form to record autofill data.
@@ -45,7 +44,7 @@ third party cookies, profile sync, continue where you left off).
 - Play an HTML video ([example](https://videojs.org/)).
 - Install a PWA web application ([example](https://whatpwacando.today/)).
 - In Chromium-based browsers, run with `--enable-logging` and then visit
-`chrome://crash` to force a crash.
+  `chrome://crash` to force a crash.
 
 ## The usual suspects
 

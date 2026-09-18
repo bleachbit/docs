@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Running BleachBit from source code"
 subtitle: "Developer setup guide"
 nav_title: "Source Code"
@@ -17,11 +16,11 @@ Linux systems often have the necessary dependencies installed for running Bleach
 
 On Debian and Ubuntu, install these packages: `gir1.2-gtk-3.0`, `libgtk-3-0`, and `python3-gi`. On Fedora, CentOS, and Red Hat, install `gtk3`, `python3-chardet`, and `python3-gobject`.
 
-## Microsoft Windows
+## Windows
 
 ### Official release environment
 
-On Microsoft Windows to replicate the environment used for publishing official releases,
+On Windows to replicate the environment used for publishing official releases,
 install the special 32-bit build of Python, PyGObject, and GTK. Like vanilla Python,
 the special build uses the MSVC compiler. It is built using the vcpkg package manager.
 
@@ -37,16 +36,16 @@ but experimental and CLI-only: there is no GUI.
 Do this setup once:
 
 1. Download the latest [Python Windows installer (64-bit)](https://www.python.org/downloads/windows/).
-1. Run the installer. Under **Optional Features**, enable **for all users**. (If you like, disable **tcl/tk and IDLE**.)
-1. Click **Next**.
-1. Customize the install location to `c:\python313` (for version 3.13.x), and finish the Python installation.
-1. Download BleachBit source from the main repository ([zip](https://github.com/bleachbit/bleachbit/archive/refs/heads/master.zip)).
-1. Unpack the BleachBit source, like to `c:\projects\bleachbit`.
-1. Change directory: `cd /d c:\projects\bleachbit`
-1. Create venv: `c:\python313\python.exe -m venv c:\projects\bleachbit\venv`
-1. Activate venv. If in cmd.exe, run: `call c:\projects\bleachbit\venv\scripts\activate.bat`
-1. Set up the venv: `pip install -r windows\requirements.txt`
-1. Run BleachBit CLI using `python.exe bleachbit.py` instead of `bleachbit.exe`.
+2. Run the installer. Under **Optional Features**, enable **for all users**. (If you like, disable **tcl/tk and IDLE**.)
+3. Click **Next**.
+4. Customize the install location to `c:\python313` (for version 3.13.x), and finish the Python installation.
+5. Download BleachBit source from the main repository ([zip](https://github.com/bleachbit/bleachbit/archive/refs/heads/master.zip)).
+6. Unpack the BleachBit source, like to `c:\projects\bleachbit`.
+7. Change directory: `cd /d c:\projects\bleachbit`
+8. Create venv: `c:\python313\python.exe -m venv c:\projects\bleachbit\venv`
+9. Activate venv. If in cmd.exe, run: `call c:\projects\bleachbit\venv\scripts\activate.bat`
+10. Set up the venv: `pip install -r windows\requirements.txt`
+11. Run BleachBit CLI using `python.exe bleachbit.py` instead of `bleachbit.exe`.
 
 The next time, just activate the venv and run the application (via `python.exe`).
 
@@ -91,11 +90,11 @@ git clone https://github.com/bleachbit/bleachbit.git
 
 Here is a full list of BleachBit Git repositories:
 
-* [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
-* [pygtkwin](https://github.com/bleachbit/pygtkwin): special build of Python, PyGObject, and GTK
-* [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
-* [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
-* [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
+- [BleachBit](https://github.com/bleachbit/bleachbit): main BleachBit application
+- [pygtkwin](https://github.com/bleachbit/pygtkwin): special build of Python, PyGObject, and GTK
+- [bleachbit-misc](https://github.com/bleachbit/bleachbit-misc): supports development
+- [CleanerML](https://github.com/bleachbit/cleanerml): extra cleaners
+- [winapp2.ini](https://github.com/bleachbit/winapp2.ini): winapp2.ini cleaners database for Windows
 
 ### Building translations
 
@@ -142,7 +141,5 @@ git checkout master
 
 ### Further reading
 
-* [Testing]({% link _docs/testing.md %})
-* [Contributing patches and bug reports](https://www.bleachbit.org/contribute)
-
-
+- [Testing]({% link _docs/testing.md %})
+- [Contributing patches and bug reports](https://www.bleachbit.org/contribute)

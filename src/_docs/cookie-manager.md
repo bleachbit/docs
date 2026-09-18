@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Cookie manager"
 subtitle: "Browser cookie management guide"
 nav_title: "Cookie Manager"
@@ -100,14 +99,14 @@ The Cookie Manager works with the following browsers:
 
 There are two ways to open the Cookie Manager.
 
-### Method A — Right-click context menu
+### Method A: right-click context menu
 
 1. In the BleachBit left pane, expand a supported browser (for example,
    **Google Chrome**).
 2. Right-click on the **Cookies** option under that browser.
 3. Select **Cookie Manager** from the context menu.
 
-### Method B — Preferences dialog
+### Method B: Preferences dialog
 
 1. Open **Preferences** from the application menu.
 2. Click **Cookies** in the left sidebar.
@@ -136,7 +135,7 @@ supported browsers that are installed.
 | **Checkboxes** | Check a host to keep its cookies; leave unchecked to delete |
 | **Select All** | Checks every host in the list |
 | **Deselect All** | Unchecks every host in the list |
-| **Cookie count** (e.g., *10 of 35 cookies kept*) | Running tally of how many cookies are marked to keep |
+| **Cookie count** (for example, *10 of 35 cookies kept*) | Running tally of how many cookies are marked to keep |
 | **Close** | Saves your selections and closes the dialog |
 
 ### Step-by-step workflow
@@ -152,7 +151,6 @@ supported browsers that are installed.
 6. Click **Close** to save your selections.
 7. Click **Preview** on the main headerbar.
 8. Click **Clean** to actually delete the cookies.
-
 
 ---
 
@@ -171,7 +169,7 @@ supported browsers that are installed.
 
 ---
 
-## localStorage and IndexDB
+## localStorage and IndexedDB
 
 **Only HTTP/HTTPS cookies are supported.** LocalStorage and IndexedDB files,
 which function similarly to cookies, are not yet managed by the Cookie Manager.
@@ -208,11 +206,13 @@ deletes.
 
 **Cookie Manager is not in the context menu**
 
-: - Verify you are using BleachBit version 5.1.0 or later.
- - Verify the browser is supported.
+: Check the following:
+
+  - Verify you are using BleachBit version 5.1.0 or later.
+  - Verify the browser is supported.
 
 **After cleaning, I am logged out of a site**
-: Cause: The site's cookie host was not checked in the Cookie Manager, or it appears under a variation of the hostname (e.g., `www.example.com` vs. `example.com` or `.example.com`).
+: Cause: The site's cookie host was not checked in the Cookie Manager, or it appears under a variation of the hostname (for example, `www.example.com` vs. `example.com` or `.example.com`).
 
 Solution: Re-open the Cookie Manager, search for variations of the site's domain, check all matching hosts, then clean again.
 

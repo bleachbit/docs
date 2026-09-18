@@ -13,3 +13,16 @@ updates:
         update-types:
           - 'minor'
           - 'patch'
+  - package-ecosystem: 'bundler'
+    directory: '/'
+    cooldown:
+      default-days: 7
+    schedule:
+      interval: 'monthly'
+    groups:
+      bundler:
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'

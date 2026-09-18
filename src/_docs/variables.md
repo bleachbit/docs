@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "CleanerML variables reference"
 nav_title: "Variables"
 category: cml

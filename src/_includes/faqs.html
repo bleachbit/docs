@@ -1,7 +1,7 @@
 {%- assign faqs = include.faqs | default: page.faqs -%}
 {%- if faqs.size > 0 %}
     {%- if include.heading %}
-        <h2>{{ include.heading | markdownify }}</h2>
+        <h2>{{ include.heading }}</h2>
     {%- endif %}
 <dl>
     {%- for faq in faqs %}

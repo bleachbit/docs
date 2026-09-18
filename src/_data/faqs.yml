@@ -119,20 +119,20 @@ main:
     Mode](https://wiki.ubuntu.com/RecoveryMode) like this:
 
     1. Reboot the system.
-    1. Choose the boot option *Advanced options for Ubuntu*.
-    1. Choose a recent kernel with *(recovery mode)*.
-    1. In the Recovery Menu, choose _clean_. Note: this will mount your filesystem.
-    1. If this cleans enough space, boot normally and then clean the cache as mentioned above.
-    1. Otherwise, choose  _root_ from the Recovery Menu.
-    1. Type this command to switch to your normal user account: `su username -`. (Replace _username_ with your username.)
-    1. Run this command to clean the user's cache: `rm -rf ~/.cache/`.
-    1. Reboot.
+    2. Choose the boot option *Advanced options for Ubuntu*.
+    3. Choose a recent kernel with *(recovery mode)*.
+    4. In the Recovery Menu, choose _clean_. Note: this will mount your filesystem.
+    5. If this cleans enough space, boot normally and then clean the cache as mentioned above.
+    6. Otherwise, choose  _root_ from the Recovery Menu.
+    7. Type this command to switch to your normal user account: `su username -`. (Replace _username_ with your username.)
+    8. Run this command to clean the user's cache: `rm -rf ~/.cache/`.
+    9. Reboot.
 
     In the future, you may avoid this situation by disabling the BleachBit option **System -
     Free Disk Space**. Otherwise, do not interrupt BleachBit while it is working.
 - question: How many passes does BleachBit make for the overwrite file option (shredding file)?
   answer: See [Shred files and wipe disks](/doc/shred-files-and-wipe-disks/).
-- question: How do I see BleachBit in my own language on Microsoft Windows?
+- question: How do I see BleachBit in my own language on Windows?
   answer: |
     There are a few ways to affect the language of the BleachBit user interface.
 
@@ -141,9 +141,9 @@ main:
 
     To force BleachBit to always show in English, you have a few options:
 
-    * Download and install the English installer instead of the regular installer.
-    * If using the regular (non-English-only) installer, uncheck the option to install translations.
-    * Manually delete the translations. The default location for translations is `c:\Program Files (x86)\BleachBit\share\locale`.
+    - Download and install the English installer instead of the regular installer.
+    - If using the regular (non-English-only) installer, uncheck the option to install translations.
+    - Manually delete the translations. The default location for translations is `c:\Program Files (x86)\BleachBit\share\locale`.
 
     The language chosen in the BleachBit installer does not affect the BleachBit application:
     it affects only the language of the installer.
@@ -164,7 +164,7 @@ things_to_know:
   answer: |
     Cache generally improves the performance of your computer. For example, browser cache
     prevents many files (such as pieces of web pages) from being downloaded again. Getting the
-    file from the cache is much faster than downloading it&mdash;even with fast bandwidth.
+    file from the cache is much faster than downloading it, even with fast bandwidth.
     Applications (such as web browsers) normally delete the useless parts of cache to prevent
     it from growing too large and to make room for new, potentially-useful data.
 
@@ -176,10 +176,10 @@ things_to_know:
   answer: |
     Cookies are not inherently evil or dangerous. The following statements are *false*:
 
-    * Cookies have no uses besides advertising
-    * Cookies can infect a computer like a virus
-    * Cookies cause popup ads
-    * Cookies can read arbitrary information from your computer (such as your name, your credit card, or private documents)
+    - Cookies have no uses besides advertising
+    - Cookies can infect a computer like a virus
+    - Cookies cause popup ads
+    - Cookies can read arbitrary information from your computer (such as your name, your credit card, or private documents)
 
     Cookies perform useful functions such as maintaining your login information: this saves
     you the time of logging in again. Many web sites use cookies to make honest improvements
@@ -189,7 +189,7 @@ things_to_know:
     disabled (using unique information such as IP address, user agent, plugins, etc), so
     disabling cookies may not have the intended effect.
 
-    On the other hand, some web sites use tricks (e.g., "evercookie" technology) to resurrect
+    On the other hand, some web sites use tricks (for example, "evercookie" technology) to resurrect
     deleted cookies and try to track users between browsers on the same computer. Using
     another trick, cookies can track visitors between web sites for behavioural ad targeting:
     for example, once you visited an online camping store, and suddenly every other web site

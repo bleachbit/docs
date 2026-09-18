@@ -6,6 +6,7 @@ _site
 .bundle/
 vendor/
 .jekyll-cache/
+.jekyll-metadata
 
 # Local Netlify folder
 .netlify
