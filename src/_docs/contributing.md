@@ -47,7 +47,7 @@ To share the cleaner with others, submit it for review:
 - (optional) Describe how much space each option cleans. For example, "the log option deleted 2KB."
 - (optional) Identify the home page of the application.
 
-Then, wait for a review. Until the final publication, remember you can add the cleaner to your own collection for immediete use in BleachBit.
+Then, wait for a review. Until the final publication, remember you can add the cleaner to your own collection for immediate use in BleachBit.
 
 ## Reviewing a cleaner
 

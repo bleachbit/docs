@@ -85,7 +85,7 @@ For more information, refer to the section [Learning](#learning-cleanerml).
 
 The **action** element is a child of the **option** element.
 
-Values for the **comand** attribute of the **action** element:
+Values for the **command** attribute of the **action** element:
 
 - **apt.autoclean**
 - **apt.autoremove**

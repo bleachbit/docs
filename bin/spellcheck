@@ -1,0 +1,77 @@
+#!/usr/bin/env ruby
+
+# Checks the Markdown sources for spelling errors using aspell.
+#
+# Front matter, code, URLs, and markup are ignored. Project terms
+# (BleachBit, CleanerML, and so on) live in .aspell.en.pws.
+
+require 'open3'
+
+BASE_DIR = File.dirname(File.dirname(__FILE__))
+DICTIONARY = "#{BASE_DIR}/.aspell.en.pws"
+
+if not system('aspell', '--version', out: File::NULL, err: File::NULL)
+    abort 'aspell is not installed'
+end
+
+# Returns [[stripped_line, line_number], ...] for spell checking
+def stripped(path)
+    front_matter = false
+    code_fence = false
+    lines = []
+    File.foreach(path).with_index(1) do |line, n|
+        if n == 1 && line.start_with?('---')
+            front_matter = true
+            next
+        elsif front_matter
+            front_matter = false if line.start_with?('---')
+            next
+        elsif line.start_with?('```')
+            code_fence = !code_fence
+            next
+        elsif code_fence
+            next
+        end
+        s = line.gsub(/`[^`]*`/, '')              # inline code
+                .gsub(%r{https?://[^\s)\]"'>]+}, '') # URLs
+                .gsub(/\]\([^)]*\)/, '](')        # link and image targets
+                .gsub(/\{%.*?%\}/, '')            # Liquid tags
+                .gsub(/\{\{.*?\}\}/, '')          # Liquid output
+                .gsub(/<[^>]+>/, '')              # HTML tags
+                .gsub(/&\w+;/, '')                # HTML entities
+                .gsub(/\b0x[0-9a-fA-F]+\b/, '')   # hex literals
+        lines << [s, n]
+    end
+    lines
+end
+
+misspellings = {}
+
+Dir.glob("#{BASE_DIR}/src/**/*.md").sort.each do |path|
+    lines = stripped(path)
+    out, = Open3.capture2('aspell', 'list', '--lang=en_US', '--mode=none',
+                          '--encoding=utf-8', "--personal=#{DICTIONARY}",
+                          stdin_data: lines.map(&:first).join)
+    out.split.uniq.each do |word|
+        # aspell splits words on non-letters (underscores, digits), so match
+        # against letters rather than \b, which counts both as word characters.
+        pattern = /(?<![[:alpha:]])#{Regexp.escape(word)}(?![[:alpha:]])/
+        locations = lines.select { |s, _| s =~ pattern }
+                          .map { |_, n| "#{path.sub("#{BASE_DIR}/", '')}:#{n}" }
+        locations << path.sub("#{BASE_DIR}/", '') if locations.empty?
+        misspellings[word] ||= []
+        misspellings[word].concat(locations)
+    end
+end
+
+if misspellings.empty?
+    puts 'No spelling errors found'
+    exit 0
+end
+
+misspellings.each_value(&:uniq!)
+misspellings.each do |word, locations|
+    locations.each { |loc| puts "#{loc}: #{word}" }
+end
+warn "#{misspellings.size} misspelled word(s). Fix the text or add a project term to .aspell.en.pws"
+exit 1

@@ -51,7 +51,7 @@ When enabled, the application uses a dark theme. When disabled, the application 
 
 ## Show debug messages
 
-When enabled, both the GUI and the console will show technical messages that sometimes help trouleshooting. Most users do not need to enable this option.
+When enabled, both the GUI and the console will show technical messages that sometimes help troubleshooting. Most users do not need to enable this option.
 
 ## Expert mode
 

@@ -73,7 +73,7 @@ There are three options to verify packages. Pick one method.
 
 1. Embedded signatures
 2. Signed checksum file
-3. Detatched Signatures
+3. Detached Signatures
 
 ### GPG keys
 
@@ -113,7 +113,7 @@ To verify a .rpm file.
 rpm --checksig bleachbit-5.0.2-1.1.fc42.noarch.rpm
 ```
 
-### Detatched signatures
+### Detached signatures
 
 Detached signatures are separate files containing only the
 cryptographic signature. They verify a download's authenticity

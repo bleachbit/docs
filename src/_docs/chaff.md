@@ -128,7 +128,7 @@ while chaff's text more resembles interesting data.
 
 Random wiping generates data that looks like:
 
-> 5q_R<kPi!@AG(q-HkQM{0>32aG3NmL^IM38ItezE#eLo0TOyf
+> `5q_R<kPi!@AG(q-HkQM{0>32aG3NmL^IM38ItezE#eLo0TOyf`
 
 Compare to:
 
