@@ -30,14 +30,19 @@ clean:
 	git gc
 	@echo "Clean complete."
 
+# Keep gems in the project instead of the global gem dir. Plain `bundle`
+# commands read this too, not only make.
+.bundle/config:
+	bundle config set --local path vendor/bundle
+
 # Install Ruby dependencies
-install:
+install: .bundle/config
 	@echo "Installing Ruby dependencies..."
 	bundle install
 	@echo "Dependencies installed"
 
 # Update Ruby dependencies
-update:
+update: .bundle/config
 	@echo "Updating Ruby dependencies..."
 	bundle update
 	@echo "Dependencies updated."
