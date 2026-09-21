@@ -14,6 +14,8 @@ compose.yaml
 .github
 .gitignore
 .gitattributes
+.mdlrc
+.mdl_style.rb
 
 *.sw?
 *~

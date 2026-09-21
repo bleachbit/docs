@@ -1,6 +1,6 @@
 # Makefile for BleachBit documentation site
 
-.PHONY: help clean serve serve-prod build install update spelling \
+.PHONY: help clean serve serve-prod build lint test install update spelling \
 	docker-serve docker-build docker-shell docker-down
 
 # Default target
@@ -11,6 +11,8 @@ help:
 	@echo "  serve    - Start local development server"
 	@echo "  serve-prod - Start local server without drafts"
 	@echo "  build    - Build the static site"
+	@echo "  lint     - Lint Markdown files"
+	@echo "  test     - Build and check the site for broken links"
 	@echo "  spelling - Check Markdown sources for spelling errors"
 	@echo "  install  - Install Ruby dependencies"
 	@echo "  update   - Update Ruby dependencies"
@@ -28,14 +30,19 @@ clean:
 	git gc
 	@echo "Clean complete."
 
+# Keep gems in the project instead of the global gem dir. Plain `bundle`
+# commands read this too, not only make.
+.bundle/config:
+	bundle config set --local path vendor/bundle
+
 # Install Ruby dependencies
-install:
+install: .bundle/config
 	@echo "Installing Ruby dependencies..."
 	bundle install
 	@echo "Dependencies installed"
 
 # Update Ruby dependencies
-update:
+update: .bundle/config
 	@echo "Updating Ruby dependencies..."
 	bundle update
 	@echo "Dependencies updated."
@@ -47,6 +54,14 @@ build:
 	@echo "Building site..."
 	bundle exec jekyll build
 	@echo "Site built in _site/"
+
+# Lint Markdown, see .mdl_style.rb for the rules
+lint:
+	bundle exec mdl README.md src
+
+# Check links, images and scripts in the built site
+test: build
+	bundle exec htmlproofer ./_site --disable-external
 
 # Check spelling in the Markdown sources
 spelling:

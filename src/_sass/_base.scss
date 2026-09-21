@@ -1,7 +1,6 @@
-/* ── Base typography ───────────────────────────────────────── */
+/* Base typography */
 :root {
-    --bs-body-font-size: 15px;
-    --bs-body-line-height: 1.75;
+    --bs-body-line-height: 1.6;
     --bs-body-color: #2c2c2c;
     --bs-heading-color: #1a1a2e;
     --bs-link-color: #1f6db5;
@@ -9,6 +8,11 @@
     --bs-link-hover-color: #154e87;
     --bs-link-hover-color-rgb: 21, 78, 135;
     --bs-code-color: #c0392b;
+
+    /* one tinted surface for code, tables and quotes */
+    --docs-surface: #f5f7fa;
+    --docs-surface-hover: #e4eef9;
+    --docs-border: #c8d8ea;
 }
 
 img {
@@ -19,103 +23,100 @@ img {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.3;
-    margin-top: 1.4em;
-    margin-bottom: 0.4em;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+/* Bootstrap's scale is built for landing pages. Step every heading down a
+   level, reusing its fluid sizes so headings still shrink on phones. */
+h1 {
+    font-size: calc(1.325rem + .9vw); /* Bootstrap's h2 */
+
+    @media (min-width: 1200px) {
+        font-size: 2rem;
+    }
 }
 
 h2 {
-    border-bottom: 1px solid #e0e6ee;
-    padding-bottom: 5px;
+    font-size: calc(1.275rem + .3vw); /* Bootstrap's h4 */
+    border-bottom: 1px solid var(--bs-border-color);
+    padding-bottom: .25rem;
+
+    @media (min-width: 1200px) {
+        font-size: 1.5rem;
+    }
 }
 
-/* ── Header ────────────────────────────────────────────────── */
+h3 {
+    font-size: 1.25rem;
+}
+
+/* h4 and below only differ from body text by weight */
+h4, h5, h6 {
+    font-size: 1rem;
+}
+
+/* Header */
 #header {
     border-bottom: 2px solid var(--bs-link-color);
-    margin-bottom: 24px;
-    padding-bottom: 10px;
 
     .brand {
         color: var(--bs-link-color);
-        font-weight: 700;
     }
 
-    a:hover {
+    /* these are navigation, not content links */
+    a {
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     p {
         /* Bootstrap derives link colors from these vars (no `a` rule needed):
            links here are gray, normal link blue on hover */
-        --bs-link-color-rgb: 85, 85, 85;        /* #555 */
+        --bs-link-color-rgb: 85, 85, 85;         /* #555 */
         --bs-link-hover-color-rgb: 31, 109, 181; /* #1f6db5 */
-        margin-bottom: 0;
-        font-size: 0.9em;
-        color: #555;
     }
 }
 
-/* ── Navigation ────────────────────────────────────────────── */
+/* Navigation */
 #navigation {
-    font-size: 0.88em;
+    font-size: .9rem;
 
     .nav {
-        --bs-nav-link-padding-x: 10px;
-        --bs-nav-link-padding-y: 2px;
-        --bs-nav-link-color: #3a3a3a;
+        --bs-nav-link-padding-x: .25rem;
+        --bs-nav-link-padding-y: .1rem;
+        --bs-nav-link-color: var(--bs-body-color);
         --bs-nav-link-hover-color: var(--bs-link-color);
-        --bs-nav-pills-border-radius: 4px;
+        --bs-nav-pills-border-radius: var(--bs-border-radius-sm);
         --bs-nav-pills-link-active-bg: var(--bs-link-color);
     }
 
     .nav-link:hover:not(.active) {
-        background-color: #e4eef9;
-    }
-
-    .nav-header {
-        padding: 10px 10px 3px;
-        font-size: 0.75em;
-        letter-spacing: 0.07em;
-        color: #888;
+        background-color: var(--docs-surface-hover);
     }
 }
 
-/* ── Page header ───────────────────────────────────────────── */
+/* Page header */
 .page-header {
     border-bottom: 2px solid var(--bs-link-color);
-    margin-top: 0;
-    padding-bottom: 10px;
-
-    h1 {
-        margin-top: 0;
-        margin-bottom: 0.1em;
-    }
-
-    .subtitle {
-        margin-bottom: 0;
-        font-size: 1.2em;
-        color: #555;
-    }
 }
 
-/* ── Code ──────────────────────────────────────────────────── */
+/* Code */
 pre, code {
     border: none;
-    border-radius: 4px;
-    background-color: #f5f7fa;
-    font-size: 0.85em;
+    border-radius: var(--bs-border-radius-sm);
+    background-color: var(--docs-surface);
 }
 
 pre {
-    font-size: 0.9em;
-    padding: 12px 15px;
-    border-left: 3px solid var(--bs-link-color);
-    border-radius: 0 4px 4px 0;
+    padding: .75rem 1rem;
 }
 
 code {
-    background-color: #fdf2f2;
-    padding: 2px 5px;
-    border-radius: 3px;
+    padding: .125rem .25rem;
 
     pre & {
         background-color: transparent;
@@ -124,22 +125,22 @@ code {
     }
 }
 
-/* ── Tables ────────────────────────────────────────────────── */
+/* Tables */
 table {
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 
     th {
-        background-color: #f0f4f9;
-        border-bottom: 2px solid #c8d8ea;
-        padding: 8px 12px;
+        background-color: var(--docs-surface);
+        border-bottom: 2px solid var(--docs-border);
+        padding: .5rem .75rem;
         font-weight: 600;
-        color: #1a1a2e;
+        color: var(--bs-heading-color);
     }
 
     td {
-        padding: 7px 12px;
-        border-bottom: 1px solid #e8edf2;
+        padding: .5rem .75rem;
+        border-bottom: 1px solid var(--bs-border-color);
     }
 
     tr:last-child td {
@@ -147,34 +148,23 @@ table {
     }
 
     tr:hover td {
-        background-color: #f8fafc;
+        background-color: var(--docs-surface);
     }
 }
 
-/* ── Blockquotes ───────────────────────────────────────────── */
+/* Blockquotes */
 blockquote {
     border-left: 4px solid var(--bs-link-color);
-    background-color: #f0f5fc;
-    padding: 10px 16px;
-    color: #444;
-    border-radius: 0 4px 4px 0;
+    background-color: var(--docs-surface);
+    padding: .75rem 1rem;
+    border-radius: 0 var(--bs-border-radius-sm) var(--bs-border-radius-sm) 0;
 
     p:last-child {
         margin-bottom: 0;
     }
 }
 
-/* ── Footer ────────────────────────────────────────────────── */
-#footer {
-    margin: 30px 0 15px;
-    padding-top: 15px;
-    border-top: 1px solid #e0e6ee;
-    font-size: 0.85em;
-    color: #999;
-    text-align: center;
-}
-
-/* ── Copy button ───────────────────────────────────────────── */
+/* Copy button */
 div.highlighter-rouge {
     position: relative;
 }
@@ -183,14 +173,13 @@ div.highlighter-rouge {
     position: absolute;
     top: 5px;
     right: 5px;
-    padding: 3px 8px;
-    font-size: 0.78em;
-    color: #444;
-    background-color: #fff;
-    border: 1px solid #c8d8ea;
-    border-radius: 4px;
+    padding: .25rem .5rem;
+    font-size: .8rem;
+    background-color: var(--bs-body-bg);
+    border: 1px solid var(--docs-border);
+    border-radius: var(--bs-border-radius-sm);
     opacity: 0;
-    transition: opacity 0.2s ease-in-out, background-color 0.15s ease;
+    transition: opacity .2s ease-in-out, background-color .15s ease;
 
     div.highlighter-rouge:hover &,
     &:focus-visible {
@@ -198,7 +187,7 @@ div.highlighter-rouge {
     }
 
     &:hover {
-        background-color: #e4eef9;
+        background-color: var(--docs-surface-hover);
         border-color: var(--bs-link-color);
         color: var(--bs-link-color);
     }

@@ -35,6 +35,9 @@ jobs:
           ruby-version: ${{ env.RUBY }}
           bundler-cache: true
 
+      - name: Lint Markdown
+        run: bundle exec mdl README.md src
+
       - name: Run jekyll doctor
         run: bundle exec jekyll doctor
 
@@ -42,6 +45,9 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+
+      - name: Check links
+        run: bundle exec htmlproofer ./_site --disable-external
 
       - name: Upload artifact
         if: github.repository == 'bleachbit/docs' && github.event_name != 'pull_request' && github.ref == 'refs/heads/gh-pages'

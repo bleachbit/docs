@@ -9,6 +9,13 @@
 
         {% seo %}
 
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script defer src="{{ '/js/main.js' | relative_url }}"></script>
+
+        {%- if site.google_analytics_id != "" %}
+        {% include google_analytics.html %}
+        {%- endif %}
+
         {%- if page.layout == "page" and jekyll.environment == "production" %}
         {% include ad.html %}
         {%- endif %}
@@ -16,7 +23,7 @@
     <body>
         <div class="container">
             <div class="row">
-                <header id="header" class="col-12">
+                <header id="header" class="col-12 mb-4 pb-2">
                     {% include header.html %}
                 </header>
             </div>
@@ -48,16 +55,10 @@
             {%- endif %}
 
             <div class="row">
-                <footer id="footer" class="col-12">
+                <footer id="footer" class="col-12 mt-5 mb-3 pt-3 border-top text-center small text-secondary">
                     {% include footer.html %}
                 </footer>
             </div>
         </div>
-
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <script defer src="{{ '/js/main.js' | relative_url }}"></script>
-        {%- if site.google_analytics_id != "" %}
-        {% include google_analytics.html %}
-        {%- endif %}
     </body>
 </html>

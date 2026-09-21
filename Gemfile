@@ -7,3 +7,8 @@ gem 'jekyll-seo-tag', '~> 2.9.0'
 gem 'jekyll-sitemap', '~> 1.4.0'
 gem 'tzinfo-data', :install_if => Gem.win_platform?
 gem 'wdm', '~> 0.2.0', :install_if => Gem.win_platform?
+
+group :test do
+    gem 'html-proofer', '~> 5.2.2'
+    gem 'mdl', '~> 0.18.1'
+end

@@ -7,7 +7,7 @@
         {%- assign label = section[1] %}
         {%- assign docs = site.docs | where: 'category', category | sort: 'order' %}
         {%- if docs.size > 0 %}
-            <li class="nav-header text-uppercase fw-bold">{{ label }}</li>
+            <li class="pt-2 pb-1 ps-1 small text-uppercase fw-bold text-secondary">{{ label }}</li>
             {%- for doc in docs %}
                 <li class="nav-item">
                     <a {% if doc.url == page.url %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ doc.url | relative_url }}">{{ doc.nav_title | default: doc.title }}</a>

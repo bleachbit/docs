@@ -1,13 +1,13 @@
 <div class="d-flex align-items-center justify-content-between gap-2 mt-4 mb-2">
   <p class="fs-4 lh-sm mb-0">
-    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="brand fw-bold" href="{{ '/' | relative_url }}">{{ site.title }}</a>
   </p>
   <button type="button" class="btn btn-sm btn-outline-secondary d-md-none" data-bs-toggle="offcanvas" data-bs-target="#docs-nav" aria-controls="docs-nav">Menu</button>
 </div>
 
-<p>
+<p class="text-secondary">
   <a href="https://www.bleachbit.org">Main site</a>
   | <a href="https://www.bleachbit.org/download">Download</a>
   | <a href="https://www.bleachbit.org/help">Get Help</a>
-  | <a href="https://github.com/bleachbit/docs">Edit this documentation</a>
+  | <a href="{{ site.source_url }}/{{ page.path }}">View page source</a>
 </p>
