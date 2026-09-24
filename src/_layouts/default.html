@@ -16,7 +16,7 @@
         {% include google_analytics.html %}
         {%- endif %}
 
-        {%- if page.layout == "page" and jekyll.environment == "production" %}
+        {%- if page.ads and jekyll.environment == "production" %}
         {% include ad.html %}
         {%- endif %}
     </head>
