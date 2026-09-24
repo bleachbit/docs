@@ -37,6 +37,7 @@ defaults:
       type: docs
     values:
       layout: page
+      ads: true
 
 timezone: UTC
 strict_front_matter: true
