@@ -11,6 +11,7 @@ order: 2
 This article covers
 
 - Where to get BleachBit packages for Linux
+- Hardware requirements
 - Software dependencies
 - How to verify the packages
 - How to install packages on Linux
@@ -28,6 +29,13 @@ Most popular distributions have BleachBit in their repositories, and this is a c
 Here is an example of this policy. Ubuntu Questing 25.10 (released October 2025) always had BleachBit 4.6.2, which was released October 2025, even though BleachBit 5.0 was released in May 2025. Users who wanted to upgrade to BleachBit 5 while using the Ubuntu repositories had to upgrade to Ubuntu 26.04 in April 2026.
 
 It is your choice to install from the distribution's repositories, but in case of any issues with the software, first check for a newer release.
+
+## Hardware requirements
+
+- **CPU**: Any architecture supported by your distribution for RPM, DEB, or running from source, while the AppImage is x86-64 only.
+- **RAM**: 128 MB free for the GUI, while the CLI and TUI use less RAM.
+- **Disk**: Under 10 MB (not counting GTK and Python, which are often installed by default).
+- **Display**: 800×600 for the GUI. The CLI works headless.
 
 ## Software dependencies
 

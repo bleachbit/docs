@@ -12,6 +12,13 @@ To install BleachBit, first [download BleachBit 5 for Windows](https://www.bleac
 
 Using Windows 7? [Download BleachBit 4.6.2 for Windows 7](https://www.bleachbit.org/bleachbit-windows-7).
 
+## Hardware requirements
+
+- **CPU**: Any x86 (32-bit) or x86-64 (64-bit) processor.
+- **RAM**: 128 MB free for the GUI. The CLI and TUI use less RAM.
+- **Disk**: 50 MB installed.
+- **Display**: 800×600 for the GUI, while the CLI works headless.
+
 ## Standard installation
 
 Most Windows users want the standard installation.
