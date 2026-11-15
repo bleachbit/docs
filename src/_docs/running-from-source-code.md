@@ -23,7 +23,7 @@ On Windows to replicate the environment used for publishing official releases,
 install the special 32-bit build of Python, PyGObject, and GTK. Like vanilla Python,
 the special build uses the MSVC compiler. It is built using the vcpkg package manager.
 
-Follow the installation steps in [build_and_test.yaml](https://github.com/bleachbit/bleachbit/blob/master/.github/workflows/build_and_test.yaml),
+Follow the installation steps in [windows_build.yaml](https://github.com/bleachbit/bleachbit/blob/master/.github/workflows/windows_build.yaml),
 which installs a [prebuilt environment from pygtkwin](https://github.com/bleachbit/pygtkwin). (You do not need
 to build it yourself.)
 
