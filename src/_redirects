@@ -4,8 +4,3 @@
 {%- for doc in site.docs %}
 {{ doc.url }} {{ doc.url }}index.html 200!
 {%- endfor %}
-{%- for page in site.pages %}
-  {%- if page.redirect %}
-{{ page.redirect.from }} {{ page.redirect.to | remove_first: site.url }} 301!
-  {%- endif %}
-{%- endfor %}

@@ -3,7 +3,6 @@ title: "How to shred files and wipe disks"
 nav_title: "Shred Files"
 category: doc
 date: 2015-09-25 23:33:58
-redirect_from: /doc/shred-files-and-wipe-disks.html
 order: 9
 ---
 

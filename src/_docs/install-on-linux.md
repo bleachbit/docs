@@ -4,7 +4,6 @@ subtitle: "Step-by-step guide"
 nav_title: "Linux Install"
 category: doc
 date: 2015-09-30 20:37:20
-redirect_from: /doc/install-on-linux.html
 order: 2
 ---
 

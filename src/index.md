@@ -2,7 +2,6 @@
 layout: page
 title: "BleachBit Documentation"
 subtitle: "Official user and developer guides"
-redirect_from: "/doc/install.html"
 ---
 
 Welcome to the official documentation for [BleachBit](https://www.bleachbit.org), a free and open-source system cleaner designed to free disk space and protect your privacy.

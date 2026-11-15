@@ -4,7 +4,6 @@ subtitle: "Hide private files using decoy data"
 nav_title: "Chaff"
 category: doc
 date: 2019-08-14 20:45:26
-redirect_from: /doc/chaff.html
 order: 11
 ---
 When you delete a file, traces can remain on your storage drive, and

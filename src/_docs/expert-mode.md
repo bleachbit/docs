@@ -4,7 +4,6 @@ subtitle: "Safety guardrails and advanced features"
 nav_title: "Expert mode"
 category: doc
 date: 2026-04-29 12:01:00
-redirect_from: /doc/expert-mode.html
 order: 4
 
 ---

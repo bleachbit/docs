@@ -62,6 +62,5 @@ include:
 
 plugins:
   - jekyll-last-modified-at
-  - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap

@@ -4,9 +4,6 @@ subtitle: "Write custom BleachBit cleaners"
 nav_title: "CleanerML Intro"
 category: cml
 date: 2015-09-25 00:01:00
-redirect_from:
-  - /cml/cleanerml.html
-  - /doc/cleanerml.html
 order: 1
 ---
 
