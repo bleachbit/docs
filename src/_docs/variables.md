@@ -1,5 +1,6 @@
 ---
 title: "CleanerML variables reference"
+description: "Reference for path variables in CleanerML and winapp2.ini, covering the home directory, environment variables, and multi-value variables."
 nav_title: "Variables"
 category: cml
 date: 2019-04-19 00:00:00

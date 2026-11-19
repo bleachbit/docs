@@ -1,6 +1,7 @@
 ---
 title: "CleanerML introduction"
 subtitle: "Write custom BleachBit cleaners"
+description: "Introduction to CleanerML, the XML markup language for writing BleachBit cleaners, covering file matching, actions, variables, and OS filters."
 nav_title: "CleanerML Intro"
 category: cml
 date: 2015-09-25 00:01:00

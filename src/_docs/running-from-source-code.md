@@ -1,6 +1,7 @@
 ---
 title: "Running BleachBit from source code"
 subtitle: "Developer setup guide"
+description: "Run BleachBit from its Git source code on Linux or Windows for development and testing, including dependencies, translations, and updates."
 nav_title: "Source Code"
 category: dev
 date: 2015-09-25 23:40:58

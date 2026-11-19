@@ -1,5 +1,6 @@
 ---
 title: "Frequently asked questions"
+description: "Answers to common questions about BleachBit, including permission errors, file recovery, wiping free space, cache, and cookies."
 nav_title: "FAQ"
 category: doc
 date: 2015-09-25 23:30:16

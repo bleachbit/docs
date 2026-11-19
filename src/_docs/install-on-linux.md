@@ -1,6 +1,7 @@
 ---
 title: "How to install BleachBit on Linux"
 subtitle: "Step-by-step guide"
+description: "Step-by-step guide to installing BleachBit on Linux, including package sources, dependencies, and signature verification."
 nav_title: "Linux Install"
 category: doc
 date: 2015-09-30 20:37:20

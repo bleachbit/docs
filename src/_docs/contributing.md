@@ -1,6 +1,7 @@
 ---
 title: "Contributing to CleanerML"
 subtitle: "A guide for cleaner developers"
+description: "Write, test, and submit CleanerML cleaners for BleachBit, with checklists for testing, formatting, licensing, and the review process."
 nav_title: "Contributing"
 category: cml
 date: 2019-04-19 00:00:00

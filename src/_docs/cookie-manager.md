@@ -1,6 +1,7 @@
 ---
 title: "Cookie manager"
 subtitle: "Browser cookie management guide"
+description: "Select which cookies to keep when cleaning browsers, preserving logins while removing tracking cookies."
 nav_title: "Cookie Manager"
 category: doc
 date: 2026-03-18 09:47:00

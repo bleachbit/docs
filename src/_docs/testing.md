@@ -1,6 +1,7 @@
 ---
 title: "Testing guide"
 subtitle: "A guide for developers and QA testers"
+description: "Help test BleachBit releases: set up a test environment, verify cleaning results, check localization, run unit tests, and file bug reports."
 nav_title: "Testing"
 category: dev
 date: 2021-04-17 17:30:57

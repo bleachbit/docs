@@ -1,6 +1,7 @@
 ---
 title: "General usage"
 subtitle: "Getting started"
+description: "How to preview and clean files with BleachBit: select cleaners and options, preview the changes, then delete."
 nav_title: "Usage"
 category: doc
 date: 2015-09-25 23:25:52

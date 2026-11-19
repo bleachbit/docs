@@ -1,6 +1,7 @@
 ---
 title: "Effectiveness audit"
 subtitle: "Cleaning developer reference"
+description: "A procedure to audit BleachBit's cleaning effectiveness and verify that files are actually deleted."
 nav_title: "Audit"
 category: dev
 date: 2018-05-12 15:38:24

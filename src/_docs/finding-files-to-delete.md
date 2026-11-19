@@ -1,6 +1,7 @@
 ---
 title: "Finding files to delete"
 subtitle: "A guide for CleanerML developers"
+description: "How to discover which files an application stores, from exercising its features to tracing it with strace, inotifywait, or Process Monitor."
 nav_title: "Finding Files"
 category: cml
 date: 2026-02-10 00:00:00

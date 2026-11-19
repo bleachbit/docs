@@ -1,6 +1,7 @@
 ---
 title: "Preferences"
 subtitle: "Settings and configuration"
+description: "Configure BleachBit preferences including update checks, file overwriting, dark mode, drive selection for wiping, languages, and whitelists."
 nav_title: "Preferences"
 category: doc
 date: 2015-09-25 23:17:25

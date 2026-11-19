@@ -1,6 +1,7 @@
 ---
 title: "BleachBit command line interface"
 subtitle: "Usage and options"
+description: "Use BleachBit's command line interface to preview, clean, shred files, and wipe empty space, with examples for scripts, cron, and Task Scheduler."
 nav_title: "CLI"
 category: doc
 date: 2015-09-25 23:27:26

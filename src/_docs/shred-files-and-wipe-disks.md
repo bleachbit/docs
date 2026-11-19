@@ -1,5 +1,6 @@
 ---
 title: "How to shred files and wipe disks"
+description: "Securely erase files and wipe empty disk space with BleachBit, with guidance on HDDs, SSDs, overwriting passes, and recovery limits."
 nav_title: "Shred Files"
 category: doc
 date: 2015-09-25 23:33:58

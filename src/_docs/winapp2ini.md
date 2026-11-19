@@ -1,6 +1,7 @@
 ---
 title: "Winapp2.ini Guide"
 subtitle: "Extend BleachBit cleaning on Windows"
+description: "Import winapp2.ini files into BleachBit on Windows for 2,400+ community-maintained cleaners, either automatically or by placing the file manually."
 nav_title: "Winapp2.ini"
 category: doc
 date: 2015-09-25 23:38:45

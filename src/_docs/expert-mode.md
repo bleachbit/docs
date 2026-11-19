@@ -1,6 +1,7 @@
 ---
 title: "Expert mode"
 subtitle: "Safety guardrails and advanced features"
+description: "Expert mode unlocks advanced cleaning options and bypasses safety confirmations, giving power users direct control."
 nav_title: "Expert mode"
 category: doc
 date: 2026-04-29 12:01:00

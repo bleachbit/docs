@@ -1,6 +1,7 @@
 ---
 title: "Troubleshooting"
 subtitle: "Fix common errors and problems"
+description: "Steps to diagnose BleachBit problems: gather system information, capture debug logs on Windows and Linux, and file a bug report."
 nav_title: "Troubleshooting"
 category: doc
 date: 2018-03-14 21:36:58

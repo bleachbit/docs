@@ -1,6 +1,7 @@
 ---
 title: "Chaff"
 subtitle: "Hide private files using decoy data"
+description: "Generate realistic decoy files with BleachBit's Chaff feature to hide private data and slow down forensic analysis of your drive."
 nav_title: "Chaff"
 category: doc
 date: 2019-08-14 20:45:26

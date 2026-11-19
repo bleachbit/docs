@@ -1,6 +1,7 @@
 ---
 title: "How to install BleachBit on Windows"
 subtitle: "Step-by-step guide"
+description: "Step-by-step guide to installing BleachBit on Windows, covering system requirements, the standard installer, portable mode, and silent installation."
 nav_title: "Windows Install"
 category: doc
 date: 2015-09-30 20:37:24
